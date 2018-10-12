@@ -95,16 +95,6 @@ PRODUCT_COPY_FILES += \
   vendor/ulefone/t1/proprietary/etc/wifi/wpa_supplicant.conf:system/etc/wifi/wpa_supplicant.conf \
   vendor/ulefone/t1/proprietary/etc/wifi/wpa_supplicant_overlay.conf:system/etc/wifi/wpa_supplicant_overlay.conf \
   vendor/ulefone/t1/proprietary/fonts/DroidSansFallback.ttf:system/fonts/DroidSansFallback.ttf \
-  vendor/ulefone/t1/proprietary/framework/arm/boot-mediatek-framework.art:system/framework/arm/boot-mediatek-framework.art \
-  vendor/ulefone/t1/proprietary/framework/arm/boot-mediatek-framework.oat:system/framework/arm/boot-mediatek-framework.oat \
-  vendor/ulefone/t1/proprietary/framework/arm/boot-telephony-common.art:system/framework/arm/boot-telephony-common.art \
-  vendor/ulefone/t1/proprietary/framework/arm/boot-telephony-common.oat:system/framework/arm/boot-telephony-common.oat \
-  vendor/ulefone/t1/proprietary/framework/arm64/boot-mediatek-framework.art:system/framework/arm64/boot-mediatek-framework.art \
-  vendor/ulefone/t1/proprietary/framework/arm64/boot-mediatek-framework.oat:system/framework/arm64/boot-mediatek-framework.oat \
-  vendor/ulefone/t1/proprietary/framework/arm64/boot-telephony-common.art:system/framework/arm64/boot-telephony-common.art \
-  vendor/ulefone/t1/proprietary/framework/arm64/boot-telephony-common.oat:system/framework/arm64/boot-telephony-common.oat \
-  vendor/ulefone/t1/proprietary/framework/mediatek-framework.jar:system/framework/mediatek-framework.jar \
-  vendor/ulefone/t1/proprietary/framework/telephony-common.jar:system/framework/telephony-common.jar \
   vendor/ulefone/t1/proprietary/lib/egl/libGLES_android.so:system/lib/egl/libGLES_android.so \
   vendor/ulefone/t1/proprietary/lib/hw/audio_policy.stub.so:system/lib/hw/audio_policy.stub.so \
   vendor/ulefone/t1/proprietary/lib/hw/fingerprint.default.so:system/lib/hw/fingerprint.default.so \
@@ -112,7 +102,6 @@ PRODUCT_COPY_FILES += \
   vendor/ulefone/t1/proprietary/lib/hw/keystore.trustkernel.so:system/lib/hw/keystore.trustkernel.so \
   vendor/ulefone/t1/proprietary/lib/hw/keystore.v1.trustkernel.so:system/lib/hw/keystore.v1.trustkernel.so \
   vendor/ulefone/t1/proprietary/lib/libMTKAudioTimeStretch.so:system/lib/libMTKAudioTimeStretch.so \
-  vendor/ulefone/t1/proprietary/lib/libaudiopolicymanager.so:system/lib/libaudiopolicymanager.so \
   vendor/ulefone/t1/proprietary/lib/libaudiopolicymanagerdefault.so:system/lib/libaudiopolicymanagerdefault.so \
   vendor/ulefone/t1/proprietary/lib/libdcfdecoderjni.so:system/lib/libdcfdecoderjni.so \
   vendor/ulefone/t1/proprietary/lib/libfs16xx_calibration_jni.so:system/lib/libfs16xx_calibration_jni.so \
@@ -122,9 +111,7 @@ PRODUCT_COPY_FILES += \
   vendor/ulefone/t1/proprietary/lib/libgybeauty.so:system/lib/libgybeauty.so \
   vendor/ulefone/t1/proprietary/lib/libgybeauty420.so:system/lib/libgybeauty420.so \
   vendor/ulefone/t1/proprietary/lib/libgybeauty422.so:system/lib/libgybeauty422.so \
-  vendor/ulefone/t1/proprietary/lib/libkphproxy.so:system/lib/libkphproxy.so \
   vendor/ulefone/t1/proprietary/lib/libmediatek_exceptionlog.so:system/lib/libmediatek_exceptionlog.so \
-  vendor/ulefone/t1/proprietary/lib/libpl.so:system/lib/libpl.so \
   vendor/ulefone/t1/proprietary/lib/libteec.so:system/lib/libteec.so \
   vendor/ulefone/t1/proprietary/lib/libteeclientjni.so:system/lib/libteeclientjni.so \
   vendor/ulefone/t1/proprietary/lib/libteejni.so:system/lib/libteejni.so \
@@ -136,20 +123,15 @@ PRODUCT_COPY_FILES += \
   vendor/ulefone/t1/proprietary/lib64/hw/keystore.v1.trustkernel.so:system/lib64/hw/keystore.v1.trustkernel.so \
   vendor/ulefone/t1/proprietary/lib64/libMTKAudioTimeStretch.so:system/lib64/libMTKAudioTimeStretch.so \
   vendor/ulefone/t1/proprietary/lib64/libagoldtpglove_jni.so:system/lib64/libagoldtpglove_jni.so \
-  vendor/ulefone/t1/proprietary/lib64/libaudiopolicymanager.so:system/lib64/libaudiopolicymanager.so \
   vendor/ulefone/t1/proprietary/lib64/libaudiopolicymanagerdefault.so:system/lib64/libaudiopolicymanagerdefault.so \
   vendor/ulefone/t1/proprietary/lib64/libdcfdecoderjni.so:system/lib64/libdcfdecoderjni.so \
   vendor/ulefone/t1/proprietary/lib64/libfilterpack_facedetect.so:system/lib64/libfilterpack_facedetect.so \
   vendor/ulefone/t1/proprietary/lib64/libfs16xx_calibration_jni.so:system/lib64/libfs16xx_calibration_jni.so \
   vendor/ulefone/t1/proprietary/lib64/libfs16xx_interface.so:system/lib64/libfs16xx_interface.so \
-  vendor/ulefone/t1/proprietary/lib64/libfs_mgr.so:system/lib64/libfs_mgr.so \
-  vendor/ulefone/t1/proprietary/lib64/libgsensorcali_jni.so:system/lib64/libgsensorcali_jni.so \
   vendor/ulefone/t1/proprietary/lib64/libgybeauty.so:system/lib64/libgybeauty.so \
   vendor/ulefone/t1/proprietary/lib64/libgybeauty420.so:system/lib64/libgybeauty420.so \
   vendor/ulefone/t1/proprietary/lib64/libgybeauty422.so:system/lib64/libgybeauty422.so \
-  vendor/ulefone/t1/proprietary/lib64/libkphproxy.so:system/lib64/libkphproxy.so \
   vendor/ulefone/t1/proprietary/lib64/libmediatek_exceptionlog.so:system/lib64/libmediatek_exceptionlog.so \
-  vendor/ulefone/t1/proprietary/lib64/libpl.so:system/lib64/libpl.so \
   vendor/ulefone/t1/proprietary/lib64/libteec.so:system/lib64/libteec.so \
   vendor/ulefone/t1/proprietary/lib64/libteeclientjni.so:system/lib64/libteeclientjni.so \
   vendor/ulefone/t1/proprietary/lib64/libteejni.so:system/lib64/libteejni.so \
