@@ -102,7 +102,6 @@ PRODUCT_COPY_FILES += \
   vendor/ulefone/t1/proprietary/lib/hw/keystore.trustkernel.so:system/lib/hw/keystore.trustkernel.so \
   vendor/ulefone/t1/proprietary/lib/hw/keystore.v1.trustkernel.so:system/lib/hw/keystore.v1.trustkernel.so \
   vendor/ulefone/t1/proprietary/lib/libMTKAudioTimeStretch.so:system/lib/libMTKAudioTimeStretch.so \
-  vendor/ulefone/t1/proprietary/lib/libaudiopolicymanagerdefault.so:system/lib/libaudiopolicymanagerdefault.so \
   vendor/ulefone/t1/proprietary/lib/libdcfdecoderjni.so:system/lib/libdcfdecoderjni.so \
   vendor/ulefone/t1/proprietary/lib/libfs16xx_calibration_jni.so:system/lib/libfs16xx_calibration_jni.so \
   vendor/ulefone/t1/proprietary/lib/libfs16xx_interface.so:system/lib/libfs16xx_interface.so \
@@ -115,6 +114,7 @@ PRODUCT_COPY_FILES += \
   vendor/ulefone/t1/proprietary/lib/libteec.so:system/lib/libteec.so \
   vendor/ulefone/t1/proprietary/lib/libteeclientjni.so:system/lib/libteeclientjni.so \
   vendor/ulefone/t1/proprietary/lib/libteejni.so:system/lib/libteejni.so \
+  vendor/ulefone/t1/proprietary/lib/libaudiopolicymanagerdefault.so:system/lib/libaudiopolicymanagerdefault.so \
   vendor/ulefone/t1/proprietary/lib64/egl/libGLES_android.so:system/lib64/egl/libGLES_android.so \
   vendor/ulefone/t1/proprietary/lib64/hw/audio_policy.stub.so:system/lib64/hw/audio_policy.stub.so \
   vendor/ulefone/t1/proprietary/lib64/hw/fingerprint.default.so:system/lib64/hw/fingerprint.default.so \
@@ -123,7 +123,6 @@ PRODUCT_COPY_FILES += \
   vendor/ulefone/t1/proprietary/lib64/hw/keystore.v1.trustkernel.so:system/lib64/hw/keystore.v1.trustkernel.so \
   vendor/ulefone/t1/proprietary/lib64/libMTKAudioTimeStretch.so:system/lib64/libMTKAudioTimeStretch.so \
   vendor/ulefone/t1/proprietary/lib64/libagoldtpglove_jni.so:system/lib64/libagoldtpglove_jni.so \
-  vendor/ulefone/t1/proprietary/lib64/libaudiopolicymanagerdefault.so:system/lib64/libaudiopolicymanagerdefault.so \
   vendor/ulefone/t1/proprietary/lib64/libdcfdecoderjni.so:system/lib64/libdcfdecoderjni.so \
   vendor/ulefone/t1/proprietary/lib64/libfilterpack_facedetect.so:system/lib64/libfilterpack_facedetect.so \
   vendor/ulefone/t1/proprietary/lib64/libfs16xx_calibration_jni.so:system/lib64/libfs16xx_calibration_jni.so \
@@ -136,6 +135,8 @@ PRODUCT_COPY_FILES += \
   vendor/ulefone/t1/proprietary/lib64/libteeclientjni.so:system/lib64/libteeclientjni.so \
   vendor/ulefone/t1/proprietary/lib64/libteejni.so:system/lib64/libteejni.so \
   vendor/ulefone/t1/proprietary/lib64/libyv12util.so:system/lib64/libyv12util.so \
+  vendor/ulefone/t1/proprietary/lib64/libfs_mgr.so:system/lib64/libfs_mgr.so \
+  vendor/ulefone/t1/proprietary/lib64/libaudiopolicymanagerdefault.so:system/lib64/libaudiopolicymanagerdefault.so \
   vendor/ulefone/t1/proprietary/vendor/app/Camera/lib/arm64/libBlurModoule.so:system/vendor/app/Camera/lib/arm64/libBlurModoule.so \
   vendor/ulefone/t1/proprietary/vendor/app/Camera/lib/arm64/libjni_jpegdecoder.so:system/vendor/app/Camera/lib/arm64/libjni_jpegdecoder.so \
   vendor/ulefone/t1/proprietary/vendor/bin/AudioSetParam:system/vendor/bin/AudioSetParam \
@@ -235,7 +236,6 @@ PRODUCT_COPY_FILES += \
   vendor/ulefone/t1/proprietary/vendor/bin/stroke:system/vendor/bin/stroke \
   vendor/ulefone/t1/proprietary/vendor/bin/superumount:system/vendor/bin/superumount \
   vendor/ulefone/t1/proprietary/vendor/bin/sysenv_daemon:system/vendor/bin/sysenv_daemon \
-  vendor/ulefone/t1/proprietary/vendor/bin/terservice:system/vendor/bin/terservice \
   vendor/ulefone/t1/proprietary/vendor/bin/tertestclient:system/vendor/bin/tertestclient \
   vendor/ulefone/t1/proprietary/vendor/bin/thermal:system/vendor/bin/thermal \
   vendor/ulefone/t1/proprietary/vendor/bin/thermal_manager:system/vendor/bin/thermal_manager \
@@ -247,7 +247,6 @@ PRODUCT_COPY_FILES += \
   vendor/ulefone/t1/proprietary/vendor/bin/volte_imcb:system/vendor/bin/volte_imcb \
   vendor/ulefone/t1/proprietary/vendor/bin/volte_stack:system/vendor/bin/volte_stack \
   vendor/ulefone/t1/proprietary/vendor/bin/volte_ua:system/vendor/bin/volte_ua \
-  vendor/ulefone/t1/proprietary/vendor/bin/vtservice:system/vendor/bin/vtservice \
   vendor/ulefone/t1/proprietary/vendor/bin/wfca:system/vendor/bin/wfca \
   vendor/ulefone/t1/proprietary/vendor/bin/wifi2agps:system/vendor/bin/wifi2agps \
   vendor/ulefone/t1/proprietary/vendor/bin/wmt_concurrency:system/vendor/bin/wmt_concurrency \

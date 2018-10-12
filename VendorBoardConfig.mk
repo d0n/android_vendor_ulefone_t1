@@ -24,7 +24,6 @@ PRODUCT_PACKAGES += \
   keystore.trustkernel \
   keystore.v1.trustkernel \
   libMTKAudioTimeStretch \
-  libaudiopolicymanagerdefault \
   libdcfdecoderjni \
   libfs16xx_calibration_jni \
   libfs16xx_interface \
@@ -37,6 +36,7 @@ PRODUCT_PACKAGES += \
   libteec \
   libteeclientjni \
   libteejni \
+  libaudiopolicymanagerdefault \
   libagoldtpglove_jni \
   libfilterpack_facedetect \
   libyv12util \
@@ -512,7 +512,6 @@ PRODUCT_PACKAGES += \
   stroke \
   superumount \
   sysenv_daemon \
-  terservice \
   tertestclient \
   thermal \
   thermal_manager \
@@ -524,7 +523,6 @@ PRODUCT_PACKAGES += \
   volte_imcb \
   volte_stack \
   volte_ua \
-  vtservice \
   wfca \
   wifi2agps \
   wmt_concurrency \
