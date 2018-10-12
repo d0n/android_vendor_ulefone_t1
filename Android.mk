@@ -158,6 +158,18 @@ LOCAL_MODULE_CLASS := SHARED_LIBRARIES
 LOCAL_PROPRIETARY_MODULE := true
 LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MULTILIB := both
+LOCAL_MODULE := libaudiopolicymanager
+LOCAL_MODULE_PATH_32 := system/lib
+LOCAL_SRC_FILES_32 := proprietary/lib/libaudiopolicymanager.so
+LOCAL_MODULE_PATH_64 := system/lib64
+LOCAL_SRC_FILES_64 := proprietary/lib64/libaudiopolicymanager.so
+LOCAL_MODULE_SUFFIX := .so
+include $(PREBUILT_SHARED_LIBRARY)
+include $(CLEAR_VARS)
+LOCAL_MODULE_CLASS := SHARED_LIBRARIES
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
+LOCAL_MULTILIB := both
 LOCAL_MODULE := libaudiopolicymanagerdefault
 LOCAL_MODULE_PATH_32 := system/lib
 LOCAL_SRC_FILES_32 := proprietary/lib/libaudiopolicymanagerdefault.so
