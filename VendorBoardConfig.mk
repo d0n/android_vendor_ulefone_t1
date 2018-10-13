@@ -357,6 +357,7 @@ PRODUCT_PACKAGES += \
   libvt_avsync \
   libvt_custom \
   libvt_socketbind \
+  libvtmal \
   libwfo_jni \
   libwo \
   libwvdrmengine \
