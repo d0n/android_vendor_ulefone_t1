@@ -19,11 +19,13 @@ PRODUCT_PACKAGES += \
   libmtk_pbb \
   libGLES_android \
   audio_policy.stub \
+  fingerprint.default \
   gatekeeper.trustkernel \
   keystore.trustkernel \
   keystore.v1.trustkernel \
-  fingerprint.default \
   libMTKAudioTimeStretch \
+  libaudiopolicymanager \
+  libaudiopolicymanagerdefault \
   libdcfdecoderjni \
   libfs16xx_calibration_jni \
   libfs16xx_interface \
@@ -33,15 +35,13 @@ PRODUCT_PACKAGES += \
   libgybeauty420 \
   libgybeauty422 \
   libmediatek_exceptionlog \
+  libpl \
   libteec \
   libteeclientjni \
   libteejni \
-  libaudiopolicymanagerdefault \
-  libpl \
-  libaudiopolicymanager \
   libagoldtpglove_jni \
-  libyv12util \
   libfilterpack_facedetect \
+  libyv12util \
   libdrmctaplugin \
   libdrmmtkplugin \
   libGLES_mali \
@@ -331,6 +331,7 @@ PRODUCT_PACKAGES += \
   libprogrambinary \
   libratconfig \
   librgbwlightsensor \
+  librilmtk \
   librilmtkmd2 \
   librilproxy \
   librilproxyutils \
@@ -378,7 +379,6 @@ PRODUCT_PACKAGES += \
   mtk-rilmd2 \
   mtk-rilproxy \
   volte_imsm \
-  librilmtk \
   libipsec_ims_shr \
   libjni_jpegdecoder \
   libterservice \
@@ -402,8 +402,8 @@ PRODUCT_PACKAGES += \
   MTKLogger \
   MTKThermalManager \
   SensorHub \
-  FwkPlugin \
   DataProtection \
+  FwkPlugin \
   agoldnvram \
   nvram_proximity \
   tee \
@@ -478,6 +478,8 @@ PRODUCT_PACKAGES += \
   msensord \
   mtk_agpsd \
   mtkmal \
+  mtkrild \
+  mtkrildmd2 \
   muxreport \
   netdiag \
   nvram_agent_binder \
@@ -485,11 +487,11 @@ PRODUCT_PACKAGES += \
   orientationd \
   perf_native_test \
   pq \
-  terservice \
   program_binary_service \
   qmcX983d \
   radvd \
   resize_ext4 \
+  rilproxy \
   rs2spir \
   rtt \
   s62xd \
@@ -503,6 +505,7 @@ PRODUCT_PACKAGES += \
   stroke \
   superumount \
   sysenv_daemon \
+  terservice \
   tertestclient \
   thermal \
   thermal_manager \
@@ -520,7 +523,3 @@ PRODUCT_PACKAGES += \
   wmt_launcher \
   wmt_loader \
   wmt_loopback \
-  mtkrild \
-  mtkrildmd2 \
-  rilproxy \
-  vtservice \

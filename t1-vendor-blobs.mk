@@ -23,11 +23,13 @@ PRODUCT_COPY_FILES += \
   vendor/ulefone/t1/proprietary/fonts/DroidSansFallback.ttf:system/fonts/DroidSansFallback.ttf \
   vendor/ulefone/t1/proprietary/lib/egl/libGLES_android.so:system/lib/egl/libGLES_android.so \
   vendor/ulefone/t1/proprietary/lib/hw/audio_policy.stub.so:system/lib/hw/audio_policy.stub.so \
+  vendor/ulefone/t1/proprietary/lib/hw/fingerprint.default.so:system/lib/hw/fingerprint.default.so \
   vendor/ulefone/t1/proprietary/lib/hw/gatekeeper.trustkernel.so:system/lib/hw/gatekeeper.trustkernel.so \
   vendor/ulefone/t1/proprietary/lib/hw/keystore.trustkernel.so:system/lib/hw/keystore.trustkernel.so \
   vendor/ulefone/t1/proprietary/lib/hw/keystore.v1.trustkernel.so:system/lib/hw/keystore.v1.trustkernel.so \
-  vendor/ulefone/t1/proprietary/lib/hw/fingerprint.default.so:system/lib/hw/fingerprint.default.so \
   vendor/ulefone/t1/proprietary/lib/libMTKAudioTimeStretch.so:system/lib/libMTKAudioTimeStretch.so \
+  vendor/ulefone/t1/proprietary/lib/libaudiopolicymanager.so:system/lib/libaudiopolicymanager.so \
+  vendor/ulefone/t1/proprietary/lib/libaudiopolicymanagerdefault.so:system/lib/libaudiopolicymanagerdefault.so \
   vendor/ulefone/t1/proprietary/lib/libdcfdecoderjni.so:system/lib/libdcfdecoderjni.so \
   vendor/ulefone/t1/proprietary/lib/libfs16xx_calibration_jni.so:system/lib/libfs16xx_calibration_jni.so \
   vendor/ulefone/t1/proprietary/lib/libfs16xx_interface.so:system/lib/libfs16xx_interface.so \
@@ -37,36 +39,34 @@ PRODUCT_COPY_FILES += \
   vendor/ulefone/t1/proprietary/lib/libgybeauty420.so:system/lib/libgybeauty420.so \
   vendor/ulefone/t1/proprietary/lib/libgybeauty422.so:system/lib/libgybeauty422.so \
   vendor/ulefone/t1/proprietary/lib/libmediatek_exceptionlog.so:system/lib/libmediatek_exceptionlog.so \
+  vendor/ulefone/t1/proprietary/lib/libpl.so:system/lib/libpl.so \
   vendor/ulefone/t1/proprietary/lib/libteec.so:system/lib/libteec.so \
   vendor/ulefone/t1/proprietary/lib/libteeclientjni.so:system/lib/libteeclientjni.so \
   vendor/ulefone/t1/proprietary/lib/libteejni.so:system/lib/libteejni.so \
-  vendor/ulefone/t1/proprietary/lib/libaudiopolicymanagerdefault.so:system/lib/libaudiopolicymanagerdefault.so \
-  vendor/ulefone/t1/proprietary/lib/libpl.so:system/lib/libpl.so \
-  vendor/ulefone/t1/proprietary/lib/libaudiopolicymanager.so:system/lib/libaudiopolicymanager.so \
   vendor/ulefone/t1/proprietary/lib64/egl/libGLES_android.so:system/lib64/egl/libGLES_android.so \
   vendor/ulefone/t1/proprietary/lib64/hw/audio_policy.stub.so:system/lib64/hw/audio_policy.stub.so \
+  vendor/ulefone/t1/proprietary/lib64/hw/fingerprint.default.so:system/lib64/hw/fingerprint.default.so \
   vendor/ulefone/t1/proprietary/lib64/hw/gatekeeper.trustkernel.so:system/lib64/hw/gatekeeper.trustkernel.so \
   vendor/ulefone/t1/proprietary/lib64/hw/keystore.trustkernel.so:system/lib64/hw/keystore.trustkernel.so \
   vendor/ulefone/t1/proprietary/lib64/hw/keystore.v1.trustkernel.so:system/lib64/hw/keystore.v1.trustkernel.so \
-  vendor/ulefone/t1/proprietary/lib64/hw/fingerprint.default.so:system/lib64/hw/fingerprint.default.so \
   vendor/ulefone/t1/proprietary/lib64/libMTKAudioTimeStretch.so:system/lib64/libMTKAudioTimeStretch.so \
   vendor/ulefone/t1/proprietary/lib64/libagoldtpglove_jni.so:system/lib64/libagoldtpglove_jni.so \
+  vendor/ulefone/t1/proprietary/lib64/libaudiopolicymanager.so:system/lib64/libaudiopolicymanager.so \
+  vendor/ulefone/t1/proprietary/lib64/libaudiopolicymanagerdefault.so:system/lib64/libaudiopolicymanagerdefault.so \
   vendor/ulefone/t1/proprietary/lib64/libdcfdecoderjni.so:system/lib64/libdcfdecoderjni.so \
+  vendor/ulefone/t1/proprietary/lib64/libfilterpack_facedetect.so:system/lib64/libfilterpack_facedetect.so \
   vendor/ulefone/t1/proprietary/lib64/libfs16xx_calibration_jni.so:system/lib64/libfs16xx_calibration_jni.so \
   vendor/ulefone/t1/proprietary/lib64/libfs16xx_interface.so:system/lib64/libfs16xx_interface.so \
+  vendor/ulefone/t1/proprietary/lib64/libfs_mgr.so:system/lib64/libfs_mgr.so \
   vendor/ulefone/t1/proprietary/lib64/libgybeauty.so:system/lib64/libgybeauty.so \
   vendor/ulefone/t1/proprietary/lib64/libgybeauty420.so:system/lib64/libgybeauty420.so \
   vendor/ulefone/t1/proprietary/lib64/libgybeauty422.so:system/lib64/libgybeauty422.so \
   vendor/ulefone/t1/proprietary/lib64/libmediatek_exceptionlog.so:system/lib64/libmediatek_exceptionlog.so \
+  vendor/ulefone/t1/proprietary/lib64/libpl.so:system/lib64/libpl.so \
   vendor/ulefone/t1/proprietary/lib64/libteec.so:system/lib64/libteec.so \
   vendor/ulefone/t1/proprietary/lib64/libteeclientjni.so:system/lib64/libteeclientjni.so \
   vendor/ulefone/t1/proprietary/lib64/libteejni.so:system/lib64/libteejni.so \
   vendor/ulefone/t1/proprietary/lib64/libyv12util.so:system/lib64/libyv12util.so \
-  vendor/ulefone/t1/proprietary/lib64/libfs_mgr.so:system/lib64/libfs_mgr.so \
-  vendor/ulefone/t1/proprietary/lib64/libaudiopolicymanagerdefault.so:system/lib64/libaudiopolicymanagerdefault.so \
-  vendor/ulefone/t1/proprietary/lib64/libfilterpack_facedetect.so:system/lib64/libfilterpack_facedetect.so \
-  vendor/ulefone/t1/proprietary/lib64/libpl.so:system/lib64/libpl.so \
-  vendor/ulefone/t1/proprietary/lib64/libaudiopolicymanager.so:system/lib64/libaudiopolicymanager.so \
   vendor/ulefone/t1/proprietary/vendor/bin/AudioSetParam:system/vendor/bin/AudioSetParam \
   vendor/ulefone/t1/proprietary/vendor/bin/MPED:system/vendor/bin/MPED \
   vendor/ulefone/t1/proprietary/vendor/bin/MtkCodecService:system/vendor/bin/MtkCodecService \
@@ -137,7 +137,8 @@ PRODUCT_COPY_FILES += \
   vendor/ulefone/t1/proprietary/vendor/bin/msensord:system/vendor/bin/msensord \
   vendor/ulefone/t1/proprietary/vendor/bin/mtk_agpsd:system/vendor/bin/mtk_agpsd \
   vendor/ulefone/t1/proprietary/vendor/bin/mtkmal:system/vendor/bin/mtkmal \
-  vendor/ulefone/t1/proprietary/vendor/bin/program_binary_builder:system/vendor/bin/program_binary_builder \
+  vendor/ulefone/t1/proprietary/vendor/bin/mtkrild:system/vendor/bin/mtkrild \
+  vendor/ulefone/t1/proprietary/vendor/bin/mtkrildmd2:system/vendor/bin/mtkrildmd2 \
   vendor/ulefone/t1/proprietary/vendor/bin/muxreport:system/vendor/bin/muxreport \
   vendor/ulefone/t1/proprietary/vendor/bin/netdiag:system/vendor/bin/netdiag \
   vendor/ulefone/t1/proprietary/vendor/bin/nvram_agent_binder:system/vendor/bin/nvram_agent_binder \
@@ -145,11 +146,12 @@ PRODUCT_COPY_FILES += \
   vendor/ulefone/t1/proprietary/vendor/bin/orientationd:system/vendor/bin/orientationd \
   vendor/ulefone/t1/proprietary/vendor/bin/perf_native_test:system/vendor/bin/perf_native_test \
   vendor/ulefone/t1/proprietary/vendor/bin/pq:system/vendor/bin/pq \
-  vendor/ulefone/t1/proprietary/vendor/bin/terservice:system/vendor/bin/terservice \
+  vendor/ulefone/t1/proprietary/vendor/bin/program_binary_builder:system/vendor/bin/program_binary_builder \
   vendor/ulefone/t1/proprietary/vendor/bin/program_binary_service:system/vendor/bin/program_binary_service \
   vendor/ulefone/t1/proprietary/vendor/bin/qmcX983d:system/vendor/bin/qmcX983d \
   vendor/ulefone/t1/proprietary/vendor/bin/radvd:system/vendor/bin/radvd \
   vendor/ulefone/t1/proprietary/vendor/bin/resize_ext4:system/vendor/bin/resize_ext4 \
+  vendor/ulefone/t1/proprietary/vendor/bin/rilproxy:system/vendor/bin/rilproxy \
   vendor/ulefone/t1/proprietary/vendor/bin/rs2spir:system/vendor/bin/rs2spir \
   vendor/ulefone/t1/proprietary/vendor/bin/rtt:system/vendor/bin/rtt \
   vendor/ulefone/t1/proprietary/vendor/bin/s62xd:system/vendor/bin/s62xd \
@@ -163,6 +165,7 @@ PRODUCT_COPY_FILES += \
   vendor/ulefone/t1/proprietary/vendor/bin/stroke:system/vendor/bin/stroke \
   vendor/ulefone/t1/proprietary/vendor/bin/superumount:system/vendor/bin/superumount \
   vendor/ulefone/t1/proprietary/vendor/bin/sysenv_daemon:system/vendor/bin/sysenv_daemon \
+  vendor/ulefone/t1/proprietary/vendor/bin/terservice:system/vendor/bin/terservice \
   vendor/ulefone/t1/proprietary/vendor/bin/tertestclient:system/vendor/bin/tertestclient \
   vendor/ulefone/t1/proprietary/vendor/bin/thermal:system/vendor/bin/thermal \
   vendor/ulefone/t1/proprietary/vendor/bin/thermal_manager:system/vendor/bin/thermal_manager \
@@ -180,10 +183,6 @@ PRODUCT_COPY_FILES += \
   vendor/ulefone/t1/proprietary/vendor/bin/wmt_launcher:system/vendor/bin/wmt_launcher \
   vendor/ulefone/t1/proprietary/vendor/bin/wmt_loader:system/vendor/bin/wmt_loader \
   vendor/ulefone/t1/proprietary/vendor/bin/wmt_loopback:system/vendor/bin/wmt_loopback \
-  vendor/ulefone/t1/proprietary/vendor/bin/mtkrild:system/vendor/bin/mtkrild \
-  vendor/ulefone/t1/proprietary/vendor/bin/mtkrildmd2:system/vendor/bin/mtkrildmd2 \
-  vendor/ulefone/t1/proprietary/vendor/bin/rilproxy:system/vendor/bin/rilproxy \
-  vendor/ulefone/t1/proprietary/vendor/bin/vtservice:system/vendor/bin/vtservice \
   vendor/ulefone/t1/proprietary/vendor/data/misc/ProjectConfig.mk:system/vendor/data/misc/ProjectConfig.mk \
   vendor/ulefone/t1/proprietary/vendor/etc/.tp/.ht120.mtc:system/vendor/etc/.tp/.ht120.mtc \
   vendor/ulefone/t1/proprietary/vendor/etc/.tp/.thermal_meta.conf:system/vendor/etc/.tp/.thermal_meta.conf \
@@ -693,6 +692,7 @@ PRODUCT_COPY_FILES += \
   vendor/ulefone/t1/proprietary/vendor/lib/libprogrambinary.so:system/vendor/lib/libprogrambinary.so \
   vendor/ulefone/t1/proprietary/vendor/lib/libratconfig.so:system/vendor/lib/libratconfig.so \
   vendor/ulefone/t1/proprietary/vendor/lib/librgbwlightsensor.so:system/vendor/lib/librgbwlightsensor.so \
+  vendor/ulefone/t1/proprietary/vendor/lib/librilmtk.so:system/vendor/lib/librilmtk.so \
   vendor/ulefone/t1/proprietary/vendor/lib/librilmtkmd2.so:system/vendor/lib/librilmtkmd2.so \
   vendor/ulefone/t1/proprietary/vendor/lib/librilproxy.so:system/vendor/lib/librilproxy.so \
   vendor/ulefone/t1/proprietary/vendor/lib/librilproxyutils.so:system/vendor/lib/librilproxyutils.so \
@@ -740,7 +740,6 @@ PRODUCT_COPY_FILES += \
   vendor/ulefone/t1/proprietary/vendor/lib/mtk-rilmd2.so:system/vendor/lib/mtk-rilmd2.so \
   vendor/ulefone/t1/proprietary/vendor/lib/mtk-rilproxy.so:system/vendor/lib/mtk-rilproxy.so \
   vendor/ulefone/t1/proprietary/vendor/lib/volte_imsm.so:system/vendor/lib/volte_imsm.so \
-  vendor/ulefone/t1/proprietary/vendor/lib/librilmtk.so:system/vendor/lib/librilmtk.so \
   vendor/ulefone/t1/proprietary/vendor/lib64/drm/libdrmctaplugin.so:system/vendor/lib64/drm/libdrmctaplugin.so \
   vendor/ulefone/t1/proprietary/vendor/lib64/drm/libdrmmtkplugin.so:system/vendor/lib64/drm/libdrmmtkplugin.so \
   vendor/ulefone/t1/proprietary/vendor/lib64/egl/libGLES_mali.so:system/vendor/lib64/egl/libGLES_mali.so \
@@ -1034,13 +1033,13 @@ PRODUCT_COPY_FILES += \
   vendor/ulefone/t1/proprietary/vendor/media/LMspeed_508.emd:system/vendor/media/LMspeed_508.emd \
   vendor/ulefone/t1/proprietary/vendor/media/PFFprec_600.emd:system/vendor/media/PFFprec_600.emd \
   vendor/ulefone/t1/proprietary/vendor/media/images/drm_disable_icon.png:system/vendor/media/images/drm_disable_icon.png \
-  vendor/ulefone/t1/proprietary/vendor/plugin/Signatures/mplugin_guard.xml:system/vendor/plugin/Signatures/mplugin_guard.xml \
-  vendor/ulefone/t1/proprietary/vendor/plugin/FwkPlugin/FwkPlugin.mpinfo:system/vendor/plugin/FwkPlugin/FwkPlugin.mpinfo \
   vendor/ulefone/t1/proprietary/vendor/plugin/DataProtection/DataProtection.mpinfo:system/vendor/plugin/DataProtection/DataProtection.mpinfo \
+  vendor/ulefone/t1/proprietary/vendor/plugin/FwkPlugin/FwkPlugin.mpinfo:system/vendor/plugin/FwkPlugin/FwkPlugin.mpinfo \
+  vendor/ulefone/t1/proprietary/vendor/plugin/Signatures/mplugin_guard.xml:system/vendor/plugin/Signatures/mplugin_guard.xml \
+  vendor/ulefone/t1/proprietary/vendor/res/images/lcd_test_00.png:system/vendor/res/images/lcd_test_00.png \
+  vendor/ulefone/t1/proprietary/vendor/res/images/lcd_test_01.png:system/vendor/res/images/lcd_test_01.png \
+  vendor/ulefone/t1/proprietary/vendor/res/images/lcd_test_02.png:system/vendor/res/images/lcd_test_02.png \
   vendor/ulefone/t1/proprietary/vendor/res/sound/CA2CA.ogg:system/vendor/res/sound/CA2CA.ogg \
   vendor/ulefone/t1/proprietary/vendor/res/sound/CADetected.ogg:system/vendor/res/sound/CADetected.ogg \
   vendor/ulefone/t1/proprietary/vendor/res/sound/ringtone.wav:system/vendor/res/sound/ringtone.wav \
   vendor/ulefone/t1/proprietary/vendor/res/sound/testpattern1.wav:system/vendor/res/sound/testpattern1.wav \
-  vendor/ulefone/t1/proprietary/vendor/res/images/lcd_test_00.png:system/vendor/res/images/lcd_test_00.png \
-  vendor/ulefone/t1/proprietary/vendor/res/images/lcd_test_01.png:system/vendor/res/images/lcd_test_01.png \
-  vendor/ulefone/t1/proprietary/vendor/res/images/lcd_test_02.png:system/vendor/res/images/lcd_test_02.png \
