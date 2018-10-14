@@ -17,12 +17,10 @@
 LOCAL_PATH := $(call my-dir)
 DEVICE_PATH := $(TOP)/device/ulefone/t1
 
-$(shell mkdir -p $(OUT)/obj/STATIC_LIBRARIES/lib_driver_cmd_mt66xx_intermediates $(OUT)/obj_arm/lib $(OUT)/obj/lib $(OUT)/obj/SHARED_LIBRARIES/libvtmal_intermediates $(OUT)/obj_arm/SHARED_LIBRARIES/libvtmal_intermediates/)
-$(shell touch $(OUT)/obj/STATIC_LIBRARIES/lib_driver_cmd_mt66xx_intermediates/export_includes $(OUT)/obj/SHARED_LIBRARIES/libvtmal_intermediates/export_includes $(OUT)/obj_arm/SHARED_LIBRARIES/libvtmal_intermediates/export_includes $(OUT)/obj_arm/lib/libvtmal.so.toc $(OUT)/obj/lib/libvtmal.so.toc)
+$(shell mkdir -p $(OUT)/obj/STATIC_LIBRARIES/lib_driver_cmd_mt66xx_intermediates)
+$(shell touch $(OUT)/obj/STATIC_LIBRARIES/lib_driver_cmd_mt66xx_intermediates/export_includes)
 $(shell cp -r $(DEVICE_PATH)/mtk/lib_driver_cmd_mt66xx $(TOP)/NOTICE-TARGET-STATIC_LIBRARIES-lib_driver_cmd_mt66xx)
 $(shell cp $(TOP)/device/ulefone/t1/mtk/libwifi-hal-mt66xx/arm/libwifi-hal-mt66xx.a $(OUT)/obj/STATIC_LIBRARIES/lib_driver_cmd_mt66xx_intermediates/lib_driver_cmd_mt66xx.a)
-#$(shell cp $(LOCAL_PATH)/mtk/custom_vt_video_enc_type.h $(OUT)/obj/SHARED_LIBRARIES/libvtmal_intermediates/export_includes)
-#$(shell cp $(LOCAL_PATH)/mtk/custom_vt_video_enc_type.h $(OUT)/obj_arm/SHARED_LIBRARIES/libvtmal_intermediates/export_includes)
 #$(shell mkdir -p $(OUT)/obj_arm/SHARED_LIBRARIES/libaudiopolicymanager_intermediates/)
 #$(shell touch $(OUT)/obj_arm/SHARED_LIBRARIES/libaudiopolicymanager_intermediates/export_includes)
 
@@ -39,7 +37,7 @@ include $(CLEAR_VARS)
 LOCAL_PROPRIETARY_MODULE := true
 LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_SRC_FILES := mtk/libmtk_vtmal.cpp
-LOCAL_SHARED_LIBRARIES := libbinder libutils
+LOCAL_SHARED_LIBRARIES := libbinder libutils libvtmal
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MODULE := libmtk_vtmal
 LOCAL_CPPFLAGS := -std=c++1y -Wno-exit-time-destructors -Wno-global-constructors -Wno-c++98-compat-pedantic -Wno-four-char-constants -Wno-padded
@@ -4531,6 +4529,17 @@ LOCAL_MODULE_CLASS := SHARED_LIBRARIES
 LOCAL_PROPRIETARY_MODULE := true
 LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
+LOCAL_MULTILIB := 32
+LOCAL_MODULE := libvtmal
+LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libvtmal.so
+include $(PREBUILT_SHARED_LIBRARY)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE_CLASS := SHARED_LIBRARIES
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
+LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libwfo_jni
 LOCAL_MODULE_PATH_32 := system/vendor/lib
@@ -5845,6 +5854,14 @@ LOCAL_MODULE := wmt_loopback
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := EXECUTABLES
 LOCAL_SRC_FILES := proprietary/vendor/bin/wmt_loopback
+LOCAL_MODULE_PATH := system/vendor/bin
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := vtservice
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_CLASS := EXECUTABLES
+LOCAL_SRC_FILES := proprietary/vendor/bin/vtservice
 LOCAL_MODULE_PATH := system/vendor/bin
 include $(BUILD_PREBUILT)
 

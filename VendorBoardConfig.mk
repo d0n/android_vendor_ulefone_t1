@@ -523,3 +523,4 @@ PRODUCT_PACKAGES += \
   wmt_launcher \
   wmt_loader \
   wmt_loopback \
+  vtservice \

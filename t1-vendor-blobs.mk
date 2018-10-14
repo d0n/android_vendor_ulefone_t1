@@ -183,6 +183,7 @@ PRODUCT_COPY_FILES += \
   vendor/ulefone/t1/proprietary/vendor/bin/wmt_launcher:system/vendor/bin/wmt_launcher \
   vendor/ulefone/t1/proprietary/vendor/bin/wmt_loader:system/vendor/bin/wmt_loader \
   vendor/ulefone/t1/proprietary/vendor/bin/wmt_loopback:system/vendor/bin/wmt_loopback \
+  vendor/ulefone/t1/proprietary/vendor/bin/vtservice:system/vendor/bin/vtservice \
   vendor/ulefone/t1/proprietary/vendor/data/misc/ProjectConfig.mk:system/vendor/data/misc/ProjectConfig.mk \
   vendor/ulefone/t1/proprietary/vendor/etc/.tp/.ht120.mtc:system/vendor/etc/.tp/.ht120.mtc \
   vendor/ulefone/t1/proprietary/vendor/etc/.tp/.thermal_meta.conf:system/vendor/etc/.tp/.thermal_meta.conf \
