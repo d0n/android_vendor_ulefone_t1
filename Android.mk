@@ -16,7 +16,6 @@
 
 LOCAL_PATH := $(call my-dir)
 DEVICE_PATH := $(TOP)/device/ulefone/t1
-LINKER_FORCED_SHIM_LIBS := /system/vendor/lib/vtmal.so|libmtk_vtmal.so         
 
 $(shell mkdir -p $(OUT)/obj/STATIC_LIBRARIES/lib_driver_cmd_mt66xx_intermediates)
 $(shell touch $(OUT)/obj/STATIC_LIBRARIES/lib_driver_cmd_mt66xx_intermediates/export_includes)
@@ -35,12 +34,32 @@ LOCAL_MODULE_SUFFIX := .cfg
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
+LOCAL_MODULE := libmtk_vtmal
+LOCAL_SRC_FILES := mtk/libmtk_vtmal.cpp
 LOCAL_PROPRIETARY_MODULE := true
 LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
-LOCAL_SRC_FILES := vtmal/libmtk_vtmal.cpp
-LOCAL_SHARED_LIBRARIES := libbinder libutils libvtmal
+LOCAL_SHARED_LIBRARIES := libbinder libutils libcutils
+LOCAL_CLANG := false
+LOCAL_CXX_STL := none
+LOCAL_SANITIZE := never
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_CLASS := SHARED_LIBRARIES
 LOCAL_MODULE_SUFFIX := .so
-LOCAL_MODULE := libmtk_vtmal
+#LOCAL_CPPFLAGS := -std=c++1y -Wno-exit-time-destructors -Wno-global-constructors -Wno-c++98-compat-pedantic -Wno-four-char-constants -Wno-padded
+include $(BUILD_SHARED_LIBRARY)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := libmtk_pbb
+LOCAL_SRC_FILES := mtk/libmtk_pbb.cpp
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
+LOCAL_SHARED_LIBRARIES := libbinder libutils libcutils
+LOCAL_CLANG := false
+LOCAL_CXX_STL := none
+LOCAL_SANITIZE := never
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_CLASS := SHARED_LIBRARIES
+LOCAL_MODULE_SUFFIX := .so
 LOCAL_CPPFLAGS := -std=c++1y -Wno-exit-time-destructors -Wno-global-constructors -Wno-c++98-compat-pedantic -Wno-four-char-constants -Wno-padded
 include $(BUILD_SHARED_LIBRARY)
 
@@ -5483,14 +5502,6 @@ LOCAL_MODULE := mtkmal
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := EXECUTABLES
 LOCAL_SRC_FILES := proprietary/vendor/bin/mtkmal
-LOCAL_MODULE_PATH := system/vendor/bin
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE := program_binary_builder
-LOCAL_MODULE_TAGS := optional
-LOCAL_MODULE_CLASS := EXECUTABLES
-LOCAL_SRC_FILES := proprietary/vendor/bin/program_binary_builder
 LOCAL_MODULE_PATH := system/vendor/bin
 include $(BUILD_PREBUILT)
 
