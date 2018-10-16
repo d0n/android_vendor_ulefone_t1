@@ -369,7 +369,6 @@ PRODUCT_PACKAGES += \
   libvt_avsync \
   libvt_custom \
   libvt_socketbind \
-  libvtmal \
   libwfo_jni \
   libwo \
   libdrmclearkeyplugin \
@@ -393,7 +392,6 @@ PRODUCT_PACKAGES += \
   Devicemessages118 \
   IMEIApp \
   SimProcessor \
-  GmsCore \
   AtciService \
   BatteryWarning \
   DrmProvider \
@@ -517,10 +515,10 @@ PRODUCT_PACKAGES += \
   volte_imcb \
   volte_stack \
   volte_ua \
+  vtservice \
   wfca \
   wifi2agps \
   wmt_concurrency \
   wmt_launcher \
   wmt_loader \
   wmt_loopback \
-  vtservice \
