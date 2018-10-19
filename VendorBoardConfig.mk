@@ -288,24 +288,6 @@ PRODUCT_PACKAGES += \
   libmmprofile_jni \
   libmmsdkservice \
   libmnl \
-  libmp4enc_sa.ca7 \
-  libmp4enc_xa.ca7 \
-  libmrdump \
-  libmsbc_mtk \
-  libmtcloader \
-  libmtk_drvb \
-  libmtk_mmutils \
-  libmtk_vt_service \
-  libmtk_vt_swip \
-  libmtk_vt_utils \
-  libmtk_vt_wrapper \
-  libmtkcam.featurepipe.streaming \
-  libmtkcam_cct \
-  libmtkcam_exif \
-  libmtkcam_fwkutils \
-  libmtkcam_hwnode \
-  libmtkcam_hwutils \
-  libmtkcam_imgbuf \
   libmtkcam_metadata \
   libmtkcam_metastore \
   libmtkcam_modulehelper \
@@ -371,12 +353,30 @@ PRODUCT_PACKAGES += \
   libvt_socketbind \
   libwfo_jni \
   libwo \
+  mtk-ril \
+  mtk-rilproxy \
   libdrmclearkeyplugin \
   libmockdrmcryptoplugin \
   libwvdrmengine \
-  mtk-ril \
+  libmp4enc_sa.ca7 \
+  libmp4enc_xa.ca7 \
+  libmrdump \
+  libmsbc_mtk \
+  libmtcloader \
+  libmtk_drvb \
+  libmtk_mmutils \
+  libmtk_vt_service \
+  libmtk_vt_swip \
+  libmtk_vt_utils \
+  libmtk_vt_wrapper \
+  libmtkcam.featurepipe.streaming \
+  libmtkcam_cct \
+  libmtkcam_exif \
+  libmtkcam_fwkutils \
+  libmtkcam_hwnode \
+  libmtkcam_hwutils \
+  libmtkcam_imgbuf \
   mtk-rilmd2 \
-  mtk-rilproxy \
   volte_imsm \
   libipsec_ims_shr \
   libjni_jpegdecoder \
