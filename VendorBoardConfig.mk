@@ -45,14 +45,13 @@ PRODUCT_PACKAGES += \
   libgybeauty \
   libgybeauty420 \
   libgybeauty422 \
-  gatekeeper.trustkernel \
-  keystore.trustkernel \
-  keystore.v1.trustkernel \
   libpl \
   libteec \
   libteeclientjni \
   libteejni \
-  libc \
+  gatekeeper.trustkernel \
+  keystore.trustkernel \
+  keystore.v1.trustkernel \
   libfs16xx_calibration_jni \
   libfs16xx_interface \
   libgsensorcali_jni \

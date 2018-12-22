@@ -17,9 +17,9 @@
 PRODUCT_COPY_FILES += \
   vendor/ulefone/t1/proprietary/bin/agoldnvram:system/bin/agoldnvram \
   vendor/ulefone/t1/proprietary/bin/nvram_proximity:system/bin/nvram_proximity \
-  vendor/ulefone/t1/proprietary/bin/sgdisk:system/bin/sgdisk \
   vendor/ulefone/t1/proprietary/bin/tee:system/bin/tee \
   vendor/ulefone/t1/proprietary/bin/teed:system/bin/teed \
+  vendor/ulefone/t1/proprietary/bin/sgdisk:system/bin/sgdisk \
   vendor/ulefone/t1/proprietary/etc/a2dp_audio_policy_configuration.xml:system/etc/a2dp_audio_policy_configuration.xml \
   vendor/ulefone/t1/proprietary/etc/apns-conf.xml:system/etc/apns-conf.xml \
   vendor/ulefone/t1/proprietary/etc/audio_effects.conf:system/etc/audio_effects.conf \
@@ -54,160 +54,6 @@ PRODUCT_COPY_FILES += \
   vendor/ulefone/t1/proprietary/etc/smartpa_params/fs16xx_music.preset:system/etc/smartpa_params/fs16xx_music.preset \
   vendor/ulefone/t1/proprietary/etc/smartpa_params/fs16xx_ringtone.preset:system/etc/smartpa_params/fs16xx_ringtone.preset \
   vendor/ulefone/t1/proprietary/etc/smartpa_params/fs16xx_voice.preset:system/etc/smartpa_params/fs16xx_voice.preset \
-  vendor/ulefone/t1/proprietary/etc/security/otacerts.zip:system/etc/security/otacerts.zip \
-  vendor/ulefone/t1/proprietary/etc/security/cacerts/00673b5b.0:system/etc/security/cacerts/00673b5b.0 \
-  vendor/ulefone/t1/proprietary/etc/security/cacerts/02b73561.0:system/etc/security/cacerts/02b73561.0 \
-  vendor/ulefone/t1/proprietary/etc/security/cacerts/03f2b8cf.0:system/etc/security/cacerts/03f2b8cf.0 \
-  vendor/ulefone/t1/proprietary/etc/security/cacerts/04f60c28.0:system/etc/security/cacerts/04f60c28.0 \
-  vendor/ulefone/t1/proprietary/etc/security/cacerts/052e396b.0:system/etc/security/cacerts/052e396b.0 \
-  vendor/ulefone/t1/proprietary/etc/security/cacerts/08aef7bb.0:system/etc/security/cacerts/08aef7bb.0 \
-  vendor/ulefone/t1/proprietary/etc/security/cacerts/0d5a4e1c.0:system/etc/security/cacerts/0d5a4e1c.0 \
-  vendor/ulefone/t1/proprietary/etc/security/cacerts/0d69c7e1.0:system/etc/security/cacerts/0d69c7e1.0 \
-  vendor/ulefone/t1/proprietary/etc/security/cacerts/10531352.0:system/etc/security/cacerts/10531352.0 \
-  vendor/ulefone/t1/proprietary/etc/security/cacerts/111e6273.0:system/etc/security/cacerts/111e6273.0 \
-  vendor/ulefone/t1/proprietary/etc/security/cacerts/119afc2e.0:system/etc/security/cacerts/119afc2e.0 \
-  vendor/ulefone/t1/proprietary/etc/security/cacerts/124bbd54.0:system/etc/security/cacerts/124bbd54.0 \
-  vendor/ulefone/t1/proprietary/etc/security/cacerts/12d55845.0:system/etc/security/cacerts/12d55845.0 \
-  vendor/ulefone/t1/proprietary/etc/security/cacerts/1676090a.0:system/etc/security/cacerts/1676090a.0 \
-  vendor/ulefone/t1/proprietary/etc/security/cacerts/17b51fe6.0:system/etc/security/cacerts/17b51fe6.0 \
-  vendor/ulefone/t1/proprietary/etc/security/cacerts/1dac3003.0:system/etc/security/cacerts/1dac3003.0 \
-  vendor/ulefone/t1/proprietary/etc/security/cacerts/1dcd6f4c.0:system/etc/security/cacerts/1dcd6f4c.0 \
-  vendor/ulefone/t1/proprietary/etc/security/cacerts/1df5a75f.0:system/etc/security/cacerts/1df5a75f.0 \
-  vendor/ulefone/t1/proprietary/etc/security/cacerts/1e1eab7c.0:system/etc/security/cacerts/1e1eab7c.0 \
-  vendor/ulefone/t1/proprietary/etc/security/cacerts/1e8e7201.0:system/etc/security/cacerts/1e8e7201.0 \
-  vendor/ulefone/t1/proprietary/etc/security/cacerts/1eb37bdf.0:system/etc/security/cacerts/1eb37bdf.0 \
-  vendor/ulefone/t1/proprietary/etc/security/cacerts/1f58a078.0:system/etc/security/cacerts/1f58a078.0 \
-  vendor/ulefone/t1/proprietary/etc/security/cacerts/21855f49.0:system/etc/security/cacerts/21855f49.0 \
-  vendor/ulefone/t1/proprietary/etc/security/cacerts/219d9499.0:system/etc/security/cacerts/219d9499.0 \
-  vendor/ulefone/t1/proprietary/etc/security/cacerts/23f4c490.0:system/etc/security/cacerts/23f4c490.0 \
-  vendor/ulefone/t1/proprietary/etc/security/cacerts/262ba90f.0:system/etc/security/cacerts/262ba90f.0 \
-  vendor/ulefone/t1/proprietary/etc/security/cacerts/27af790d.0:system/etc/security/cacerts/27af790d.0 \
-  vendor/ulefone/t1/proprietary/etc/security/cacerts/2add47b6.0:system/etc/security/cacerts/2add47b6.0 \
-  vendor/ulefone/t1/proprietary/etc/security/cacerts/2d9dafe4.0:system/etc/security/cacerts/2d9dafe4.0 \
-  vendor/ulefone/t1/proprietary/etc/security/cacerts/2fa87019.0:system/etc/security/cacerts/2fa87019.0 \
-  vendor/ulefone/t1/proprietary/etc/security/cacerts/33815e15.0:system/etc/security/cacerts/33815e15.0 \
-  vendor/ulefone/t1/proprietary/etc/security/cacerts/33815e15.1:system/etc/security/cacerts/33815e15.1 \
-  vendor/ulefone/t1/proprietary/etc/security/cacerts/343eb6cb.0:system/etc/security/cacerts/343eb6cb.0 \
-  vendor/ulefone/t1/proprietary/etc/security/cacerts/35105088.0:system/etc/security/cacerts/35105088.0 \
-  vendor/ulefone/t1/proprietary/etc/security/cacerts/399e7759.0:system/etc/security/cacerts/399e7759.0 \
-  vendor/ulefone/t1/proprietary/etc/security/cacerts/3a3b02ce.0:system/etc/security/cacerts/3a3b02ce.0 \
-  vendor/ulefone/t1/proprietary/etc/security/cacerts/3ad48a91.0:system/etc/security/cacerts/3ad48a91.0 \
-  vendor/ulefone/t1/proprietary/etc/security/cacerts/3c58f906.0:system/etc/security/cacerts/3c58f906.0 \
-  vendor/ulefone/t1/proprietary/etc/security/cacerts/3c6676aa.0:system/etc/security/cacerts/3c6676aa.0 \
-  vendor/ulefone/t1/proprietary/etc/security/cacerts/3c860d51.0:system/etc/security/cacerts/3c860d51.0 \
-  vendor/ulefone/t1/proprietary/etc/security/cacerts/3c9a4d3b.0:system/etc/security/cacerts/3c9a4d3b.0 \
-  vendor/ulefone/t1/proprietary/etc/security/cacerts/3d441de8.0:system/etc/security/cacerts/3d441de8.0 \
-  vendor/ulefone/t1/proprietary/etc/security/cacerts/3e7271e8.0:system/etc/security/cacerts/3e7271e8.0 \
-  vendor/ulefone/t1/proprietary/etc/security/cacerts/40dc992e.0:system/etc/security/cacerts/40dc992e.0 \
-  vendor/ulefone/t1/proprietary/etc/security/cacerts/418595b9.0:system/etc/security/cacerts/418595b9.0 \
-  vendor/ulefone/t1/proprietary/etc/security/cacerts/450c6e38.0:system/etc/security/cacerts/450c6e38.0 \
-  vendor/ulefone/t1/proprietary/etc/security/cacerts/455f1b52.0:system/etc/security/cacerts/455f1b52.0 \
-  vendor/ulefone/t1/proprietary/etc/security/cacerts/48a195d8.0:system/etc/security/cacerts/48a195d8.0 \
-  vendor/ulefone/t1/proprietary/etc/security/cacerts/4be590e0.0:system/etc/security/cacerts/4be590e0.0 \
-  vendor/ulefone/t1/proprietary/etc/security/cacerts/4e18c148.0:system/etc/security/cacerts/4e18c148.0 \
-  vendor/ulefone/t1/proprietary/etc/security/cacerts/5046c355.0:system/etc/security/cacerts/5046c355.0 \
-  vendor/ulefone/t1/proprietary/etc/security/cacerts/524d9b43.0:system/etc/security/cacerts/524d9b43.0 \
-  vendor/ulefone/t1/proprietary/etc/security/cacerts/52b525c7.0:system/etc/security/cacerts/52b525c7.0 \
-  vendor/ulefone/t1/proprietary/etc/security/cacerts/57692373.0:system/etc/security/cacerts/57692373.0 \
-  vendor/ulefone/t1/proprietary/etc/security/cacerts/58a44af1.0:system/etc/security/cacerts/58a44af1.0 \
-  vendor/ulefone/t1/proprietary/etc/security/cacerts/5a250ea7.0:system/etc/security/cacerts/5a250ea7.0 \
-  vendor/ulefone/t1/proprietary/etc/security/cacerts/5a3f0ff8.0:system/etc/security/cacerts/5a3f0ff8.0 \
-  vendor/ulefone/t1/proprietary/etc/security/cacerts/5cf9d536.0:system/etc/security/cacerts/5cf9d536.0 \
-  vendor/ulefone/t1/proprietary/etc/security/cacerts/5e4e69e7.0:system/etc/security/cacerts/5e4e69e7.0 \
-  vendor/ulefone/t1/proprietary/etc/security/cacerts/5f47b495.0:system/etc/security/cacerts/5f47b495.0 \
-  vendor/ulefone/t1/proprietary/etc/security/cacerts/60afe812.0:system/etc/security/cacerts/60afe812.0 \
-  vendor/ulefone/t1/proprietary/etc/security/cacerts/63a2c897.0:system/etc/security/cacerts/63a2c897.0 \
-  vendor/ulefone/t1/proprietary/etc/security/cacerts/6645de82.0:system/etc/security/cacerts/6645de82.0 \
-  vendor/ulefone/t1/proprietary/etc/security/cacerts/67495436.0:system/etc/security/cacerts/67495436.0 \
-  vendor/ulefone/t1/proprietary/etc/security/cacerts/69105f4f.0:system/etc/security/cacerts/69105f4f.0 \
-  vendor/ulefone/t1/proprietary/etc/security/cacerts/6e8bf996.0:system/etc/security/cacerts/6e8bf996.0 \
-  vendor/ulefone/t1/proprietary/etc/security/cacerts/6fcc125d.0:system/etc/security/cacerts/6fcc125d.0 \
-  vendor/ulefone/t1/proprietary/etc/security/cacerts/72f369af.0:system/etc/security/cacerts/72f369af.0 \
-  vendor/ulefone/t1/proprietary/etc/security/cacerts/75680d2e.0:system/etc/security/cacerts/75680d2e.0 \
-  vendor/ulefone/t1/proprietary/etc/security/cacerts/76579174.0:system/etc/security/cacerts/76579174.0 \
-  vendor/ulefone/t1/proprietary/etc/security/cacerts/7672ac4b.0:system/etc/security/cacerts/7672ac4b.0 \
-  vendor/ulefone/t1/proprietary/etc/security/cacerts/7999be0d.0:system/etc/security/cacerts/7999be0d.0 \
-  vendor/ulefone/t1/proprietary/etc/security/cacerts/7a819ef2.0:system/etc/security/cacerts/7a819ef2.0 \
-  vendor/ulefone/t1/proprietary/etc/security/cacerts/7d453d8f.0:system/etc/security/cacerts/7d453d8f.0 \
-  vendor/ulefone/t1/proprietary/etc/security/cacerts/81b9768f.0:system/etc/security/cacerts/81b9768f.0 \
-  vendor/ulefone/t1/proprietary/etc/security/cacerts/82223c44.0:system/etc/security/cacerts/82223c44.0 \
-  vendor/ulefone/t1/proprietary/etc/security/cacerts/8470719d.0:system/etc/security/cacerts/8470719d.0 \
-  vendor/ulefone/t1/proprietary/etc/security/cacerts/85cde254.0:system/etc/security/cacerts/85cde254.0 \
-  vendor/ulefone/t1/proprietary/etc/security/cacerts/86212b19.0:system/etc/security/cacerts/86212b19.0 \
-  vendor/ulefone/t1/proprietary/etc/security/cacerts/87753b0d.0:system/etc/security/cacerts/87753b0d.0 \
-  vendor/ulefone/t1/proprietary/etc/security/cacerts/882de061.0:system/etc/security/cacerts/882de061.0 \
-  vendor/ulefone/t1/proprietary/etc/security/cacerts/89c02a45.0:system/etc/security/cacerts/89c02a45.0 \
-  vendor/ulefone/t1/proprietary/etc/security/cacerts/8d6437c3.0:system/etc/security/cacerts/8d6437c3.0 \
-  vendor/ulefone/t1/proprietary/etc/security/cacerts/91739615.0:system/etc/security/cacerts/91739615.0 \
-  vendor/ulefone/t1/proprietary/etc/security/cacerts/9282e51c.0:system/etc/security/cacerts/9282e51c.0 \
-  vendor/ulefone/t1/proprietary/etc/security/cacerts/9339512a.0:system/etc/security/cacerts/9339512a.0 \
-  vendor/ulefone/t1/proprietary/etc/security/cacerts/9576d26b.0:system/etc/security/cacerts/9576d26b.0 \
-  vendor/ulefone/t1/proprietary/etc/security/cacerts/95aff9e3.0:system/etc/security/cacerts/95aff9e3.0 \
-  vendor/ulefone/t1/proprietary/etc/security/cacerts/961f5451.0:system/etc/security/cacerts/961f5451.0 \
-  vendor/ulefone/t1/proprietary/etc/security/cacerts/9685a493.0:system/etc/security/cacerts/9685a493.0 \
-  vendor/ulefone/t1/proprietary/etc/security/cacerts/9772ca32.0:system/etc/security/cacerts/9772ca32.0 \
-  vendor/ulefone/t1/proprietary/etc/security/cacerts/9ab62355.0:system/etc/security/cacerts/9ab62355.0 \
-  vendor/ulefone/t1/proprietary/etc/security/cacerts/9d6523ce.0:system/etc/security/cacerts/9d6523ce.0 \
-  vendor/ulefone/t1/proprietary/etc/security/cacerts/9dbefe7b.0:system/etc/security/cacerts/9dbefe7b.0 \
-  vendor/ulefone/t1/proprietary/etc/security/cacerts/9f533518.0:system/etc/security/cacerts/9f533518.0 \
-  vendor/ulefone/t1/proprietary/etc/security/cacerts/a0bc6fbb.0:system/etc/security/cacerts/a0bc6fbb.0 \
-  vendor/ulefone/t1/proprietary/etc/security/cacerts/a2c66da8.0:system/etc/security/cacerts/a2c66da8.0 \
-  vendor/ulefone/t1/proprietary/etc/security/cacerts/a2df7ad7.0:system/etc/security/cacerts/a2df7ad7.0 \
-  vendor/ulefone/t1/proprietary/etc/security/cacerts/a3896b44.0:system/etc/security/cacerts/a3896b44.0 \
-  vendor/ulefone/t1/proprietary/etc/security/cacerts/a7605362.0:system/etc/security/cacerts/a7605362.0 \
-  vendor/ulefone/t1/proprietary/etc/security/cacerts/a7d2cf64.0:system/etc/security/cacerts/a7d2cf64.0 \
-  vendor/ulefone/t1/proprietary/etc/security/cacerts/a81e292b.0:system/etc/security/cacerts/a81e292b.0 \
-  vendor/ulefone/t1/proprietary/etc/security/cacerts/ab5346f4.0:system/etc/security/cacerts/ab5346f4.0 \
-  vendor/ulefone/t1/proprietary/etc/security/cacerts/aeb67534.0:system/etc/security/cacerts/aeb67534.0 \
-  vendor/ulefone/t1/proprietary/etc/security/cacerts/b0ed035a.0:system/etc/security/cacerts/b0ed035a.0 \
-  vendor/ulefone/t1/proprietary/etc/security/cacerts/b0f3e76e.0:system/etc/security/cacerts/b0f3e76e.0 \
-  vendor/ulefone/t1/proprietary/etc/security/cacerts/b3fb433b.0:system/etc/security/cacerts/b3fb433b.0 \
-  vendor/ulefone/t1/proprietary/etc/security/cacerts/b7db1890.0:system/etc/security/cacerts/b7db1890.0 \
-  vendor/ulefone/t1/proprietary/etc/security/cacerts/b872f2b4.0:system/etc/security/cacerts/b872f2b4.0 \
-  vendor/ulefone/t1/proprietary/etc/security/cacerts/bc3f2570.0:system/etc/security/cacerts/bc3f2570.0 \
-  vendor/ulefone/t1/proprietary/etc/security/cacerts/bdacca6f.0:system/etc/security/cacerts/bdacca6f.0 \
-  vendor/ulefone/t1/proprietary/etc/security/cacerts/bf64f35b.0:system/etc/security/cacerts/bf64f35b.0 \
-  vendor/ulefone/t1/proprietary/etc/security/cacerts/c491639e.0:system/etc/security/cacerts/c491639e.0 \
-  vendor/ulefone/t1/proprietary/etc/security/cacerts/c51c224c.0:system/etc/security/cacerts/c51c224c.0 \
-  vendor/ulefone/t1/proprietary/etc/security/cacerts/c7e2a638.0:system/etc/security/cacerts/c7e2a638.0 \
-  vendor/ulefone/t1/proprietary/etc/security/cacerts/c90bc37d.0:system/etc/security/cacerts/c90bc37d.0 \
-  vendor/ulefone/t1/proprietary/etc/security/cacerts/cb156124.0:system/etc/security/cacerts/cb156124.0 \
-  vendor/ulefone/t1/proprietary/etc/security/cacerts/cb1c3204.0:system/etc/security/cacerts/cb1c3204.0 \
-  vendor/ulefone/t1/proprietary/etc/security/cacerts/ccc52f49.0:system/etc/security/cacerts/ccc52f49.0 \
-  vendor/ulefone/t1/proprietary/etc/security/cacerts/cf701eeb.0:system/etc/security/cacerts/cf701eeb.0 \
-  vendor/ulefone/t1/proprietary/etc/security/cacerts/d06393bb.0:system/etc/security/cacerts/d06393bb.0 \
-  vendor/ulefone/t1/proprietary/etc/security/cacerts/d16a5865.0:system/etc/security/cacerts/d16a5865.0 \
-  vendor/ulefone/t1/proprietary/etc/security/cacerts/d18e9066.0:system/etc/security/cacerts/d18e9066.0 \
-  vendor/ulefone/t1/proprietary/etc/security/cacerts/d4c339cb.0:system/etc/security/cacerts/d4c339cb.0 \
-  vendor/ulefone/t1/proprietary/etc/security/cacerts/d5727d6a.0:system/etc/security/cacerts/d5727d6a.0 \
-  vendor/ulefone/t1/proprietary/etc/security/cacerts/d59297b8.0:system/etc/security/cacerts/d59297b8.0 \
-  vendor/ulefone/t1/proprietary/etc/security/cacerts/d66b55d9.0:system/etc/security/cacerts/d66b55d9.0 \
-  vendor/ulefone/t1/proprietary/etc/security/cacerts/d6e6eab9.0:system/etc/security/cacerts/d6e6eab9.0 \
-  vendor/ulefone/t1/proprietary/etc/security/cacerts/d7746a63.0:system/etc/security/cacerts/d7746a63.0 \
-  vendor/ulefone/t1/proprietary/etc/security/cacerts/dbc54cab.0:system/etc/security/cacerts/dbc54cab.0 \
-  vendor/ulefone/t1/proprietary/etc/security/cacerts/dfc0fe80.0:system/etc/security/cacerts/dfc0fe80.0 \
-  vendor/ulefone/t1/proprietary/etc/security/cacerts/e268a4c5.0:system/etc/security/cacerts/e268a4c5.0 \
-  vendor/ulefone/t1/proprietary/etc/security/cacerts/e442e424.0:system/etc/security/cacerts/e442e424.0 \
-  vendor/ulefone/t1/proprietary/etc/security/cacerts/e48193cf.0:system/etc/security/cacerts/e48193cf.0 \
-  vendor/ulefone/t1/proprietary/etc/security/cacerts/e60bf0c0.0:system/etc/security/cacerts/e60bf0c0.0 \
-  vendor/ulefone/t1/proprietary/etc/security/cacerts/e775ed2d.0:system/etc/security/cacerts/e775ed2d.0 \
-  vendor/ulefone/t1/proprietary/etc/security/cacerts/e8651083.0:system/etc/security/cacerts/e8651083.0 \
-  vendor/ulefone/t1/proprietary/etc/security/cacerts/ea169617.0:system/etc/security/cacerts/ea169617.0 \
-  vendor/ulefone/t1/proprietary/etc/security/cacerts/ed39abd0.0:system/etc/security/cacerts/ed39abd0.0 \
-  vendor/ulefone/t1/proprietary/etc/security/cacerts/ee7cd6fb.0:system/etc/security/cacerts/ee7cd6fb.0 \
-  vendor/ulefone/t1/proprietary/etc/security/cacerts/ee90b008.0:system/etc/security/cacerts/ee90b008.0 \
-  vendor/ulefone/t1/proprietary/etc/security/cacerts/f61bff45.0:system/etc/security/cacerts/f61bff45.0 \
-  vendor/ulefone/t1/proprietary/etc/security/cacerts/f80cc7f6.0:system/etc/security/cacerts/f80cc7f6.0 \
-  vendor/ulefone/t1/proprietary/etc/security/cacerts/fac084d7.0:system/etc/security/cacerts/fac084d7.0 \
-  vendor/ulefone/t1/proprietary/etc/security/cacerts/facacbc6.0:system/etc/security/cacerts/facacbc6.0 \
-  vendor/ulefone/t1/proprietary/etc/security/cacerts/fb126c6d.0:system/etc/security/cacerts/fb126c6d.0 \
-  vendor/ulefone/t1/proprietary/etc/security/cacerts/fde84897.0:system/etc/security/cacerts/fde84897.0 \
-  vendor/ulefone/t1/proprietary/etc/security/cacerts/ff783690.0:system/etc/security/cacerts/ff783690.0 \
-  vendor/ulefone/t1/proprietary/etc/security/cacerts_supl/594f1775.0:system/etc/security/cacerts_supl/594f1775.0 \
-  vendor/ulefone/t1/proprietary/etc/security/cacerts_supl/7651b327.0:system/etc/security/cacerts_supl/7651b327.0 \
-  vendor/ulefone/t1/proprietary/etc/security/cacerts_supl/848ea856.0:system/etc/security/cacerts_supl/848ea856.0 \
-  vendor/ulefone/t1/proprietary/etc/security/cacerts_supl/c542733d.0:system/etc/security/cacerts_supl/c542733d.0 \
-  vendor/ulefone/t1/proprietary/etc/security/cacerts_supl/f336e3d1.0:system/etc/security/cacerts_supl/f336e3d1.0 \
   vendor/ulefone/t1/proprietary/etc/seccomp_policy/mediacodec-seccomp.policy:system/etc/seccomp_policy/mediacodec-seccomp.policy \
   vendor/ulefone/t1/proprietary/etc/seccomp_policy/mediaextractor-seccomp.policy:system/etc/seccomp_policy/mediaextractor-seccomp.policy \
   vendor/ulefone/t1/proprietary/etc/runningbooster/platform_list.txt:system/etc/runningbooster/platform_list.txt \
@@ -447,14 +293,164 @@ PRODUCT_COPY_FILES += \
   vendor/ulefone/t1/proprietary/etc/wide-dhcpv6/dhcp6cctlkey:system/etc/wide-dhcpv6/dhcp6cctlkey \
   vendor/ulefone/t1/proprietary/etc/wide-dhcpv6/dhcp6s.conf:system/etc/wide-dhcpv6/dhcp6s.conf \
   vendor/ulefone/t1/proprietary/etc/slp_conf:system/etc/slp_conf \
+  vendor/ulefone/t1/proprietary/etc/security/cacerts/00673b5b.0:system/etc/security/cacerts/00673b5b.0 \
+  vendor/ulefone/t1/proprietary/etc/security/cacerts/02b73561.0:system/etc/security/cacerts/02b73561.0 \
+  vendor/ulefone/t1/proprietary/etc/security/cacerts/03f2b8cf.0:system/etc/security/cacerts/03f2b8cf.0 \
+  vendor/ulefone/t1/proprietary/etc/security/cacerts/04f60c28.0:system/etc/security/cacerts/04f60c28.0 \
+  vendor/ulefone/t1/proprietary/etc/security/cacerts/052e396b.0:system/etc/security/cacerts/052e396b.0 \
+  vendor/ulefone/t1/proprietary/etc/security/cacerts/08aef7bb.0:system/etc/security/cacerts/08aef7bb.0 \
+  vendor/ulefone/t1/proprietary/etc/security/cacerts/0d5a4e1c.0:system/etc/security/cacerts/0d5a4e1c.0 \
+  vendor/ulefone/t1/proprietary/etc/security/cacerts/0d69c7e1.0:system/etc/security/cacerts/0d69c7e1.0 \
+  vendor/ulefone/t1/proprietary/etc/security/cacerts/10531352.0:system/etc/security/cacerts/10531352.0 \
+  vendor/ulefone/t1/proprietary/etc/security/cacerts/111e6273.0:system/etc/security/cacerts/111e6273.0 \
+  vendor/ulefone/t1/proprietary/etc/security/cacerts/119afc2e.0:system/etc/security/cacerts/119afc2e.0 \
+  vendor/ulefone/t1/proprietary/etc/security/cacerts/124bbd54.0:system/etc/security/cacerts/124bbd54.0 \
+  vendor/ulefone/t1/proprietary/etc/security/cacerts/12d55845.0:system/etc/security/cacerts/12d55845.0 \
+  vendor/ulefone/t1/proprietary/etc/security/cacerts/1676090a.0:system/etc/security/cacerts/1676090a.0 \
+  vendor/ulefone/t1/proprietary/etc/security/cacerts/17b51fe6.0:system/etc/security/cacerts/17b51fe6.0 \
+  vendor/ulefone/t1/proprietary/etc/security/cacerts/1dac3003.0:system/etc/security/cacerts/1dac3003.0 \
+  vendor/ulefone/t1/proprietary/etc/security/cacerts/1dcd6f4c.0:system/etc/security/cacerts/1dcd6f4c.0 \
+  vendor/ulefone/t1/proprietary/etc/security/cacerts/1df5a75f.0:system/etc/security/cacerts/1df5a75f.0 \
+  vendor/ulefone/t1/proprietary/etc/security/cacerts/1e1eab7c.0:system/etc/security/cacerts/1e1eab7c.0 \
+  vendor/ulefone/t1/proprietary/etc/security/cacerts/1e8e7201.0:system/etc/security/cacerts/1e8e7201.0 \
+  vendor/ulefone/t1/proprietary/etc/security/cacerts/1eb37bdf.0:system/etc/security/cacerts/1eb37bdf.0 \
+  vendor/ulefone/t1/proprietary/etc/security/cacerts/1f58a078.0:system/etc/security/cacerts/1f58a078.0 \
+  vendor/ulefone/t1/proprietary/etc/security/cacerts/21855f49.0:system/etc/security/cacerts/21855f49.0 \
+  vendor/ulefone/t1/proprietary/etc/security/cacerts/219d9499.0:system/etc/security/cacerts/219d9499.0 \
+  vendor/ulefone/t1/proprietary/etc/security/cacerts/23f4c490.0:system/etc/security/cacerts/23f4c490.0 \
+  vendor/ulefone/t1/proprietary/etc/security/cacerts/262ba90f.0:system/etc/security/cacerts/262ba90f.0 \
+  vendor/ulefone/t1/proprietary/etc/security/cacerts/27af790d.0:system/etc/security/cacerts/27af790d.0 \
+  vendor/ulefone/t1/proprietary/etc/security/cacerts/2add47b6.0:system/etc/security/cacerts/2add47b6.0 \
+  vendor/ulefone/t1/proprietary/etc/security/cacerts/2d9dafe4.0:system/etc/security/cacerts/2d9dafe4.0 \
+  vendor/ulefone/t1/proprietary/etc/security/cacerts/2fa87019.0:system/etc/security/cacerts/2fa87019.0 \
+  vendor/ulefone/t1/proprietary/etc/security/cacerts/33815e15.0:system/etc/security/cacerts/33815e15.0 \
+  vendor/ulefone/t1/proprietary/etc/security/cacerts/33815e15.1:system/etc/security/cacerts/33815e15.1 \
+  vendor/ulefone/t1/proprietary/etc/security/cacerts/343eb6cb.0:system/etc/security/cacerts/343eb6cb.0 \
+  vendor/ulefone/t1/proprietary/etc/security/cacerts/35105088.0:system/etc/security/cacerts/35105088.0 \
+  vendor/ulefone/t1/proprietary/etc/security/cacerts/399e7759.0:system/etc/security/cacerts/399e7759.0 \
+  vendor/ulefone/t1/proprietary/etc/security/cacerts/3a3b02ce.0:system/etc/security/cacerts/3a3b02ce.0 \
+  vendor/ulefone/t1/proprietary/etc/security/cacerts/3ad48a91.0:system/etc/security/cacerts/3ad48a91.0 \
+  vendor/ulefone/t1/proprietary/etc/security/cacerts/3c58f906.0:system/etc/security/cacerts/3c58f906.0 \
+  vendor/ulefone/t1/proprietary/etc/security/cacerts/3c6676aa.0:system/etc/security/cacerts/3c6676aa.0 \
+  vendor/ulefone/t1/proprietary/etc/security/cacerts/3c860d51.0:system/etc/security/cacerts/3c860d51.0 \
+  vendor/ulefone/t1/proprietary/etc/security/cacerts/3c9a4d3b.0:system/etc/security/cacerts/3c9a4d3b.0 \
+  vendor/ulefone/t1/proprietary/etc/security/cacerts/3d441de8.0:system/etc/security/cacerts/3d441de8.0 \
+  vendor/ulefone/t1/proprietary/etc/security/cacerts/3e7271e8.0:system/etc/security/cacerts/3e7271e8.0 \
+  vendor/ulefone/t1/proprietary/etc/security/cacerts/40dc992e.0:system/etc/security/cacerts/40dc992e.0 \
+  vendor/ulefone/t1/proprietary/etc/security/cacerts/418595b9.0:system/etc/security/cacerts/418595b9.0 \
+  vendor/ulefone/t1/proprietary/etc/security/cacerts/450c6e38.0:system/etc/security/cacerts/450c6e38.0 \
+  vendor/ulefone/t1/proprietary/etc/security/cacerts/455f1b52.0:system/etc/security/cacerts/455f1b52.0 \
+  vendor/ulefone/t1/proprietary/etc/security/cacerts/48a195d8.0:system/etc/security/cacerts/48a195d8.0 \
+  vendor/ulefone/t1/proprietary/etc/security/cacerts/4be590e0.0:system/etc/security/cacerts/4be590e0.0 \
+  vendor/ulefone/t1/proprietary/etc/security/cacerts/4e18c148.0:system/etc/security/cacerts/4e18c148.0 \
+  vendor/ulefone/t1/proprietary/etc/security/cacerts/5046c355.0:system/etc/security/cacerts/5046c355.0 \
+  vendor/ulefone/t1/proprietary/etc/security/cacerts/524d9b43.0:system/etc/security/cacerts/524d9b43.0 \
+  vendor/ulefone/t1/proprietary/etc/security/cacerts/52b525c7.0:system/etc/security/cacerts/52b525c7.0 \
+  vendor/ulefone/t1/proprietary/etc/security/cacerts/57692373.0:system/etc/security/cacerts/57692373.0 \
+  vendor/ulefone/t1/proprietary/etc/security/cacerts/58a44af1.0:system/etc/security/cacerts/58a44af1.0 \
+  vendor/ulefone/t1/proprietary/etc/security/cacerts/5a250ea7.0:system/etc/security/cacerts/5a250ea7.0 \
+  vendor/ulefone/t1/proprietary/etc/security/cacerts/5a3f0ff8.0:system/etc/security/cacerts/5a3f0ff8.0 \
+  vendor/ulefone/t1/proprietary/etc/security/cacerts/5cf9d536.0:system/etc/security/cacerts/5cf9d536.0 \
+  vendor/ulefone/t1/proprietary/etc/security/cacerts/5e4e69e7.0:system/etc/security/cacerts/5e4e69e7.0 \
+  vendor/ulefone/t1/proprietary/etc/security/cacerts/5f47b495.0:system/etc/security/cacerts/5f47b495.0 \
+  vendor/ulefone/t1/proprietary/etc/security/cacerts/60afe812.0:system/etc/security/cacerts/60afe812.0 \
+  vendor/ulefone/t1/proprietary/etc/security/cacerts/63a2c897.0:system/etc/security/cacerts/63a2c897.0 \
+  vendor/ulefone/t1/proprietary/etc/security/cacerts/6645de82.0:system/etc/security/cacerts/6645de82.0 \
+  vendor/ulefone/t1/proprietary/etc/security/cacerts/67495436.0:system/etc/security/cacerts/67495436.0 \
+  vendor/ulefone/t1/proprietary/etc/security/cacerts/69105f4f.0:system/etc/security/cacerts/69105f4f.0 \
+  vendor/ulefone/t1/proprietary/etc/security/cacerts/6e8bf996.0:system/etc/security/cacerts/6e8bf996.0 \
+  vendor/ulefone/t1/proprietary/etc/security/cacerts/6fcc125d.0:system/etc/security/cacerts/6fcc125d.0 \
+  vendor/ulefone/t1/proprietary/etc/security/cacerts/72f369af.0:system/etc/security/cacerts/72f369af.0 \
+  vendor/ulefone/t1/proprietary/etc/security/cacerts/75680d2e.0:system/etc/security/cacerts/75680d2e.0 \
+  vendor/ulefone/t1/proprietary/etc/security/cacerts/76579174.0:system/etc/security/cacerts/76579174.0 \
+  vendor/ulefone/t1/proprietary/etc/security/cacerts/7672ac4b.0:system/etc/security/cacerts/7672ac4b.0 \
+  vendor/ulefone/t1/proprietary/etc/security/cacerts/7999be0d.0:system/etc/security/cacerts/7999be0d.0 \
+  vendor/ulefone/t1/proprietary/etc/security/cacerts/7a819ef2.0:system/etc/security/cacerts/7a819ef2.0 \
+  vendor/ulefone/t1/proprietary/etc/security/cacerts/7d453d8f.0:system/etc/security/cacerts/7d453d8f.0 \
+  vendor/ulefone/t1/proprietary/etc/security/cacerts/81b9768f.0:system/etc/security/cacerts/81b9768f.0 \
+  vendor/ulefone/t1/proprietary/etc/security/cacerts/82223c44.0:system/etc/security/cacerts/82223c44.0 \
+  vendor/ulefone/t1/proprietary/etc/security/cacerts/8470719d.0:system/etc/security/cacerts/8470719d.0 \
+  vendor/ulefone/t1/proprietary/etc/security/cacerts/85cde254.0:system/etc/security/cacerts/85cde254.0 \
+  vendor/ulefone/t1/proprietary/etc/security/cacerts/86212b19.0:system/etc/security/cacerts/86212b19.0 \
+  vendor/ulefone/t1/proprietary/etc/security/cacerts/87753b0d.0:system/etc/security/cacerts/87753b0d.0 \
+  vendor/ulefone/t1/proprietary/etc/security/cacerts/882de061.0:system/etc/security/cacerts/882de061.0 \
+  vendor/ulefone/t1/proprietary/etc/security/cacerts/89c02a45.0:system/etc/security/cacerts/89c02a45.0 \
+  vendor/ulefone/t1/proprietary/etc/security/cacerts/8d6437c3.0:system/etc/security/cacerts/8d6437c3.0 \
+  vendor/ulefone/t1/proprietary/etc/security/cacerts/91739615.0:system/etc/security/cacerts/91739615.0 \
+  vendor/ulefone/t1/proprietary/etc/security/cacerts/9282e51c.0:system/etc/security/cacerts/9282e51c.0 \
+  vendor/ulefone/t1/proprietary/etc/security/cacerts/9339512a.0:system/etc/security/cacerts/9339512a.0 \
+  vendor/ulefone/t1/proprietary/etc/security/cacerts/9576d26b.0:system/etc/security/cacerts/9576d26b.0 \
+  vendor/ulefone/t1/proprietary/etc/security/cacerts/95aff9e3.0:system/etc/security/cacerts/95aff9e3.0 \
+  vendor/ulefone/t1/proprietary/etc/security/cacerts/961f5451.0:system/etc/security/cacerts/961f5451.0 \
+  vendor/ulefone/t1/proprietary/etc/security/cacerts/9685a493.0:system/etc/security/cacerts/9685a493.0 \
+  vendor/ulefone/t1/proprietary/etc/security/cacerts/9772ca32.0:system/etc/security/cacerts/9772ca32.0 \
+  vendor/ulefone/t1/proprietary/etc/security/cacerts/9ab62355.0:system/etc/security/cacerts/9ab62355.0 \
+  vendor/ulefone/t1/proprietary/etc/security/cacerts/9d6523ce.0:system/etc/security/cacerts/9d6523ce.0 \
+  vendor/ulefone/t1/proprietary/etc/security/cacerts/9dbefe7b.0:system/etc/security/cacerts/9dbefe7b.0 \
+  vendor/ulefone/t1/proprietary/etc/security/cacerts/9f533518.0:system/etc/security/cacerts/9f533518.0 \
+  vendor/ulefone/t1/proprietary/etc/security/cacerts/a0bc6fbb.0:system/etc/security/cacerts/a0bc6fbb.0 \
+  vendor/ulefone/t1/proprietary/etc/security/cacerts/a2c66da8.0:system/etc/security/cacerts/a2c66da8.0 \
+  vendor/ulefone/t1/proprietary/etc/security/cacerts/a2df7ad7.0:system/etc/security/cacerts/a2df7ad7.0 \
+  vendor/ulefone/t1/proprietary/etc/security/cacerts/a3896b44.0:system/etc/security/cacerts/a3896b44.0 \
+  vendor/ulefone/t1/proprietary/etc/security/cacerts/a7605362.0:system/etc/security/cacerts/a7605362.0 \
+  vendor/ulefone/t1/proprietary/etc/security/cacerts/a7d2cf64.0:system/etc/security/cacerts/a7d2cf64.0 \
+  vendor/ulefone/t1/proprietary/etc/security/cacerts/a81e292b.0:system/etc/security/cacerts/a81e292b.0 \
+  vendor/ulefone/t1/proprietary/etc/security/cacerts/ab5346f4.0:system/etc/security/cacerts/ab5346f4.0 \
+  vendor/ulefone/t1/proprietary/etc/security/cacerts/aeb67534.0:system/etc/security/cacerts/aeb67534.0 \
+  vendor/ulefone/t1/proprietary/etc/security/cacerts/b0ed035a.0:system/etc/security/cacerts/b0ed035a.0 \
+  vendor/ulefone/t1/proprietary/etc/security/cacerts/b0f3e76e.0:system/etc/security/cacerts/b0f3e76e.0 \
+  vendor/ulefone/t1/proprietary/etc/security/cacerts/b3fb433b.0:system/etc/security/cacerts/b3fb433b.0 \
+  vendor/ulefone/t1/proprietary/etc/security/cacerts/b7db1890.0:system/etc/security/cacerts/b7db1890.0 \
+  vendor/ulefone/t1/proprietary/etc/security/cacerts/b872f2b4.0:system/etc/security/cacerts/b872f2b4.0 \
+  vendor/ulefone/t1/proprietary/etc/security/cacerts/bc3f2570.0:system/etc/security/cacerts/bc3f2570.0 \
+  vendor/ulefone/t1/proprietary/etc/security/cacerts/bdacca6f.0:system/etc/security/cacerts/bdacca6f.0 \
+  vendor/ulefone/t1/proprietary/etc/security/cacerts/bf64f35b.0:system/etc/security/cacerts/bf64f35b.0 \
+  vendor/ulefone/t1/proprietary/etc/security/cacerts/c491639e.0:system/etc/security/cacerts/c491639e.0 \
+  vendor/ulefone/t1/proprietary/etc/security/cacerts/c51c224c.0:system/etc/security/cacerts/c51c224c.0 \
+  vendor/ulefone/t1/proprietary/etc/security/cacerts/c7e2a638.0:system/etc/security/cacerts/c7e2a638.0 \
+  vendor/ulefone/t1/proprietary/etc/security/cacerts/c90bc37d.0:system/etc/security/cacerts/c90bc37d.0 \
+  vendor/ulefone/t1/proprietary/etc/security/cacerts/cb156124.0:system/etc/security/cacerts/cb156124.0 \
+  vendor/ulefone/t1/proprietary/etc/security/cacerts/cb1c3204.0:system/etc/security/cacerts/cb1c3204.0 \
+  vendor/ulefone/t1/proprietary/etc/security/cacerts/ccc52f49.0:system/etc/security/cacerts/ccc52f49.0 \
+  vendor/ulefone/t1/proprietary/etc/security/cacerts/cf701eeb.0:system/etc/security/cacerts/cf701eeb.0 \
+  vendor/ulefone/t1/proprietary/etc/security/cacerts/d06393bb.0:system/etc/security/cacerts/d06393bb.0 \
+  vendor/ulefone/t1/proprietary/etc/security/cacerts/d16a5865.0:system/etc/security/cacerts/d16a5865.0 \
+  vendor/ulefone/t1/proprietary/etc/security/cacerts/d18e9066.0:system/etc/security/cacerts/d18e9066.0 \
+  vendor/ulefone/t1/proprietary/etc/security/cacerts/d4c339cb.0:system/etc/security/cacerts/d4c339cb.0 \
+  vendor/ulefone/t1/proprietary/etc/security/cacerts/d5727d6a.0:system/etc/security/cacerts/d5727d6a.0 \
+  vendor/ulefone/t1/proprietary/etc/security/cacerts/d59297b8.0:system/etc/security/cacerts/d59297b8.0 \
+  vendor/ulefone/t1/proprietary/etc/security/cacerts/d66b55d9.0:system/etc/security/cacerts/d66b55d9.0 \
+  vendor/ulefone/t1/proprietary/etc/security/cacerts/d6e6eab9.0:system/etc/security/cacerts/d6e6eab9.0 \
+  vendor/ulefone/t1/proprietary/etc/security/cacerts/d7746a63.0:system/etc/security/cacerts/d7746a63.0 \
+  vendor/ulefone/t1/proprietary/etc/security/cacerts/dbc54cab.0:system/etc/security/cacerts/dbc54cab.0 \
+  vendor/ulefone/t1/proprietary/etc/security/cacerts/dfc0fe80.0:system/etc/security/cacerts/dfc0fe80.0 \
+  vendor/ulefone/t1/proprietary/etc/security/cacerts/e268a4c5.0:system/etc/security/cacerts/e268a4c5.0 \
+  vendor/ulefone/t1/proprietary/etc/security/cacerts/e442e424.0:system/etc/security/cacerts/e442e424.0 \
+  vendor/ulefone/t1/proprietary/etc/security/cacerts/e48193cf.0:system/etc/security/cacerts/e48193cf.0 \
+  vendor/ulefone/t1/proprietary/etc/security/cacerts/e60bf0c0.0:system/etc/security/cacerts/e60bf0c0.0 \
+  vendor/ulefone/t1/proprietary/etc/security/cacerts/e775ed2d.0:system/etc/security/cacerts/e775ed2d.0 \
+  vendor/ulefone/t1/proprietary/etc/security/cacerts/e8651083.0:system/etc/security/cacerts/e8651083.0 \
+  vendor/ulefone/t1/proprietary/etc/security/cacerts/ea169617.0:system/etc/security/cacerts/ea169617.0 \
+  vendor/ulefone/t1/proprietary/etc/security/cacerts/ed39abd0.0:system/etc/security/cacerts/ed39abd0.0 \
+  vendor/ulefone/t1/proprietary/etc/security/cacerts/ee7cd6fb.0:system/etc/security/cacerts/ee7cd6fb.0 \
+  vendor/ulefone/t1/proprietary/etc/security/cacerts/ee90b008.0:system/etc/security/cacerts/ee90b008.0 \
+  vendor/ulefone/t1/proprietary/etc/security/cacerts/f61bff45.0:system/etc/security/cacerts/f61bff45.0 \
+  vendor/ulefone/t1/proprietary/etc/security/cacerts/f80cc7f6.0:system/etc/security/cacerts/f80cc7f6.0 \
+  vendor/ulefone/t1/proprietary/etc/security/cacerts/fac084d7.0:system/etc/security/cacerts/fac084d7.0 \
+  vendor/ulefone/t1/proprietary/etc/security/cacerts/facacbc6.0:system/etc/security/cacerts/facacbc6.0 \
+  vendor/ulefone/t1/proprietary/etc/security/cacerts/fb126c6d.0:system/etc/security/cacerts/fb126c6d.0 \
+  vendor/ulefone/t1/proprietary/etc/security/cacerts/fde84897.0:system/etc/security/cacerts/fde84897.0 \
+  vendor/ulefone/t1/proprietary/etc/security/cacerts/ff783690.0:system/etc/security/cacerts/ff783690.0 \
+  vendor/ulefone/t1/proprietary/etc/security/cacerts_supl/594f1775.0:system/etc/security/cacerts_supl/594f1775.0 \
+  vendor/ulefone/t1/proprietary/etc/security/cacerts_supl/7651b327.0:system/etc/security/cacerts_supl/7651b327.0 \
+  vendor/ulefone/t1/proprietary/etc/security/cacerts_supl/848ea856.0:system/etc/security/cacerts_supl/848ea856.0 \
+  vendor/ulefone/t1/proprietary/etc/security/cacerts_supl/c542733d.0:system/etc/security/cacerts_supl/c542733d.0 \
+  vendor/ulefone/t1/proprietary/etc/security/cacerts_supl/f336e3d1.0:system/etc/security/cacerts_supl/f336e3d1.0 \
+  vendor/ulefone/t1/proprietary/etc/security/otacerts.zip:system/etc/security/otacerts.zip \
   vendor/ulefone/t1/proprietary/lib/libaudiopolicyenginedefault.so:system/lib/libaudiopolicyenginedefault.so \
-  vendor/ulefone/t1/proprietary/lib/libaudiopolicymanager.so:system/lib/libaudiopolicymanager.so \
   vendor/ulefone/t1/proprietary/lib/libaudiopolicymanagerdefault.so:system/lib/libaudiopolicymanagerdefault.so \
-  vendor/ulefone/t1/proprietary/lib/libext2_blkid.so:system/lib/libext2_blkid.so \
   vendor/ulefone/t1/proprietary/lib/libext2_com_err.so:system/lib/libext2_com_err.so \
-  vendor/ulefone/t1/proprietary/lib/libext2_e2p.so:system/lib/libext2_e2p.so \
   vendor/ulefone/t1/proprietary/lib/libext2_profile.so:system/lib/libext2_profile.so \
-  vendor/ulefone/t1/proprietary/lib/libext2_uuid.so:system/lib/libext2_uuid.so \
   vendor/ulefone/t1/proprietary/lib/libext2fs.so:system/lib/libext2fs.so \
   vendor/ulefone/t1/proprietary/lib/libfs_mgr.so:system/lib/libfs_mgr.so \
   vendor/ulefone/t1/proprietary/lib/libgatekeeper.so:system/lib/libgatekeeper.so \
@@ -462,26 +458,30 @@ PRODUCT_COPY_FILES += \
   vendor/ulefone/t1/proprietary/lib/libgybeauty420.so:system/lib/libgybeauty420.so \
   vendor/ulefone/t1/proprietary/lib/libgybeauty422.so:system/lib/libgybeauty422.so \
   vendor/ulefone/t1/proprietary/lib/libkeymaster1.so:system/lib/libkeymaster1.so \
+  vendor/ulefone/t1/proprietary/lib/libpl.so:system/lib/libpl.so \
+  vendor/ulefone/t1/proprietary/lib/libteec.so:system/lib/libteec.so \
+  vendor/ulefone/t1/proprietary/lib/libteeclientjni.so:system/lib/libteeclientjni.so \
+  vendor/ulefone/t1/proprietary/lib/libaudiopolicymanager.so:system/lib/libaudiopolicymanager.so \
+  vendor/ulefone/t1/proprietary/lib/libext2_blkid.so:system/lib/libext2_blkid.so \
+  vendor/ulefone/t1/proprietary/lib/libext2_e2p.so:system/lib/libext2_e2p.so \
+  vendor/ulefone/t1/proprietary/lib/libext2_uuid.so:system/lib/libext2_uuid.so \
+  vendor/ulefone/t1/proprietary/lib/libteejni.so:system/lib/libteejni.so \
   vendor/ulefone/t1/proprietary/lib/hw/audio_policy.stub.so:system/lib/hw/audio_policy.stub.so \
   vendor/ulefone/t1/proprietary/lib/hw/gatekeeper.trustkernel.so:system/lib/hw/gatekeeper.trustkernel.so \
   vendor/ulefone/t1/proprietary/lib/hw/keystore.trustkernel.so:system/lib/hw/keystore.trustkernel.so \
   vendor/ulefone/t1/proprietary/lib/hw/keystore.v1.trustkernel.so:system/lib/hw/keystore.v1.trustkernel.so \
-  vendor/ulefone/t1/proprietary/lib/libpl.so:system/lib/libpl.so \
-  vendor/ulefone/t1/proprietary/lib/libteec.so:system/lib/libteec.so \
-  vendor/ulefone/t1/proprietary/lib/libteeclientjni.so:system/lib/libteeclientjni.so \
-  vendor/ulefone/t1/proprietary/lib/libteejni.so:system/lib/libteejni.so \
   vendor/ulefone/t1/proprietary/lib/egl/libGLES_android.so:system/lib/egl/libGLES_android.so \
-  vendor/ulefone/t1/proprietary/lib64/libaudiopolicyenginedefault.so:system/lib64/libaudiopolicyenginedefault.so \
-  vendor/ulefone/t1/proprietary/lib64/libaudiopolicymanager.so:system/lib64/libaudiopolicymanager.so \
   vendor/ulefone/t1/proprietary/lib64/libaudiopolicymanagerdefault.so:system/lib64/libaudiopolicymanagerdefault.so \
   vendor/ulefone/t1/proprietary/lib64/libc.so:system/lib64/libc.so \
   vendor/ulefone/t1/proprietary/lib64/libext2_blkid.so:system/lib64/libext2_blkid.so \
-  vendor/ulefone/t1/proprietary/lib64/libext2_com_err.so:system/lib64/libext2_com_err.so \
   vendor/ulefone/t1/proprietary/lib64/libext2_e2p.so:system/lib64/libext2_e2p.so \
-  vendor/ulefone/t1/proprietary/lib64/libext2_profile.so:system/lib64/libext2_profile.so \
   vendor/ulefone/t1/proprietary/lib64/libext2_quota.so:system/lib64/libext2_quota.so \
-  vendor/ulefone/t1/proprietary/lib64/libext2_uuid.so:system/lib64/libext2_uuid.so \
   vendor/ulefone/t1/proprietary/lib64/libext2fs.so:system/lib64/libext2fs.so \
+  vendor/ulefone/t1/proprietary/lib64/libaudiopolicyenginedefault.so:system/lib64/libaudiopolicyenginedefault.so \
+  vendor/ulefone/t1/proprietary/lib64/libaudiopolicymanager.so:system/lib64/libaudiopolicymanager.so \
+  vendor/ulefone/t1/proprietary/lib64/libext2_com_err.so:system/lib64/libext2_com_err.so \
+  vendor/ulefone/t1/proprietary/lib64/libext2_profile.so:system/lib64/libext2_profile.so \
+  vendor/ulefone/t1/proprietary/lib64/libext2_uuid.so:system/lib64/libext2_uuid.so \
   vendor/ulefone/t1/proprietary/lib64/libfilterpack_facedetect.so:system/lib64/libfilterpack_facedetect.so \
   vendor/ulefone/t1/proprietary/lib64/libfs16xx_calibration_jni.so:system/lib64/libfs16xx_calibration_jni.so \
   vendor/ulefone/t1/proprietary/lib64/libfs16xx_interface.so:system/lib64/libfs16xx_interface.so \

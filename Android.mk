@@ -74,45 +74,6 @@ LOCAL_MODULE_CLASS := SHARED_LIBRARIES
 LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
-LOCAL_MODULE := gatekeeper.trustkernel
-LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/lib/hw
-LOCAL_SRC_FILES_32 := proprietary/lib/hw/gatekeeper.trustkernel.so
-LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/lib64/hw
-LOCAL_SRC_FILES_64 := proprietary/lib64/hw/gatekeeper.trustkernel.so
-LOCAL_SHARED_LIBRARIES := libc++
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE_CLASS := SHARED_LIBRARIES
-LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
-LOCAL_MODULE_SUFFIX := .so
-LOCAL_MULTILIB := both
-LOCAL_MODULE := keystore.trustkernel
-LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/lib/hw
-LOCAL_SRC_FILES_32 := proprietary/lib/hw/keystore.trustkernel.so
-LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/lib64/hw
-LOCAL_SRC_FILES_64 := proprietary/lib64/hw/keystore.trustkernel.so
-LOCAL_SHARED_LIBRARIES := libc++
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE_CLASS := SHARED_LIBRARIES
-LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
-LOCAL_MODULE_SUFFIX := .so
-LOCAL_MULTILIB := both
-LOCAL_MODULE := keystore.v1.trustkernel
-LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/lib/hw
-LOCAL_SRC_FILES_32 := proprietary/lib/hw/keystore.v1.trustkernel.so
-LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/lib64/hw
-LOCAL_SRC_FILES_64 := proprietary/lib64/hw/keystore.v1.trustkernel.so
-LOCAL_SHARED_LIBRARIES := libc++
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE_CLASS := SHARED_LIBRARIES
-LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
-LOCAL_MODULE_SUFFIX := .so
-LOCAL_MULTILIB := both
 LOCAL_MODULE := libpl
 LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/lib
 LOCAL_SRC_FILES_32 := proprietary/lib/libpl.so
@@ -164,10 +125,38 @@ include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
 LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
-LOCAL_MULTILIB := 64
-LOCAL_MODULE := libc
-LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/lib
-LOCAL_SRC_FILES_64 := proprietary/lib64/libc.so
+LOCAL_MULTILIB := both
+LOCAL_MODULE := gatekeeper.trustkernel
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/lib/hw
+LOCAL_SRC_FILES_32 := proprietary/lib/hw/gatekeeper.trustkernel.so
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/lib64/hw
+LOCAL_SRC_FILES_64 := proprietary/lib64/hw/gatekeeper.trustkernel.so
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE_CLASS := SHARED_LIBRARIES
+LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
+LOCAL_MODULE_SUFFIX := .so
+LOCAL_MULTILIB := both
+LOCAL_MODULE := keystore.trustkernel
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/lib/hw
+LOCAL_SRC_FILES_32 := proprietary/lib/hw/keystore.trustkernel.so
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/lib64/hw
+LOCAL_SRC_FILES_64 := proprietary/lib64/hw/keystore.trustkernel.so
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE_CLASS := SHARED_LIBRARIES
+LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
+LOCAL_MODULE_SUFFIX := .so
+LOCAL_MULTILIB := both
+LOCAL_MODULE := keystore.v1.trustkernel
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/lib/hw
+LOCAL_SRC_FILES_32 := proprietary/lib/hw/keystore.v1.trustkernel.so
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/lib64/hw
+LOCAL_SRC_FILES_64 := proprietary/lib64/hw/keystore.v1.trustkernel.so
 LOCAL_SHARED_LIBRARIES := libc++
 include $(BUILD_PREBUILT)
 
