@@ -41,22 +41,12 @@ PRODUCT_PACKAGES += \
   mtk-ril \
   libmtkplayer \
   libaudiocustparam  \
+  libfs16xx_calibration_jni \
+  libfs16xx_interface \
   libfs_mgr \
-  libgybeauty \
-  libgybeauty420 \
-  libgybeauty422 \
-  libpl \
   libteec \
   libteeclientjni \
   libteejni \
-  gatekeeper.trustkernel \
-  keystore.trustkernel \
-  keystore.v1.trustkernel \
-  libfs16xx_calibration_jni \
-  libfs16xx_interface \
-  libgsensorcali_jni \
-  libkphproxy \
-  libyv12util \
   libdrmctaplugin \
   libdrmmtkplugin \
   libGLES_mali \
@@ -396,14 +386,12 @@ PRODUCT_PACKAGES += \
   libterservice \
   libwapi \
   libwifitest \
+  teed \
   agoldnvram \
   nvram_proximity \
-  tee \
-  teed \
+  rilproxy \
   MPED \
-  MtkCodecService \
-  aal \
-  aee \
+  thermalindicator \
   aee_archive \
   aee_core_forwarder \
   aee_dumpstate \
@@ -411,110 +399,108 @@ PRODUCT_PACKAGES += \
   akmd8963 \
   akmd8975 \
   ami304d \
-  atci_service \
-  atcid \
-  audiocmdservice_atci \
   autobt \
-  autokd \
-  batterywarning \
-  bmm050d \
   boot_logo_updater \
-  camtool \
+  dmlog \
+  emdlogger3 \
+  ipsec \
+  lsm303md \
+  mdlogger \
+  netdiag \
+  spir2cl \
+  volte_stack \
   ccci_fsd \
   ccci_mdinit \
+  MtkCodecService \
+  autokd \
   charon \
-  dhcp6c \
-  dhcp6ctl \
-  dhcp6s \
-  dmlog \
   downloader \
-  em_svr \
-  emdlogger1 \
-  emdlogger2 \
-  emdlogger3 \
   emdlogger5 \
-  epdg_wod \
+  ipsec_mon \
+  magd \
+  md_monitor \
+  mrdump_tool \
+  rs2spir \
+  thermalloadalgod \
   factory \
-  flashlessd \
-  fsck_msdos_mtk \
+  rtt \
+  superumount \
   fuelgauged \
-  fuelgauged_nvram \
-  ged_srv \
-  geomagneticd \
+  mtkmal \
+  s62xd \
+  viaradiooptions \
   gsm0710muxd \
   gsm0710muxdmd2 \
-  ipsec \
-  ipsec_mon \
-  kpoc_charger \
+  aal \
+  atci_service \
+  batterywarning \
+  dhcp6ctl \
+  emdlogger1 \
+  flashlessd \
   lcdc_screen_cap \
-  libccu_bin.dm \
-  libccu_bin.pm \
-  lsm303md \
-  magd \
-  matv \
-  mbimd \
-  mc6420d \
-  md_ctrl \
-  md_monitor \
-  md_monitor_ctrl \
-  mdlogger \
   memorydumper \
-  memsicd \
-  memsicd3416x \
+  orientationd \
+  starter \
+  volte_ua \
+  md_ctrl \
+  fsck_msdos_mtk \
+  matv \
+  md_monitor_ctrl \
+  perf_native_test \
+  sysenv_daemon \
   meta_tst \
-  mfv_ut \
+  vtservice \
   mnld \
-  mobile_log_d \
-  mrdump_tool \
+  statusd \
+  wfca \
   msensord \
   mtk_agpsd \
-  mtkmal \
+  wmt_loopback \
   mtkrild \
   mtkrildmd2 \
   muxreport \
-  netdiag \
   nvram_agent_binder \
   nvram_daemon \
-  orientationd \
-  perf_native_test \
-  pq \
-  program_binary_service \
-  qmcX983d \
-  radvd \
-  resize_ext4 \
-  rilproxy \
-  rs2spir \
-  rtt \
-  s62xd \
   slpd \
-  sn \
-  spir2cl \
-  spm_loader \
-  starter \
-  statusd \
-  stp_dump3 \
-  stroke \
-  superumount \
-  sysenv_daemon \
-  terservice \
   tertestclient \
-  thermal \
-  thermal_manager \
-  thermald \
-  thermalindicator \
-  thermalloadalgod \
-  viaradiooptions \
+  pq \
+  atcid \
+  bmm050d \
+  em_svr \
+  epdg_wod \
+  kpoc_charger \
+  mc6420d \
+  mobile_log_d \
+  resize_ext4 \
+  spm_loader \
+  fuelgauged_nvram \
+  mbimd \
+  memsicd \
+  program_binary_service \
   viarild \
-  volte_imcb \
-  volte_stack \
-  volte_ua \
-  vtservice \
-  wfca \
+  terservice \
+  sn \
+  thermald \
+  thermal_manager \
+  audiocmdservice_atci \
+  camtool \
+  dhcp6s \
+  emdlogger2 \
+  ged_srv \
+  libccu_bin.dm \
+  memsicd3416x \
+  qmcX983d \
+  stp_dump3 \
   wifi2agps \
-  wmt_concurrency \
+  volte_imcb \
   wmt_launcher \
   wmt_loader \
-  wmt_loopback \
+  geomagneticd \
+  libccu_bin.pm \
+  mfv_ut \
+  radvd \
+  stroke \
+  wmt_concurrency \
   program_binary_builder \
   ROMv2_lm_patch_1_0_hdr.bin \
   ROMv2_lm_patch_1_1_hdr.bin \
@@ -561,93 +547,11 @@ PRODUCT_PACKAGES += \
   pcm_suspend_lpddr4_by_mp1_mt6355.bin \
   pcm_suspend_lpddr4_mt6355.bin \
   pcm_suspend_mt6355.bin \
-  a2dp_audio_policy_configuration.xml \
-  apns-conf.xml \
-  audio_effects.conf \
-  audio_policy_volumes.xml \
-  camerasize.xml \
-  changeram.xml \
-  default_volume_tables.xml \
-  fonts.xml \
-  media_codecs.xml \
-  media_codecs_google_audio.xml \
-  media_codecs_google_video_le.xml \
-  media_codecs_mediatek_audio.xml \
-  media_codecs_mediatek_video.xml \
-  media_codecs_performance.xml \
-  spn-conf.xml \
-  p2p_supplicant_overlay.conf \
-  wpa_supplicant.conf \
-  wpa_supplicant_overlay.conf \
-  google.xml \
-  android.hardware.audio.low_latency.xml \
-  android.hardware.bluetooth.xml \
-  android.hardware.bluetooth_le.xml \
-  android.hardware.camera.xml \
-  android.hardware.consumerir.xml \
-  android.hardware.faketouch.xml \
-  android.hardware.fingerprint.xml \
-  android.hardware.location.gps.xml \
-  android.hardware.microphone.xml \
-  android.hardware.opengles.aep.xml \
-  android.hardware.sensor.accelerometer.xml \
-  android.hardware.sensor.compass.xml \
-  android.hardware.sensor.gyroscope.xml \
-  android.hardware.sensor.light.xml \
-  android.hardware.sensor.proximity.xml \
-  android.hardware.telephony.cdma.xml \
-  android.hardware.telephony.gsm.xml \
-  android.hardware.touchscreen.multitouch.distinct.xml \
-  android.hardware.touchscreen.multitouch.jazzhand.xml \
-  android.hardware.touchscreen.multitouch.xml \
-  android.hardware.touchscreen.xml \
-  android.hardware.usb.accessory.xml \
-  android.hardware.usb.host.xml \
-  android.hardware.wifi.direct.xml \
-  android.hardware.wifi.xml \
-  android.software.device_admin.xml \
-  android.software.webview.xml \
-  com.google.android.maps.xml \
-  com.google.android.media.effects.xml \
-  handheld_core_hardware.xml \
-  atrace.rc \
-  audioserver.rc \
-  bootanim.rc \
-  bootstat.rc \
-  cameraserver.rc \
-  debuggerd.rc \
-  debuggerd64.rc \
-  drmserver.rc \
-  dumpstate.rc \
-  gatekeeperd.rc \
-  installd.rc \
-  keystore.rc \
-  lmkd.rc \
-  logd.rc \
-  mdnsd.rc \
-  mediacodec.rc \
-  mediadrmserver.rc \
-  mediaextractor.rc \
-  mediaserver.rc \
-  mtpd.rc \
-  netd.rc \
-  racoon.rc \
-  servicemanager.rc \
-  surfaceflinger.rc \
-  uncrypt.rc \
-  vdc.rc \
-  vold.rc \
-  init.mal.rc \
-  init.wod.rc \
+  cfg.ini \
   .thermal_meta.conf \
   thermal.conf \
   thermal.off.conf \
-  DSM.xml \
-  DSM_config.xml \
   agps_profiles_conf2.xml \
-  3dwidgets.xml \
-  audio_device.xml \
-  audio_em.xml \
   AudioParamOptions.xml \
   BtInfo_AudioParam.xml \
   BtInfo_ParamUnitDesc.xml \
@@ -730,6 +634,14 @@ PRODUCT_PACKAGES += \
   VolumeGainMap_ParamUnitDesc.xml \
   Volume_AudioParam.xml \
   Volume_ParamUnitDesc.xml \
+  init.mal.rc \
+  init.wod.rc \
+  mtk_omx_core.cfg \
+  DSM.xml \
+  DSM_config.xml \
+  3dwidgets.xml \
+  audio_device.xml \
+  audio_em.xml \
   aurisys_config.xml \
   cdma_ecc_list.xml \
   cdma_ecc_list_ss.xml \
@@ -742,7 +654,6 @@ PRODUCT_PACKAGES += \
   wod_cust.conf \
   wod_optr.conf \
   mpe.conf \
-  mtk_omx_core.cfg \
   radvd.conf \
   virtual-spn-conf-by-efgid1.xml \
   virtual-spn-conf-by-efpnn.xml \

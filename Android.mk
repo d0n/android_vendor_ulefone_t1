@@ -22,63 +22,37 @@ LOCAL_MODULE_CLASS := SHARED_LIBRARIES
 LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
+LOCAL_MODULE := libfs16xx_calibration_jni
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/lib
+LOCAL_SRC_FILES_32 := proprietary/lib/libfs16xx_calibration_jni.so
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/lib64
+LOCAL_SRC_FILES_64 := proprietary/lib64/libfs16xx_calibration_jni.so
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE_CLASS := SHARED_LIBRARIES
+LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
+LOCAL_MODULE_SUFFIX := .so
+LOCAL_MULTILIB := both
+LOCAL_MODULE := libfs16xx_interface
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/lib
+LOCAL_SRC_FILES_32 := proprietary/lib/libfs16xx_interface.so
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/lib64
+LOCAL_SRC_FILES_64 := proprietary/lib64/libfs16xx_interface.so
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE_CLASS := SHARED_LIBRARIES
+LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
+LOCAL_MODULE_SUFFIX := .so
+LOCAL_MULTILIB := both
 LOCAL_MODULE := libfs_mgr
 LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/lib
 LOCAL_SRC_FILES_32 := proprietary/lib/libfs_mgr.so
 LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/lib64
 LOCAL_SRC_FILES_64 := proprietary/lib64/libfs_mgr.so
-LOCAL_SHARED_LIBRARIES := libc++
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE_CLASS := SHARED_LIBRARIES
-LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
-LOCAL_MODULE_SUFFIX := .so
-LOCAL_MULTILIB := both
-LOCAL_MODULE := libgybeauty
-LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/lib
-LOCAL_SRC_FILES_32 := proprietary/lib/libgybeauty.so
-LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/lib64
-LOCAL_SRC_FILES_64 := proprietary/lib64/libgybeauty.so
-LOCAL_SHARED_LIBRARIES := libc++
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE_CLASS := SHARED_LIBRARIES
-LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
-LOCAL_MODULE_SUFFIX := .so
-LOCAL_MULTILIB := both
-LOCAL_MODULE := libgybeauty420
-LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/lib
-LOCAL_SRC_FILES_32 := proprietary/lib/libgybeauty420.so
-LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/lib64
-LOCAL_SRC_FILES_64 := proprietary/lib64/libgybeauty420.so
-LOCAL_SHARED_LIBRARIES := libc++
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE_CLASS := SHARED_LIBRARIES
-LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
-LOCAL_MODULE_SUFFIX := .so
-LOCAL_MULTILIB := both
-LOCAL_MODULE := libgybeauty422
-LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/lib
-LOCAL_SRC_FILES_32 := proprietary/lib/libgybeauty422.so
-LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/lib64
-LOCAL_SRC_FILES_64 := proprietary/lib64/libgybeauty422.so
-LOCAL_SHARED_LIBRARIES := libc++
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE_CLASS := SHARED_LIBRARIES
-LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
-LOCAL_MODULE_SUFFIX := .so
-LOCAL_MULTILIB := both
-LOCAL_MODULE := libpl
-LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/lib
-LOCAL_SRC_FILES_32 := proprietary/lib/libpl.so
-LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/lib64
-LOCAL_SRC_FILES_64 := proprietary/lib64/libpl.so
 LOCAL_SHARED_LIBRARIES := libc++
 include $(BUILD_PREBUILT)
 
@@ -118,100 +92,6 @@ LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/lib
 LOCAL_SRC_FILES_32 := proprietary/lib/libteejni.so
 LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/lib64
 LOCAL_SRC_FILES_64 := proprietary/lib64/libteejni.so
-LOCAL_SHARED_LIBRARIES := libc++
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE_CLASS := SHARED_LIBRARIES
-LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
-LOCAL_MODULE_SUFFIX := .so
-LOCAL_MULTILIB := both
-LOCAL_MODULE := gatekeeper.trustkernel
-LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/lib/hw
-LOCAL_SRC_FILES_32 := proprietary/lib/hw/gatekeeper.trustkernel.so
-LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/lib64/hw
-LOCAL_SRC_FILES_64 := proprietary/lib64/hw/gatekeeper.trustkernel.so
-LOCAL_SHARED_LIBRARIES := libc++
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE_CLASS := SHARED_LIBRARIES
-LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
-LOCAL_MODULE_SUFFIX := .so
-LOCAL_MULTILIB := both
-LOCAL_MODULE := keystore.trustkernel
-LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/lib/hw
-LOCAL_SRC_FILES_32 := proprietary/lib/hw/keystore.trustkernel.so
-LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/lib64/hw
-LOCAL_SRC_FILES_64 := proprietary/lib64/hw/keystore.trustkernel.so
-LOCAL_SHARED_LIBRARIES := libc++
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE_CLASS := SHARED_LIBRARIES
-LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
-LOCAL_MODULE_SUFFIX := .so
-LOCAL_MULTILIB := both
-LOCAL_MODULE := keystore.v1.trustkernel
-LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/lib/hw
-LOCAL_SRC_FILES_32 := proprietary/lib/hw/keystore.v1.trustkernel.so
-LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/lib64/hw
-LOCAL_SRC_FILES_64 := proprietary/lib64/hw/keystore.v1.trustkernel.so
-LOCAL_SHARED_LIBRARIES := libc++
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE_CLASS := SHARED_LIBRARIES
-LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
-LOCAL_MODULE_SUFFIX := .so
-LOCAL_MULTILIB := 64
-LOCAL_MODULE := libfs16xx_calibration_jni
-LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/lib
-LOCAL_SRC_FILES_64 := proprietary/lib64/libfs16xx_calibration_jni.so
-LOCAL_SHARED_LIBRARIES := libc++
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE_CLASS := SHARED_LIBRARIES
-LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
-LOCAL_MODULE_SUFFIX := .so
-LOCAL_MULTILIB := 64
-LOCAL_MODULE := libfs16xx_interface
-LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/lib
-LOCAL_SRC_FILES_64 := proprietary/lib64/libfs16xx_interface.so
-LOCAL_SHARED_LIBRARIES := libc++
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE_CLASS := SHARED_LIBRARIES
-LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
-LOCAL_MODULE_SUFFIX := .so
-LOCAL_MULTILIB := 64
-LOCAL_MODULE := libgsensorcali_jni
-LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/lib
-LOCAL_SRC_FILES_64 := proprietary/lib64/libgsensorcali_jni.so
-LOCAL_SHARED_LIBRARIES := libc++
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE_CLASS := SHARED_LIBRARIES
-LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
-LOCAL_MODULE_SUFFIX := .so
-LOCAL_MULTILIB := 64
-LOCAL_MODULE := libkphproxy
-LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/lib
-LOCAL_SRC_FILES_64 := proprietary/lib64/libkphproxy.so
-LOCAL_SHARED_LIBRARIES := libc++
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE_CLASS := SHARED_LIBRARIES
-LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
-LOCAL_MODULE_SUFFIX := .so
-LOCAL_MULTILIB := 64
-LOCAL_MODULE := libyv12util
-LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/lib
-LOCAL_SRC_FILES_64 := proprietary/lib64/libyv12util.so
 LOCAL_SHARED_LIBRARIES := libc++
 include $(BUILD_PREBUILT)
 
@@ -4844,6 +4724,13 @@ LOCAL_SHARED_LIBRARIES := libc++
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
+LOCAL_MODULE := teed
+LOCAL_MODULE_CLASS := EXECUTABLES
+LOCAL_SRC_FILES := proprietary/bin/teed
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/bin
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
 LOCAL_MODULE := agoldnvram
 LOCAL_MODULE_CLASS := EXECUTABLES
 LOCAL_SRC_FILES := proprietary/bin/agoldnvram
@@ -4858,17 +4745,11 @@ LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/bin
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
-LOCAL_MODULE := tee
+LOCAL_MODULE := rilproxy
 LOCAL_MODULE_CLASS := EXECUTABLES
-LOCAL_SRC_FILES := proprietary/bin/tee
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/bin
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE := teed
-LOCAL_MODULE_CLASS := EXECUTABLES
-LOCAL_SRC_FILES := proprietary/bin/teed
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/bin
+LOCAL_SRC_FILES := proprietary/vendor/bin/rilproxy
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
+LOCAL_PROPRIETARY_MODULE := true
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
@@ -4880,25 +4761,9 @@ LOCAL_PROPRIETARY_MODULE := true
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
-LOCAL_MODULE := MtkCodecService
+LOCAL_MODULE := thermalindicator
 LOCAL_MODULE_CLASS := EXECUTABLES
-LOCAL_SRC_FILES := proprietary/vendor/bin/MtkCodecService
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
-LOCAL_PROPRIETARY_MODULE := true
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE := aal
-LOCAL_MODULE_CLASS := EXECUTABLES
-LOCAL_SRC_FILES := proprietary/vendor/bin/aal
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
-LOCAL_PROPRIETARY_MODULE := true
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE := aee
-LOCAL_MODULE_CLASS := EXECUTABLES
-LOCAL_SRC_FILES := proprietary/vendor/bin/aee
+LOCAL_SRC_FILES := proprietary/vendor/bin/thermalindicator
 LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
 LOCAL_PROPRIETARY_MODULE := true
 include $(BUILD_PREBUILT)
@@ -4960,57 +4825,9 @@ LOCAL_PROPRIETARY_MODULE := true
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
-LOCAL_MODULE := atci_service
-LOCAL_MODULE_CLASS := EXECUTABLES
-LOCAL_SRC_FILES := proprietary/vendor/bin/atci_service
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
-LOCAL_PROPRIETARY_MODULE := true
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE := atcid
-LOCAL_MODULE_CLASS := EXECUTABLES
-LOCAL_SRC_FILES := proprietary/vendor/bin/atcid
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
-LOCAL_PROPRIETARY_MODULE := true
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE := audiocmdservice_atci
-LOCAL_MODULE_CLASS := EXECUTABLES
-LOCAL_SRC_FILES := proprietary/vendor/bin/audiocmdservice_atci
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
-LOCAL_PROPRIETARY_MODULE := true
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
 LOCAL_MODULE := autobt
 LOCAL_MODULE_CLASS := EXECUTABLES
 LOCAL_SRC_FILES := proprietary/vendor/bin/autobt
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
-LOCAL_PROPRIETARY_MODULE := true
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE := autokd
-LOCAL_MODULE_CLASS := EXECUTABLES
-LOCAL_SRC_FILES := proprietary/vendor/bin/autokd
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
-LOCAL_PROPRIETARY_MODULE := true
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE := batterywarning
-LOCAL_MODULE_CLASS := EXECUTABLES
-LOCAL_SRC_FILES := proprietary/vendor/bin/batterywarning
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
-LOCAL_PROPRIETARY_MODULE := true
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE := bmm050d
-LOCAL_MODULE_CLASS := EXECUTABLES
-LOCAL_SRC_FILES := proprietary/vendor/bin/bmm050d
 LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
 LOCAL_PROPRIETARY_MODULE := true
 include $(BUILD_PREBUILT)
@@ -5024,9 +4841,65 @@ LOCAL_PROPRIETARY_MODULE := true
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
-LOCAL_MODULE := camtool
+LOCAL_MODULE := dmlog
 LOCAL_MODULE_CLASS := EXECUTABLES
-LOCAL_SRC_FILES := proprietary/vendor/bin/camtool
+LOCAL_SRC_FILES := proprietary/vendor/bin/dmlog
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
+LOCAL_PROPRIETARY_MODULE := true
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := emdlogger3
+LOCAL_MODULE_CLASS := EXECUTABLES
+LOCAL_SRC_FILES := proprietary/vendor/bin/emdlogger3
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
+LOCAL_PROPRIETARY_MODULE := true
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := ipsec
+LOCAL_MODULE_CLASS := EXECUTABLES
+LOCAL_SRC_FILES := proprietary/vendor/bin/ipsec
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
+LOCAL_PROPRIETARY_MODULE := true
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := lsm303md
+LOCAL_MODULE_CLASS := EXECUTABLES
+LOCAL_SRC_FILES := proprietary/vendor/bin/lsm303md
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
+LOCAL_PROPRIETARY_MODULE := true
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := mdlogger
+LOCAL_MODULE_CLASS := EXECUTABLES
+LOCAL_SRC_FILES := proprietary/vendor/bin/mdlogger
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
+LOCAL_PROPRIETARY_MODULE := true
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := netdiag
+LOCAL_MODULE_CLASS := EXECUTABLES
+LOCAL_SRC_FILES := proprietary/vendor/bin/netdiag
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
+LOCAL_PROPRIETARY_MODULE := true
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := spir2cl
+LOCAL_MODULE_CLASS := EXECUTABLES
+LOCAL_SRC_FILES := proprietary/vendor/bin/spir2cl
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
+LOCAL_PROPRIETARY_MODULE := true
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := volte_stack
+LOCAL_MODULE_CLASS := EXECUTABLES
+LOCAL_SRC_FILES := proprietary/vendor/bin/volte_stack
 LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
 LOCAL_PROPRIETARY_MODULE := true
 include $(BUILD_PREBUILT)
@@ -5048,41 +4921,25 @@ LOCAL_PROPRIETARY_MODULE := true
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
+LOCAL_MODULE := MtkCodecService
+LOCAL_MODULE_CLASS := EXECUTABLES
+LOCAL_SRC_FILES := proprietary/vendor/bin/MtkCodecService
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
+LOCAL_PROPRIETARY_MODULE := true
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := autokd
+LOCAL_MODULE_CLASS := EXECUTABLES
+LOCAL_SRC_FILES := proprietary/vendor/bin/autokd
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
+LOCAL_PROPRIETARY_MODULE := true
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
 LOCAL_MODULE := charon
 LOCAL_MODULE_CLASS := EXECUTABLES
 LOCAL_SRC_FILES := proprietary/vendor/bin/charon
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
-LOCAL_PROPRIETARY_MODULE := true
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE := dhcp6c
-LOCAL_MODULE_CLASS := EXECUTABLES
-LOCAL_SRC_FILES := proprietary/vendor/bin/dhcp6c
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
-LOCAL_PROPRIETARY_MODULE := true
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE := dhcp6ctl
-LOCAL_MODULE_CLASS := EXECUTABLES
-LOCAL_SRC_FILES := proprietary/vendor/bin/dhcp6ctl
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
-LOCAL_PROPRIETARY_MODULE := true
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE := dhcp6s
-LOCAL_MODULE_CLASS := EXECUTABLES
-LOCAL_SRC_FILES := proprietary/vendor/bin/dhcp6s
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
-LOCAL_PROPRIETARY_MODULE := true
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE := dmlog
-LOCAL_MODULE_CLASS := EXECUTABLES
-LOCAL_SRC_FILES := proprietary/vendor/bin/dmlog
 LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
 LOCAL_PROPRIETARY_MODULE := true
 include $(BUILD_PREBUILT)
@@ -5096,38 +4953,6 @@ LOCAL_PROPRIETARY_MODULE := true
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
-LOCAL_MODULE := em_svr
-LOCAL_MODULE_CLASS := EXECUTABLES
-LOCAL_SRC_FILES := proprietary/vendor/bin/em_svr
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
-LOCAL_PROPRIETARY_MODULE := true
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE := emdlogger1
-LOCAL_MODULE_CLASS := EXECUTABLES
-LOCAL_SRC_FILES := proprietary/vendor/bin/emdlogger1
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
-LOCAL_PROPRIETARY_MODULE := true
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE := emdlogger2
-LOCAL_MODULE_CLASS := EXECUTABLES
-LOCAL_SRC_FILES := proprietary/vendor/bin/emdlogger2
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
-LOCAL_PROPRIETARY_MODULE := true
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE := emdlogger3
-LOCAL_MODULE_CLASS := EXECUTABLES
-LOCAL_SRC_FILES := proprietary/vendor/bin/emdlogger3
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
-LOCAL_PROPRIETARY_MODULE := true
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
 LOCAL_MODULE := emdlogger5
 LOCAL_MODULE_CLASS := EXECUTABLES
 LOCAL_SRC_FILES := proprietary/vendor/bin/emdlogger5
@@ -5136,9 +4961,49 @@ LOCAL_PROPRIETARY_MODULE := true
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
-LOCAL_MODULE := epdg_wod
+LOCAL_MODULE := ipsec_mon
 LOCAL_MODULE_CLASS := EXECUTABLES
-LOCAL_SRC_FILES := proprietary/vendor/bin/epdg_wod
+LOCAL_SRC_FILES := proprietary/vendor/bin/ipsec_mon
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
+LOCAL_PROPRIETARY_MODULE := true
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := magd
+LOCAL_MODULE_CLASS := EXECUTABLES
+LOCAL_SRC_FILES := proprietary/vendor/bin/magd
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
+LOCAL_PROPRIETARY_MODULE := true
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := md_monitor
+LOCAL_MODULE_CLASS := EXECUTABLES
+LOCAL_SRC_FILES := proprietary/vendor/bin/md_monitor
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
+LOCAL_PROPRIETARY_MODULE := true
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := mrdump_tool
+LOCAL_MODULE_CLASS := EXECUTABLES
+LOCAL_SRC_FILES := proprietary/vendor/bin/mrdump_tool
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
+LOCAL_PROPRIETARY_MODULE := true
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := rs2spir
+LOCAL_MODULE_CLASS := EXECUTABLES
+LOCAL_SRC_FILES := proprietary/vendor/bin/rs2spir
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
+LOCAL_PROPRIETARY_MODULE := true
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := thermalloadalgod
+LOCAL_MODULE_CLASS := EXECUTABLES
+LOCAL_SRC_FILES := proprietary/vendor/bin/thermalloadalgod
 LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
 LOCAL_PROPRIETARY_MODULE := true
 include $(BUILD_PREBUILT)
@@ -5152,17 +5017,17 @@ LOCAL_PROPRIETARY_MODULE := true
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
-LOCAL_MODULE := flashlessd
+LOCAL_MODULE := rtt
 LOCAL_MODULE_CLASS := EXECUTABLES
-LOCAL_SRC_FILES := proprietary/vendor/bin/flashlessd
+LOCAL_SRC_FILES := proprietary/vendor/bin/rtt
 LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
 LOCAL_PROPRIETARY_MODULE := true
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
-LOCAL_MODULE := fsck_msdos_mtk
+LOCAL_MODULE := superumount
 LOCAL_MODULE_CLASS := EXECUTABLES
-LOCAL_SRC_FILES := proprietary/vendor/bin/fsck_msdos_mtk
+LOCAL_SRC_FILES := proprietary/vendor/bin/superumount
 LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
 LOCAL_PROPRIETARY_MODULE := true
 include $(BUILD_PREBUILT)
@@ -5176,25 +5041,25 @@ LOCAL_PROPRIETARY_MODULE := true
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
-LOCAL_MODULE := fuelgauged_nvram
+LOCAL_MODULE := mtkmal
 LOCAL_MODULE_CLASS := EXECUTABLES
-LOCAL_SRC_FILES := proprietary/vendor/bin/fuelgauged_nvram
+LOCAL_SRC_FILES := proprietary/vendor/bin/mtkmal
 LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
 LOCAL_PROPRIETARY_MODULE := true
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
-LOCAL_MODULE := ged_srv
+LOCAL_MODULE := s62xd
 LOCAL_MODULE_CLASS := EXECUTABLES
-LOCAL_SRC_FILES := proprietary/vendor/bin/ged_srv
+LOCAL_SRC_FILES := proprietary/vendor/bin/s62xd
 LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
 LOCAL_PROPRIETARY_MODULE := true
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
-LOCAL_MODULE := geomagneticd
+LOCAL_MODULE := viaradiooptions
 LOCAL_MODULE_CLASS := EXECUTABLES
-LOCAL_SRC_FILES := proprietary/vendor/bin/geomagneticd
+LOCAL_SRC_FILES := proprietary/vendor/bin/viaradiooptions
 LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
 LOCAL_PROPRIETARY_MODULE := true
 include $(BUILD_PREBUILT)
@@ -5216,25 +5081,49 @@ LOCAL_PROPRIETARY_MODULE := true
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
-LOCAL_MODULE := ipsec
+LOCAL_MODULE := aal
 LOCAL_MODULE_CLASS := EXECUTABLES
-LOCAL_SRC_FILES := proprietary/vendor/bin/ipsec
+LOCAL_SRC_FILES := proprietary/vendor/bin/aal
 LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
 LOCAL_PROPRIETARY_MODULE := true
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
-LOCAL_MODULE := ipsec_mon
+LOCAL_MODULE := atci_service
 LOCAL_MODULE_CLASS := EXECUTABLES
-LOCAL_SRC_FILES := proprietary/vendor/bin/ipsec_mon
+LOCAL_SRC_FILES := proprietary/vendor/bin/atci_service
 LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
 LOCAL_PROPRIETARY_MODULE := true
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
-LOCAL_MODULE := kpoc_charger
+LOCAL_MODULE := batterywarning
 LOCAL_MODULE_CLASS := EXECUTABLES
-LOCAL_SRC_FILES := proprietary/vendor/bin/kpoc_charger
+LOCAL_SRC_FILES := proprietary/vendor/bin/batterywarning
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
+LOCAL_PROPRIETARY_MODULE := true
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := dhcp6ctl
+LOCAL_MODULE_CLASS := EXECUTABLES
+LOCAL_SRC_FILES := proprietary/vendor/bin/dhcp6ctl
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
+LOCAL_PROPRIETARY_MODULE := true
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := emdlogger1
+LOCAL_MODULE_CLASS := EXECUTABLES
+LOCAL_SRC_FILES := proprietary/vendor/bin/emdlogger1
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
+LOCAL_PROPRIETARY_MODULE := true
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := flashlessd
+LOCAL_MODULE_CLASS := EXECUTABLES
+LOCAL_SRC_FILES := proprietary/vendor/bin/flashlessd
 LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
 LOCAL_PROPRIETARY_MODULE := true
 include $(BUILD_PREBUILT)
@@ -5248,57 +5137,33 @@ LOCAL_PROPRIETARY_MODULE := true
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
-LOCAL_MODULE := libccu_bin.dm
+LOCAL_MODULE := memorydumper
 LOCAL_MODULE_CLASS := EXECUTABLES
-LOCAL_SRC_FILES := proprietary/vendor/bin/libccu_bin.dm
+LOCAL_SRC_FILES := proprietary/vendor/bin/memorydumper
 LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
 LOCAL_PROPRIETARY_MODULE := true
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
-LOCAL_MODULE := libccu_bin.pm
+LOCAL_MODULE := orientationd
 LOCAL_MODULE_CLASS := EXECUTABLES
-LOCAL_SRC_FILES := proprietary/vendor/bin/libccu_bin.pm
+LOCAL_SRC_FILES := proprietary/vendor/bin/orientationd
 LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
 LOCAL_PROPRIETARY_MODULE := true
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
-LOCAL_MODULE := lsm303md
+LOCAL_MODULE := starter
 LOCAL_MODULE_CLASS := EXECUTABLES
-LOCAL_SRC_FILES := proprietary/vendor/bin/lsm303md
+LOCAL_SRC_FILES := proprietary/vendor/bin/starter
 LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
 LOCAL_PROPRIETARY_MODULE := true
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
-LOCAL_MODULE := magd
+LOCAL_MODULE := volte_ua
 LOCAL_MODULE_CLASS := EXECUTABLES
-LOCAL_SRC_FILES := proprietary/vendor/bin/magd
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
-LOCAL_PROPRIETARY_MODULE := true
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE := matv
-LOCAL_MODULE_CLASS := EXECUTABLES
-LOCAL_SRC_FILES := proprietary/vendor/bin/matv
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
-LOCAL_PROPRIETARY_MODULE := true
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE := mbimd
-LOCAL_MODULE_CLASS := EXECUTABLES
-LOCAL_SRC_FILES := proprietary/vendor/bin/mbimd
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
-LOCAL_PROPRIETARY_MODULE := true
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE := mc6420d
-LOCAL_MODULE_CLASS := EXECUTABLES
-LOCAL_SRC_FILES := proprietary/vendor/bin/mc6420d
+LOCAL_SRC_FILES := proprietary/vendor/bin/volte_ua
 LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
 LOCAL_PROPRIETARY_MODULE := true
 include $(BUILD_PREBUILT)
@@ -5312,9 +5177,17 @@ LOCAL_PROPRIETARY_MODULE := true
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
-LOCAL_MODULE := md_monitor
+LOCAL_MODULE := fsck_msdos_mtk
 LOCAL_MODULE_CLASS := EXECUTABLES
-LOCAL_SRC_FILES := proprietary/vendor/bin/md_monitor
+LOCAL_SRC_FILES := proprietary/vendor/bin/fsck_msdos_mtk
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
+LOCAL_PROPRIETARY_MODULE := true
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := matv
+LOCAL_MODULE_CLASS := EXECUTABLES
+LOCAL_SRC_FILES := proprietary/vendor/bin/matv
 LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
 LOCAL_PROPRIETARY_MODULE := true
 include $(BUILD_PREBUILT)
@@ -5328,33 +5201,17 @@ LOCAL_PROPRIETARY_MODULE := true
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
-LOCAL_MODULE := mdlogger
+LOCAL_MODULE := perf_native_test
 LOCAL_MODULE_CLASS := EXECUTABLES
-LOCAL_SRC_FILES := proprietary/vendor/bin/mdlogger
+LOCAL_SRC_FILES := proprietary/vendor/bin/perf_native_test
 LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
 LOCAL_PROPRIETARY_MODULE := true
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
-LOCAL_MODULE := memorydumper
+LOCAL_MODULE := sysenv_daemon
 LOCAL_MODULE_CLASS := EXECUTABLES
-LOCAL_SRC_FILES := proprietary/vendor/bin/memorydumper
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
-LOCAL_PROPRIETARY_MODULE := true
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE := memsicd
-LOCAL_MODULE_CLASS := EXECUTABLES
-LOCAL_SRC_FILES := proprietary/vendor/bin/memsicd
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
-LOCAL_PROPRIETARY_MODULE := true
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE := memsicd3416x
-LOCAL_MODULE_CLASS := EXECUTABLES
-LOCAL_SRC_FILES := proprietary/vendor/bin/memsicd3416x
+LOCAL_SRC_FILES := proprietary/vendor/bin/sysenv_daemon
 LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
 LOCAL_PROPRIETARY_MODULE := true
 include $(BUILD_PREBUILT)
@@ -5368,11 +5225,13 @@ LOCAL_PROPRIETARY_MODULE := true
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
-LOCAL_MODULE := mfv_ut
+LOCAL_MODULE := vtservice
 LOCAL_MODULE_CLASS := EXECUTABLES
-LOCAL_SRC_FILES := proprietary/vendor/bin/mfv_ut
+LOCAL_SRC_FILES := proprietary/vendor/bin/vtservice
 LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
 LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MULTILIB := 32
+LOCAL_SHARED_LIBRARIES := libc++ libutils libbinder libmtk_vt_service libmtk_vt_wrapper libmtk_vt_swip libmtk_vt_utils
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
@@ -5384,17 +5243,17 @@ LOCAL_PROPRIETARY_MODULE := true
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
-LOCAL_MODULE := mobile_log_d
+LOCAL_MODULE := statusd
 LOCAL_MODULE_CLASS := EXECUTABLES
-LOCAL_SRC_FILES := proprietary/vendor/bin/mobile_log_d
+LOCAL_SRC_FILES := proprietary/vendor/bin/statusd
 LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
 LOCAL_PROPRIETARY_MODULE := true
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
-LOCAL_MODULE := mrdump_tool
+LOCAL_MODULE := wfca
 LOCAL_MODULE_CLASS := EXECUTABLES
-LOCAL_SRC_FILES := proprietary/vendor/bin/mrdump_tool
+LOCAL_SRC_FILES := proprietary/vendor/bin/wfca
 LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
 LOCAL_PROPRIETARY_MODULE := true
 include $(BUILD_PREBUILT)
@@ -5416,9 +5275,9 @@ LOCAL_PROPRIETARY_MODULE := true
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
-LOCAL_MODULE := mtkmal
+LOCAL_MODULE := wmt_loopback
 LOCAL_MODULE_CLASS := EXECUTABLES
-LOCAL_SRC_FILES := proprietary/vendor/bin/mtkmal
+LOCAL_SRC_FILES := proprietary/vendor/bin/wmt_loopback
 LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
 LOCAL_PROPRIETARY_MODULE := true
 include $(BUILD_PREBUILT)
@@ -5448,14 +5307,6 @@ LOCAL_PROPRIETARY_MODULE := true
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
-LOCAL_MODULE := netdiag
-LOCAL_MODULE_CLASS := EXECUTABLES
-LOCAL_SRC_FILES := proprietary/vendor/bin/netdiag
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
-LOCAL_PROPRIETARY_MODULE := true
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
 LOCAL_MODULE := nvram_agent_binder
 LOCAL_MODULE_CLASS := EXECUTABLES
 LOCAL_SRC_FILES := proprietary/vendor/bin/nvram_agent_binder
@@ -5472,177 +5323,9 @@ LOCAL_PROPRIETARY_MODULE := true
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
-LOCAL_MODULE := orientationd
-LOCAL_MODULE_CLASS := EXECUTABLES
-LOCAL_SRC_FILES := proprietary/vendor/bin/orientationd
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
-LOCAL_PROPRIETARY_MODULE := true
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE := perf_native_test
-LOCAL_MODULE_CLASS := EXECUTABLES
-LOCAL_SRC_FILES := proprietary/vendor/bin/perf_native_test
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
-LOCAL_PROPRIETARY_MODULE := true
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE := pq
-LOCAL_MODULE_CLASS := EXECUTABLES
-LOCAL_SRC_FILES := proprietary/vendor/bin/pq
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
-LOCAL_PROPRIETARY_MODULE := true
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE := program_binary_service
-LOCAL_MODULE_CLASS := EXECUTABLES
-LOCAL_SRC_FILES := proprietary/vendor/bin/program_binary_service
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
-LOCAL_PROPRIETARY_MODULE := true
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE := qmcX983d
-LOCAL_MODULE_CLASS := EXECUTABLES
-LOCAL_SRC_FILES := proprietary/vendor/bin/qmcX983d
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
-LOCAL_PROPRIETARY_MODULE := true
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE := radvd
-LOCAL_MODULE_CLASS := EXECUTABLES
-LOCAL_SRC_FILES := proprietary/vendor/bin/radvd
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
-LOCAL_PROPRIETARY_MODULE := true
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE := resize_ext4
-LOCAL_MODULE_CLASS := EXECUTABLES
-LOCAL_SRC_FILES := proprietary/vendor/bin/resize_ext4
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
-LOCAL_PROPRIETARY_MODULE := true
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE := rilproxy
-LOCAL_MODULE_CLASS := EXECUTABLES
-LOCAL_SRC_FILES := proprietary/vendor/bin/rilproxy
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
-LOCAL_PROPRIETARY_MODULE := true
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE := rs2spir
-LOCAL_MODULE_CLASS := EXECUTABLES
-LOCAL_SRC_FILES := proprietary/vendor/bin/rs2spir
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
-LOCAL_PROPRIETARY_MODULE := true
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE := rtt
-LOCAL_MODULE_CLASS := EXECUTABLES
-LOCAL_SRC_FILES := proprietary/vendor/bin/rtt
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
-LOCAL_PROPRIETARY_MODULE := true
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE := s62xd
-LOCAL_MODULE_CLASS := EXECUTABLES
-LOCAL_SRC_FILES := proprietary/vendor/bin/s62xd
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
-LOCAL_PROPRIETARY_MODULE := true
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
 LOCAL_MODULE := slpd
 LOCAL_MODULE_CLASS := EXECUTABLES
 LOCAL_SRC_FILES := proprietary/vendor/bin/slpd
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
-LOCAL_PROPRIETARY_MODULE := true
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE := sn
-LOCAL_MODULE_CLASS := EXECUTABLES
-LOCAL_SRC_FILES := proprietary/vendor/bin/sn
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
-LOCAL_PROPRIETARY_MODULE := true
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE := spir2cl
-LOCAL_MODULE_CLASS := EXECUTABLES
-LOCAL_SRC_FILES := proprietary/vendor/bin/spir2cl
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
-LOCAL_PROPRIETARY_MODULE := true
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE := spm_loader
-LOCAL_MODULE_CLASS := EXECUTABLES
-LOCAL_SRC_FILES := proprietary/vendor/bin/spm_loader
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
-LOCAL_PROPRIETARY_MODULE := true
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE := starter
-LOCAL_MODULE_CLASS := EXECUTABLES
-LOCAL_SRC_FILES := proprietary/vendor/bin/starter
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
-LOCAL_PROPRIETARY_MODULE := true
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE := statusd
-LOCAL_MODULE_CLASS := EXECUTABLES
-LOCAL_SRC_FILES := proprietary/vendor/bin/statusd
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
-LOCAL_PROPRIETARY_MODULE := true
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE := stp_dump3
-LOCAL_MODULE_CLASS := EXECUTABLES
-LOCAL_SRC_FILES := proprietary/vendor/bin/stp_dump3
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
-LOCAL_PROPRIETARY_MODULE := true
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE := stroke
-LOCAL_MODULE_CLASS := EXECUTABLES
-LOCAL_SRC_FILES := proprietary/vendor/bin/stroke
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
-LOCAL_PROPRIETARY_MODULE := true
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE := superumount
-LOCAL_MODULE_CLASS := EXECUTABLES
-LOCAL_SRC_FILES := proprietary/vendor/bin/superumount
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
-LOCAL_PROPRIETARY_MODULE := true
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE := sysenv_daemon
-LOCAL_MODULE_CLASS := EXECUTABLES
-LOCAL_SRC_FILES := proprietary/vendor/bin/sysenv_daemon
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
-LOCAL_PROPRIETARY_MODULE := true
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE := terservice
-LOCAL_MODULE_CLASS := EXECUTABLES
-LOCAL_SRC_FILES := proprietary/vendor/bin/terservice
 LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
 LOCAL_PROPRIETARY_MODULE := true
 include $(BUILD_PREBUILT)
@@ -5656,49 +5339,113 @@ LOCAL_PROPRIETARY_MODULE := true
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
-LOCAL_MODULE := thermal
+LOCAL_MODULE := pq
 LOCAL_MODULE_CLASS := EXECUTABLES
-LOCAL_SRC_FILES := proprietary/vendor/bin/thermal
+LOCAL_SRC_FILES := proprietary/vendor/bin/pq
 LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
 LOCAL_PROPRIETARY_MODULE := true
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
-LOCAL_MODULE := thermal_manager
+LOCAL_MODULE := atcid
 LOCAL_MODULE_CLASS := EXECUTABLES
-LOCAL_SRC_FILES := proprietary/vendor/bin/thermal_manager
+LOCAL_SRC_FILES := proprietary/vendor/bin/atcid
 LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
 LOCAL_PROPRIETARY_MODULE := true
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
-LOCAL_MODULE := thermald
+LOCAL_MODULE := bmm050d
 LOCAL_MODULE_CLASS := EXECUTABLES
-LOCAL_SRC_FILES := proprietary/vendor/bin/thermald
+LOCAL_SRC_FILES := proprietary/vendor/bin/bmm050d
 LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
 LOCAL_PROPRIETARY_MODULE := true
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
-LOCAL_MODULE := thermalindicator
+LOCAL_MODULE := em_svr
 LOCAL_MODULE_CLASS := EXECUTABLES
-LOCAL_SRC_FILES := proprietary/vendor/bin/thermalindicator
+LOCAL_SRC_FILES := proprietary/vendor/bin/em_svr
 LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
 LOCAL_PROPRIETARY_MODULE := true
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
-LOCAL_MODULE := thermalloadalgod
+LOCAL_MODULE := epdg_wod
 LOCAL_MODULE_CLASS := EXECUTABLES
-LOCAL_SRC_FILES := proprietary/vendor/bin/thermalloadalgod
+LOCAL_SRC_FILES := proprietary/vendor/bin/epdg_wod
 LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
 LOCAL_PROPRIETARY_MODULE := true
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
-LOCAL_MODULE := viaradiooptions
+LOCAL_MODULE := kpoc_charger
 LOCAL_MODULE_CLASS := EXECUTABLES
-LOCAL_SRC_FILES := proprietary/vendor/bin/viaradiooptions
+LOCAL_SRC_FILES := proprietary/vendor/bin/kpoc_charger
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
+LOCAL_PROPRIETARY_MODULE := true
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := mc6420d
+LOCAL_MODULE_CLASS := EXECUTABLES
+LOCAL_SRC_FILES := proprietary/vendor/bin/mc6420d
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
+LOCAL_PROPRIETARY_MODULE := true
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := mobile_log_d
+LOCAL_MODULE_CLASS := EXECUTABLES
+LOCAL_SRC_FILES := proprietary/vendor/bin/mobile_log_d
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
+LOCAL_PROPRIETARY_MODULE := true
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := resize_ext4
+LOCAL_MODULE_CLASS := EXECUTABLES
+LOCAL_SRC_FILES := proprietary/vendor/bin/resize_ext4
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
+LOCAL_PROPRIETARY_MODULE := true
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := spm_loader
+LOCAL_MODULE_CLASS := EXECUTABLES
+LOCAL_SRC_FILES := proprietary/vendor/bin/spm_loader
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
+LOCAL_PROPRIETARY_MODULE := true
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := fuelgauged_nvram
+LOCAL_MODULE_CLASS := EXECUTABLES
+LOCAL_SRC_FILES := proprietary/vendor/bin/fuelgauged_nvram
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
+LOCAL_PROPRIETARY_MODULE := true
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := mbimd
+LOCAL_MODULE_CLASS := EXECUTABLES
+LOCAL_SRC_FILES := proprietary/vendor/bin/mbimd
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
+LOCAL_PROPRIETARY_MODULE := true
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := memsicd
+LOCAL_MODULE_CLASS := EXECUTABLES
+LOCAL_SRC_FILES := proprietary/vendor/bin/memsicd
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
+LOCAL_PROPRIETARY_MODULE := true
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := program_binary_service
+LOCAL_MODULE_CLASS := EXECUTABLES
+LOCAL_SRC_FILES := proprietary/vendor/bin/program_binary_service
 LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
 LOCAL_PROPRIETARY_MODULE := true
 include $(BUILD_PREBUILT)
@@ -5712,43 +5459,105 @@ LOCAL_PROPRIETARY_MODULE := true
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
-LOCAL_MODULE := volte_imcb
+LOCAL_MODULE := terservice
 LOCAL_MODULE_CLASS := EXECUTABLES
-LOCAL_SRC_FILES := proprietary/vendor/bin/volte_imcb
+LOCAL_SRC_FILES := proprietary/vendor/bin/terservice
 LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
 LOCAL_PROPRIETARY_MODULE := true
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
-LOCAL_MODULE := volte_stack
+LOCAL_MODULE := sn
 LOCAL_MODULE_CLASS := EXECUTABLES
-LOCAL_SRC_FILES := proprietary/vendor/bin/volte_stack
+LOCAL_SRC_FILES := proprietary/vendor/bin/sn
 LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
 LOCAL_PROPRIETARY_MODULE := true
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
-LOCAL_MODULE := volte_ua
+LOCAL_MODULE := thermald
 LOCAL_MODULE_CLASS := EXECUTABLES
-LOCAL_SRC_FILES := proprietary/vendor/bin/volte_ua
+LOCAL_SRC_FILES := proprietary/vendor/bin/thermald
 LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
 LOCAL_PROPRIETARY_MODULE := true
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
-LOCAL_MODULE := vtservice
+LOCAL_MODULE := thermal_manager
 LOCAL_MODULE_CLASS := EXECUTABLES
-LOCAL_SRC_FILES := proprietary/vendor/bin/vtservice
+LOCAL_SRC_FILES := proprietary/vendor/bin/thermal_manager
 LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
 LOCAL_PROPRIETARY_MODULE := true
-LOCAL_MULTILIB := 32
-LOCAL_SHARED_LIBRARIES := libc++ libutils libbinder libmtk_vt_service libmtk_vt_wrapper libmtk_vt_swip libmtk_vt_utils
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
-LOCAL_MODULE := wfca
+LOCAL_MODULE := audiocmdservice_atci
 LOCAL_MODULE_CLASS := EXECUTABLES
-LOCAL_SRC_FILES := proprietary/vendor/bin/wfca
+LOCAL_SRC_FILES := proprietary/vendor/bin/audiocmdservice_atci
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
+LOCAL_PROPRIETARY_MODULE := true
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := camtool
+LOCAL_MODULE_CLASS := EXECUTABLES
+LOCAL_SRC_FILES := proprietary/vendor/bin/camtool
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
+LOCAL_PROPRIETARY_MODULE := true
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := dhcp6s
+LOCAL_MODULE_CLASS := EXECUTABLES
+LOCAL_SRC_FILES := proprietary/vendor/bin/dhcp6s
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
+LOCAL_PROPRIETARY_MODULE := true
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := emdlogger2
+LOCAL_MODULE_CLASS := EXECUTABLES
+LOCAL_SRC_FILES := proprietary/vendor/bin/emdlogger2
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
+LOCAL_PROPRIETARY_MODULE := true
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := ged_srv
+LOCAL_MODULE_CLASS := EXECUTABLES
+LOCAL_SRC_FILES := proprietary/vendor/bin/ged_srv
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
+LOCAL_PROPRIETARY_MODULE := true
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := libccu_bin.dm
+LOCAL_MODULE_CLASS := EXECUTABLES
+LOCAL_SRC_FILES := proprietary/vendor/bin/libccu_bin.dm
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
+LOCAL_PROPRIETARY_MODULE := true
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := memsicd3416x
+LOCAL_MODULE_CLASS := EXECUTABLES
+LOCAL_SRC_FILES := proprietary/vendor/bin/memsicd3416x
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
+LOCAL_PROPRIETARY_MODULE := true
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := qmcX983d
+LOCAL_MODULE_CLASS := EXECUTABLES
+LOCAL_SRC_FILES := proprietary/vendor/bin/qmcX983d
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
+LOCAL_PROPRIETARY_MODULE := true
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := stp_dump3
+LOCAL_MODULE_CLASS := EXECUTABLES
+LOCAL_SRC_FILES := proprietary/vendor/bin/stp_dump3
 LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
 LOCAL_PROPRIETARY_MODULE := true
 include $(BUILD_PREBUILT)
@@ -5762,9 +5571,9 @@ LOCAL_PROPRIETARY_MODULE := true
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
-LOCAL_MODULE := wmt_concurrency
+LOCAL_MODULE := volte_imcb
 LOCAL_MODULE_CLASS := EXECUTABLES
-LOCAL_SRC_FILES := proprietary/vendor/bin/wmt_concurrency
+LOCAL_SRC_FILES := proprietary/vendor/bin/volte_imcb
 LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
 LOCAL_PROPRIETARY_MODULE := true
 include $(BUILD_PREBUILT)
@@ -5786,9 +5595,49 @@ LOCAL_PROPRIETARY_MODULE := true
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
-LOCAL_MODULE := wmt_loopback
+LOCAL_MODULE := geomagneticd
 LOCAL_MODULE_CLASS := EXECUTABLES
-LOCAL_SRC_FILES := proprietary/vendor/bin/wmt_loopback
+LOCAL_SRC_FILES := proprietary/vendor/bin/geomagneticd
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
+LOCAL_PROPRIETARY_MODULE := true
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := libccu_bin.pm
+LOCAL_MODULE_CLASS := EXECUTABLES
+LOCAL_SRC_FILES := proprietary/vendor/bin/libccu_bin.pm
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
+LOCAL_PROPRIETARY_MODULE := true
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := mfv_ut
+LOCAL_MODULE_CLASS := EXECUTABLES
+LOCAL_SRC_FILES := proprietary/vendor/bin/mfv_ut
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
+LOCAL_PROPRIETARY_MODULE := true
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := radvd
+LOCAL_MODULE_CLASS := EXECUTABLES
+LOCAL_SRC_FILES := proprietary/vendor/bin/radvd
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
+LOCAL_PROPRIETARY_MODULE := true
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := stroke
+LOCAL_MODULE_CLASS := EXECUTABLES
+LOCAL_SRC_FILES := proprietary/vendor/bin/stroke
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
+LOCAL_PROPRIETARY_MODULE := true
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := wmt_concurrency
+LOCAL_MODULE_CLASS := EXECUTABLES
+LOCAL_SRC_FILES := proprietary/vendor/bin/wmt_concurrency
 LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
 LOCAL_PROPRIETARY_MODULE := true
 include $(BUILD_PREBUILT)
@@ -6162,1333 +6011,922 @@ LOCAL_PROPRIETARY_MODULE := true
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
-LOCAL_MODULE := a2dp_audio_policy_configuration.xml
-LOCAL_SRC_FILES := proprietary/etc/a2dp_audio_policy_configuration.xml
+LOCAL_MODULE := cfg.ini
+LOCAL_SRC_FILES := proprietary/app/t6/cfg.ini
 LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE := apns-conf.xml
-LOCAL_SRC_FILES := proprietary/etc/apns-conf.xml
-LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE := audio_effects.conf
-LOCAL_SRC_FILES := proprietary/etc/audio_effects.conf
-LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE := audio_policy_volumes.xml
-LOCAL_SRC_FILES := proprietary/etc/audio_policy_volumes.xml
-LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE := camerasize.xml
-LOCAL_SRC_FILES := proprietary/etc/camerasize.xml
-LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE := changeram.xml
-LOCAL_SRC_FILES := proprietary/etc/changeram.xml
-LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE := default_volume_tables.xml
-LOCAL_SRC_FILES := proprietary/etc/default_volume_tables.xml
-LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE := fonts.xml
-LOCAL_SRC_FILES := proprietary/etc/fonts.xml
-LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE := media_codecs.xml
-LOCAL_SRC_FILES := proprietary/etc/media_codecs.xml
-LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE := media_codecs_google_audio.xml
-LOCAL_SRC_FILES := proprietary/etc/media_codecs_google_audio.xml
-LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE := media_codecs_google_video_le.xml
-LOCAL_SRC_FILES := proprietary/etc/media_codecs_google_video_le.xml
-LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE := media_codecs_mediatek_audio.xml
-LOCAL_SRC_FILES := proprietary/etc/media_codecs_mediatek_audio.xml
-LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE := media_codecs_mediatek_video.xml
-LOCAL_SRC_FILES := proprietary/etc/media_codecs_mediatek_video.xml
-LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE := media_codecs_performance.xml
-LOCAL_SRC_FILES := proprietary/etc/media_codecs_performance.xml
-LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE := spn-conf.xml
-LOCAL_SRC_FILES := proprietary/etc/spn-conf.xml
-LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE := p2p_supplicant_overlay.conf
-LOCAL_SRC_FILES := proprietary/etc/wifi/p2p_supplicant_overlay.conf
-LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc/wifi
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE := wpa_supplicant.conf
-LOCAL_SRC_FILES := proprietary/etc/wifi/wpa_supplicant.conf
-LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc/wifi
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE := wpa_supplicant_overlay.conf
-LOCAL_SRC_FILES := proprietary/etc/wifi/wpa_supplicant_overlay.conf
-LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc/wifi
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE := google.xml
-LOCAL_SRC_FILES := proprietary/etc/sysconfig/google.xml
-LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc/sysconfig
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE := android.hardware.audio.low_latency.xml
-LOCAL_SRC_FILES := proprietary/etc/permissions/android.hardware.audio.low_latency.xml
-LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc/permissions
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE := android.hardware.bluetooth.xml
-LOCAL_SRC_FILES := proprietary/etc/permissions/android.hardware.bluetooth.xml
-LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc/permissions
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE := android.hardware.bluetooth_le.xml
-LOCAL_SRC_FILES := proprietary/etc/permissions/android.hardware.bluetooth_le.xml
-LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc/permissions
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE := android.hardware.camera.xml
-LOCAL_SRC_FILES := proprietary/etc/permissions/android.hardware.camera.xml
-LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc/permissions
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE := android.hardware.consumerir.xml
-LOCAL_SRC_FILES := proprietary/etc/permissions/android.hardware.consumerir.xml
-LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc/permissions
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE := android.hardware.faketouch.xml
-LOCAL_SRC_FILES := proprietary/etc/permissions/android.hardware.faketouch.xml
-LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc/permissions
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE := android.hardware.fingerprint.xml
-LOCAL_SRC_FILES := proprietary/etc/permissions/android.hardware.fingerprint.xml
-LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc/permissions
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE := android.hardware.location.gps.xml
-LOCAL_SRC_FILES := proprietary/etc/permissions/android.hardware.location.gps.xml
-LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc/permissions
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE := android.hardware.microphone.xml
-LOCAL_SRC_FILES := proprietary/etc/permissions/android.hardware.microphone.xml
-LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc/permissions
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE := android.hardware.opengles.aep.xml
-LOCAL_SRC_FILES := proprietary/etc/permissions/android.hardware.opengles.aep.xml
-LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc/permissions
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE := android.hardware.sensor.accelerometer.xml
-LOCAL_SRC_FILES := proprietary/etc/permissions/android.hardware.sensor.accelerometer.xml
-LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc/permissions
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE := android.hardware.sensor.compass.xml
-LOCAL_SRC_FILES := proprietary/etc/permissions/android.hardware.sensor.compass.xml
-LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc/permissions
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE := android.hardware.sensor.gyroscope.xml
-LOCAL_SRC_FILES := proprietary/etc/permissions/android.hardware.sensor.gyroscope.xml
-LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc/permissions
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE := android.hardware.sensor.light.xml
-LOCAL_SRC_FILES := proprietary/etc/permissions/android.hardware.sensor.light.xml
-LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc/permissions
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE := android.hardware.sensor.proximity.xml
-LOCAL_SRC_FILES := proprietary/etc/permissions/android.hardware.sensor.proximity.xml
-LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc/permissions
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE := android.hardware.telephony.cdma.xml
-LOCAL_SRC_FILES := proprietary/etc/permissions/android.hardware.telephony.cdma.xml
-LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc/permissions
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE := android.hardware.telephony.gsm.xml
-LOCAL_SRC_FILES := proprietary/etc/permissions/android.hardware.telephony.gsm.xml
-LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc/permissions
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE := android.hardware.touchscreen.multitouch.distinct.xml
-LOCAL_SRC_FILES := proprietary/etc/permissions/android.hardware.touchscreen.multitouch.distinct.xml
-LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc/permissions
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE := android.hardware.touchscreen.multitouch.jazzhand.xml
-LOCAL_SRC_FILES := proprietary/etc/permissions/android.hardware.touchscreen.multitouch.jazzhand.xml
-LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc/permissions
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE := android.hardware.touchscreen.multitouch.xml
-LOCAL_SRC_FILES := proprietary/etc/permissions/android.hardware.touchscreen.multitouch.xml
-LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc/permissions
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE := android.hardware.touchscreen.xml
-LOCAL_SRC_FILES := proprietary/etc/permissions/android.hardware.touchscreen.xml
-LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc/permissions
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE := android.hardware.usb.accessory.xml
-LOCAL_SRC_FILES := proprietary/etc/permissions/android.hardware.usb.accessory.xml
-LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc/permissions
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE := android.hardware.usb.host.xml
-LOCAL_SRC_FILES := proprietary/etc/permissions/android.hardware.usb.host.xml
-LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc/permissions
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE := android.hardware.wifi.direct.xml
-LOCAL_SRC_FILES := proprietary/etc/permissions/android.hardware.wifi.direct.xml
-LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc/permissions
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE := android.hardware.wifi.xml
-LOCAL_SRC_FILES := proprietary/etc/permissions/android.hardware.wifi.xml
-LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc/permissions
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE := android.software.device_admin.xml
-LOCAL_SRC_FILES := proprietary/etc/permissions/android.software.device_admin.xml
-LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc/permissions
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE := android.software.webview.xml
-LOCAL_SRC_FILES := proprietary/etc/permissions/android.software.webview.xml
-LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc/permissions
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE := com.google.android.maps.xml
-LOCAL_SRC_FILES := proprietary/etc/permissions/com.google.android.maps.xml
-LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc/permissions
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE := com.google.android.media.effects.xml
-LOCAL_SRC_FILES := proprietary/etc/permissions/com.google.android.media.effects.xml
-LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc/permissions
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE := handheld_core_hardware.xml
-LOCAL_SRC_FILES := proprietary/etc/permissions/handheld_core_hardware.xml
-LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc/permissions
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE := atrace.rc
-LOCAL_SRC_FILES := proprietary/etc/init/atrace.rc
-LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc/init
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE := audioserver.rc
-LOCAL_SRC_FILES := proprietary/etc/init/audioserver.rc
-LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc/init
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE := bootanim.rc
-LOCAL_SRC_FILES := proprietary/etc/init/bootanim.rc
-LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc/init
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE := bootstat.rc
-LOCAL_SRC_FILES := proprietary/etc/init/bootstat.rc
-LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc/init
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE := cameraserver.rc
-LOCAL_SRC_FILES := proprietary/etc/init/cameraserver.rc
-LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc/init
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE := debuggerd.rc
-LOCAL_SRC_FILES := proprietary/etc/init/debuggerd.rc
-LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc/init
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE := debuggerd64.rc
-LOCAL_SRC_FILES := proprietary/etc/init/debuggerd64.rc
-LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc/init
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE := drmserver.rc
-LOCAL_SRC_FILES := proprietary/etc/init/drmserver.rc
-LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc/init
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE := dumpstate.rc
-LOCAL_SRC_FILES := proprietary/etc/init/dumpstate.rc
-LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc/init
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE := gatekeeperd.rc
-LOCAL_SRC_FILES := proprietary/etc/init/gatekeeperd.rc
-LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc/init
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE := installd.rc
-LOCAL_SRC_FILES := proprietary/etc/init/installd.rc
-LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc/init
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE := keystore.rc
-LOCAL_SRC_FILES := proprietary/etc/init/keystore.rc
-LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc/init
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE := lmkd.rc
-LOCAL_SRC_FILES := proprietary/etc/init/lmkd.rc
-LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc/init
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE := logd.rc
-LOCAL_SRC_FILES := proprietary/etc/init/logd.rc
-LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc/init
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE := mdnsd.rc
-LOCAL_SRC_FILES := proprietary/etc/init/mdnsd.rc
-LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc/init
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE := mediacodec.rc
-LOCAL_SRC_FILES := proprietary/etc/init/mediacodec.rc
-LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc/init
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE := mediadrmserver.rc
-LOCAL_SRC_FILES := proprietary/etc/init/mediadrmserver.rc
-LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc/init
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE := mediaextractor.rc
-LOCAL_SRC_FILES := proprietary/etc/init/mediaextractor.rc
-LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc/init
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE := mediaserver.rc
-LOCAL_SRC_FILES := proprietary/etc/init/mediaserver.rc
-LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc/init
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE := mtpd.rc
-LOCAL_SRC_FILES := proprietary/etc/init/mtpd.rc
-LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc/init
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE := netd.rc
-LOCAL_SRC_FILES := proprietary/etc/init/netd.rc
-LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc/init
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE := racoon.rc
-LOCAL_SRC_FILES := proprietary/etc/init/racoon.rc
-LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc/init
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE := servicemanager.rc
-LOCAL_SRC_FILES := proprietary/etc/init/servicemanager.rc
-LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc/init
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE := surfaceflinger.rc
-LOCAL_SRC_FILES := proprietary/etc/init/surfaceflinger.rc
-LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc/init
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE := uncrypt.rc
-LOCAL_SRC_FILES := proprietary/etc/init/uncrypt.rc
-LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc/init
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE := vdc.rc
-LOCAL_SRC_FILES := proprietary/etc/init/vdc.rc
-LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc/init
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE := vold.rc
-LOCAL_SRC_FILES := proprietary/etc/init/vold.rc
-LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc/init
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE := init.mal.rc
-LOCAL_SRC_FILES := proprietary/etc/init/init.mal.rc
-LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc/init
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE := init.wod.rc
-LOCAL_SRC_FILES := proprietary/etc/init/init.wod.rc
-LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc/init
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/app/t6
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := .thermal_meta.conf
-LOCAL_SRC_FILES := proprietary/etc/.tp/.thermal_meta.conf
+LOCAL_SRC_FILES := proprietary/vendor/etc/.tp/.thermal_meta.conf
 LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc/.tp
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc/.tp
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := thermal.conf
-LOCAL_SRC_FILES := proprietary/etc/.tp/thermal.conf
+LOCAL_SRC_FILES := proprietary/vendor/etc/.tp/thermal.conf
 LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc/.tp
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc/.tp
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := thermal.off.conf
-LOCAL_SRC_FILES := proprietary/etc/.tp/thermal.off.conf
+LOCAL_SRC_FILES := proprietary/vendor/etc/.tp/thermal.off.conf
 LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc/.tp
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE := DSM.xml
-LOCAL_SRC_FILES := proprietary/etc/DSM.xml
-LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE := DSM_config.xml
-LOCAL_SRC_FILES := proprietary/etc/DSM_config.xml
-LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc/.tp
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := agps_profiles_conf2.xml
-LOCAL_SRC_FILES := proprietary/etc/agps_profiles_conf2.xml
+LOCAL_SRC_FILES := proprietary/vendor/etc/agps_profiles_conf2.xml
 LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE := 3dwidgets.xml
-LOCAL_SRC_FILES := proprietary/etc/appwidget/3dwidgets.xml
-LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc/appwidget
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE := audio_device.xml
-LOCAL_SRC_FILES := proprietary/etc/audio_device.xml
-LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE := audio_em.xml
-LOCAL_SRC_FILES := proprietary/etc/audio_em.xml
-LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := AudioParamOptions.xml
-LOCAL_SRC_FILES := proprietary/etc/audio_param/AudioParamOptions.xml
+LOCAL_SRC_FILES := proprietary/vendor/etc/audio_param/AudioParamOptions.xml
 LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc/audio_param
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc/audio_param
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := BtInfo_AudioParam.xml
-LOCAL_SRC_FILES := proprietary/etc/audio_param/BtInfo_AudioParam.xml
+LOCAL_SRC_FILES := proprietary/vendor/etc/audio_param/BtInfo_AudioParam.xml
 LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc/audio_param
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc/audio_param
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := BtInfo_ParamUnitDesc.xml
-LOCAL_SRC_FILES := proprietary/etc/audio_param/BtInfo_ParamUnitDesc.xml
+LOCAL_SRC_FILES := proprietary/vendor/etc/audio_param/BtInfo_ParamUnitDesc.xml
 LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc/audio_param
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc/audio_param
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := PlaybackACF_AudioParam.xml
-LOCAL_SRC_FILES := proprietary/etc/audio_param/PlaybackACF_AudioParam.xml
+LOCAL_SRC_FILES := proprietary/vendor/etc/audio_param/PlaybackACF_AudioParam.xml
 LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc/audio_param
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc/audio_param
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := PlaybackACF_ParamUnitDesc.xml
-LOCAL_SRC_FILES := proprietary/etc/audio_param/PlaybackACF_ParamUnitDesc.xml
+LOCAL_SRC_FILES := proprietary/vendor/etc/audio_param/PlaybackACF_ParamUnitDesc.xml
 LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc/audio_param
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc/audio_param
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := PlaybackDRC_AudioParam.xml
-LOCAL_SRC_FILES := proprietary/etc/audio_param/PlaybackDRC_AudioParam.xml
+LOCAL_SRC_FILES := proprietary/vendor/etc/audio_param/PlaybackDRC_AudioParam.xml
 LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc/audio_param
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc/audio_param
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := PlaybackDRC_ParamUnitDesc.xml
-LOCAL_SRC_FILES := proprietary/etc/audio_param/PlaybackDRC_ParamUnitDesc.xml
+LOCAL_SRC_FILES := proprietary/vendor/etc/audio_param/PlaybackDRC_ParamUnitDesc.xml
 LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc/audio_param
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc/audio_param
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := PlaybackHCF_AudioParam.xml
-LOCAL_SRC_FILES := proprietary/etc/audio_param/PlaybackHCF_AudioParam.xml
+LOCAL_SRC_FILES := proprietary/vendor/etc/audio_param/PlaybackHCF_AudioParam.xml
 LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc/audio_param
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc/audio_param
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := PlaybackHCF_ParamUnitDesc.xml
-LOCAL_SRC_FILES := proprietary/etc/audio_param/PlaybackHCF_ParamUnitDesc.xml
+LOCAL_SRC_FILES := proprietary/vendor/etc/audio_param/PlaybackHCF_ParamUnitDesc.xml
 LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc/audio_param
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc/audio_param
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := PlaybackVolAna_AudioParam.xml
-LOCAL_SRC_FILES := proprietary/etc/audio_param/PlaybackVolAna_AudioParam.xml
+LOCAL_SRC_FILES := proprietary/vendor/etc/audio_param/PlaybackVolAna_AudioParam.xml
 LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc/audio_param
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc/audio_param
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := PlaybackVolAna_ParamUnitDesc.xml
-LOCAL_SRC_FILES := proprietary/etc/audio_param/PlaybackVolAna_ParamUnitDesc.xml
+LOCAL_SRC_FILES := proprietary/vendor/etc/audio_param/PlaybackVolAna_ParamUnitDesc.xml
 LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc/audio_param
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc/audio_param
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := PlaybackVolDigi_AudioParam.xml
-LOCAL_SRC_FILES := proprietary/etc/audio_param/PlaybackVolDigi_AudioParam.xml
+LOCAL_SRC_FILES := proprietary/vendor/etc/audio_param/PlaybackVolDigi_AudioParam.xml
 LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc/audio_param
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc/audio_param
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := PlaybackVolDigi_ParamUnitDesc.xml
-LOCAL_SRC_FILES := proprietary/etc/audio_param/PlaybackVolDigi_ParamUnitDesc.xml
+LOCAL_SRC_FILES := proprietary/vendor/etc/audio_param/PlaybackVolDigi_ParamUnitDesc.xml
 LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc/audio_param
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc/audio_param
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := PlaybackVolUI_AudioParam.xml
-LOCAL_SRC_FILES := proprietary/etc/audio_param/PlaybackVolUI_AudioParam.xml
+LOCAL_SRC_FILES := proprietary/vendor/etc/audio_param/PlaybackVolUI_AudioParam.xml
 LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc/audio_param
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc/audio_param
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := PlaybackVolUI_ParamUnitDesc.xml
-LOCAL_SRC_FILES := proprietary/etc/audio_param/PlaybackVolUI_ParamUnitDesc.xml
+LOCAL_SRC_FILES := proprietary/vendor/etc/audio_param/PlaybackVolUI_ParamUnitDesc.xml
 LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc/audio_param
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc/audio_param
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := Playback_AudioParam.xml
-LOCAL_SRC_FILES := proprietary/etc/audio_param/Playback_AudioParam.xml
+LOCAL_SRC_FILES := proprietary/vendor/etc/audio_param/Playback_AudioParam.xml
 LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc/audio_param
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc/audio_param
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := Playback_ParamTreeView.xml
-LOCAL_SRC_FILES := proprietary/etc/audio_param/Playback_ParamTreeView.xml
+LOCAL_SRC_FILES := proprietary/vendor/etc/audio_param/Playback_ParamTreeView.xml
 LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc/audio_param
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc/audio_param
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := Playback_ParamUnitDesc.xml
-LOCAL_SRC_FILES := proprietary/etc/audio_param/Playback_ParamUnitDesc.xml
+LOCAL_SRC_FILES := proprietary/vendor/etc/audio_param/Playback_ParamUnitDesc.xml
 LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc/audio_param
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc/audio_param
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := RecordDMNR_AudioParam.xml
-LOCAL_SRC_FILES := proprietary/etc/audio_param/RecordDMNR_AudioParam.xml
+LOCAL_SRC_FILES := proprietary/vendor/etc/audio_param/RecordDMNR_AudioParam.xml
 LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc/audio_param
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc/audio_param
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := RecordDMNR_ParamUnitDesc.xml
-LOCAL_SRC_FILES := proprietary/etc/audio_param/RecordDMNR_ParamUnitDesc.xml
+LOCAL_SRC_FILES := proprietary/vendor/etc/audio_param/RecordDMNR_ParamUnitDesc.xml
 LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc/audio_param
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc/audio_param
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := RecordFIR_AudioParam.xml
-LOCAL_SRC_FILES := proprietary/etc/audio_param/RecordFIR_AudioParam.xml
+LOCAL_SRC_FILES := proprietary/vendor/etc/audio_param/RecordFIR_AudioParam.xml
 LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc/audio_param
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc/audio_param
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := RecordFIR_ParamUnitDesc.xml
-LOCAL_SRC_FILES := proprietary/etc/audio_param/RecordFIR_ParamUnitDesc.xml
+LOCAL_SRC_FILES := proprietary/vendor/etc/audio_param/RecordFIR_ParamUnitDesc.xml
 LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc/audio_param
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc/audio_param
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := RecordUI_AudioParam.xml
-LOCAL_SRC_FILES := proprietary/etc/audio_param/RecordUI_AudioParam.xml
+LOCAL_SRC_FILES := proprietary/vendor/etc/audio_param/RecordUI_AudioParam.xml
 LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc/audio_param
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc/audio_param
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := RecordUI_ParamUnitDesc.xml
-LOCAL_SRC_FILES := proprietary/etc/audio_param/RecordUI_ParamUnitDesc.xml
+LOCAL_SRC_FILES := proprietary/vendor/etc/audio_param/RecordUI_ParamUnitDesc.xml
 LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc/audio_param
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc/audio_param
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := RecordVolUI_AudioParam.xml
-LOCAL_SRC_FILES := proprietary/etc/audio_param/RecordVolUI_AudioParam.xml
+LOCAL_SRC_FILES := proprietary/vendor/etc/audio_param/RecordVolUI_AudioParam.xml
 LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc/audio_param
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc/audio_param
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := RecordVolUI_ParamUnitDesc.xml
-LOCAL_SRC_FILES := proprietary/etc/audio_param/RecordVolUI_ParamUnitDesc.xml
+LOCAL_SRC_FILES := proprietary/vendor/etc/audio_param/RecordVolUI_ParamUnitDesc.xml
 LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc/audio_param
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc/audio_param
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := RecordVol_AudioParam.xml
-LOCAL_SRC_FILES := proprietary/etc/audio_param/RecordVol_AudioParam.xml
+LOCAL_SRC_FILES := proprietary/vendor/etc/audio_param/RecordVol_AudioParam.xml
 LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc/audio_param
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc/audio_param
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := RecordVol_ParamUnitDesc.xml
-LOCAL_SRC_FILES := proprietary/etc/audio_param/RecordVol_ParamUnitDesc.xml
+LOCAL_SRC_FILES := proprietary/vendor/etc/audio_param/RecordVol_ParamUnitDesc.xml
 LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc/audio_param
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc/audio_param
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := Record_AudioParam.xml
-LOCAL_SRC_FILES := proprietary/etc/audio_param/Record_AudioParam.xml
+LOCAL_SRC_FILES := proprietary/vendor/etc/audio_param/Record_AudioParam.xml
 LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc/audio_param
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc/audio_param
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := Record_ParamTreeView.xml
-LOCAL_SRC_FILES := proprietary/etc/audio_param/Record_ParamTreeView.xml
+LOCAL_SRC_FILES := proprietary/vendor/etc/audio_param/Record_ParamTreeView.xml
 LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc/audio_param
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc/audio_param
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := Record_ParamUnitDesc.xml
-LOCAL_SRC_FILES := proprietary/etc/audio_param/Record_ParamUnitDesc.xml
+LOCAL_SRC_FILES := proprietary/vendor/etc/audio_param/Record_ParamUnitDesc.xml
 LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc/audio_param
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc/audio_param
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := SmartPa_AudioParam.xml
-LOCAL_SRC_FILES := proprietary/etc/audio_param/SmartPa_AudioParam.xml
+LOCAL_SRC_FILES := proprietary/vendor/etc/audio_param/SmartPa_AudioParam.xml
 LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc/audio_param
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc/audio_param
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := SmartPa_ParamUnitDesc.xml
-LOCAL_SRC_FILES := proprietary/etc/audio_param/SmartPa_ParamUnitDesc.xml
+LOCAL_SRC_FILES := proprietary/vendor/etc/audio_param/SmartPa_ParamUnitDesc.xml
 LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc/audio_param
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc/audio_param
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := SpeechDMNR_AudioParam.xml
-LOCAL_SRC_FILES := proprietary/etc/audio_param/SpeechDMNR_AudioParam.xml
+LOCAL_SRC_FILES := proprietary/vendor/etc/audio_param/SpeechDMNR_AudioParam.xml
 LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc/audio_param
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc/audio_param
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := SpeechDMNR_ParamUnitDesc.xml
-LOCAL_SRC_FILES := proprietary/etc/audio_param/SpeechDMNR_ParamUnitDesc.xml
+LOCAL_SRC_FILES := proprietary/vendor/etc/audio_param/SpeechDMNR_ParamUnitDesc.xml
 LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc/audio_param
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc/audio_param
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := SpeechGeneral_AudioParam.xml
-LOCAL_SRC_FILES := proprietary/etc/audio_param/SpeechGeneral_AudioParam.xml
+LOCAL_SRC_FILES := proprietary/vendor/etc/audio_param/SpeechGeneral_AudioParam.xml
 LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc/audio_param
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc/audio_param
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := SpeechGeneral_ParamUnitDesc.xml
-LOCAL_SRC_FILES := proprietary/etc/audio_param/SpeechGeneral_ParamUnitDesc.xml
+LOCAL_SRC_FILES := proprietary/vendor/etc/audio_param/SpeechGeneral_ParamUnitDesc.xml
 LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc/audio_param
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc/audio_param
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := SpeechMagiClarity_AudioParam.xml
-LOCAL_SRC_FILES := proprietary/etc/audio_param/SpeechMagiClarity_AudioParam.xml
+LOCAL_SRC_FILES := proprietary/vendor/etc/audio_param/SpeechMagiClarity_AudioParam.xml
 LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc/audio_param
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc/audio_param
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := SpeechMagiClarity_ParamUnitDesc.xml
-LOCAL_SRC_FILES := proprietary/etc/audio_param/SpeechMagiClarity_ParamUnitDesc.xml
+LOCAL_SRC_FILES := proprietary/vendor/etc/audio_param/SpeechMagiClarity_ParamUnitDesc.xml
 LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc/audio_param
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc/audio_param
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := SpeechNetwork_AudioParam.xml
-LOCAL_SRC_FILES := proprietary/etc/audio_param/SpeechNetwork_AudioParam.xml
+LOCAL_SRC_FILES := proprietary/vendor/etc/audio_param/SpeechNetwork_AudioParam.xml
 LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc/audio_param
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc/audio_param
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := SpeechNetwork_ParamUnitDesc.xml
-LOCAL_SRC_FILES := proprietary/etc/audio_param/SpeechNetwork_ParamUnitDesc.xml
+LOCAL_SRC_FILES := proprietary/vendor/etc/audio_param/SpeechNetwork_ParamUnitDesc.xml
 LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc/audio_param
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc/audio_param
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := SpeechUI_AudioParam.xml
-LOCAL_SRC_FILES := proprietary/etc/audio_param/SpeechUI_AudioParam.xml
+LOCAL_SRC_FILES := proprietary/vendor/etc/audio_param/SpeechUI_AudioParam.xml
 LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc/audio_param
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc/audio_param
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := SpeechUI_ParamUnitDesc.xml
-LOCAL_SRC_FILES := proprietary/etc/audio_param/SpeechUI_ParamUnitDesc.xml
+LOCAL_SRC_FILES := proprietary/vendor/etc/audio_param/SpeechUI_ParamUnitDesc.xml
 LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc/audio_param
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc/audio_param
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := SpeechVolUI_AudioParam.xml
-LOCAL_SRC_FILES := proprietary/etc/audio_param/SpeechVolUI_AudioParam.xml
+LOCAL_SRC_FILES := proprietary/vendor/etc/audio_param/SpeechVolUI_AudioParam.xml
 LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc/audio_param
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc/audio_param
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := SpeechVolUI_ParamUnitDesc.xml
-LOCAL_SRC_FILES := proprietary/etc/audio_param/SpeechVolUI_ParamUnitDesc.xml
+LOCAL_SRC_FILES := proprietary/vendor/etc/audio_param/SpeechVolUI_ParamUnitDesc.xml
 LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc/audio_param
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc/audio_param
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := SpeechVol_AudioParam.xml
-LOCAL_SRC_FILES := proprietary/etc/audio_param/SpeechVol_AudioParam.xml
+LOCAL_SRC_FILES := proprietary/vendor/etc/audio_param/SpeechVol_AudioParam.xml
 LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc/audio_param
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc/audio_param
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := SpeechVol_ParamUnitDesc.xml
-LOCAL_SRC_FILES := proprietary/etc/audio_param/SpeechVol_ParamUnitDesc.xml
+LOCAL_SRC_FILES := proprietary/vendor/etc/audio_param/SpeechVol_ParamUnitDesc.xml
 LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc/audio_param
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc/audio_param
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := Speech_AudioParam.xml
-LOCAL_SRC_FILES := proprietary/etc/audio_param/Speech_AudioParam.xml
+LOCAL_SRC_FILES := proprietary/vendor/etc/audio_param/Speech_AudioParam.xml
 LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc/audio_param
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc/audio_param
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := Speech_ParamTreeView.xml
-LOCAL_SRC_FILES := proprietary/etc/audio_param/Speech_ParamTreeView.xml
+LOCAL_SRC_FILES := proprietary/vendor/etc/audio_param/Speech_ParamTreeView.xml
 LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc/audio_param
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc/audio_param
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := Speech_ParamUnitDesc.xml
-LOCAL_SRC_FILES := proprietary/etc/audio_param/Speech_ParamUnitDesc.xml
+LOCAL_SRC_FILES := proprietary/vendor/etc/audio_param/Speech_ParamUnitDesc.xml
 LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc/audio_param
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc/audio_param
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := USBCall_AudioParam.xml
-LOCAL_SRC_FILES := proprietary/etc/audio_param/USBCall_AudioParam.xml
+LOCAL_SRC_FILES := proprietary/vendor/etc/audio_param/USBCall_AudioParam.xml
 LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc/audio_param
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc/audio_param
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := USBCall_ParamUnitDesc.xml
-LOCAL_SRC_FILES := proprietary/etc/audio_param/USBCall_ParamUnitDesc.xml
+LOCAL_SRC_FILES := proprietary/vendor/etc/audio_param/USBCall_ParamUnitDesc.xml
 LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc/audio_param
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc/audio_param
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := USBDevice_AudioParam.xml
-LOCAL_SRC_FILES := proprietary/etc/audio_param/USBDevice_AudioParam.xml
+LOCAL_SRC_FILES := proprietary/vendor/etc/audio_param/USBDevice_AudioParam.xml
 LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc/audio_param
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc/audio_param
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := USBDevice_ParamUnitDesc.xml
-LOCAL_SRC_FILES := proprietary/etc/audio_param/USBDevice_ParamUnitDesc.xml
+LOCAL_SRC_FILES := proprietary/vendor/etc/audio_param/USBDevice_ParamUnitDesc.xml
 LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc/audio_param
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc/audio_param
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := VoIPDMNR_AudioParam.xml
-LOCAL_SRC_FILES := proprietary/etc/audio_param/VoIPDMNR_AudioParam.xml
+LOCAL_SRC_FILES := proprietary/vendor/etc/audio_param/VoIPDMNR_AudioParam.xml
 LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc/audio_param
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc/audio_param
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := VoIPDMNR_ParamUnitDesc.xml
-LOCAL_SRC_FILES := proprietary/etc/audio_param/VoIPDMNR_ParamUnitDesc.xml
+LOCAL_SRC_FILES := proprietary/vendor/etc/audio_param/VoIPDMNR_ParamUnitDesc.xml
 LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc/audio_param
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc/audio_param
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := VoIPGeneral_AudioParam.xml
-LOCAL_SRC_FILES := proprietary/etc/audio_param/VoIPGeneral_AudioParam.xml
+LOCAL_SRC_FILES := proprietary/vendor/etc/audio_param/VoIPGeneral_AudioParam.xml
 LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc/audio_param
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc/audio_param
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := VoIPGeneral_ParamUnitDesc.xml
-LOCAL_SRC_FILES := proprietary/etc/audio_param/VoIPGeneral_ParamUnitDesc.xml
+LOCAL_SRC_FILES := proprietary/vendor/etc/audio_param/VoIPGeneral_ParamUnitDesc.xml
 LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc/audio_param
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc/audio_param
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := VoIPUI_AudioParam.xml
-LOCAL_SRC_FILES := proprietary/etc/audio_param/VoIPUI_AudioParam.xml
+LOCAL_SRC_FILES := proprietary/vendor/etc/audio_param/VoIPUI_AudioParam.xml
 LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc/audio_param
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc/audio_param
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := VoIPUI_ParamUnitDesc.xml
-LOCAL_SRC_FILES := proprietary/etc/audio_param/VoIPUI_ParamUnitDesc.xml
+LOCAL_SRC_FILES := proprietary/vendor/etc/audio_param/VoIPUI_ParamUnitDesc.xml
 LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc/audio_param
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc/audio_param
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := VoIPVolUI_AudioParam.xml
-LOCAL_SRC_FILES := proprietary/etc/audio_param/VoIPVolUI_AudioParam.xml
+LOCAL_SRC_FILES := proprietary/vendor/etc/audio_param/VoIPVolUI_AudioParam.xml
 LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc/audio_param
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc/audio_param
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := VoIPVolUI_ParamUnitDesc.xml
-LOCAL_SRC_FILES := proprietary/etc/audio_param/VoIPVolUI_ParamUnitDesc.xml
+LOCAL_SRC_FILES := proprietary/vendor/etc/audio_param/VoIPVolUI_ParamUnitDesc.xml
 LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc/audio_param
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc/audio_param
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := VoIPVol_AudioParam.xml
-LOCAL_SRC_FILES := proprietary/etc/audio_param/VoIPVol_AudioParam.xml
+LOCAL_SRC_FILES := proprietary/vendor/etc/audio_param/VoIPVol_AudioParam.xml
 LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc/audio_param
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc/audio_param
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := VoIPVol_ParamUnitDesc.xml
-LOCAL_SRC_FILES := proprietary/etc/audio_param/VoIPVol_ParamUnitDesc.xml
+LOCAL_SRC_FILES := proprietary/vendor/etc/audio_param/VoIPVol_ParamUnitDesc.xml
 LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc/audio_param
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc/audio_param
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := VoIP_AudioParam.xml
-LOCAL_SRC_FILES := proprietary/etc/audio_param/VoIP_AudioParam.xml
+LOCAL_SRC_FILES := proprietary/vendor/etc/audio_param/VoIP_AudioParam.xml
 LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc/audio_param
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc/audio_param
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := VoIP_ParamTreeView.xml
-LOCAL_SRC_FILES := proprietary/etc/audio_param/VoIP_ParamTreeView.xml
+LOCAL_SRC_FILES := proprietary/vendor/etc/audio_param/VoIP_ParamTreeView.xml
 LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc/audio_param
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc/audio_param
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := VoIP_ParamUnitDesc.xml
-LOCAL_SRC_FILES := proprietary/etc/audio_param/VoIP_ParamUnitDesc.xml
+LOCAL_SRC_FILES := proprietary/vendor/etc/audio_param/VoIP_ParamUnitDesc.xml
 LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc/audio_param
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc/audio_param
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := VoIPv2DMNR_AudioParam.xml
-LOCAL_SRC_FILES := proprietary/etc/audio_param/VoIPv2DMNR_AudioParam.xml
+LOCAL_SRC_FILES := proprietary/vendor/etc/audio_param/VoIPv2DMNR_AudioParam.xml
 LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc/audio_param
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc/audio_param
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := VoIPv2DMNR_ParamUnitDesc.xml
-LOCAL_SRC_FILES := proprietary/etc/audio_param/VoIPv2DMNR_ParamUnitDesc.xml
+LOCAL_SRC_FILES := proprietary/vendor/etc/audio_param/VoIPv2DMNR_ParamUnitDesc.xml
 LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc/audio_param
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc/audio_param
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := VoIPv2General_AudioParam.xml
-LOCAL_SRC_FILES := proprietary/etc/audio_param/VoIPv2General_AudioParam.xml
+LOCAL_SRC_FILES := proprietary/vendor/etc/audio_param/VoIPv2General_AudioParam.xml
 LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc/audio_param
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc/audio_param
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := VoIPv2General_ParamUnitDesc.xml
-LOCAL_SRC_FILES := proprietary/etc/audio_param/VoIPv2General_ParamUnitDesc.xml
+LOCAL_SRC_FILES := proprietary/vendor/etc/audio_param/VoIPv2General_ParamUnitDesc.xml
 LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc/audio_param
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc/audio_param
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := VoIPv2UI_AudioParam.xml
-LOCAL_SRC_FILES := proprietary/etc/audio_param/VoIPv2UI_AudioParam.xml
+LOCAL_SRC_FILES := proprietary/vendor/etc/audio_param/VoIPv2UI_AudioParam.xml
 LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc/audio_param
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc/audio_param
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := VoIPv2UI_ParamUnitDesc.xml
-LOCAL_SRC_FILES := proprietary/etc/audio_param/VoIPv2UI_ParamUnitDesc.xml
+LOCAL_SRC_FILES := proprietary/vendor/etc/audio_param/VoIPv2UI_ParamUnitDesc.xml
 LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc/audio_param
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc/audio_param
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := VoIPv2_AudioParam.xml
-LOCAL_SRC_FILES := proprietary/etc/audio_param/VoIPv2_AudioParam.xml
+LOCAL_SRC_FILES := proprietary/vendor/etc/audio_param/VoIPv2_AudioParam.xml
 LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc/audio_param
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc/audio_param
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := VoIPv2_ParamTreeView.xml
-LOCAL_SRC_FILES := proprietary/etc/audio_param/VoIPv2_ParamTreeView.xml
+LOCAL_SRC_FILES := proprietary/vendor/etc/audio_param/VoIPv2_ParamTreeView.xml
 LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc/audio_param
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc/audio_param
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := VoIPv2_ParamUnitDesc.xml
-LOCAL_SRC_FILES := proprietary/etc/audio_param/VoIPv2_ParamUnitDesc.xml
+LOCAL_SRC_FILES := proprietary/vendor/etc/audio_param/VoIPv2_ParamUnitDesc.xml
 LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc/audio_param
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc/audio_param
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := VolumeGainMapUL_AudioParam.xml
-LOCAL_SRC_FILES := proprietary/etc/audio_param/VolumeGainMapUL_AudioParam.xml
+LOCAL_SRC_FILES := proprietary/vendor/etc/audio_param/VolumeGainMapUL_AudioParam.xml
 LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc/audio_param
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc/audio_param
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := VolumeGainMapUL_ParamUnitDesc.xml
-LOCAL_SRC_FILES := proprietary/etc/audio_param/VolumeGainMapUL_ParamUnitDesc.xml
+LOCAL_SRC_FILES := proprietary/vendor/etc/audio_param/VolumeGainMapUL_ParamUnitDesc.xml
 LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc/audio_param
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc/audio_param
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := VolumeGainMap_AudioParam.xml
-LOCAL_SRC_FILES := proprietary/etc/audio_param/VolumeGainMap_AudioParam.xml
+LOCAL_SRC_FILES := proprietary/vendor/etc/audio_param/VolumeGainMap_AudioParam.xml
 LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc/audio_param
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc/audio_param
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := VolumeGainMap_ParamUnitDesc.xml
-LOCAL_SRC_FILES := proprietary/etc/audio_param/VolumeGainMap_ParamUnitDesc.xml
+LOCAL_SRC_FILES := proprietary/vendor/etc/audio_param/VolumeGainMap_ParamUnitDesc.xml
 LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc/audio_param
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc/audio_param
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := Volume_AudioParam.xml
-LOCAL_SRC_FILES := proprietary/etc/audio_param/Volume_AudioParam.xml
+LOCAL_SRC_FILES := proprietary/vendor/etc/audio_param/Volume_AudioParam.xml
 LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc/audio_param
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc/audio_param
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := Volume_ParamUnitDesc.xml
-LOCAL_SRC_FILES := proprietary/etc/audio_param/Volume_ParamUnitDesc.xml
+LOCAL_SRC_FILES := proprietary/vendor/etc/audio_param/Volume_ParamUnitDesc.xml
 LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc/audio_param
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc/audio_param
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
-LOCAL_MODULE := aurisys_config.xml
-LOCAL_SRC_FILES := proprietary/etc/aurisys_config.xml
+LOCAL_MODULE := init.mal.rc
+LOCAL_SRC_FILES := proprietary/vendor/etc/init/init.mal.rc
 LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc/init
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
-LOCAL_MODULE := cdma_ecc_list.xml
-LOCAL_SRC_FILES := proprietary/etc/cdma_ecc_list.xml
+LOCAL_MODULE := init.wod.rc
+LOCAL_SRC_FILES := proprietary/vendor/etc/init/init.wod.rc
 LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE := cdma_ecc_list_ss.xml
-LOCAL_SRC_FILES := proprietary/etc/cdma_ecc_list_ss.xml
-LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE := custom.conf
-LOCAL_SRC_FILES := proprietary/etc/custom.conf
-LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE := ecc_list.xml
-LOCAL_SRC_FILES := proprietary/etc/ecc_list.xml
-LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE := factory.ini
-LOCAL_SRC_FILES := proprietary/etc/factory.ini
-LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE := ipsec.conf
-LOCAL_SRC_FILES := proprietary/etc/ipsec/ipsec.conf
-LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc/ipsec
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE := openssl.cnf
-LOCAL_SRC_FILES := proprietary/etc/ipsec/ssl/openssl.cnf
-LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc/ipsec/ssl
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE := strongswan.conf
-LOCAL_SRC_FILES := proprietary/etc/ipsec/strongswan.conf
-LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc/ipsec
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE := wod_cust.conf
-LOCAL_SRC_FILES := proprietary/etc/ipsec/wod_cust.conf
-LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc/ipsec
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE := wod_optr.conf
-LOCAL_SRC_FILES := proprietary/etc/ipsec/wod_optr.conf
-LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc/ipsec
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE := mpe.conf
-LOCAL_SRC_FILES := proprietary/etc/mpe.conf
-LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc/init
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := mtk_omx_core.cfg
-LOCAL_SRC_FILES := proprietary/etc/mtk_omx_core.cfg
+LOCAL_SRC_FILES := proprietary/vendor/etc/mtk_omx_core.cfg
 LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := DSM.xml
+LOCAL_SRC_FILES := proprietary/vendor/etc/DSM.xml
+LOCAL_MODULE_CLASS := ETC
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := DSM_config.xml
+LOCAL_SRC_FILES := proprietary/vendor/etc/DSM_config.xml
+LOCAL_MODULE_CLASS := ETC
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := 3dwidgets.xml
+LOCAL_SRC_FILES := proprietary/vendor/etc/appwidget/3dwidgets.xml
+LOCAL_MODULE_CLASS := ETC
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc/appwidget
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := audio_device.xml
+LOCAL_SRC_FILES := proprietary/vendor/etc/audio_device.xml
+LOCAL_MODULE_CLASS := ETC
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := audio_em.xml
+LOCAL_SRC_FILES := proprietary/vendor/etc/audio_em.xml
+LOCAL_MODULE_CLASS := ETC
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := aurisys_config.xml
+LOCAL_SRC_FILES := proprietary/vendor/etc/aurisys_config.xml
+LOCAL_MODULE_CLASS := ETC
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := cdma_ecc_list.xml
+LOCAL_SRC_FILES := proprietary/vendor/etc/cdma_ecc_list.xml
+LOCAL_MODULE_CLASS := ETC
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := cdma_ecc_list_ss.xml
+LOCAL_SRC_FILES := proprietary/vendor/etc/cdma_ecc_list_ss.xml
+LOCAL_MODULE_CLASS := ETC
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := custom.conf
+LOCAL_SRC_FILES := proprietary/vendor/etc/custom.conf
+LOCAL_MODULE_CLASS := ETC
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := ecc_list.xml
+LOCAL_SRC_FILES := proprietary/vendor/etc/ecc_list.xml
+LOCAL_MODULE_CLASS := ETC
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := factory.ini
+LOCAL_SRC_FILES := proprietary/vendor/etc/factory.ini
+LOCAL_MODULE_CLASS := ETC
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := ipsec.conf
+LOCAL_SRC_FILES := proprietary/vendor/etc/ipsec/ipsec.conf
+LOCAL_MODULE_CLASS := ETC
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc/ipsec
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := openssl.cnf
+LOCAL_SRC_FILES := proprietary/vendor/etc/ipsec/ssl/openssl.cnf
+LOCAL_MODULE_CLASS := ETC
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc/ipsec/ssl
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := strongswan.conf
+LOCAL_SRC_FILES := proprietary/vendor/etc/ipsec/strongswan.conf
+LOCAL_MODULE_CLASS := ETC
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc/ipsec
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := wod_cust.conf
+LOCAL_SRC_FILES := proprietary/vendor/etc/ipsec/wod_cust.conf
+LOCAL_MODULE_CLASS := ETC
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc/ipsec
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := wod_optr.conf
+LOCAL_SRC_FILES := proprietary/vendor/etc/ipsec/wod_optr.conf
+LOCAL_MODULE_CLASS := ETC
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc/ipsec
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := mpe.conf
+LOCAL_SRC_FILES := proprietary/vendor/etc/mpe.conf
+LOCAL_MODULE_CLASS := ETC
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := radvd.conf
-LOCAL_SRC_FILES := proprietary/etc/radvd/radvd.conf
+LOCAL_SRC_FILES := proprietary/vendor/etc/radvd/radvd.conf
 LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc/radvd
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc/radvd
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := virtual-spn-conf-by-efgid1.xml
-LOCAL_SRC_FILES := proprietary/etc/virtual-spn-conf-by-efgid1.xml
+LOCAL_SRC_FILES := proprietary/vendor/etc/virtual-spn-conf-by-efgid1.xml
 LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := virtual-spn-conf-by-efpnn.xml
-LOCAL_SRC_FILES := proprietary/etc/virtual-spn-conf-by-efpnn.xml
+LOCAL_SRC_FILES := proprietary/vendor/etc/virtual-spn-conf-by-efpnn.xml
 LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := virtual-spn-conf-by-efspn.xml
-LOCAL_SRC_FILES := proprietary/etc/virtual-spn-conf-by-efspn.xml
+LOCAL_SRC_FILES := proprietary/vendor/etc/virtual-spn-conf-by-efspn.xml
 LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := virtual-spn-conf-by-imsi.xml
-LOCAL_SRC_FILES := proprietary/etc/virtual-spn-conf-by-imsi.xml
+LOCAL_SRC_FILES := proprietary/vendor/etc/virtual-spn-conf-by-imsi.xml
 LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := dhcp6c.conf
-LOCAL_SRC_FILES := proprietary/etc/wide-dhcpv6/dhcp6c.conf
+LOCAL_SRC_FILES := proprietary/vendor/etc/wide-dhcpv6/dhcp6c.conf
 LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc/wide-dhcpv6
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc/wide-dhcpv6
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := dhcp6cDNS.conf
-LOCAL_SRC_FILES := proprietary/etc/wide-dhcpv6/dhcp6cDNS.conf
+LOCAL_SRC_FILES := proprietary/vendor/etc/wide-dhcpv6/dhcp6cDNS.conf
 LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc/wide-dhcpv6
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc/wide-dhcpv6
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := dhcp6s.conf
-LOCAL_SRC_FILES := proprietary/etc/wide-dhcpv6/dhcp6s.conf
+LOCAL_SRC_FILES := proprietary/vendor/etc/wide-dhcpv6/dhcp6s.conf
 LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc/wide-dhcpv6
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc/wide-dhcpv6
 include $(BUILD_PREBUILT)
 
 $(shell mkdir -p $(OUT)/obj_arm/lib $(OUT)/obj/lib $(OUT)/obj_arm/SHARED_LIBRARIES/mtk-rilproxy_intermediates/ $(OUT)/obj/SHARED_LIBRARIES/mtk-rilproxy_intermediates/ $(OUT)/obj_arm/SHARED_LIBRARIES/mtk-rilmd2_intermediates/ $(OUT)/obj/SHARED_LIBRARIES/mtk-rilmd2_intermediates/ $(OUT)/obj_arm/SHARED_LIBRARIES/mtk-ril_intermediates $(OUT)/obj/SHARED_LIBRARIES/mtk-ril_intermediates) #$(OUT)/obj/SHARED_LIBRARIES/libaudiopolicyservice_intermediates/LINKED $(OUT)/obj/STATIC_LIBRARIES/lib_driver_cmd_mt66xx_intermediates/ $(OUT_DIR_COMMON_BASE)/d0ndroid/host/linux-x86/obj/SHARED_LIBRARIES/libcurl-host_intermediates $(OUT_DIR_COMMON_BASE)/d0ndroid/host/linux-x86/obj/lib/ $(OUT_DIR_COMMON_BASE)/d0ndroid/host/linux-x86/lib64 $(OUT)/obj/SHARED_LIBRARIES/libhwm_intermediates $(OUT)/obj_arm/SHARED_LIBRARIES/libhwm_intermediates $(OUT)/obj_arm/SHARED_LIBRARIES/librilproxy_intermediates $(OUT)/obj_arm/SHARED_LIBRARIES/librilproxyutils_intermediates $(OUT)/obj/SHARED_LIBRARIES/librilproxy_intermediates $(OUT)/obj/SHARED_LIBRARIES/librilproxyutils_intermediates $(OUT)/obj/STATIC_LIBRARIES/rild-prop-md1_intermediates $(OUT)/obj/STATIC_LIBRARIES/librilmtk-prop-md1_intermediates $(OUT)/obj_arm/STATIC_LIBRARIES/mtk-ril-prop-md1_intermediates $(OUT)/obj_arm/STATIC_LIBRARIES/mtk-ril-prop-md2_intermediates $(OUT)/obj_arm/STATIC_LIBRARIES/mtk-ril-prop-md2_intermediates $(OUT)/obj_arm/SHARED_LIBRARIES/librilmtk_intermediates $(OUT)/obj_arm/SHARED_LIBRARIES/librilmtkmd2_intermediates $(OUT)/obj_arm/SHARED_LIBRARIES/libmal_intermediates $(OUT)/obj_arm/SHARED_LIBRARIES/libmdfx_intermediates $(OUT)/obj/SHARED_LIBRARIES/libmal_intermediates $(OUT)/obj/SHARED_LIBRARIES/libmdfx_intermediates $(OUT_DIR_COMMON_BASE)/d0ndroid/host/linux-x86/lib)
