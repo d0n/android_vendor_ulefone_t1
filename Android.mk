@@ -1,13 +1,13 @@
 # Copyright (C) 2015 The CyanogenMod Project
 #
-# Licensed under the Apache License, Version 2.0 (the License);
+# Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
 # You may obtain a copy of the License at
 #
 # http://www.apache.org/licenses/LICENSE-2.0
 #
 # Unless required by applicable law or agreed to in writing, software
-# distributed under the License is distributed on an AS IS BASIS,
+# distributed under the License is distributed on an "AS IS" BASIS,
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
@@ -16,532 +16,247 @@
 
 LOCAL_PATH := $(call my-dir)
 DEVICE_PATH := $(TOP)/device/ulefone/t1
-#$(shell mkdir -p $(OUT)/obj_arm/SHARED_LIBRARIES/libvtmal_intermediates/ $(OUT)/obj_arm/lib/ $(OUT)/obj/STATIC_LIBRARIES/lib_driver_cmd_mt66xx_intermediates/)
-#$(shell touch $(OUT)/obj/STATIC_LIBRARIES/lib_driver_cmd_mt66xx_intermediates/export_includes $(OUT)/obj_arm/SHARED_LIBRARIES/libvtmal_intermediates/export_includes)
-#$(shell cp $(DEVICE_PATH)/mtk/libwifi-hal-mt66xx/arm/libwifi-hal-mt66xx.a $(OUT)/obj/STATIC_LIBRARIES/lib_driver_cmd_mt66xx_intermediates/lib_driver_cmd_mt66xx.a)
-#$(shell cp -r $(DEVICE_PATH)/mtk/lib_driver_cmd_mt66xx $(TOP)/NOTICE-TARGET-STATIC_LIBRARIES-lib_driver_cmd_mt66xx)
-#$(shell touch $(OUT)/obj_arm/SHARED_LIBRARIES/libvtmal_intermediates/export_includes $(OUT)/obj_arm/lib/libvtmal.so.toc)
-#$(shell mkdir -p $(OUT)/obj_arm/SHARED_LIBRARIES/libaudiopolicymanager_intermediates/)
-#$(shell touch $(OUT)/obj_arm/SHARED_LIBRARIES/libaudiopolicymanager_intermediates/export_includes)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE_CLASS := ETC
-LOCAL_PROPRIETARY_MODULE := true
-LOCAL_MODULE := egl
-LOCAL_MODULE_PATH := system/vendor/lib/egl
-LOCAL_SRC_FILES := proprietary/vendor/lib/egl/egl.cfg
-LOCAL_MODULE_SUFFIX := .cfg
-include $(BUILD_PREBUILT)
-
-#include $(CLEAR_VARS)
-#LOCAL_PROPRIETARY_MODULE := true
-#LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
-#LOCAL_SRC_FILES := mtk/libmtk_vtmal.cpp
-#LOCAL_SHARED_LIBRARIES := libbinder libutils
-#LOCAL_MODULE_SUFFIX := .so
-#LOCAL_MODULE := libmtk_vtmal
-#LOCAL_CPPFLAGS := -std=c++1y -Wno-exit-time-destructors -Wno-global-constructors -Wno-c++98-compat-pedantic -Wno-four-char-constants -Wno-padded
-#LOCAL_C_EXPORT_INCLUDES := $(DEVICE_PATH)/include
-#include $(BUILD_SHARED_LIBRARY)
-#LINKER_FORCED_SHIM_LIBS := /system/vendor/lib/vtmal.so|libmtk_vtmal.so
-
-#include $(CLEAR_VARS)
-#LOCAL_PROPRIETARY_MODULE := true
-#LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
-#LOCAL_SRC_FILES := mtk/libmtk_pbb.cpp
-#LOCAL_SHARED_LIBRARIES := libbinder libutils
-#LOCAL_MODULE_SUFFIX := .so
-#LOCAL_MODULE := libmtk_pbb
-#LOCAL_CPPFLAGS := -std=c++1y -Wno-exit-time-destructors -Wno-global-constructors -Wno-c++98-compat-pedantic -Wno-four-char-constants -Wno-padded
-#include $(BUILD_SHARED_LIBRARY)
-#LINKER_FORCED_SHIM_LIBS := /system/vendor/bin/program_binary_builder|libmtk_pbb.so
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
-LOCAL_PROPRIETARY_MODULE := true
-LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
-LOCAL_MODULE_SUFFIX := .so
-LOCAL_MULTILIB := both
-LOCAL_MODULE := libGLES_android
-LOCAL_MODULE_PATH_32 := system/lib/egl
-LOCAL_SRC_FILES_32 := proprietary/lib/egl/libGLES_android.so
-LOCAL_MODULE_PATH_64 := system/lib64/egl
-LOCAL_SRC_FILES_64 := proprietary/lib64/egl/libGLES_android.so
-include $(PREBUILT_SHARED_LIBRARY)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE_CLASS := SHARED_LIBRARIES
-LOCAL_PROPRIETARY_MODULE := true
-LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
-LOCAL_MODULE_SUFFIX := .so
-LOCAL_MULTILIB := both
-LOCAL_MODULE := audio_policy.stub
-LOCAL_MODULE_PATH_32 := system/lib/hw
-LOCAL_SRC_FILES_32 := proprietary/lib/hw/audio_policy.stub.so
-LOCAL_MODULE_PATH_64 := system/lib64/hw
-LOCAL_SRC_FILES_64 := proprietary/lib64/hw/audio_policy.stub.so
-include $(PREBUILT_SHARED_LIBRARY)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE_CLASS := SHARED_LIBRARIES
-LOCAL_PROPRIETARY_MODULE := true
-LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
-LOCAL_MODULE_SUFFIX := .so
-LOCAL_MULTILIB := both
-LOCAL_MODULE := fingerprint.default
-LOCAL_MODULE_PATH_32 := system/lib/hw
-LOCAL_SRC_FILES_32 := proprietary/lib/hw/fingerprint.default.so
-LOCAL_MODULE_PATH_64 := system/lib64/hw
-LOCAL_SRC_FILES_64 := proprietary/lib64/hw/fingerprint.default.so
-include $(PREBUILT_SHARED_LIBRARY)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE_CLASS := SHARED_LIBRARIES
-LOCAL_PROPRIETARY_MODULE := true
 LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := gatekeeper.trustkernel
-LOCAL_MODULE_PATH_32 := system/lib/hw
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/lib/hw
 LOCAL_SRC_FILES_32 := proprietary/lib/hw/gatekeeper.trustkernel.so
-LOCAL_MODULE_PATH_64 := system/lib64/hw
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/lib64/hw
 LOCAL_SRC_FILES_64 := proprietary/lib64/hw/gatekeeper.trustkernel.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
-LOCAL_PROPRIETARY_MODULE := true
 LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := keystore.trustkernel
-LOCAL_MODULE_PATH_32 := system/lib/hw
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/lib/hw
 LOCAL_SRC_FILES_32 := proprietary/lib/hw/keystore.trustkernel.so
-LOCAL_MODULE_PATH_64 := system/lib64/hw
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/lib64/hw
 LOCAL_SRC_FILES_64 := proprietary/lib64/hw/keystore.trustkernel.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
-LOCAL_PROPRIETARY_MODULE := true
 LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := keystore.v1.trustkernel
-LOCAL_MODULE_PATH_32 := system/lib/hw
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/lib/hw
 LOCAL_SRC_FILES_32 := proprietary/lib/hw/keystore.v1.trustkernel.so
-LOCAL_MODULE_PATH_64 := system/lib64/hw
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/lib64/hw
 LOCAL_SRC_FILES_64 := proprietary/lib64/hw/keystore.v1.trustkernel.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
-LOCAL_PROPRIETARY_MODULE := true
 LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libMTKAudioTimeStretch
-LOCAL_MODULE_PATH_32 := system/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/lib
 LOCAL_SRC_FILES_32 := proprietary/lib/libMTKAudioTimeStretch.so
-LOCAL_MODULE_PATH_64 := system/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/lib64
 LOCAL_SRC_FILES_64 := proprietary/lib64/libMTKAudioTimeStretch.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
-LOCAL_PROPRIETARY_MODULE := true
-LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
-LOCAL_MODULE_SUFFIX := .so
-LOCAL_MULTILIB := both
-LOCAL_MODULE := libaudiopolicymanager
-LOCAL_MODULE_PATH_32 := system/lib
-LOCAL_SRC_FILES_32 := proprietary/lib/libaudiopolicymanager.so
-LOCAL_MODULE_PATH_64 := system/lib64
-LOCAL_SRC_FILES_64 := proprietary/lib64/libaudiopolicymanager.so
-include $(PREBUILT_SHARED_LIBRARY)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE_CLASS := SHARED_LIBRARIES
-LOCAL_PROPRIETARY_MODULE := true
-LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
-LOCAL_MODULE_SUFFIX := .so
-LOCAL_MULTILIB := both
-LOCAL_MODULE := libaudiopolicymanagerdefault
-LOCAL_MODULE_PATH_32 := system/lib
-LOCAL_SRC_FILES_32 := proprietary/lib/libaudiopolicymanagerdefault.so
-LOCAL_MODULE_PATH_64 := system/lib64
-LOCAL_SRC_FILES_64 := proprietary/lib64/libaudiopolicymanagerdefault.so
-LOCAL_EXPORT_C_INCLUDES := $(DEVICE_PATH)/include
-include $(PREBUILT_SHARED_LIBRARY)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE_CLASS := SHARED_LIBRARIES
-LOCAL_PROPRIETARY_MODULE := true
 LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libdcfdecoderjni
-LOCAL_MODULE_PATH_32 := system/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/lib
 LOCAL_SRC_FILES_32 := proprietary/lib/libdcfdecoderjni.so
-LOCAL_MODULE_PATH_64 := system/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/lib64
 LOCAL_SRC_FILES_64 := proprietary/lib64/libdcfdecoderjni.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
-LOCAL_PROPRIETARY_MODULE := true
 LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libfs16xx_calibration_jni
-LOCAL_MODULE_PATH_32 := system/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/lib
 LOCAL_SRC_FILES_32 := proprietary/lib/libfs16xx_calibration_jni.so
-LOCAL_MODULE_PATH_64 := system/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/lib64
 LOCAL_SRC_FILES_64 := proprietary/lib64/libfs16xx_calibration_jni.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
-LOCAL_PROPRIETARY_MODULE := true
 LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libfs16xx_interface
-LOCAL_MODULE_PATH_32 := system/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/lib
 LOCAL_SRC_FILES_32 := proprietary/lib/libfs16xx_interface.so
-LOCAL_MODULE_PATH_64 := system/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/lib64
 LOCAL_SRC_FILES_64 := proprietary/lib64/libfs16xx_interface.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
-LOCAL_PROPRIETARY_MODULE := true
 LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libfs_mgr
-LOCAL_MODULE_PATH_32 := system/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/lib
 LOCAL_SRC_FILES_32 := proprietary/lib/libfs_mgr.so
-LOCAL_MODULE_PATH_64 := system/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/lib64
 LOCAL_SRC_FILES_64 := proprietary/lib64/libfs_mgr.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
-LOCAL_PROPRIETARY_MODULE := true
 LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := 32
 LOCAL_MODULE := libgsensorcali_jni
-LOCAL_MODULE_PATH_32 := system/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/lib
 LOCAL_SRC_FILES_32 := proprietary/lib/libgsensorcali_jni.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
-LOCAL_PROPRIETARY_MODULE := true
 LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libgybeauty
-LOCAL_MODULE_PATH_32 := system/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/lib
 LOCAL_SRC_FILES_32 := proprietary/lib/libgybeauty.so
-LOCAL_MODULE_PATH_64 := system/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/lib64
 LOCAL_SRC_FILES_64 := proprietary/lib64/libgybeauty.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
-LOCAL_PROPRIETARY_MODULE := true
 LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libgybeauty420
-LOCAL_MODULE_PATH_32 := system/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/lib
 LOCAL_SRC_FILES_32 := proprietary/lib/libgybeauty420.so
-LOCAL_MODULE_PATH_64 := system/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/lib64
 LOCAL_SRC_FILES_64 := proprietary/lib64/libgybeauty420.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
-LOCAL_PROPRIETARY_MODULE := true
 LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libgybeauty422
-LOCAL_MODULE_PATH_32 := system/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/lib
 LOCAL_SRC_FILES_32 := proprietary/lib/libgybeauty422.so
-LOCAL_MODULE_PATH_64 := system/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/lib64
 LOCAL_SRC_FILES_64 := proprietary/lib64/libgybeauty422.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
-LOCAL_PROPRIETARY_MODULE := true
 LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libmediatek_exceptionlog
-LOCAL_MODULE_PATH_32 := system/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/lib
 LOCAL_SRC_FILES_32 := proprietary/lib/libmediatek_exceptionlog.so
-LOCAL_MODULE_PATH_64 := system/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/lib64
 LOCAL_SRC_FILES_64 := proprietary/lib64/libmediatek_exceptionlog.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
-LOCAL_PROPRIETARY_MODULE := true
 LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libpl
-LOCAL_MODULE_PATH_32 := system/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/lib
 LOCAL_SRC_FILES_32 := proprietary/lib/libpl.so
-LOCAL_MODULE_PATH_64 := system/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/lib64
 LOCAL_SRC_FILES_64 := proprietary/lib64/libpl.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
-LOCAL_PROPRIETARY_MODULE := true
 LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libteec
-LOCAL_MODULE_PATH_32 := system/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/lib
 LOCAL_SRC_FILES_32 := proprietary/lib/libteec.so
-LOCAL_MODULE_PATH_64 := system/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/lib64
 LOCAL_SRC_FILES_64 := proprietary/lib64/libteec.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
-LOCAL_PROPRIETARY_MODULE := true
 LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libteeclientjni
-LOCAL_MODULE_PATH_32 := system/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/lib
 LOCAL_SRC_FILES_32 := proprietary/lib/libteeclientjni.so
-LOCAL_MODULE_PATH_64 := system/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/lib64
 LOCAL_SRC_FILES_64 := proprietary/lib64/libteeclientjni.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
-LOCAL_PROPRIETARY_MODULE := true
 LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libteejni
-LOCAL_MODULE_PATH_32 := system/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/lib
 LOCAL_SRC_FILES_32 := proprietary/lib/libteejni.so
-LOCAL_MODULE_PATH_64 := system/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/lib64
 LOCAL_SRC_FILES_64 := proprietary/lib64/libteejni.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
-LOCAL_PROPRIETARY_MODULE := true
 LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := 64
 LOCAL_MODULE := libagoldtpglove_jni
-LOCAL_MODULE_PATH_64 := system/lib
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/lib
 LOCAL_SRC_FILES_64 := proprietary/lib64/libagoldtpglove_jni.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
-LOCAL_PROPRIETARY_MODULE := true
-LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
-LOCAL_MODULE_SUFFIX := .so
-LOCAL_MULTILIB := 64
-LOCAL_MODULE := libfilterpack_facedetect
-LOCAL_MODULE_PATH_64 := system/lib
-LOCAL_SRC_FILES_64 := proprietary/lib64/libfilterpack_facedetect.so
-include $(PREBUILT_SHARED_LIBRARY)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE_CLASS := SHARED_LIBRARIES
-LOCAL_PROPRIETARY_MODULE := true
 LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := 64
 LOCAL_MODULE := libyv12util
-LOCAL_MODULE_PATH_64 := system/lib
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/lib
 LOCAL_SRC_FILES_64 := proprietary/lib64/libyv12util.so
-include $(PREBUILT_SHARED_LIBRARY)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE_CLASS := SHARED_LIBRARIES
-LOCAL_PROPRIETARY_MODULE := true
-LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
-LOCAL_MODULE_SUFFIX := .so
-LOCAL_MULTILIB := both
-LOCAL_MODULE := libdrmctaplugin
-LOCAL_MODULE_PATH_32 := system/vendor/lib/drm
-LOCAL_SRC_FILES_32 := proprietary/vendor/lib/drm/libdrmctaplugin.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64/drm
-LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/drm/libdrmctaplugin.so
-include $(PREBUILT_SHARED_LIBRARY)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE_CLASS := SHARED_LIBRARIES
-LOCAL_PROPRIETARY_MODULE := true
-LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
-LOCAL_MODULE_SUFFIX := .so
-LOCAL_MULTILIB := both
-LOCAL_MODULE := libdrmmtkplugin
-LOCAL_MODULE_PATH_32 := system/vendor/lib/drm
-LOCAL_SRC_FILES_32 := proprietary/vendor/lib/drm/libdrmmtkplugin.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64/drm
-LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/drm/libdrmmtkplugin.so
-include $(PREBUILT_SHARED_LIBRARY)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE_CLASS := SHARED_LIBRARIES
-LOCAL_PROPRIETARY_MODULE := true
-LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
-LOCAL_MODULE_SUFFIX := .so
-LOCAL_MULTILIB := both
-LOCAL_MODULE := libGLES_mali
-LOCAL_MODULE_PATH_32 := system/vendor/lib/egl
-LOCAL_SRC_FILES_32 := proprietary/vendor/lib/egl/libGLES_mali.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64/egl
-LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/egl/libGLES_mali.so
-include $(PREBUILT_SHARED_LIBRARY)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE_CLASS := SHARED_LIBRARIES
-LOCAL_PROPRIETARY_MODULE := true
-LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
-LOCAL_MODULE_SUFFIX := .so
-LOCAL_MULTILIB := both
-LOCAL_MODULE := audio.primary.mt6757
-LOCAL_MODULE_PATH_32 := system/vendor/lib/hw
-LOCAL_SRC_FILES_32 := proprietary/vendor/lib/hw/audio.primary.mt6757.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64/hw
-LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/hw/audio.primary.mt6757.so
-include $(PREBUILT_SHARED_LIBRARY)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE_CLASS := SHARED_LIBRARIES
-LOCAL_PROPRIETARY_MODULE := true
-LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
-LOCAL_MODULE_SUFFIX := .so
-LOCAL_MULTILIB := both
-LOCAL_MODULE := audio.usb.mt6757
-LOCAL_MODULE_PATH_32 := system/vendor/lib/hw
-LOCAL_SRC_FILES_32 := proprietary/vendor/lib/hw/audio.usb.mt6757.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64/hw
-LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/hw/audio.usb.mt6757.so
-include $(PREBUILT_SHARED_LIBRARY)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE_CLASS := SHARED_LIBRARIES
-LOCAL_PROPRIETARY_MODULE := true
-LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
-LOCAL_MODULE_SUFFIX := .so
-LOCAL_MULTILIB := both
-LOCAL_MODULE := camera.mt6757
-LOCAL_MODULE_PATH_32 := system/vendor/lib/hw
-LOCAL_SRC_FILES_32 := proprietary/vendor/lib/hw/camera.mt6757.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64/hw
-LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/hw/camera.mt6757.so
-include $(PREBUILT_SHARED_LIBRARY)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE_CLASS := SHARED_LIBRARIES
-LOCAL_PROPRIETARY_MODULE := true
-LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
-LOCAL_MODULE_SUFFIX := .so
-LOCAL_MULTILIB := both
-LOCAL_MODULE := consumerir.mt6757
-LOCAL_MODULE_PATH_32 := system/vendor/lib/hw
-LOCAL_SRC_FILES_32 := proprietary/vendor/lib/hw/consumerir.mt6757.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64/hw
-LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/hw/consumerir.mt6757.so
-include $(PREBUILT_SHARED_LIBRARY)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE_CLASS := SHARED_LIBRARIES
-LOCAL_PROPRIETARY_MODULE := true
-LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
-LOCAL_MODULE_SUFFIX := .so
-LOCAL_MULTILIB := both
-LOCAL_MODULE := gps.mt6757
-LOCAL_MODULE_PATH_32 := system/vendor/lib/hw
-LOCAL_SRC_FILES_32 := proprietary/vendor/lib/hw/gps.mt6757.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64/hw
-LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/hw/gps.mt6757.so
-include $(PREBUILT_SHARED_LIBRARY)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE_CLASS := SHARED_LIBRARIES
-LOCAL_PROPRIETARY_MODULE := true
-LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
-LOCAL_MODULE_SUFFIX := .so
-LOCAL_MULTILIB := both
-LOCAL_MODULE := gralloc.mt6757
-LOCAL_MODULE_PATH_32 := system/vendor/lib/hw
-LOCAL_SRC_FILES_32 := proprietary/vendor/lib/hw/gralloc.mt6757.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64/hw
-LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/hw/gralloc.mt6757.so
-include $(PREBUILT_SHARED_LIBRARY)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE_CLASS := SHARED_LIBRARIES
-LOCAL_PROPRIETARY_MODULE := true
-LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
-LOCAL_MODULE_SUFFIX := .so
-LOCAL_MULTILIB := both
-LOCAL_MODULE := hwcomposer.mt6757
-LOCAL_MODULE_PATH_32 := system/vendor/lib/hw
-LOCAL_SRC_FILES_32 := proprietary/vendor/lib/hw/hwcomposer.mt6757.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64/hw
-LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/hw/hwcomposer.mt6757.so
-include $(PREBUILT_SHARED_LIBRARY)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE_CLASS := SHARED_LIBRARIES
-LOCAL_PROPRIETARY_MODULE := true
-LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
-LOCAL_MODULE_SUFFIX := .so
-LOCAL_MULTILIB := both
-LOCAL_MODULE := lights.mt6757
-LOCAL_MODULE_PATH_32 := system/vendor/lib/hw
-LOCAL_SRC_FILES_32 := proprietary/vendor/lib/hw/lights.mt6757.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64/hw
-LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/hw/lights.mt6757.so
-include $(PREBUILT_SHARED_LIBRARY)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE_CLASS := SHARED_LIBRARIES
-LOCAL_PROPRIETARY_MODULE := true
-LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
-LOCAL_MODULE_SUFFIX := .so
-LOCAL_MULTILIB := both
-LOCAL_MODULE := memtrack.mt6757
-LOCAL_MODULE_PATH_32 := system/vendor/lib/hw
-LOCAL_SRC_FILES_32 := proprietary/vendor/lib/hw/memtrack.mt6757.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64/hw
-LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/hw/memtrack.mt6757.so
-include $(PREBUILT_SHARED_LIBRARY)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE_CLASS := SHARED_LIBRARIES
-LOCAL_PROPRIETARY_MODULE := true
-LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
-LOCAL_MODULE_SUFFIX := .so
-LOCAL_MULTILIB := both
-LOCAL_MODULE := sensors.mt6757
-LOCAL_MODULE_PATH_32 := system/vendor/lib/hw
-LOCAL_SRC_FILES_32 := proprietary/vendor/lib/hw/sensors.mt6757.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64/hw
-LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/hw/sensors.mt6757.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -550,11 +265,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := lib3a
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/lib3a.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/lib3a.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -563,11 +279,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := lib3a_core1
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/lib3a_core1.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/lib3a_core1.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -576,11 +293,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libBlurModoule
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libBlurModoule.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libBlurModoule.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -589,11 +307,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libBnMtkCodec
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libBnMtkCodec.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libBnMtkCodec.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -602,9 +321,10 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := 32
 LOCAL_MODULE := libClearMotionFW
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libClearMotionFW.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -613,9 +333,10 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := 32
 LOCAL_MODULE := libDR
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libDR.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -624,9 +345,10 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := 32
 LOCAL_MODULE := libHEVCdec_sa.ca7.android
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libHEVCdec_sa.ca7.android.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -635,11 +357,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libJpgDecPipe
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libJpgDecPipe.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libJpgDecPipe.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -648,11 +371,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libJpgEncPipe
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libJpgEncPipe.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libJpgEncPipe.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -661,11 +385,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libMiraVision_jni
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libMiraVision_jni.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libMiraVision_jni.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -674,9 +399,10 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := 32
 LOCAL_MODULE := libMtkOmxAdpcmDec
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libMtkOmxAdpcmDec.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -685,9 +411,10 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := 32
 LOCAL_MODULE := libMtkOmxAdpcmEnc
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libMtkOmxAdpcmEnc.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -696,9 +423,10 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := 32
 LOCAL_MODULE := libMtkOmxApeDec
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libMtkOmxApeDec.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -707,11 +435,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libMtkOmxCore
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libMtkOmxCore.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libMtkOmxCore.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -720,9 +449,10 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := 32
 LOCAL_MODULE := libMtkOmxFlacDec
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libMtkOmxFlacDec.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -731,9 +461,10 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := 32
 LOCAL_MODULE := libMtkOmxG711Dec
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libMtkOmxG711Dec.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -742,9 +473,10 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := 32
 LOCAL_MODULE := libMtkOmxGsmDec
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libMtkOmxGsmDec.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -753,9 +485,10 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := 32
 LOCAL_MODULE := libMtkOmxMp3Dec
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libMtkOmxMp3Dec.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -764,9 +497,10 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := 32
 LOCAL_MODULE := libMtkOmxRawDec
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libMtkOmxRawDec.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -775,9 +509,10 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := 32
 LOCAL_MODULE := libMtkOmxVdecEx
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libMtkOmxVdecEx.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -786,9 +521,10 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := 32
 LOCAL_MODULE := libMtkOmxVenc
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libMtkOmxVenc.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -797,9 +533,10 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := 32
 LOCAL_MODULE := libMtkOmxVorbisEnc
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libMtkOmxVorbisEnc.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -808,11 +545,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libMtkVideoSpeedEffect
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libMtkVideoSpeedEffect.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libMtkVideoSpeedEffect.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -821,12 +559,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libOpenCL
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libOpenCL.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libOpenCL.so
-LOCAL_SHARED_LIBRARIES = libc++ libz libutils libRS_internal libbcinfo liblog libEGL libGLESv1_CM libGLESv2 libnativewindow
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++ libz libutils libRS_internal libbcinfo liblog libEGL libGLESv1_CM libGLESv2 libnativewindow
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -835,12 +573,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libOpenCLIcd
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libOpenCLIcd.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libOpenCLIcd.so
-LOCAL_SHARED_LIBRARIES = libc++ libz libutils libRS_internal libbcinfo liblog libEGL libGLESv1_CM libGLESv2 libnativewindow
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++ libz libutils libRS_internal libbcinfo liblog libEGL libGLESv1_CM libGLESv2 libnativewindow
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -849,11 +587,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libPQDCjni
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libPQDCjni.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libPQDCjni.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -862,25 +601,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libPQjni
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libPQjni.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libPQjni.so
-include $(PREBUILT_SHARED_LIBRARY)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE_CLASS := SHARED_LIBRARIES
-LOCAL_PROPRIETARY_MODULE := true
-LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
-LOCAL_MODULE_SUFFIX := .so
-LOCAL_MULTILIB := both
-LOCAL_MODULE := libRSDriverArm
-LOCAL_MODULE_PATH_32 := system/vendor/lib
-LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libRSDriverArm.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
-LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libRSDriverArm.so
-LOCAL_SHARED_LIBRARIES = libc++ libz libutils libRS_internal libbcinfo liblog libEGL libGLESv1_CM libGLESv2 libnativewindow
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -889,12 +615,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libRSDriver_mtk
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libRSDriver_mtk.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libRSDriver_mtk.so
-LOCAL_SHARED_LIBRARIES = libc++ libz libutils libRS_internal libbcinfo liblog libEGL libGLESv1_CM libGLESv2 libnativewindow
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++ libz libutils libRS_internal libbcinfo liblog libEGL libGLESv1_CM libGLESv2 libnativewindow
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -903,11 +629,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libSonyIMX230PdafLibrary
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libSonyIMX230PdafLibrary.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libSonyIMX230PdafLibrary.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -916,11 +643,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libSonyIMX230PdafLibraryWrapper
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libSonyIMX230PdafLibraryWrapper.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libSonyIMX230PdafLibraryWrapper.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -929,11 +657,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libSonyIMX338PdafLibrary
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libSonyIMX338PdafLibrary.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libSonyIMX338PdafLibrary.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -942,11 +671,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libSonyIMX338PdafLibraryWrapper
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libSonyIMX338PdafLibraryWrapper.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libSonyIMX338PdafLibraryWrapper.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -955,11 +685,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libSonyIMX386PdafLibrary
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libSonyIMX386PdafLibrary.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libSonyIMX386PdafLibrary.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -968,11 +699,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libSonyIMX386PdafLibraryWrapper
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libSonyIMX386PdafLibraryWrapper.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libSonyIMX386PdafLibraryWrapper.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -981,11 +713,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libSwJpgCodec
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libSwJpgCodec.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libSwJpgCodec.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -994,11 +727,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := lib_agoldcam_s5k3p3sx_mipi_raw_GQ_3039_v1
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/lib_agoldcam_s5k3p3sx_mipi_raw_GQ_3039_v1.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/lib_agoldcam_s5k3p3sx_mipi_raw_GQ_3039_v1.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -1007,11 +741,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := lib_agoldcam_s5k3p3sx_mipi_raw_GQ_3039_v2
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/lib_agoldcam_s5k3p3sx_mipi_raw_GQ_3039_v2.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/lib_agoldcam_s5k3p3sx_mipi_raw_GQ_3039_v2.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -1020,11 +755,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := lib_agoldcam_s5k3p3sx_mipi_raw_SY_50123A_v1
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/lib_agoldcam_s5k3p3sx_mipi_raw_SY_50123A_v1.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/lib_agoldcam_s5k3p3sx_mipi_raw_SY_50123A_v1.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -1033,11 +769,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := lib_agoldlens_dw9714af_v1
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/lib_agoldlens_dw9714af_v1.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/lib_agoldlens_dw9714af_v1.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -1046,11 +783,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := lib_agoldlens_dw9714af_v10
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/lib_agoldlens_dw9714af_v10.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/lib_agoldlens_dw9714af_v10.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -1059,11 +797,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := lib_agoldlens_dw9714af_v11
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/lib_agoldlens_dw9714af_v11.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/lib_agoldlens_dw9714af_v11.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -1072,11 +811,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := lib_agoldlens_dw9714af_v12
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/lib_agoldlens_dw9714af_v12.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/lib_agoldlens_dw9714af_v12.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -1085,11 +825,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := lib_agoldlens_dw9714af_v13
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/lib_agoldlens_dw9714af_v13.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/lib_agoldlens_dw9714af_v13.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -1098,11 +839,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := lib_agoldlens_dw9714af_v14
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/lib_agoldlens_dw9714af_v14.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/lib_agoldlens_dw9714af_v14.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -1111,11 +853,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := lib_agoldlens_dw9714af_v2
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/lib_agoldlens_dw9714af_v2.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/lib_agoldlens_dw9714af_v2.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -1124,11 +867,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := lib_agoldlens_dw9714af_v3
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/lib_agoldlens_dw9714af_v3.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/lib_agoldlens_dw9714af_v3.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -1137,11 +881,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := lib_agoldlens_dw9714af_v4
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/lib_agoldlens_dw9714af_v4.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/lib_agoldlens_dw9714af_v4.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -1150,11 +895,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := lib_agoldlens_dw9714af_v5
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/lib_agoldlens_dw9714af_v5.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/lib_agoldlens_dw9714af_v5.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -1163,11 +909,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := lib_agoldlens_dw9714af_v6
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/lib_agoldlens_dw9714af_v6.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/lib_agoldlens_dw9714af_v6.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -1176,11 +923,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := lib_agoldlens_dw9714af_v7
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/lib_agoldlens_dw9714af_v7.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/lib_agoldlens_dw9714af_v7.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -1189,11 +937,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := lib_agoldlens_dw9714af_v8
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/lib_agoldlens_dw9714af_v8.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/lib_agoldlens_dw9714af_v8.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -1202,11 +951,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := lib_agoldlens_dw9714af_v9
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/lib_agoldlens_dw9714af_v9.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/lib_agoldlens_dw9714af_v9.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -1215,11 +965,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := lib_agoldlens_dw9718af_v1
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/lib_agoldlens_dw9718af_v1.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/lib_agoldlens_dw9718af_v1.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -1228,11 +979,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := lib_agoldlens_dw9763af_v1
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/lib_agoldlens_dw9763af_v1.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/lib_agoldlens_dw9763af_v1.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -1241,11 +993,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := lib_agoldlens_dw9763af_v2
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/lib_agoldlens_dw9763af_v2.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/lib_agoldlens_dw9763af_v2.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -1254,11 +1007,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := lib_agoldlens_dw9763af_v3
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/lib_agoldlens_dw9763af_v3.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/lib_agoldlens_dw9763af_v3.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -1267,11 +1021,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := lib_agoldlens_dw9763af_v4
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/lib_agoldlens_dw9763af_v4.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/lib_agoldlens_dw9763af_v4.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -1280,11 +1035,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := lib_agoldlens_dw9763af_v5
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/lib_agoldlens_dw9763af_v5.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/lib_agoldlens_dw9763af_v5.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -1293,11 +1049,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := lib_agoldlens_dw9800af_v1
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/lib_agoldlens_dw9800af_v1.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/lib_agoldlens_dw9800af_v1.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -1306,11 +1063,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := lib_agoldlens_dw9800af_v2
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/lib_agoldlens_dw9800af_v2.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/lib_agoldlens_dw9800af_v2.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -1319,11 +1077,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := lib_agoldlens_dw9800af_v3
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/lib_agoldlens_dw9800af_v3.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/lib_agoldlens_dw9800af_v3.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -1332,11 +1091,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := lib_agoldlens_dw9800af_v4
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/lib_agoldlens_dw9800af_v4.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/lib_agoldlens_dw9800af_v4.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -1345,11 +1105,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := lib_agoldlens_dw9800af_v5
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/lib_agoldlens_dw9800af_v5.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/lib_agoldlens_dw9800af_v5.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -1358,11 +1119,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := lib_agoldlens_dw9800af_v6
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/lib_agoldlens_dw9800af_v6.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/lib_agoldlens_dw9800af_v6.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -1371,11 +1133,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := lib_agoldlens_dw9800af_v7
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/lib_agoldlens_dw9800af_v7.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/lib_agoldlens_dw9800af_v7.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -1384,11 +1147,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := lib_agoldlens_lc898212xdaf_v1
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/lib_agoldlens_lc898212xdaf_v1.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/lib_agoldlens_lc898212xdaf_v1.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -1397,11 +1161,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := lib_iir
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/lib_iir.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/lib_iir.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -1410,11 +1175,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := lib_speech_enh
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/lib_speech_enh.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/lib_speech_enh.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -1423,11 +1189,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libaal
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libaal.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libaal.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -1436,11 +1203,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libaal_cust
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libaal_cust.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libaal_cust.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -1449,11 +1217,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libabfadp
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libabfadp.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libabfadp.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -1462,11 +1231,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libacdk
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libacdk.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libacdk.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -1475,11 +1245,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libaed
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libaed.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libaed.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -1488,9 +1259,10 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := 32
 LOCAL_MODULE := libamr_wrap
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libamr_wrap.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -1499,9 +1271,10 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := 32
 LOCAL_MODULE := libamrvt
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libamrvt.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -1510,11 +1283,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libatciserv_jni
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libatciserv_jni.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libatciserv_jni.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -1523,11 +1297,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libatvctrlservice
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libatvctrlservice.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libatvctrlservice.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -1536,11 +1311,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libaudio_param_parser
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libaudio_param_parser.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libaudio_param_parser.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -1549,11 +1325,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libaudiocompensationfilter
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libaudiocompensationfilter.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libaudiocompensationfilter.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -1562,11 +1339,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libaudiocompensationfilterc
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libaudiocompensationfilterc.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libaudiocompensationfilterc.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -1575,11 +1353,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libaudiocomponentengine
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libaudiocomponentengine.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libaudiocomponentengine.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -1588,11 +1367,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libaudiocomponentenginec
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libaudiocomponentenginec.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libaudiocomponentenginec.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -1601,11 +1381,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libaudiocustparam
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libaudiocustparam.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libaudiocustparam.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -1614,11 +1395,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libaudiodcrflt
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libaudiodcrflt.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libaudiodcrflt.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -1627,11 +1409,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libaudioloudc
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libaudioloudc.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libaudioloudc.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -1640,9 +1423,10 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := 32
 LOCAL_MODULE := libaudiomtkdcremoval
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libaudiomtkdcremoval.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -1651,11 +1435,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libaudiosetting
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libaudiosetting.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libaudiosetting.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -1664,11 +1449,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libaudiotoolkit
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libaudiotoolkit.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libaudiotoolkit.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -1677,22 +1463,10 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := 32
 LOCAL_MODULE := libawb_wrap
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libawb_wrap.so
-include $(PREBUILT_SHARED_LIBRARY)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE_CLASS := SHARED_LIBRARIES
-LOCAL_PROPRIETARY_MODULE := true
-LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
-LOCAL_MODULE_SUFFIX := .so
-LOCAL_MULTILIB := both
-LOCAL_MODULE := libbccArm
-LOCAL_MODULE_PATH_32 := system/vendor/lib
-LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libbccArm.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
-LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libbccArm.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -1701,11 +1475,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libbessound_hd_mtk
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libbessound_hd_mtk.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libbessound_hd_mtk.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -1714,11 +1489,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libblisrc
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libblisrc.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libblisrc.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -1727,11 +1503,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libblisrc32
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libblisrc32.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libblisrc32.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -1740,11 +1517,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libbluetooth_hw_test
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libbluetooth_hw_test.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libbluetooth_hw_test.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -1753,11 +1531,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libbluetooth_mtk
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libbluetooth_mtk.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libbluetooth_mtk.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -1766,11 +1545,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libbluetooth_mtk_pure
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libbluetooth_mtk_pure.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libbluetooth_mtk_pure.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -1779,11 +1559,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libbluetooth_relayer
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libbluetooth_relayer.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libbluetooth_relayer.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -1792,11 +1573,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libbluetoothem_mtk
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libbluetoothem_mtk.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libbluetoothem_mtk.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -1805,9 +1587,10 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := 32
 LOCAL_MODULE := libbt-vendor
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libbt-vendor.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -1816,11 +1599,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libbwc
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libbwc.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libbwc.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -1829,9 +1613,10 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := 32
 LOCAL_MODULE := libc2kril
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libc2kril.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -1840,11 +1625,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libc2kutils
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libc2kutils.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libc2kutils.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -1853,11 +1639,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libcam.camadapter
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libcam.camadapter.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libcam.camadapter.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -1866,11 +1653,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libcam.camshot
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libcam.camshot.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libcam.camshot.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -1879,11 +1667,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libcam.client
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libcam.client.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libcam.client.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -1892,11 +1681,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libcam.device1
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libcam.device1.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libcam.device1.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -1905,11 +1695,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libcam.device3
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libcam.device3.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libcam.device3.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -1918,11 +1709,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libcam.feature_utils
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libcam.feature_utils.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libcam.feature_utils.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -1931,11 +1723,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libcam.featureio.pipe.panorama
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libcam.featureio.pipe.panorama.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libcam.featureio.pipe.panorama.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -1944,24 +1737,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libcam.hal3a.automation
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libcam.hal3a.automation.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libcam.hal3a.automation.so
-include $(PREBUILT_SHARED_LIBRARY)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE_CLASS := SHARED_LIBRARIES
-LOCAL_PROPRIETARY_MODULE := true
-LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
-LOCAL_MODULE_SUFFIX := .so
-LOCAL_MULTILIB := both
-LOCAL_MODULE := libcam.hal3a.cctsvr
-LOCAL_MODULE_PATH_32 := system/vendor/lib
-LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libcam.hal3a.cctsvr.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
-LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libcam.hal3a.cctsvr.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -1970,11 +1751,26 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libcam.hal3a.log
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libcam.hal3a.log.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libcam.hal3a.log.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE_CLASS := SHARED_LIBRARIES
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
+LOCAL_MODULE_SUFFIX := .so
+LOCAL_MULTILIB := both
+LOCAL_MODULE := libcam.hal3a.cctsvr
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
+LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libcam.hal3a.cctsvr.so
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
+LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libcam.hal3a.cctsvr.so
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -1983,11 +1779,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libcam.hal3a.v3.dng
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libcam.hal3a.v3.dng.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libcam.hal3a.v3.dng.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -1996,11 +1793,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libcam.hal3a.v3.lsctbl
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libcam.hal3a.v3.lsctbl.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libcam.hal3a.v3.lsctbl.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -2009,11 +1807,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libcam.hal3a.v3.nvram
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libcam.hal3a.v3.nvram.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libcam.hal3a.v3.nvram.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -2022,11 +1821,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libcam.hal3a.v3
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libcam.hal3a.v3.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libcam.hal3a.v3.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -2035,11 +1835,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libcam.halsensor
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libcam.halsensor.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libcam.halsensor.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -2048,11 +1849,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libcam.iopipe
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libcam.iopipe.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libcam.iopipe.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -2061,11 +1863,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libcam.jni.lomohaljni
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libcam.jni.lomohaljni.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libcam.jni.lomohaljni.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -2074,11 +1877,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libcam.lcs
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libcam.lcs.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libcam.lcs.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -2087,11 +1891,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libcam.legacypipeline
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libcam.legacypipeline.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libcam.legacypipeline.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -2100,11 +1905,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libcam.paramsmgr
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libcam.paramsmgr.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libcam.paramsmgr.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -2113,11 +1919,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libcam.vhdr
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libcam.vhdr.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libcam.vhdr.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -2126,11 +1933,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libcam1_utils
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libcam1_utils.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libcam1_utils.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -2139,11 +1947,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libcam3_app
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libcam3_app.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libcam3_app.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -2152,11 +1961,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libcam3_hwpipeline
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libcam3_hwpipeline.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libcam3_hwpipeline.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -2165,11 +1975,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libcam3a_imem
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libcam3a_imem.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libcam3a_imem.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -2178,11 +1989,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libcam_extension
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libcam_extension.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libcam_extension.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -2191,11 +2003,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libcam_platform
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libcam_platform.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libcam_platform.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -2204,11 +2017,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libcamalgo
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libcamalgo.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libcamalgo.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -2217,11 +2031,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libcamdrv_ccu
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libcamdrv_ccu.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libcamdrv_ccu.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -2230,11 +2045,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libcamdrv_ccuif
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libcamdrv_ccuif.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libcamdrv_ccuif.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -2243,11 +2059,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libcamdrv_cq_tuning_mgr
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libcamdrv_cq_tuning_mgr.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libcamdrv_cq_tuning_mgr.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -2256,11 +2073,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libcamdrv_imem
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libcamdrv_imem.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libcamdrv_imem.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -2269,11 +2087,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libcamdrv_isp
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libcamdrv_isp.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libcamdrv_isp.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -2282,11 +2101,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libcamdrv_tuning_mgr
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libcamdrv_tuning_mgr.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libcamdrv_tuning_mgr.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -2295,11 +2115,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libcamdrv_twin
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libcamdrv_twin.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libcamdrv_twin.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -2308,11 +2129,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libcameracustom
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libcameracustom.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libcameracustom.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -2321,11 +2143,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libccci_util
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libccci_util.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libccci_util.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -2334,11 +2157,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libcharon
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libcharon.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libcharon.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -2347,11 +2171,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libcomutils
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libcomutils.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libcomutils.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -2360,11 +2185,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libconsumerir_core
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libconsumerir_core.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libconsumerir_core.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -2373,11 +2199,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libcrypto-ss
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libcrypto-ss.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libcrypto-ss.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -2386,11 +2213,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libcurl-ss
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libcurl-ss.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libcurl-ss.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -2399,11 +2227,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libcustom_jni
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libcustom_jni.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libcustom_jni.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -2412,11 +2241,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libcustom_nvram
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libcustom_nvram.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libcustom_nvram.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -2425,11 +2255,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libcustom_prop
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libcustom_prop.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libcustom_prop.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -2438,11 +2269,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libcvsd_mtk
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libcvsd_mtk.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libcvsd_mtk.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -2451,11 +2283,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libdirect-coredump
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libdirect-coredump.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libdirect-coredump.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -2464,11 +2297,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libdngop
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libdngop.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libdngop.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -2477,11 +2311,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libdpframework
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libdpframework.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libdpframework.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -2490,11 +2325,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libdrmmtkutil
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libdrmmtkutil.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libdrmmtkutil.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -2503,11 +2339,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libdrmmtkwhitelist
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libdrmmtkwhitelist.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libdrmmtkwhitelist.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -2516,11 +2353,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libeffecthal.base
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libeffecthal.base.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libeffecthal.base.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -2529,11 +2367,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libeffecthal.cfb
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libeffecthal.cfb.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libeffecthal.cfb.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -2542,11 +2381,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libeffecthal.jpg
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libeffecthal.jpg.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libeffecthal.jpg.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -2555,11 +2395,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libem_audio_jni
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libem_audio_jni.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libem_audio_jni.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -2568,11 +2409,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libem_bt_jni
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libem_bt_jni.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libem_bt_jni.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -2581,11 +2423,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libem_gpio_jni
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libem_gpio_jni.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libem_gpio_jni.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -2594,11 +2437,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libem_lte_jni
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libem_lte_jni.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libem_lte_jni.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -2607,11 +2451,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libem_mbim_jni
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libem_mbim_jni.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libem_mbim_jni.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -2620,11 +2465,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libem_modem_jni
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libem_modem_jni.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libem_modem_jni.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -2633,11 +2479,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libem_sensor_jni
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libem_sensor_jni.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libem_sensor_jni.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -2646,11 +2493,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libem_support_jni
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libem_support_jni.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libem_support_jni.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -2659,11 +2507,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libem_usb_jni
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libem_usb_jni.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libem_usb_jni.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -2672,11 +2521,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libem_wifi_jni
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libem_wifi_jni.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libem_wifi_jni.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -2685,11 +2535,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libfeature.face
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libfeature.face.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libfeature.face.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -2698,11 +2549,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libfeature_3dnr
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libfeature_3dnr.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libfeature_3dnr.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -2711,11 +2563,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libfeature_cfb
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libfeature_cfb.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libfeature_cfb.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -2724,11 +2577,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libfeature_eis
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libfeature_eis.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libfeature_eis.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -2737,11 +2591,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libfeature_vfb
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libfeature_vfb.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libfeature_vfb.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -2750,11 +2605,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libfeatureio.featurefactory
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libfeatureio.featurefactory.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libfeatureio.featurefactory.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -2763,9 +2619,10 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := 32
 LOCAL_MODULE := libfgauge_gm30
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libfgauge_gm30.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -2774,11 +2631,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libfile_op
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libfile_op.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libfile_op.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -2787,24 +2645,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libfmcust
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libfmcust.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libfmcust.so
-include $(PREBUILT_SHARED_LIBRARY)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE_CLASS := SHARED_LIBRARIES
-LOCAL_PROPRIETARY_MODULE := true
-LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
-LOCAL_MODULE_SUFFIX := .so
-LOCAL_MULTILIB := both
-LOCAL_MODULE := libfmjni
-LOCAL_MODULE_PATH_32 := system/vendor/lib
-LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libfmjni.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
-LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libfmjni.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -2813,11 +2659,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libfposervice
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libfposervice.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libfposervice.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -2826,11 +2673,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libfvaudio
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libfvaudio.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libfvaudio.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -2839,11 +2687,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libgas
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libgas.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libgas.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -2852,11 +2701,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libged
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libged.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libged.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -2865,11 +2715,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libgpu_aux
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libgpu_aux.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libgpu_aux.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -2878,11 +2729,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libgralloc_extra
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libgralloc_extra.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libgralloc_extra.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -2891,11 +2743,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libgui_ext
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libgui_ext.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libgui_ext.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -2904,9 +2757,10 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := 32
 LOCAL_MODULE := libh264dec_customize
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libh264dec_customize.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -2915,9 +2769,10 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := 32
 LOCAL_MODULE := libh264dec_sa.ca7
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libh264dec_sa.ca7.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -2926,9 +2781,10 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := 32
 LOCAL_MODULE := libh264dec_sd.ca7
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libh264dec_sd.ca7.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -2937,9 +2793,10 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := 32
 LOCAL_MODULE := libh264dec_se.ca7
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libh264dec_se.ca7.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -2948,9 +2805,10 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := 32
 LOCAL_MODULE := libh264enc_sa.ca7
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libh264enc_sa.ca7.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -2959,9 +2817,10 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := 32
 LOCAL_MODULE := libh264enc_sb.ca7
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libh264enc_sb.ca7.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -2970,11 +2829,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libhdrproc
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libhdrproc.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libhdrproc.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -2983,11 +2843,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libhevce_sb.ca7.android
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libhevce_sb.ca7.android.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libhevce_sb.ca7.android.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -2996,11 +2857,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libhwm
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libhwm.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libhwm.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -3009,11 +2871,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libhydra
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libhydra.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libhydra.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -3022,11 +2885,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libimageio
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libimageio.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libimageio.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -3035,11 +2899,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libimageio_plat_drv
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libimageio_plat_drv.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libimageio_plat_drv.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -3048,11 +2913,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libimageio_plat_pipe
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libimageio_plat_pipe.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libimageio_plat_pipe.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -3061,11 +2927,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libimsma
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libimsma.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libimsma.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -3074,11 +2941,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libimsma_rtp
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libimsma_rtp.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libimsma_rtp.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -3087,11 +2955,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libimsma_socketwrapper
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libimsma_socketwrapper.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libimsma_socketwrapper.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -3100,11 +2969,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libion_mtk
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libion_mtk.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libion_mtk.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -3113,11 +2983,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libispfeature
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libispfeature.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libispfeature.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -3126,11 +2997,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libjni_lomoeffect
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libjni_lomoeffect.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libjni_lomoeffect.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -3139,11 +3011,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libjni_pq
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libjni_pq.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libjni_pq.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -3152,11 +3025,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libksensor
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libksensor.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libksensor.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -3165,11 +3039,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libktimestamp
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libktimestamp.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libktimestamp.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -3178,9 +3053,10 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := 32
 LOCAL_MODULE := liblic_divx
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/liblic_divx.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -3189,9 +3065,10 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := 32
 LOCAL_MODULE := liblic_s263
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/liblic_s263.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -3200,11 +3077,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := liblog3a
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/liblog3a.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/liblog3a.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -3213,11 +3091,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libm4u
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libm4u.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libm4u.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -3226,11 +3105,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libmal
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libmal.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libmal.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -3239,11 +3119,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libmal_datamngr
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libmal_datamngr.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libmal_datamngr.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -3252,11 +3133,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libmal_epdga
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libmal_epdga.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libmal_epdga.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -3265,11 +3147,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libmal_imsmngr
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libmal_imsmngr.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libmal_imsmngr.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -3278,11 +3161,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libmal_mdmngr
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libmal_mdmngr.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libmal_mdmngr.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libmdfx libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -3291,11 +3175,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libmal_nwmngr
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libmal_nwmngr.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libmal_nwmngr.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -3304,11 +3189,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libmal_rds
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libmal_rds.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libmal_rds.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -3317,11 +3203,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libmal_rilproxy
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libmal_rilproxy.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libmal_rilproxy.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -3330,24 +3217,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libmal_simmngr
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libmal_simmngr.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libmal_simmngr.so
-include $(PREBUILT_SHARED_LIBRARY)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE_CLASS := EXECUTABLES
-LOCAL_PROPRIETARY_MODULE := true
-LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
-LOCAL_MODULE_SUFFIX := .bc
-LOCAL_MULTILIB := both
-LOCAL_MODULE := libmalicore
-LOCAL_MODULE_PATH_32 := system/vendor/lib
-LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libmalicore.bc
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
-LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libmalicore.bc
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -3356,11 +3231,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libmatv_cust
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libmatv_cust.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libmatv_cust.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -3369,11 +3245,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libmdfx
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libmdfx.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libmdfx.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -3382,11 +3259,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libmdloggerrecycle
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libmdloggerrecycle.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libmdloggerrecycle.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -3395,11 +3273,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libmemoryDumpEncoder
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libmemoryDumpEncoder.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libmemoryDumpEncoder.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -3408,11 +3287,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libmemorydumper
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libmemorydumper.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libmemorydumper.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -3421,11 +3301,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libmfllcore
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libmfllcore.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libmfllcore.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -3434,11 +3315,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libmhalImageCodec
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libmhalImageCodec.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libmhalImageCodec.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -3447,11 +3329,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libminiui
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libminiui.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libminiui.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -3460,9 +3343,10 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := 32
 LOCAL_MODULE := libmjcFakeEngine
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libmjcFakeEngine.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -3471,11 +3355,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libmmprofile
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libmmprofile.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libmmprofile.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -3484,11 +3369,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libmmprofile_jni
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libmmprofile_jni.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libmmprofile_jni.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -3497,9 +3383,10 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := 32
 LOCAL_MODULE := libmmsdkservice
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libmmsdkservice.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -3508,9 +3395,10 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := 32
 LOCAL_MODULE := libmnl
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libmnl.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -3519,9 +3407,10 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := 32
 LOCAL_MODULE := libmp4enc_sa.ca7
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libmp4enc_sa.ca7.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -3530,9 +3419,10 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := 32
 LOCAL_MODULE := libmp4enc_xa.ca7
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libmp4enc_xa.ca7.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -3541,11 +3431,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libmrdump
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libmrdump.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libmrdump.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -3554,11 +3445,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libmsbc_mtk
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libmsbc_mtk.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libmsbc_mtk.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -3567,9 +3459,10 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := 32
 LOCAL_MODULE := libmtcloader
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libmtcloader.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -3578,11 +3471,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libmtk_drvb
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libmtk_drvb.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libmtk_drvb.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -3591,11 +3485,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libmtk_mmutils
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libmtk_mmutils.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libmtk_mmutils.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -3604,9 +3499,10 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := 32
 LOCAL_MODULE := libmtk_vt_service
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libmtk_vt_service.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libandroid_runtime libbinder libnativehelper libui libgui libmedia libimsma libsource libimsma_rtp libmtk_vt_swip libvt_avsync libvt_socketbind libmtk_vt_utils libstagefright_foundation libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -3615,9 +3511,10 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := 32
 LOCAL_MODULE := libmtk_vt_swip
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libmtk_vt_swip.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libmtk_vt_utils libstagefright libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -3626,9 +3523,10 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := 32
 LOCAL_MODULE := libmtk_vt_utils
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libmtk_vt_utils.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -3637,11 +3535,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libmtk_vt_wrapper
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libmtk_vt_wrapper.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libmtk_vt_wrapper.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -3650,11 +3549,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libmtkcam.featurepipe.streaming
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libmtkcam.featurepipe.streaming.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libmtkcam.featurepipe.streaming.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -3663,11 +3563,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libmtkcam_cct
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libmtkcam_cct.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libmtkcam_cct.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -3676,11 +3577,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libmtkcam_exif
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libmtkcam_exif.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libmtkcam_exif.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -3689,11 +3591,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libmtkcam_fwkutils
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libmtkcam_fwkutils.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libmtkcam_fwkutils.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -3702,11 +3605,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libmtkcam_hwnode
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libmtkcam_hwnode.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libmtkcam_hwnode.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -3715,11 +3619,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libmtkcam_hwutils
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libmtkcam_hwutils.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libmtkcam_hwutils.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -3728,11 +3633,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libmtkcam_imgbuf
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libmtkcam_imgbuf.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libmtkcam_imgbuf.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -3741,11 +3647,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libmtkcam_metadata
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libmtkcam_metadata.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libmtkcam_metadata.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -3754,11 +3661,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libmtkcam_metastore
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libmtkcam_metastore.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libmtkcam_metastore.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -3767,11 +3675,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libmtkcam_modulehelper
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libmtkcam_modulehelper.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libmtkcam_modulehelper.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -3780,11 +3689,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libmtkcam_pipeline
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libmtkcam_pipeline.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libmtkcam_pipeline.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -3793,11 +3703,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libmtkcam_stdutils
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libmtkcam_stdutils.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libmtkcam_stdutils.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -3806,11 +3717,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libmtkcam_streamutils
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libmtkcam_streamutils.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libmtkcam_streamutils.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -3819,11 +3731,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libmtkcam_sysutils
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libmtkcam_sysutils.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libmtkcam_sysutils.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -3832,11 +3745,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libmtkjpeg
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libmtkjpeg.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libmtkjpeg.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -3845,11 +3759,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libmtklimiter
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libmtklimiter.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libmtklimiter.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -3858,11 +3773,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libmtkplayer
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libmtkplayer.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libmtkplayer.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -3871,11 +3787,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libmtkshifter
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libmtkshifter.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libmtkshifter.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -3884,11 +3801,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libnativecheck-jni
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libnativecheck-jni.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libnativecheck-jni.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -3897,11 +3815,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libnvram
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libnvram.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libnvram.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libcustom_nvram libnvram_platform libnvram_sec libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -3910,11 +3829,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libnvram_daemon_callback
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libnvram_daemon_callback.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libnvram_daemon_callback.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -3923,11 +3843,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libnvram_platform
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libnvram_platform.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libnvram_platform.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -3936,11 +3857,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libnvram_sec
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libnvram_sec.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libnvram_sec.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -3949,11 +3871,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libnvramagentclient
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libnvramagentclient.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libnvramagentclient.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -3962,11 +3885,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libperfservice
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libperfservice.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libperfservice.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -3975,11 +3899,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libperfservicenative
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libperfservicenative.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libperfservicenative.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -3988,11 +3913,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libpq_cust_base
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libpq_cust_base.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libpq_cust_base.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -4001,11 +3927,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libpq_prot
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libpq_prot.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libpq_prot.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -4014,11 +3941,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libpqservice
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libpqservice.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libpqservice.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -4027,11 +3955,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libprogrambinary
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libprogrambinary.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libprogrambinary.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -4040,11 +3969,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libratconfig
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libratconfig.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libratconfig.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -4053,11 +3983,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := librgbwlightsensor
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/librgbwlightsensor.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/librgbwlightsensor.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -4066,11 +3997,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := librilmtk
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/librilmtk.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/librilmtk.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -4079,11 +4011,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := librilmtkmd2
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/librilmtkmd2.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/librilmtkmd2.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -4092,11 +4025,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := librilproxy
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/librilproxy.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/librilproxy.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -4105,11 +4039,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := librilproxyutils
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/librilproxyutils.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/librilproxyutils.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -4118,9 +4053,10 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := 32
 LOCAL_MODULE := librpc
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/librpc.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -4129,9 +4065,10 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := 32
 LOCAL_MODULE := librpcril
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/librpcril.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -4140,11 +4077,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := librrc
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/librrc.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/librrc.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -4153,9 +4091,10 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := 32
 LOCAL_MODULE := libshowlogo
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libshowlogo.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -4164,11 +4103,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libsimaka
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libsimaka.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libsimaka.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -4177,11 +4117,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libsink
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libsink.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libsink.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -4190,11 +4131,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libsource
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libsource.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libsource.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -4203,11 +4145,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libspeech_enh_lib
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libspeech_enh_lib.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libspeech_enh_lib.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -4216,11 +4159,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libssl-ss
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libssl-ss.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libssl-ss.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -4229,11 +4173,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libstagefrighthw
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libstagefrighthw.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libstagefrighthw.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -4242,11 +4187,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libstrongswan
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libstrongswan.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libstrongswan.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -4255,11 +4201,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libsysenv
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libsysenv.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libsysenv.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -4268,11 +4215,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libtfa9890_interface
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libtfa9890_interface.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libtfa9890_interface.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -4281,9 +4229,10 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := 32
 LOCAL_MODULE := libthermalalgo
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libthermalalgo.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -4292,11 +4241,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libthha
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libthha.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libthha.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -4305,11 +4255,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libtimestretch
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libtimestretch.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libtimestretch.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -4318,11 +4269,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libtouchfilter
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libtouchfilter.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libtouchfilter.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -4331,11 +4283,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libudf
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libudf.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libudf.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -4344,11 +4297,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libui_ext
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libui_ext.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libui_ext.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -4357,9 +4311,10 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := 32
 LOCAL_MODULE := libvc1dec_sa.ca7
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libvc1dec_sa.ca7.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -4368,11 +4323,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libvcodec_cap
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libvcodec_cap.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libvcodec_cap.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -4381,11 +4337,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libvcodec_oal
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libvcodec_oal.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libvcodec_oal.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -4394,11 +4351,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libvcodec_utility
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libvcodec_utility.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libvcodec_utility.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -4407,11 +4365,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libvcodecdrv
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libvcodecdrv.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libvcodecdrv.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -4420,9 +4379,10 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := 32
 LOCAL_MODULE := libviagpsrpc
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libviagpsrpc.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -4431,9 +4391,10 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := 32
 LOCAL_MODULE := libviatelecom-withuim-ril
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libviatelecom-withuim-ril.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -4442,9 +4403,10 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := 32
 LOCAL_MODULE := libvoicerecognition
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libvoicerecognition.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -4453,9 +4415,10 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := 32
 LOCAL_MODULE := libvoicerecognition_jni
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libvoicerecognition_jni.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -4464,9 +4427,10 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := 32
 LOCAL_MODULE := libvp8dec_sa.ca7
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libvp8dec_sa.ca7.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -4475,9 +4439,10 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := 32
 LOCAL_MODULE := libvp8enc_sa.ca7
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libvp8enc_sa.ca7.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -4486,9 +4451,10 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := 32
 LOCAL_MODULE := libvp9dec_sa.ca7
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libvp9dec_sa.ca7.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -4497,11 +4463,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libvt_avsync
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libvt_avsync.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libvt_avsync.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libbinder libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -4510,9 +4477,10 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := 32
 LOCAL_MODULE := libvt_custom
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libvt_custom.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -4521,9 +4489,22 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := 32
 LOCAL_MODULE := libvt_socketbind
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libvt_socketbind.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libbinder libc++
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE_CLASS := SHARED_LIBRARIES
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
+LOCAL_MODULE_SUFFIX := .so
+LOCAL_MULTILIB := 32
+LOCAL_MODULE := libvtmal
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
+LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libvtmal.so
+LOCAL_SHARED_LIBRARIES := libc++ libutils libcutils libbinder
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -4532,11 +4513,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libwfo_jni
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libwfo_jni.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libwfo_jni.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -4545,48 +4527,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libwo
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libwo.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libwo.so
-include $(PREBUILT_SHARED_LIBRARY)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE_CLASS := SHARED_LIBRARIES
-LOCAL_PROPRIETARY_MODULE := true
-LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
-LOCAL_MODULE_SUFFIX := .so
-LOCAL_MULTILIB := both
-LOCAL_MODULE := libdrmclearkeyplugin
-LOCAL_MODULE_PATH_32 := system/vendor/lib/mediadrm
-LOCAL_SRC_FILES_32 := proprietary/vendor/lib/mediadrm/libdrmclearkeyplugin.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64/mediadrm
-LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/mediadrm/libdrmclearkeyplugin.so
-include $(PREBUILT_SHARED_LIBRARY)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE_CLASS := SHARED_LIBRARIES
-LOCAL_PROPRIETARY_MODULE := true
-LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
-LOCAL_MODULE_SUFFIX := .so
-LOCAL_MULTILIB := both
-LOCAL_MODULE := libmockdrmcryptoplugin
-LOCAL_MODULE_PATH_32 := system/vendor/lib/mediadrm
-LOCAL_SRC_FILES_32 := proprietary/vendor/lib/mediadrm/libmockdrmcryptoplugin.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64/mediadrm
-LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/mediadrm/libmockdrmcryptoplugin.so
-include $(PREBUILT_SHARED_LIBRARY)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE_CLASS := SHARED_LIBRARIES
-LOCAL_PROPRIETARY_MODULE := true
-LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
-LOCAL_MODULE_SUFFIX := .so
-LOCAL_MULTILIB := 32
-LOCAL_MODULE := libwvdrmengine
-LOCAL_MODULE_PATH_32 := system/vendor/lib/mediadrm
-LOCAL_SRC_FILES_32 := proprietary/vendor/lib/mediadrm/libwvdrmengine.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -4595,11 +4541,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := mtk-ril
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/mtk-ril.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/mtk-ril.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -4608,11 +4555,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := mtk-rilmd2
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/mtk-rilmd2.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/mtk-rilmd2.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -4621,11 +4569,12 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := mtk-rilproxy
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/mtk-rilproxy.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/mtk-rilproxy.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -4634,11 +4583,206 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := both
 LOCAL_MODULE := volte_imsm
-LOCAL_MODULE_PATH_32 := system/vendor/lib
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/volte_imsm.so
-LOCAL_MODULE_PATH_64 := system/vendor/lib64
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/volte_imsm.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libmal libc++
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE_CLASS := SHARED_LIBRARIES
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
+LOCAL_MODULE_SUFFIX := .so
+LOCAL_MULTILIB := 32
+LOCAL_MODULE := libwvdrmengine
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib/mediadrm
+LOCAL_SRC_FILES_32 := proprietary/vendor/lib/mediadrm/libwvdrmengine.so
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE_CLASS := SHARED_LIBRARIES
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
+LOCAL_MODULE_SUFFIX := .so
+LOCAL_MULTILIB := both
+LOCAL_MODULE := audio.primary.mt6757
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib/hw
+LOCAL_SRC_FILES_32 := proprietary/vendor/lib/hw/audio.primary.mt6757.so
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64/hw
+LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/hw/audio.primary.mt6757.so
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE_CLASS := SHARED_LIBRARIES
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
+LOCAL_MODULE_SUFFIX := .so
+LOCAL_MULTILIB := both
+LOCAL_MODULE := audio.usb.mt6757
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib/hw
+LOCAL_SRC_FILES_32 := proprietary/vendor/lib/hw/audio.usb.mt6757.so
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64/hw
+LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/hw/audio.usb.mt6757.so
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE_CLASS := SHARED_LIBRARIES
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
+LOCAL_MODULE_SUFFIX := .so
+LOCAL_MULTILIB := both
+LOCAL_MODULE := camera.mt6757
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib/hw
+LOCAL_SRC_FILES_32 := proprietary/vendor/lib/hw/camera.mt6757.so
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64/hw
+LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/hw/camera.mt6757.so
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE_CLASS := SHARED_LIBRARIES
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
+LOCAL_MODULE_SUFFIX := .so
+LOCAL_MULTILIB := both
+LOCAL_MODULE := consumerir.mt6757
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib/hw
+LOCAL_SRC_FILES_32 := proprietary/vendor/lib/hw/consumerir.mt6757.so
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64/hw
+LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/hw/consumerir.mt6757.so
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE_CLASS := SHARED_LIBRARIES
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
+LOCAL_MODULE_SUFFIX := .so
+LOCAL_MULTILIB := both
+LOCAL_MODULE := gps.mt6757
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib/hw
+LOCAL_SRC_FILES_32 := proprietary/vendor/lib/hw/gps.mt6757.so
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64/hw
+LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/hw/gps.mt6757.so
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE_CLASS := SHARED_LIBRARIES
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
+LOCAL_MODULE_SUFFIX := .so
+LOCAL_MULTILIB := both
+LOCAL_MODULE := gralloc.mt6757
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib/hw
+LOCAL_SRC_FILES_32 := proprietary/vendor/lib/hw/gralloc.mt6757.so
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64/hw
+LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/hw/gralloc.mt6757.so
+LOCAL_SHARED_LIBRARIES := libhardware libGLESv1_CM libion libgralloc_extra libion_mtk libc++
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE_CLASS := SHARED_LIBRARIES
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
+LOCAL_MODULE_SUFFIX := .so
+LOCAL_MULTILIB := both
+LOCAL_MODULE := hwcomposer.mt6757
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib/hw
+LOCAL_SRC_FILES_32 := proprietary/vendor/lib/hw/hwcomposer.mt6757.so
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64/hw
+LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/hw/hwcomposer.mt6757.so
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE_CLASS := SHARED_LIBRARIES
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
+LOCAL_MODULE_SUFFIX := .so
+LOCAL_MULTILIB := both
+LOCAL_MODULE := lights.mt6757
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib/hw
+LOCAL_SRC_FILES_32 := proprietary/vendor/lib/hw/lights.mt6757.so
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64/hw
+LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/hw/lights.mt6757.so
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE_CLASS := SHARED_LIBRARIES
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
+LOCAL_MODULE_SUFFIX := .so
+LOCAL_MULTILIB := both
+LOCAL_MODULE := memtrack.mt6757
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib/hw
+LOCAL_SRC_FILES_32 := proprietary/vendor/lib/hw/memtrack.mt6757.so
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64/hw
+LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/hw/memtrack.mt6757.so
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE_CLASS := SHARED_LIBRARIES
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
+LOCAL_MODULE_SUFFIX := .so
+LOCAL_MULTILIB := both
+LOCAL_MODULE := sensors.mt6757
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib/hw
+LOCAL_SRC_FILES_32 := proprietary/vendor/lib/hw/sensors.mt6757.so
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64/hw
+LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/hw/sensors.mt6757.so
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE_CLASS := SHARED_LIBRARIES
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
+LOCAL_MODULE_SUFFIX := .so
+LOCAL_MULTILIB := both
+LOCAL_MODULE := libGLES_mali
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib/egl
+LOCAL_SRC_FILES_32 := proprietary/vendor/lib/egl/libGLES_mali.so
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64/egl
+LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/egl/libGLES_mali.so
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE_CLASS := SHARED_LIBRARIES
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
+LOCAL_MODULE_SUFFIX := .so
+LOCAL_MULTILIB := both
+LOCAL_MODULE := libdrmctaplugin
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib/drm
+LOCAL_SRC_FILES_32 := proprietary/vendor/lib/drm/libdrmctaplugin.so
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64/drm
+LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/drm/libdrmctaplugin.so
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE_CLASS := SHARED_LIBRARIES
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
+LOCAL_MODULE_SUFFIX := .so
+LOCAL_MULTILIB := both
+LOCAL_MODULE := libdrmmtkplugin
+LOCAL_MODULE_PATH_32 := $(PRODUCT_OUT)/system/vendor/lib/drm
+LOCAL_SRC_FILES_32 := proprietary/vendor/lib/drm/libdrmmtkplugin.so
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib64/drm
+LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/drm/libdrmmtkplugin.so
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -4647,9 +4791,10 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := 64
 LOCAL_MODULE := libipsec_ims_shr
-LOCAL_MODULE_PATH_64 := system/vendor/lib
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libipsec_ims_shr.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -4658,9 +4803,10 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := 64
 LOCAL_MODULE := libjni_jpegdecoder
-LOCAL_MODULE_PATH_64 := system/vendor/lib
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libjni_jpegdecoder.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -4669,9 +4815,10 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := 64
 LOCAL_MODULE := libterservice
-LOCAL_MODULE_PATH_64 := system/vendor/lib
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libterservice.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -4680,9 +4827,10 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := 64
 LOCAL_MODULE := libwapi
-LOCAL_MODULE_PATH_64 := system/vendor/lib
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libwapi.so
-include $(PREBUILT_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := libc++
+include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -4691,1157 +4839,2636 @@ LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MULTILIB := 64
 LOCAL_MODULE := libwifitest
-LOCAL_MODULE_PATH_64 := system/vendor/lib
+LOCAL_MODULE_PATH_64 := $(PRODUCT_OUT)/system/vendor/lib
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libwifitest.so
-include $(PREBUILT_SHARED_LIBRARY)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE := AgoldApnInfoCollector
-LOCAL_PRIVILEGED_MODULE := false
-LOCAL_MODULE_TAGS := optional
-LOCAL_MODULE_CLASS := APPS
-LOCAL_SRC_FILES := proprietary/app/AgoldApnInfoCollector/AgoldApnInfoCollector.apk
-LOCAL_MODULE_PATH := system/app/AgoldApnInfoCollector
-LOCAL_CERTIFICATE := PRESIGNED
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE := AgoldCompass
-LOCAL_PRIVILEGED_MODULE := false
-LOCAL_MODULE_TAGS := optional
-LOCAL_MODULE_CLASS := APPS
-LOCAL_SRC_FILES := proprietary/app/AgoldCompass/AgoldCompass.apk
-LOCAL_MODULE_PATH := system/app/AgoldCompass
-LOCAL_CERTIFICATE := PRESIGNED
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE := AgoldNetworkmanager
-LOCAL_PRIVILEGED_MODULE := false
-LOCAL_MODULE_TAGS := optional
-LOCAL_MODULE_CLASS := APPS
-LOCAL_SRC_FILES := proprietary/app/AgoldNetworkmanager/AgoldNetworkmanager.apk
-LOCAL_MODULE_PATH := system/app/AgoldNetworkmanager
-LOCAL_CERTIFICATE := PRESIGNED
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE := AguiAccAndAlspsCalibration
-LOCAL_PRIVILEGED_MODULE := false
-LOCAL_MODULE_TAGS := optional
-LOCAL_MODULE_CLASS := APPS
-LOCAL_SRC_FILES := proprietary/app/AguiAccAndAlspsCalibration/AguiAccAndAlspsCalibration.apk
-LOCAL_MODULE_PATH := system/app/AguiAccAndAlspsCalibration
-LOCAL_CERTIFICATE := PRESIGNED
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE := AosGpsTracker
-LOCAL_PRIVILEGED_MODULE := false
-LOCAL_MODULE_TAGS := optional
-LOCAL_MODULE_CLASS := APPS
-LOCAL_SRC_FILES := proprietary/app/AosGpsTracker/AosGpsTracker.apk
-LOCAL_MODULE_PATH := system/app/AosGpsTracker
-LOCAL_CERTIFICATE := PRESIGNED
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE := Devicemessages114
-LOCAL_PRIVILEGED_MODULE := false
-LOCAL_MODULE_TAGS := optional
-LOCAL_MODULE_CLASS := APPS
-LOCAL_SRC_FILES := proprietary/app/Devicemessages114/Devicemessages114.apk
-LOCAL_MODULE_PATH := system/app/Devicemessages114
-LOCAL_CERTIFICATE := PRESIGNED
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE := Devicemessages118
-LOCAL_PRIVILEGED_MODULE := false
-LOCAL_MODULE_TAGS := optional
-LOCAL_MODULE_CLASS := APPS
-LOCAL_SRC_FILES := proprietary/app/Devicemessages118/Devicemessages118.apk
-LOCAL_MODULE_PATH := system/app/Devicemessages118
-LOCAL_CERTIFICATE := PRESIGNED
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE := IMEIApp
-LOCAL_PRIVILEGED_MODULE := false
-LOCAL_MODULE_TAGS := optional
-LOCAL_MODULE_CLASS := APPS
-LOCAL_SRC_FILES := proprietary/app/IMEIApp/IMEIApp.apk
-LOCAL_MODULE_PATH := system/app/IMEIApp
-LOCAL_CERTIFICATE := PRESIGNED
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE := SimProcessor
-LOCAL_PRIVILEGED_MODULE := true
-LOCAL_MODULE_TAGS := optional
-LOCAL_MODULE_CLASS := APPS
-LOCAL_SRC_FILES := proprietary/priv-app/SimProcessor/SimProcessor.apk
-LOCAL_MODULE_PATH := system/priv-app/SimProcessor
-LOCAL_CERTIFICATE := PRESIGNED
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE := AtciService
-LOCAL_PRIVILEGED_MODULE := false
-LOCAL_MODULE_TAGS := optional
-LOCAL_MODULE_CLASS := APPS
-LOCAL_SRC_FILES := proprietary/vendor/app/AtciService/AtciService.apk
-LOCAL_MODULE_PATH := system/vendor/app/AtciService
-LOCAL_CERTIFICATE := PRESIGNED
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE := BatteryWarning
-LOCAL_PRIVILEGED_MODULE := false
-LOCAL_MODULE_TAGS := optional
-LOCAL_MODULE_CLASS := APPS
-LOCAL_SRC_FILES := proprietary/vendor/app/BatteryWarning/BatteryWarning.apk
-LOCAL_MODULE_PATH := system/vendor/app/BatteryWarning
-LOCAL_CERTIFICATE := PRESIGNED
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE := DrmProvider
-LOCAL_PRIVILEGED_MODULE := false
-LOCAL_MODULE_TAGS := optional
-LOCAL_MODULE_CLASS := APPS
-LOCAL_SRC_FILES := proprietary/vendor/app/DrmProvider/DrmProvider.apk
-LOCAL_MODULE_PATH := system/vendor/app/DrmProvider
-LOCAL_CERTIFICATE := PRESIGNED
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE := Gba
-LOCAL_PRIVILEGED_MODULE := false
-LOCAL_MODULE_TAGS := optional
-LOCAL_MODULE_CLASS := APPS
-LOCAL_SRC_FILES := proprietary/vendor/app/Gba/Gba.apk
-LOCAL_MODULE_PATH := system/vendor/app/Gba
-LOCAL_CERTIFICATE := PRESIGNED
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE := MDMConfig
-LOCAL_PRIVILEGED_MODULE := false
-LOCAL_MODULE_TAGS := optional
-LOCAL_MODULE_CLASS := APPS
-LOCAL_SRC_FILES := proprietary/vendor/app/MDMConfig/MDMConfig.apk
-LOCAL_MODULE_PATH := system/vendor/app/MDMConfig
-LOCAL_CERTIFICATE := PRESIGNED
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE := MTKLogger
-LOCAL_PRIVILEGED_MODULE := false
-LOCAL_MODULE_TAGS := optional
-LOCAL_MODULE_CLASS := APPS
-LOCAL_SRC_FILES := proprietary/vendor/app/MTKLogger/MTKLogger.apk
-LOCAL_MODULE_PATH := system/vendor/app/MTKLogger
-LOCAL_CERTIFICATE := PRESIGNED
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE := MTKThermalManager
-LOCAL_PRIVILEGED_MODULE := false
-LOCAL_MODULE_TAGS := optional
-LOCAL_MODULE_CLASS := APPS
-LOCAL_SRC_FILES := proprietary/vendor/app/MTKThermalManager/MTKThermalManager.apk
-LOCAL_MODULE_PATH := system/vendor/app/MTKThermalManager
-LOCAL_CERTIFICATE := PRESIGNED
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE := SensorHub
-LOCAL_PRIVILEGED_MODULE := false
-LOCAL_MODULE_TAGS := optional
-LOCAL_MODULE_CLASS := APPS
-LOCAL_SRC_FILES := proprietary/vendor/app/SensorHub/SensorHub.apk
-LOCAL_MODULE_PATH := system/vendor/app/SensorHub
-LOCAL_CERTIFICATE := PRESIGNED
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE := DataProtection
-LOCAL_PRIVILEGED_MODULE := false
-LOCAL_MODULE_TAGS := optional
-LOCAL_MODULE_CLASS := APPS
-LOCAL_SRC_FILES := proprietary/vendor/plugin/DataProtection/DataProtection.apk
-LOCAL_MODULE_PATH := system/vendor/plugin/DataProtection
-LOCAL_CERTIFICATE := PRESIGNED
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE := FwkPlugin
-LOCAL_PRIVILEGED_MODULE := false
-LOCAL_MODULE_TAGS := optional
-LOCAL_MODULE_CLASS := APPS
-LOCAL_SRC_FILES := proprietary/vendor/plugin/FwkPlugin/FwkPlugin.apk
-LOCAL_MODULE_PATH := system/vendor/plugin/FwkPlugin
-LOCAL_CERTIFICATE := PRESIGNED
+LOCAL_SHARED_LIBRARIES := libc++
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := agoldnvram
-LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := EXECUTABLES
 LOCAL_SRC_FILES := proprietary/bin/agoldnvram
-LOCAL_MODULE_PATH := system/bin
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/bin
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := nvram_proximity
-LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := EXECUTABLES
 LOCAL_SRC_FILES := proprietary/bin/nvram_proximity
-LOCAL_MODULE_PATH := system/bin
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/bin
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := tee
-LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := EXECUTABLES
 LOCAL_SRC_FILES := proprietary/bin/tee
-LOCAL_MODULE_PATH := system/bin
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/bin
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := teed
-LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := EXECUTABLES
 LOCAL_SRC_FILES := proprietary/bin/teed
-LOCAL_MODULE_PATH := system/bin
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE := AudioSetParam
-LOCAL_MODULE_TAGS := optional
-LOCAL_MODULE_CLASS := EXECUTABLES
-LOCAL_SRC_FILES := proprietary/vendor/bin/AudioSetParam
-LOCAL_MODULE_PATH := system/vendor/bin
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/bin
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := MPED
-LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := EXECUTABLES
 LOCAL_SRC_FILES := proprietary/vendor/bin/MPED
-LOCAL_MODULE_PATH := system/vendor/bin
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
+LOCAL_PROPRIETARY_MODULE := true
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := MtkCodecService
-LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := EXECUTABLES
 LOCAL_SRC_FILES := proprietary/vendor/bin/MtkCodecService
-LOCAL_MODULE_PATH := system/vendor/bin
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
+LOCAL_PROPRIETARY_MODULE := true
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := aal
-LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := EXECUTABLES
 LOCAL_SRC_FILES := proprietary/vendor/bin/aal
-LOCAL_MODULE_PATH := system/vendor/bin
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
+LOCAL_PROPRIETARY_MODULE := true
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := aee
-LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := EXECUTABLES
 LOCAL_SRC_FILES := proprietary/vendor/bin/aee
-LOCAL_MODULE_PATH := system/vendor/bin
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
+LOCAL_PROPRIETARY_MODULE := true
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := aee_archive
-LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := EXECUTABLES
 LOCAL_SRC_FILES := proprietary/vendor/bin/aee_archive
-LOCAL_MODULE_PATH := system/vendor/bin
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
+LOCAL_PROPRIETARY_MODULE := true
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := aee_core_forwarder
-LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := EXECUTABLES
 LOCAL_SRC_FILES := proprietary/vendor/bin/aee_core_forwarder
-LOCAL_MODULE_PATH := system/vendor/bin
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
+LOCAL_PROPRIETARY_MODULE := true
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := aee_dumpstate
-LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := EXECUTABLES
 LOCAL_SRC_FILES := proprietary/vendor/bin/aee_dumpstate
-LOCAL_MODULE_PATH := system/vendor/bin
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
+LOCAL_PROPRIETARY_MODULE := true
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := akmd09911
-LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := EXECUTABLES
 LOCAL_SRC_FILES := proprietary/vendor/bin/akmd09911
-LOCAL_MODULE_PATH := system/vendor/bin
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
+LOCAL_PROPRIETARY_MODULE := true
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := akmd8963
-LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := EXECUTABLES
 LOCAL_SRC_FILES := proprietary/vendor/bin/akmd8963
-LOCAL_MODULE_PATH := system/vendor/bin
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
+LOCAL_PROPRIETARY_MODULE := true
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := akmd8975
-LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := EXECUTABLES
 LOCAL_SRC_FILES := proprietary/vendor/bin/akmd8975
-LOCAL_MODULE_PATH := system/vendor/bin
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
+LOCAL_PROPRIETARY_MODULE := true
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := ami304d
-LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := EXECUTABLES
 LOCAL_SRC_FILES := proprietary/vendor/bin/ami304d
-LOCAL_MODULE_PATH := system/vendor/bin
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
+LOCAL_PROPRIETARY_MODULE := true
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := atci_service
-LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := EXECUTABLES
 LOCAL_SRC_FILES := proprietary/vendor/bin/atci_service
-LOCAL_MODULE_PATH := system/vendor/bin
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
+LOCAL_PROPRIETARY_MODULE := true
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := atcid
-LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := EXECUTABLES
 LOCAL_SRC_FILES := proprietary/vendor/bin/atcid
-LOCAL_MODULE_PATH := system/vendor/bin
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
+LOCAL_PROPRIETARY_MODULE := true
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := audiocmdservice_atci
-LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := EXECUTABLES
 LOCAL_SRC_FILES := proprietary/vendor/bin/audiocmdservice_atci
-LOCAL_MODULE_PATH := system/vendor/bin
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
+LOCAL_PROPRIETARY_MODULE := true
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := autobt
-LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := EXECUTABLES
 LOCAL_SRC_FILES := proprietary/vendor/bin/autobt
-LOCAL_MODULE_PATH := system/vendor/bin
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
+LOCAL_PROPRIETARY_MODULE := true
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := autokd
-LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := EXECUTABLES
 LOCAL_SRC_FILES := proprietary/vendor/bin/autokd
-LOCAL_MODULE_PATH := system/vendor/bin
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
+LOCAL_PROPRIETARY_MODULE := true
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := batterywarning
-LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := EXECUTABLES
 LOCAL_SRC_FILES := proprietary/vendor/bin/batterywarning
-LOCAL_MODULE_PATH := system/vendor/bin
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
+LOCAL_PROPRIETARY_MODULE := true
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := bmm050d
-LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := EXECUTABLES
 LOCAL_SRC_FILES := proprietary/vendor/bin/bmm050d
-LOCAL_MODULE_PATH := system/vendor/bin
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
+LOCAL_PROPRIETARY_MODULE := true
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := boot_logo_updater
-LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := EXECUTABLES
 LOCAL_SRC_FILES := proprietary/vendor/bin/boot_logo_updater
-LOCAL_MODULE_PATH := system/vendor/bin
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
+LOCAL_PROPRIETARY_MODULE := true
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := camtool
-LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := EXECUTABLES
 LOCAL_SRC_FILES := proprietary/vendor/bin/camtool
-LOCAL_MODULE_PATH := system/vendor/bin
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
+LOCAL_PROPRIETARY_MODULE := true
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := ccci_fsd
-LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := EXECUTABLES
 LOCAL_SRC_FILES := proprietary/vendor/bin/ccci_fsd
-LOCAL_MODULE_PATH := system/vendor/bin
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
+LOCAL_PROPRIETARY_MODULE := true
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := ccci_mdinit
-LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := EXECUTABLES
 LOCAL_SRC_FILES := proprietary/vendor/bin/ccci_mdinit
-LOCAL_MODULE_PATH := system/vendor/bin
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
+LOCAL_PROPRIETARY_MODULE := true
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := charon
-LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := EXECUTABLES
 LOCAL_SRC_FILES := proprietary/vendor/bin/charon
-LOCAL_MODULE_PATH := system/vendor/bin
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
+LOCAL_PROPRIETARY_MODULE := true
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := dhcp6c
-LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := EXECUTABLES
 LOCAL_SRC_FILES := proprietary/vendor/bin/dhcp6c
-LOCAL_MODULE_PATH := system/vendor/bin
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
+LOCAL_PROPRIETARY_MODULE := true
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := dhcp6ctl
-LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := EXECUTABLES
 LOCAL_SRC_FILES := proprietary/vendor/bin/dhcp6ctl
-LOCAL_MODULE_PATH := system/vendor/bin
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
+LOCAL_PROPRIETARY_MODULE := true
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := dhcp6s
-LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := EXECUTABLES
 LOCAL_SRC_FILES := proprietary/vendor/bin/dhcp6s
-LOCAL_MODULE_PATH := system/vendor/bin
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
+LOCAL_PROPRIETARY_MODULE := true
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := dmlog
-LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := EXECUTABLES
 LOCAL_SRC_FILES := proprietary/vendor/bin/dmlog
-LOCAL_MODULE_PATH := system/vendor/bin
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
+LOCAL_PROPRIETARY_MODULE := true
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := downloader
-LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := EXECUTABLES
 LOCAL_SRC_FILES := proprietary/vendor/bin/downloader
-LOCAL_MODULE_PATH := system/vendor/bin
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
+LOCAL_PROPRIETARY_MODULE := true
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := em_svr
-LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := EXECUTABLES
 LOCAL_SRC_FILES := proprietary/vendor/bin/em_svr
-LOCAL_MODULE_PATH := system/vendor/bin
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
+LOCAL_PROPRIETARY_MODULE := true
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := emdlogger1
-LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := EXECUTABLES
 LOCAL_SRC_FILES := proprietary/vendor/bin/emdlogger1
-LOCAL_MODULE_PATH := system/vendor/bin
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
+LOCAL_PROPRIETARY_MODULE := true
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := emdlogger2
-LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := EXECUTABLES
 LOCAL_SRC_FILES := proprietary/vendor/bin/emdlogger2
-LOCAL_MODULE_PATH := system/vendor/bin
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
+LOCAL_PROPRIETARY_MODULE := true
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := emdlogger3
-LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := EXECUTABLES
 LOCAL_SRC_FILES := proprietary/vendor/bin/emdlogger3
-LOCAL_MODULE_PATH := system/vendor/bin
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
+LOCAL_PROPRIETARY_MODULE := true
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := emdlogger5
-LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := EXECUTABLES
 LOCAL_SRC_FILES := proprietary/vendor/bin/emdlogger5
-LOCAL_MODULE_PATH := system/vendor/bin
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
+LOCAL_PROPRIETARY_MODULE := true
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := epdg_wod
-LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := EXECUTABLES
 LOCAL_SRC_FILES := proprietary/vendor/bin/epdg_wod
-LOCAL_MODULE_PATH := system/vendor/bin
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
+LOCAL_PROPRIETARY_MODULE := true
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := factory
-LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := EXECUTABLES
 LOCAL_SRC_FILES := proprietary/vendor/bin/factory
-LOCAL_MODULE_PATH := system/vendor/bin
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
+LOCAL_PROPRIETARY_MODULE := true
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := flashlessd
-LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := EXECUTABLES
 LOCAL_SRC_FILES := proprietary/vendor/bin/flashlessd
-LOCAL_MODULE_PATH := system/vendor/bin
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
+LOCAL_PROPRIETARY_MODULE := true
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := fsck_msdos_mtk
-LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := EXECUTABLES
 LOCAL_SRC_FILES := proprietary/vendor/bin/fsck_msdos_mtk
-LOCAL_MODULE_PATH := system/vendor/bin
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
+LOCAL_PROPRIETARY_MODULE := true
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := fuelgauged
-LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := EXECUTABLES
 LOCAL_SRC_FILES := proprietary/vendor/bin/fuelgauged
-LOCAL_MODULE_PATH := system/vendor/bin
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
+LOCAL_PROPRIETARY_MODULE := true
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := fuelgauged_nvram
-LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := EXECUTABLES
 LOCAL_SRC_FILES := proprietary/vendor/bin/fuelgauged_nvram
-LOCAL_MODULE_PATH := system/vendor/bin
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
+LOCAL_PROPRIETARY_MODULE := true
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := ged_srv
-LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := EXECUTABLES
 LOCAL_SRC_FILES := proprietary/vendor/bin/ged_srv
-LOCAL_MODULE_PATH := system/vendor/bin
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
+LOCAL_PROPRIETARY_MODULE := true
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := geomagneticd
-LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := EXECUTABLES
 LOCAL_SRC_FILES := proprietary/vendor/bin/geomagneticd
-LOCAL_MODULE_PATH := system/vendor/bin
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
+LOCAL_PROPRIETARY_MODULE := true
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := gsm0710muxd
-LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := EXECUTABLES
 LOCAL_SRC_FILES := proprietary/vendor/bin/gsm0710muxd
-LOCAL_MODULE_PATH := system/vendor/bin
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
+LOCAL_PROPRIETARY_MODULE := true
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := gsm0710muxdmd2
-LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := EXECUTABLES
 LOCAL_SRC_FILES := proprietary/vendor/bin/gsm0710muxdmd2
-LOCAL_MODULE_PATH := system/vendor/bin
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
+LOCAL_PROPRIETARY_MODULE := true
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := ipsec
-LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := EXECUTABLES
 LOCAL_SRC_FILES := proprietary/vendor/bin/ipsec
-LOCAL_MODULE_PATH := system/vendor/bin
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
+LOCAL_PROPRIETARY_MODULE := true
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := ipsec_mon
-LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := EXECUTABLES
 LOCAL_SRC_FILES := proprietary/vendor/bin/ipsec_mon
-LOCAL_MODULE_PATH := system/vendor/bin
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
+LOCAL_PROPRIETARY_MODULE := true
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := kpoc_charger
-LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := EXECUTABLES
 LOCAL_SRC_FILES := proprietary/vendor/bin/kpoc_charger
-LOCAL_MODULE_PATH := system/vendor/bin
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
+LOCAL_PROPRIETARY_MODULE := true
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := lcdc_screen_cap
-LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := EXECUTABLES
 LOCAL_SRC_FILES := proprietary/vendor/bin/lcdc_screen_cap
-LOCAL_MODULE_PATH := system/vendor/bin
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
+LOCAL_PROPRIETARY_MODULE := true
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := libccu_bin.dm
-LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := EXECUTABLES
 LOCAL_SRC_FILES := proprietary/vendor/bin/libccu_bin.dm
-LOCAL_MODULE_PATH := system/vendor/bin
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
+LOCAL_PROPRIETARY_MODULE := true
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := libccu_bin.pm
-LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := EXECUTABLES
 LOCAL_SRC_FILES := proprietary/vendor/bin/libccu_bin.pm
-LOCAL_MODULE_PATH := system/vendor/bin
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
+LOCAL_PROPRIETARY_MODULE := true
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := lsm303md
-LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := EXECUTABLES
 LOCAL_SRC_FILES := proprietary/vendor/bin/lsm303md
-LOCAL_MODULE_PATH := system/vendor/bin
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
+LOCAL_PROPRIETARY_MODULE := true
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := magd
-LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := EXECUTABLES
 LOCAL_SRC_FILES := proprietary/vendor/bin/magd
-LOCAL_MODULE_PATH := system/vendor/bin
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
+LOCAL_PROPRIETARY_MODULE := true
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := matv
-LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := EXECUTABLES
 LOCAL_SRC_FILES := proprietary/vendor/bin/matv
-LOCAL_MODULE_PATH := system/vendor/bin
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
+LOCAL_PROPRIETARY_MODULE := true
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := mbimd
-LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := EXECUTABLES
 LOCAL_SRC_FILES := proprietary/vendor/bin/mbimd
-LOCAL_MODULE_PATH := system/vendor/bin
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
+LOCAL_PROPRIETARY_MODULE := true
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := mc6420d
-LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := EXECUTABLES
 LOCAL_SRC_FILES := proprietary/vendor/bin/mc6420d
-LOCAL_MODULE_PATH := system/vendor/bin
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
+LOCAL_PROPRIETARY_MODULE := true
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := md_ctrl
-LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := EXECUTABLES
 LOCAL_SRC_FILES := proprietary/vendor/bin/md_ctrl
-LOCAL_MODULE_PATH := system/vendor/bin
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
+LOCAL_PROPRIETARY_MODULE := true
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := md_monitor
-LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := EXECUTABLES
 LOCAL_SRC_FILES := proprietary/vendor/bin/md_monitor
-LOCAL_MODULE_PATH := system/vendor/bin
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
+LOCAL_PROPRIETARY_MODULE := true
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := md_monitor_ctrl
-LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := EXECUTABLES
 LOCAL_SRC_FILES := proprietary/vendor/bin/md_monitor_ctrl
-LOCAL_MODULE_PATH := system/vendor/bin
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
+LOCAL_PROPRIETARY_MODULE := true
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := mdlogger
-LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := EXECUTABLES
 LOCAL_SRC_FILES := proprietary/vendor/bin/mdlogger
-LOCAL_MODULE_PATH := system/vendor/bin
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
+LOCAL_PROPRIETARY_MODULE := true
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := memorydumper
-LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := EXECUTABLES
 LOCAL_SRC_FILES := proprietary/vendor/bin/memorydumper
-LOCAL_MODULE_PATH := system/vendor/bin
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
+LOCAL_PROPRIETARY_MODULE := true
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := memsicd
-LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := EXECUTABLES
 LOCAL_SRC_FILES := proprietary/vendor/bin/memsicd
-LOCAL_MODULE_PATH := system/vendor/bin
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
+LOCAL_PROPRIETARY_MODULE := true
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := memsicd3416x
-LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := EXECUTABLES
 LOCAL_SRC_FILES := proprietary/vendor/bin/memsicd3416x
-LOCAL_MODULE_PATH := system/vendor/bin
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
+LOCAL_PROPRIETARY_MODULE := true
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := meta_tst
-LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := EXECUTABLES
 LOCAL_SRC_FILES := proprietary/vendor/bin/meta_tst
-LOCAL_MODULE_PATH := system/vendor/bin
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
+LOCAL_PROPRIETARY_MODULE := true
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := mfv_ut
-LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := EXECUTABLES
 LOCAL_SRC_FILES := proprietary/vendor/bin/mfv_ut
-LOCAL_MODULE_PATH := system/vendor/bin
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
+LOCAL_PROPRIETARY_MODULE := true
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := mnld
-LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := EXECUTABLES
 LOCAL_SRC_FILES := proprietary/vendor/bin/mnld
-LOCAL_MODULE_PATH := system/vendor/bin
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
+LOCAL_PROPRIETARY_MODULE := true
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := mobile_log_d
-LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := EXECUTABLES
 LOCAL_SRC_FILES := proprietary/vendor/bin/mobile_log_d
-LOCAL_MODULE_PATH := system/vendor/bin
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
+LOCAL_PROPRIETARY_MODULE := true
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := mrdump_tool
-LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := EXECUTABLES
 LOCAL_SRC_FILES := proprietary/vendor/bin/mrdump_tool
-LOCAL_MODULE_PATH := system/vendor/bin
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
+LOCAL_PROPRIETARY_MODULE := true
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := msensord
-LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := EXECUTABLES
 LOCAL_SRC_FILES := proprietary/vendor/bin/msensord
-LOCAL_MODULE_PATH := system/vendor/bin
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
+LOCAL_PROPRIETARY_MODULE := true
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := mtk_agpsd
-LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := EXECUTABLES
 LOCAL_SRC_FILES := proprietary/vendor/bin/mtk_agpsd
-LOCAL_MODULE_PATH := system/vendor/bin
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
+LOCAL_PROPRIETARY_MODULE := true
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := mtkmal
-LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := EXECUTABLES
 LOCAL_SRC_FILES := proprietary/vendor/bin/mtkmal
-LOCAL_MODULE_PATH := system/vendor/bin
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
+LOCAL_PROPRIETARY_MODULE := true
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := mtkrild
-LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := EXECUTABLES
 LOCAL_SRC_FILES := proprietary/vendor/bin/mtkrild
-LOCAL_MODULE_PATH := system/vendor/bin
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
+LOCAL_PROPRIETARY_MODULE := true
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := mtkrildmd2
-LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := EXECUTABLES
 LOCAL_SRC_FILES := proprietary/vendor/bin/mtkrildmd2
-LOCAL_MODULE_PATH := system/vendor/bin
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
+LOCAL_PROPRIETARY_MODULE := true
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := muxreport
-LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := EXECUTABLES
 LOCAL_SRC_FILES := proprietary/vendor/bin/muxreport
-LOCAL_MODULE_PATH := system/vendor/bin
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
+LOCAL_PROPRIETARY_MODULE := true
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := netdiag
-LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := EXECUTABLES
 LOCAL_SRC_FILES := proprietary/vendor/bin/netdiag
-LOCAL_MODULE_PATH := system/vendor/bin
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
+LOCAL_PROPRIETARY_MODULE := true
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := nvram_agent_binder
-LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := EXECUTABLES
 LOCAL_SRC_FILES := proprietary/vendor/bin/nvram_agent_binder
-LOCAL_MODULE_PATH := system/vendor/bin
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
+LOCAL_PROPRIETARY_MODULE := true
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := nvram_daemon
-LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := EXECUTABLES
 LOCAL_SRC_FILES := proprietary/vendor/bin/nvram_daemon
-LOCAL_MODULE_PATH := system/vendor/bin
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
+LOCAL_PROPRIETARY_MODULE := true
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := orientationd
-LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := EXECUTABLES
 LOCAL_SRC_FILES := proprietary/vendor/bin/orientationd
-LOCAL_MODULE_PATH := system/vendor/bin
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
+LOCAL_PROPRIETARY_MODULE := true
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := perf_native_test
-LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := EXECUTABLES
 LOCAL_SRC_FILES := proprietary/vendor/bin/perf_native_test
-LOCAL_MODULE_PATH := system/vendor/bin
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
+LOCAL_PROPRIETARY_MODULE := true
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := pq
-LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := EXECUTABLES
 LOCAL_SRC_FILES := proprietary/vendor/bin/pq
-LOCAL_MODULE_PATH := system/vendor/bin
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
+LOCAL_PROPRIETARY_MODULE := true
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := program_binary_builder
+LOCAL_MODULE_CLASS := EXECUTABLES
+LOCAL_SRC_FILES := proprietary/vendor/bin/program_binary_builder
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
+LOCAL_PROPRIETARY_MODULE := true
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := program_binary_service
-LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := EXECUTABLES
 LOCAL_SRC_FILES := proprietary/vendor/bin/program_binary_service
-LOCAL_MODULE_PATH := system/vendor/bin
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
+LOCAL_PROPRIETARY_MODULE := true
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := qmcX983d
-LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := EXECUTABLES
 LOCAL_SRC_FILES := proprietary/vendor/bin/qmcX983d
-LOCAL_MODULE_PATH := system/vendor/bin
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
+LOCAL_PROPRIETARY_MODULE := true
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := radvd
-LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := EXECUTABLES
 LOCAL_SRC_FILES := proprietary/vendor/bin/radvd
-LOCAL_MODULE_PATH := system/vendor/bin
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
+LOCAL_PROPRIETARY_MODULE := true
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := resize_ext4
-LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := EXECUTABLES
 LOCAL_SRC_FILES := proprietary/vendor/bin/resize_ext4
-LOCAL_MODULE_PATH := system/vendor/bin
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
+LOCAL_PROPRIETARY_MODULE := true
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := rilproxy
-LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := EXECUTABLES
 LOCAL_SRC_FILES := proprietary/vendor/bin/rilproxy
-LOCAL_MODULE_PATH := system/vendor/bin
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
+LOCAL_PROPRIETARY_MODULE := true
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := rs2spir
-LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := EXECUTABLES
 LOCAL_SRC_FILES := proprietary/vendor/bin/rs2spir
-LOCAL_MODULE_PATH := system/vendor/bin
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
+LOCAL_PROPRIETARY_MODULE := true
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := rtt
-LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := EXECUTABLES
 LOCAL_SRC_FILES := proprietary/vendor/bin/rtt
-LOCAL_MODULE_PATH := system/vendor/bin
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
+LOCAL_PROPRIETARY_MODULE := true
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := s62xd
-LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := EXECUTABLES
 LOCAL_SRC_FILES := proprietary/vendor/bin/s62xd
-LOCAL_MODULE_PATH := system/vendor/bin
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
+LOCAL_PROPRIETARY_MODULE := true
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := slpd
-LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := EXECUTABLES
 LOCAL_SRC_FILES := proprietary/vendor/bin/slpd
-LOCAL_MODULE_PATH := system/vendor/bin
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
+LOCAL_PROPRIETARY_MODULE := true
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := sn
-LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := EXECUTABLES
 LOCAL_SRC_FILES := proprietary/vendor/bin/sn
-LOCAL_MODULE_PATH := system/vendor/bin
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
+LOCAL_PROPRIETARY_MODULE := true
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := spir2cl
-LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := EXECUTABLES
 LOCAL_SRC_FILES := proprietary/vendor/bin/spir2cl
-LOCAL_MODULE_PATH := system/vendor/bin
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
+LOCAL_PROPRIETARY_MODULE := true
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := spm_loader
-LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := EXECUTABLES
 LOCAL_SRC_FILES := proprietary/vendor/bin/spm_loader
-LOCAL_MODULE_PATH := system/vendor/bin
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
+LOCAL_PROPRIETARY_MODULE := true
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := starter
-LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := EXECUTABLES
 LOCAL_SRC_FILES := proprietary/vendor/bin/starter
-LOCAL_MODULE_PATH := system/vendor/bin
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
+LOCAL_PROPRIETARY_MODULE := true
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := statusd
-LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := EXECUTABLES
 LOCAL_SRC_FILES := proprietary/vendor/bin/statusd
-LOCAL_MODULE_PATH := system/vendor/bin
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
+LOCAL_PROPRIETARY_MODULE := true
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := stp_dump3
-LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := EXECUTABLES
 LOCAL_SRC_FILES := proprietary/vendor/bin/stp_dump3
-LOCAL_MODULE_PATH := system/vendor/bin
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
+LOCAL_PROPRIETARY_MODULE := true
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := stroke
-LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := EXECUTABLES
 LOCAL_SRC_FILES := proprietary/vendor/bin/stroke
-LOCAL_MODULE_PATH := system/vendor/bin
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
+LOCAL_PROPRIETARY_MODULE := true
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := superumount
-LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := EXECUTABLES
 LOCAL_SRC_FILES := proprietary/vendor/bin/superumount
-LOCAL_MODULE_PATH := system/vendor/bin
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
+LOCAL_PROPRIETARY_MODULE := true
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := sysenv_daemon
-LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := EXECUTABLES
 LOCAL_SRC_FILES := proprietary/vendor/bin/sysenv_daemon
-LOCAL_MODULE_PATH := system/vendor/bin
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
+LOCAL_PROPRIETARY_MODULE := true
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := terservice
-LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := EXECUTABLES
 LOCAL_SRC_FILES := proprietary/vendor/bin/terservice
-LOCAL_MODULE_PATH := system/vendor/bin
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
+LOCAL_PROPRIETARY_MODULE := true
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := tertestclient
-LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := EXECUTABLES
 LOCAL_SRC_FILES := proprietary/vendor/bin/tertestclient
-LOCAL_MODULE_PATH := system/vendor/bin
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
+LOCAL_PROPRIETARY_MODULE := true
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := thermal
-LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := EXECUTABLES
 LOCAL_SRC_FILES := proprietary/vendor/bin/thermal
-LOCAL_MODULE_PATH := system/vendor/bin
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
+LOCAL_PROPRIETARY_MODULE := true
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := thermal_manager
-LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := EXECUTABLES
 LOCAL_SRC_FILES := proprietary/vendor/bin/thermal_manager
-LOCAL_MODULE_PATH := system/vendor/bin
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
+LOCAL_PROPRIETARY_MODULE := true
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := thermald
-LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := EXECUTABLES
 LOCAL_SRC_FILES := proprietary/vendor/bin/thermald
-LOCAL_MODULE_PATH := system/vendor/bin
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
+LOCAL_PROPRIETARY_MODULE := true
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := thermalindicator
-LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := EXECUTABLES
 LOCAL_SRC_FILES := proprietary/vendor/bin/thermalindicator
-LOCAL_MODULE_PATH := system/vendor/bin
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
+LOCAL_PROPRIETARY_MODULE := true
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := thermalloadalgod
-LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := EXECUTABLES
 LOCAL_SRC_FILES := proprietary/vendor/bin/thermalloadalgod
-LOCAL_MODULE_PATH := system/vendor/bin
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
+LOCAL_PROPRIETARY_MODULE := true
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := viaradiooptions
-LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := EXECUTABLES
 LOCAL_SRC_FILES := proprietary/vendor/bin/viaradiooptions
-LOCAL_MODULE_PATH := system/vendor/bin
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
+LOCAL_PROPRIETARY_MODULE := true
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := viarild
-LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := EXECUTABLES
 LOCAL_SRC_FILES := proprietary/vendor/bin/viarild
-LOCAL_MODULE_PATH := system/vendor/bin
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
+LOCAL_PROPRIETARY_MODULE := true
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := volte_imcb
-LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := EXECUTABLES
 LOCAL_SRC_FILES := proprietary/vendor/bin/volte_imcb
-LOCAL_MODULE_PATH := system/vendor/bin
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
+LOCAL_PROPRIETARY_MODULE := true
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := volte_stack
-LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := EXECUTABLES
 LOCAL_SRC_FILES := proprietary/vendor/bin/volte_stack
-LOCAL_MODULE_PATH := system/vendor/bin
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
+LOCAL_PROPRIETARY_MODULE := true
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := volte_ua
-LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := EXECUTABLES
 LOCAL_SRC_FILES := proprietary/vendor/bin/volte_ua
-LOCAL_MODULE_PATH := system/vendor/bin
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
+LOCAL_PROPRIETARY_MODULE := true
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := vtservice
-LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := EXECUTABLES
 LOCAL_SRC_FILES := proprietary/vendor/bin/vtservice
-LOCAL_MODULE_PATH := system/vendor/bin
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MULTILIB := 32
+LOCAL_SHARED_LIBRARIES := libc++ libutils libbinder libmtk_vt_service libmtk_vt_wrapper libmtk_vt_swip libmtk_vt_utils
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := wfca
-LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := EXECUTABLES
 LOCAL_SRC_FILES := proprietary/vendor/bin/wfca
-LOCAL_MODULE_PATH := system/vendor/bin
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
+LOCAL_PROPRIETARY_MODULE := true
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := wifi2agps
-LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := EXECUTABLES
 LOCAL_SRC_FILES := proprietary/vendor/bin/wifi2agps
-LOCAL_MODULE_PATH := system/vendor/bin
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
+LOCAL_PROPRIETARY_MODULE := true
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := wmt_concurrency
-LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := EXECUTABLES
 LOCAL_SRC_FILES := proprietary/vendor/bin/wmt_concurrency
-LOCAL_MODULE_PATH := system/vendor/bin
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
+LOCAL_PROPRIETARY_MODULE := true
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := wmt_launcher
-LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := EXECUTABLES
 LOCAL_SRC_FILES := proprietary/vendor/bin/wmt_launcher
-LOCAL_MODULE_PATH := system/vendor/bin
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
+LOCAL_PROPRIETARY_MODULE := true
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := wmt_loader
-LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := EXECUTABLES
 LOCAL_SRC_FILES := proprietary/vendor/bin/wmt_loader
-LOCAL_MODULE_PATH := system/vendor/bin
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
+LOCAL_PROPRIETARY_MODULE := true
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := wmt_loopback
-LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := EXECUTABLES
 LOCAL_SRC_FILES := proprietary/vendor/bin/wmt_loopback
-LOCAL_MODULE_PATH := system/vendor/bin
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/bin
+LOCAL_PROPRIETARY_MODULE := true
 include $(BUILD_PREBUILT)
 
+include $(CLEAR_VARS)
+LOCAL_MODULE := ROMv2_lm_patch_1_0_hdr.bin
+LOCAL_MODULE_CLASS := EXECUTABLES
+LOCAL_SRC_FILES := proprietary/vendor/firmware/ROMv2_lm_patch_1_0_hdr.bin
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/firmware
+LOCAL_PROPRIETARY_MODULE := true
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := ROMv2_lm_patch_1_1_hdr.bin
+LOCAL_MODULE_CLASS := EXECUTABLES
+LOCAL_SRC_FILES := proprietary/vendor/firmware/ROMv2_lm_patch_1_1_hdr.bin
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/firmware
+LOCAL_PROPRIETARY_MODULE := true
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := WIFI_RAM_CODE_6755
+LOCAL_MODULE_CLASS := EXECUTABLES
+LOCAL_SRC_FILES := proprietary/vendor/firmware/WIFI_RAM_CODE_6755
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/firmware
+LOCAL_PROPRIETARY_MODULE := true
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := WMT_SOC.cfg
+LOCAL_MODULE_CLASS := EXECUTABLES
+LOCAL_SRC_FILES := proprietary/vendor/firmware/WMT_SOC.cfg
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/firmware
+LOCAL_PROPRIETARY_MODULE := true
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := catcher_filter_1_ulwctg_n.bin
+LOCAL_MODULE_CLASS := EXECUTABLES
+LOCAL_SRC_FILES := proprietary/vendor/firmware/catcher_filter_1_ulwctg_n.bin
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/firmware
+LOCAL_PROPRIETARY_MODULE := true
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := catcher_filter_3_3g_n.bin
+LOCAL_MODULE_CLASS := EXECUTABLES
+LOCAL_SRC_FILES := proprietary/vendor/firmware/catcher_filter_3_3g_n.bin
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/firmware
+LOCAL_PROPRIETARY_MODULE := true
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := em_filter_1_ulwctg_n.bin
+LOCAL_MODULE_CLASS := EXECUTABLES
+LOCAL_SRC_FILES := proprietary/vendor/firmware/em_filter_1_ulwctg_n.bin
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/firmware
+LOCAL_PROPRIETARY_MODULE := true
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := fm_cust.cfg
+LOCAL_MODULE_CLASS := EXECUTABLES
+LOCAL_SRC_FILES := proprietary/vendor/firmware/fm_cust.cfg
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/firmware
+LOCAL_PROPRIETARY_MODULE := true
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := mt6627_fm_v1_coeff.bin
+LOCAL_MODULE_CLASS := EXECUTABLES
+LOCAL_SRC_FILES := proprietary/vendor/firmware/mt6627_fm_v1_coeff.bin
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/firmware
+LOCAL_PROPRIETARY_MODULE := true
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := mt6627_fm_v1_patch.bin
+LOCAL_MODULE_CLASS := EXECUTABLES
+LOCAL_SRC_FILES := proprietary/vendor/firmware/mt6627_fm_v1_patch.bin
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/firmware
+LOCAL_PROPRIETARY_MODULE := true
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := pcm_deepidle.bin
+LOCAL_MODULE_CLASS := EXECUTABLES
+LOCAL_SRC_FILES := proprietary/vendor/firmware/pcm_deepidle.bin
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/firmware
+LOCAL_PROPRIETARY_MODULE := true
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := pcm_deepidle_by_mp1.bin
+LOCAL_MODULE_CLASS := EXECUTABLES
+LOCAL_SRC_FILES := proprietary/vendor/firmware/pcm_deepidle_by_mp1.bin
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/firmware
+LOCAL_PROPRIETARY_MODULE := true
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := pcm_deepidle_by_mp1_mt6355.bin
+LOCAL_MODULE_CLASS := EXECUTABLES
+LOCAL_SRC_FILES := proprietary/vendor/firmware/pcm_deepidle_by_mp1_mt6355.bin
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/firmware
+LOCAL_PROPRIETARY_MODULE := true
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := pcm_deepidle_lpddr4.bin
+LOCAL_MODULE_CLASS := EXECUTABLES
+LOCAL_SRC_FILES := proprietary/vendor/firmware/pcm_deepidle_lpddr4.bin
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/firmware
+LOCAL_PROPRIETARY_MODULE := true
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := pcm_deepidle_lpddr4_by_mp1.bin
+LOCAL_MODULE_CLASS := EXECUTABLES
+LOCAL_SRC_FILES := proprietary/vendor/firmware/pcm_deepidle_lpddr4_by_mp1.bin
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/firmware
+LOCAL_PROPRIETARY_MODULE := true
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := pcm_deepidle_lpddr4_by_mp1_mt6355.bin
+LOCAL_MODULE_CLASS := EXECUTABLES
+LOCAL_SRC_FILES := proprietary/vendor/firmware/pcm_deepidle_lpddr4_by_mp1_mt6355.bin
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/firmware
+LOCAL_PROPRIETARY_MODULE := true
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := pcm_deepidle_lpddr4_mt6355.bin
+LOCAL_MODULE_CLASS := EXECUTABLES
+LOCAL_SRC_FILES := proprietary/vendor/firmware/pcm_deepidle_lpddr4_mt6355.bin
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/firmware
+LOCAL_PROPRIETARY_MODULE := true
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := pcm_deepidle_mt6355.bin
+LOCAL_MODULE_CLASS := EXECUTABLES
+LOCAL_SRC_FILES := proprietary/vendor/firmware/pcm_deepidle_mt6355.bin
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/firmware
+LOCAL_PROPRIETARY_MODULE := true
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := pcm_mcdi_ddrdfs.bin
+LOCAL_MODULE_CLASS := EXECUTABLES
+LOCAL_SRC_FILES := proprietary/vendor/firmware/pcm_mcdi_ddrdfs.bin
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/firmware
+LOCAL_PROPRIETARY_MODULE := true
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := pcm_mcdi_ddrdfs_lpddr4.bin
+LOCAL_MODULE_CLASS := EXECUTABLES
+LOCAL_SRC_FILES := proprietary/vendor/firmware/pcm_mcdi_ddrdfs_lpddr4.bin
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/firmware
+LOCAL_PROPRIETARY_MODULE := true
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := pcm_mcdi_ddrdfs_lpddr4_mt6355.bin
+LOCAL_MODULE_CLASS := EXECUTABLES
+LOCAL_SRC_FILES := proprietary/vendor/firmware/pcm_mcdi_ddrdfs_lpddr4_mt6355.bin
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/firmware
+LOCAL_PROPRIETARY_MODULE := true
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := pcm_mcdi_ddrdfs_mt6355.bin
+LOCAL_MODULE_CLASS := EXECUTABLES
+LOCAL_SRC_FILES := proprietary/vendor/firmware/pcm_mcdi_ddrdfs_mt6355.bin
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/firmware
+LOCAL_PROPRIETARY_MODULE := true
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := pcm_sodi_ddrdfs.bin
+LOCAL_MODULE_CLASS := EXECUTABLES
+LOCAL_SRC_FILES := proprietary/vendor/firmware/pcm_sodi_ddrdfs.bin
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/firmware
+LOCAL_PROPRIETARY_MODULE := true
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := pcm_sodi_ddrdfs_by_mp1.bin
+LOCAL_MODULE_CLASS := EXECUTABLES
+LOCAL_SRC_FILES := proprietary/vendor/firmware/pcm_sodi_ddrdfs_by_mp1.bin
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/firmware
+LOCAL_PROPRIETARY_MODULE := true
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := pcm_sodi_ddrdfs_by_mp1_mt6355.bin
+LOCAL_MODULE_CLASS := EXECUTABLES
+LOCAL_SRC_FILES := proprietary/vendor/firmware/pcm_sodi_ddrdfs_by_mp1_mt6355.bin
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/firmware
+LOCAL_PROPRIETARY_MODULE := true
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := pcm_sodi_ddrdfs_lpddr4.bin
+LOCAL_MODULE_CLASS := EXECUTABLES
+LOCAL_SRC_FILES := proprietary/vendor/firmware/pcm_sodi_ddrdfs_lpddr4.bin
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/firmware
+LOCAL_PROPRIETARY_MODULE := true
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := pcm_sodi_ddrdfs_lpddr4_by_mp1.bin
+LOCAL_MODULE_CLASS := EXECUTABLES
+LOCAL_SRC_FILES := proprietary/vendor/firmware/pcm_sodi_ddrdfs_lpddr4_by_mp1.bin
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/firmware
+LOCAL_PROPRIETARY_MODULE := true
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := pcm_sodi_ddrdfs_lpddr4_by_mp1_mt6355.bin
+LOCAL_MODULE_CLASS := EXECUTABLES
+LOCAL_SRC_FILES := proprietary/vendor/firmware/pcm_sodi_ddrdfs_lpddr4_by_mp1_mt6355.bin
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/firmware
+LOCAL_PROPRIETARY_MODULE := true
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := pcm_sodi_ddrdfs_lpddr4_mt6355.bin
+LOCAL_MODULE_CLASS := EXECUTABLES
+LOCAL_SRC_FILES := proprietary/vendor/firmware/pcm_sodi_ddrdfs_lpddr4_mt6355.bin
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/firmware
+LOCAL_PROPRIETARY_MODULE := true
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := pcm_sodi_ddrdfs_mt6355.bin
+LOCAL_MODULE_CLASS := EXECUTABLES
+LOCAL_SRC_FILES := proprietary/vendor/firmware/pcm_sodi_ddrdfs_mt6355.bin
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/firmware
+LOCAL_PROPRIETARY_MODULE := true
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := pcm_suspend.bin
+LOCAL_MODULE_CLASS := EXECUTABLES
+LOCAL_SRC_FILES := proprietary/vendor/firmware/pcm_suspend.bin
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/firmware
+LOCAL_PROPRIETARY_MODULE := true
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := pcm_suspend_by_mp1.bin
+LOCAL_MODULE_CLASS := EXECUTABLES
+LOCAL_SRC_FILES := proprietary/vendor/firmware/pcm_suspend_by_mp1.bin
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/firmware
+LOCAL_PROPRIETARY_MODULE := true
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := pcm_suspend_by_mp1_mt6355.bin
+LOCAL_MODULE_CLASS := EXECUTABLES
+LOCAL_SRC_FILES := proprietary/vendor/firmware/pcm_suspend_by_mp1_mt6355.bin
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/firmware
+LOCAL_PROPRIETARY_MODULE := true
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := pcm_suspend_lpddr4.bin
+LOCAL_MODULE_CLASS := EXECUTABLES
+LOCAL_SRC_FILES := proprietary/vendor/firmware/pcm_suspend_lpddr4.bin
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/firmware
+LOCAL_PROPRIETARY_MODULE := true
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := pcm_suspend_lpddr4_by_mp1.bin
+LOCAL_MODULE_CLASS := EXECUTABLES
+LOCAL_SRC_FILES := proprietary/vendor/firmware/pcm_suspend_lpddr4_by_mp1.bin
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/firmware
+LOCAL_PROPRIETARY_MODULE := true
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := pcm_suspend_lpddr4_by_mp1_mt6355.bin
+LOCAL_MODULE_CLASS := EXECUTABLES
+LOCAL_SRC_FILES := proprietary/vendor/firmware/pcm_suspend_lpddr4_by_mp1_mt6355.bin
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/firmware
+LOCAL_PROPRIETARY_MODULE := true
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := pcm_suspend_lpddr4_mt6355.bin
+LOCAL_MODULE_CLASS := EXECUTABLES
+LOCAL_SRC_FILES := proprietary/vendor/firmware/pcm_suspend_lpddr4_mt6355.bin
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/firmware
+LOCAL_PROPRIETARY_MODULE := true
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := pcm_suspend_mt6355.bin
+LOCAL_MODULE_CLASS := EXECUTABLES
+LOCAL_SRC_FILES := proprietary/vendor/firmware/pcm_suspend_mt6355.bin
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/firmware
+LOCAL_PROPRIETARY_MODULE := true
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := catcher_filter_1_ulwctg_n_C2KOnly_Test.bin
+LOCAL_MODULE_CLASS := EXECUTABLES
+LOCAL_SRC_FILES := proprietary/vendor/firmware/customfilter/catcher_filter_1_ulwctg_n_C2KOnly_Test.bin
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/firmware/customfilter
+LOCAL_PROPRIETARY_MODULE := true
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := catcher_filter_1_ulwctg_n_Default_Embms.bin
+LOCAL_MODULE_CLASS := EXECUTABLES
+LOCAL_SRC_FILES := proprietary/vendor/firmware/customfilter/catcher_filter_1_ulwctg_n_Default_Embms.bin
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/firmware/customfilter
+LOCAL_PROPRIETARY_MODULE := true
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := catcher_filter_1_ulwctg_n_Default_IPAllOff.bin
+LOCAL_MODULE_CLASS := EXECUTABLES
+LOCAL_SRC_FILES := proprietary/vendor/firmware/customfilter/catcher_filter_1_ulwctg_n_Default_IPAllOff.bin
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/firmware/customfilter
+LOCAL_PROPRIETARY_MODULE := true
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := catcher_filter_1_ulwctg_n_FullLog.bin
+LOCAL_MODULE_CLASS := EXECUTABLES
+LOCAL_SRC_FILES := proprietary/vendor/firmware/customfilter/catcher_filter_1_ulwctg_n_FullLog.bin
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/firmware/customfilter
+LOCAL_PROPRIETARY_MODULE := true
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := catcher_filter_1_ulwctg_n_SlimLog_DspAllOff.bin
+LOCAL_MODULE_CLASS := EXECUTABLES
+LOCAL_SRC_FILES := proprietary/vendor/firmware/customfilter/catcher_filter_1_ulwctg_n_SlimLog_DspAllOff.bin
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/firmware/customfilter
+LOCAL_PROPRIETARY_MODULE := true
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := catcher_filter_1_ulwctg_n__Default.bin
+LOCAL_MODULE_CLASS := EXECUTABLES
+LOCAL_SRC_FILES := proprietary/vendor/firmware/customfilter/catcher_filter_1_ulwctg_n__Default.bin
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/firmware/customfilter
+LOCAL_PROPRIETARY_MODULE := true
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := catcher_filter_1_ulwctg_n_meta.bin
+LOCAL_MODULE_CLASS := EXECUTABLES
+LOCAL_SRC_FILES := proprietary/vendor/firmware/customfilter/catcher_filter_1_ulwctg_n_meta.bin
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/firmware/customfilter
+LOCAL_PROPRIETARY_MODULE := true
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := a2dp_audio_policy_configuration.xml
+LOCAL_SRC_FILES := proprietary/etc/a2dp_audio_policy_configuration.xml
+LOCAL_MODULE_CLASS := ETC
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := audio_policy_volumes.xml
+LOCAL_SRC_FILES := proprietary/etc/audio_policy_volumes.xml
+LOCAL_MODULE_CLASS := ETC
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := camerasize.xml
+LOCAL_SRC_FILES := proprietary/etc/camerasize.xml
+LOCAL_MODULE_CLASS := ETC
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := changeram.xml
+LOCAL_SRC_FILES := proprietary/etc/changeram.xml
+LOCAL_MODULE_CLASS := ETC
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := default_volume_tables.xml
+LOCAL_SRC_FILES := proprietary/etc/default_volume_tables.xml
+LOCAL_MODULE_CLASS := ETC
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := media_codecs.xml
+LOCAL_SRC_FILES := proprietary/etc/media_codecs.xml
+LOCAL_MODULE_CLASS := ETC
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := media_codecs_google_audio.xml
+LOCAL_SRC_FILES := proprietary/etc/media_codecs_google_audio.xml
+LOCAL_MODULE_CLASS := ETC
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := media_codecs_google_video_le.xml
+LOCAL_SRC_FILES := proprietary/etc/media_codecs_google_video_le.xml
+LOCAL_MODULE_CLASS := ETC
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := media_codecs_mediatek_audio.xml
+LOCAL_SRC_FILES := proprietary/etc/media_codecs_mediatek_audio.xml
+LOCAL_MODULE_CLASS := ETC
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := media_codecs_mediatek_video.xml
+LOCAL_SRC_FILES := proprietary/etc/media_codecs_mediatek_video.xml
+LOCAL_MODULE_CLASS := ETC
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := media_codecs_performance.xml
+LOCAL_SRC_FILES := proprietary/etc/media_codecs_performance.xml
+LOCAL_MODULE_CLASS := ETC
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := p2p_supplicant_overlay.conf
+LOCAL_SRC_FILES := proprietary/etc/wifi/p2p_supplicant_overlay.conf
+LOCAL_MODULE_CLASS := ETC
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc/wifi
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := wpa_supplicant.conf
+LOCAL_SRC_FILES := proprietary/etc/wifi/wpa_supplicant.conf
+LOCAL_MODULE_CLASS := ETC
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc/wifi
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := wpa_supplicant_overlay.conf
+LOCAL_SRC_FILES := proprietary/etc/wifi/wpa_supplicant_overlay.conf
+LOCAL_MODULE_CLASS := ETC
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc/wifi
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := google.xml
+LOCAL_SRC_FILES := proprietary/etc/preferred-apps/google.xml
+LOCAL_MODULE_CLASS := ETC
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc/preferred-apps
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := android.hardware.audio.low_latency.xml
+LOCAL_SRC_FILES := proprietary/etc/permissions/android.hardware.audio.low_latency.xml
+LOCAL_MODULE_CLASS := ETC
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc/permissions
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := android.hardware.camera.xml
+LOCAL_SRC_FILES := proprietary/etc/permissions/android.hardware.camera.xml
+LOCAL_MODULE_CLASS := ETC
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc/permissions
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := android.hardware.consumerir.xml
+LOCAL_SRC_FILES := proprietary/etc/permissions/android.hardware.consumerir.xml
+LOCAL_MODULE_CLASS := ETC
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc/permissions
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := android.hardware.faketouch.xml
+LOCAL_SRC_FILES := proprietary/etc/permissions/android.hardware.faketouch.xml
+LOCAL_MODULE_CLASS := ETC
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc/permissions
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := android.hardware.microphone.xml
+LOCAL_SRC_FILES := proprietary/etc/permissions/android.hardware.microphone.xml
+LOCAL_MODULE_CLASS := ETC
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc/permissions
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := android.hardware.opengles.aep.xml
+LOCAL_SRC_FILES := proprietary/etc/permissions/android.hardware.opengles.aep.xml
+LOCAL_MODULE_CLASS := ETC
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc/permissions
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := android.hardware.sensor.compass.xml
+LOCAL_SRC_FILES := proprietary/etc/permissions/android.hardware.sensor.compass.xml
+LOCAL_MODULE_CLASS := ETC
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc/permissions
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := android.software.device_admin.xml
+LOCAL_SRC_FILES := proprietary/etc/permissions/android.software.device_admin.xml
+LOCAL_MODULE_CLASS := ETC
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc/permissions
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := com.google.android.maps.xml
+LOCAL_SRC_FILES := proprietary/etc/permissions/com.google.android.maps.xml
+LOCAL_MODULE_CLASS := ETC
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc/permissions
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := com.google.android.media.effects.xml
+LOCAL_SRC_FILES := proprietary/etc/permissions/com.google.android.media.effects.xml
+LOCAL_MODULE_CLASS := ETC
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc/permissions
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := atrace.rc
+LOCAL_SRC_FILES := proprietary/etc/init/atrace.rc
+LOCAL_MODULE_CLASS := ETC
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc/init
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := audioserver.rc
+LOCAL_SRC_FILES := proprietary/etc/init/audioserver.rc
+LOCAL_MODULE_CLASS := ETC
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc/init
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := bootanim.rc
+LOCAL_SRC_FILES := proprietary/etc/init/bootanim.rc
+LOCAL_MODULE_CLASS := ETC
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc/init
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := bootstat.rc
+LOCAL_SRC_FILES := proprietary/etc/init/bootstat.rc
+LOCAL_MODULE_CLASS := ETC
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc/init
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := cameraserver.rc
+LOCAL_SRC_FILES := proprietary/etc/init/cameraserver.rc
+LOCAL_MODULE_CLASS := ETC
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc/init
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := debuggerd.rc
+LOCAL_SRC_FILES := proprietary/etc/init/debuggerd.rc
+LOCAL_MODULE_CLASS := ETC
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc/init
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := debuggerd64.rc
+LOCAL_SRC_FILES := proprietary/etc/init/debuggerd64.rc
+LOCAL_MODULE_CLASS := ETC
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc/init
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := drmserver.rc
+LOCAL_SRC_FILES := proprietary/etc/init/drmserver.rc
+LOCAL_MODULE_CLASS := ETC
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc/init
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := dumpstate.rc
+LOCAL_SRC_FILES := proprietary/etc/init/dumpstate.rc
+LOCAL_MODULE_CLASS := ETC
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc/init
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := gatekeeperd.rc
+LOCAL_SRC_FILES := proprietary/etc/init/gatekeeperd.rc
+LOCAL_MODULE_CLASS := ETC
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc/init
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := installd.rc
+LOCAL_SRC_FILES := proprietary/etc/init/installd.rc
+LOCAL_MODULE_CLASS := ETC
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc/init
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := keystore.rc
+LOCAL_SRC_FILES := proprietary/etc/init/keystore.rc
+LOCAL_MODULE_CLASS := ETC
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc/init
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := lmkd.rc
+LOCAL_SRC_FILES := proprietary/etc/init/lmkd.rc
+LOCAL_MODULE_CLASS := ETC
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc/init
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := logd.rc
+LOCAL_SRC_FILES := proprietary/etc/init/logd.rc
+LOCAL_MODULE_CLASS := ETC
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc/init
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := mdnsd.rc
+LOCAL_SRC_FILES := proprietary/etc/init/mdnsd.rc
+LOCAL_MODULE_CLASS := ETC
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc/init
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := mediacodec.rc
+LOCAL_SRC_FILES := proprietary/etc/init/mediacodec.rc
+LOCAL_MODULE_CLASS := ETC
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc/init
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := mediadrmserver.rc
+LOCAL_SRC_FILES := proprietary/etc/init/mediadrmserver.rc
+LOCAL_MODULE_CLASS := ETC
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc/init
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := mediaextractor.rc
+LOCAL_SRC_FILES := proprietary/etc/init/mediaextractor.rc
+LOCAL_MODULE_CLASS := ETC
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc/init
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := mediaserver.rc
+LOCAL_SRC_FILES := proprietary/etc/init/mediaserver.rc
+LOCAL_MODULE_CLASS := ETC
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc/init
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := mtpd.rc
+LOCAL_SRC_FILES := proprietary/etc/init/mtpd.rc
+LOCAL_MODULE_CLASS := ETC
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc/init
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := netd.rc
+LOCAL_SRC_FILES := proprietary/etc/init/netd.rc
+LOCAL_MODULE_CLASS := ETC
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc/init
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := racoon.rc
+LOCAL_SRC_FILES := proprietary/etc/init/racoon.rc
+LOCAL_MODULE_CLASS := ETC
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc/init
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := servicemanager.rc
+LOCAL_SRC_FILES := proprietary/etc/init/servicemanager.rc
+LOCAL_MODULE_CLASS := ETC
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc/init
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := surfaceflinger.rc
+LOCAL_SRC_FILES := proprietary/etc/init/surfaceflinger.rc
+LOCAL_MODULE_CLASS := ETC
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc/init
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := uncrypt.rc
+LOCAL_SRC_FILES := proprietary/etc/init/uncrypt.rc
+LOCAL_MODULE_CLASS := ETC
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc/init
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := vdc.rc
+LOCAL_SRC_FILES := proprietary/etc/init/vdc.rc
+LOCAL_MODULE_CLASS := ETC
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc/init
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := vold.rc
+LOCAL_SRC_FILES := proprietary/etc/init/vold.rc
+LOCAL_MODULE_CLASS := ETC
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/etc/init
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := DSM.xml
+LOCAL_SRC_FILES := proprietary/vendor/etc/DSM.xml
+LOCAL_MODULE_CLASS := ETC
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := DSM_config.xml
+LOCAL_SRC_FILES := proprietary/vendor/etc/DSM_config.xml
+LOCAL_MODULE_CLASS := ETC
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := agps_profiles_conf2.xml
+LOCAL_SRC_FILES := proprietary/vendor/etc/agps_profiles_conf2.xml
+LOCAL_MODULE_CLASS := ETC
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := audio_em.xml
+LOCAL_SRC_FILES := proprietary/vendor/etc/audio_em.xml
+LOCAL_MODULE_CLASS := ETC
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := aurisys_config.xml
+LOCAL_SRC_FILES := proprietary/vendor/etc/aurisys_config.xml
+LOCAL_MODULE_CLASS := ETC
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := cdma_ecc_list.xml
+LOCAL_SRC_FILES := proprietary/vendor/etc/cdma_ecc_list.xml
+LOCAL_MODULE_CLASS := ETC
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := cdma_ecc_list_ss.xml
+LOCAL_SRC_FILES := proprietary/vendor/etc/cdma_ecc_list_ss.xml
+LOCAL_MODULE_CLASS := ETC
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := custom.conf
+LOCAL_SRC_FILES := proprietary/vendor/etc/custom.conf
+LOCAL_MODULE_CLASS := ETC
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := ecc_list.xml
+LOCAL_SRC_FILES := proprietary/vendor/etc/ecc_list.xml
+LOCAL_MODULE_CLASS := ETC
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := factory.ini
+LOCAL_SRC_FILES := proprietary/vendor/etc/factory.ini
+LOCAL_MODULE_CLASS := ETC
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := mpe.conf
+LOCAL_SRC_FILES := proprietary/vendor/etc/mpe.conf
+LOCAL_MODULE_CLASS := ETC
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := mtk_omx_core.cfg
+LOCAL_SRC_FILES := proprietary/vendor/etc/mtk_omx_core.cfg
+LOCAL_MODULE_CLASS := ETC
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := virtual-spn-conf-by-efgid1.xml
+LOCAL_SRC_FILES := proprietary/vendor/etc/virtual-spn-conf-by-efgid1.xml
+LOCAL_MODULE_CLASS := ETC
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := virtual-spn-conf-by-efpnn.xml
+LOCAL_SRC_FILES := proprietary/vendor/etc/virtual-spn-conf-by-efpnn.xml
+LOCAL_MODULE_CLASS := ETC
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := virtual-spn-conf-by-efspn.xml
+LOCAL_SRC_FILES := proprietary/vendor/etc/virtual-spn-conf-by-efspn.xml
+LOCAL_MODULE_CLASS := ETC
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := virtual-spn-conf-by-imsi.xml
+LOCAL_SRC_FILES := proprietary/vendor/etc/virtual-spn-conf-by-imsi.xml
+LOCAL_MODULE_CLASS := ETC
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := dhcp6c.conf
+LOCAL_SRC_FILES := proprietary/vendor/etc/wide-dhcpv6/dhcp6c.conf
+LOCAL_MODULE_CLASS := ETC
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc/wide-dhcpv6
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := dhcp6cDNS.conf
+LOCAL_SRC_FILES := proprietary/vendor/etc/wide-dhcpv6/dhcp6cDNS.conf
+LOCAL_MODULE_CLASS := ETC
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc/wide-dhcpv6
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := dhcp6s.conf
+LOCAL_SRC_FILES := proprietary/vendor/etc/wide-dhcpv6/dhcp6s.conf
+LOCAL_MODULE_CLASS := ETC
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc/wide-dhcpv6
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := radvd.conf
+LOCAL_SRC_FILES := proprietary/vendor/etc/radvd/radvd.conf
+LOCAL_MODULE_CLASS := ETC
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc/radvd
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := ipsec.conf
+LOCAL_SRC_FILES := proprietary/vendor/etc/ipsec/ipsec.conf
+LOCAL_MODULE_CLASS := ETC
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc/ipsec
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := strongswan.conf
+LOCAL_SRC_FILES := proprietary/vendor/etc/ipsec/strongswan.conf
+LOCAL_MODULE_CLASS := ETC
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc/ipsec
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := wod_cust.conf
+LOCAL_SRC_FILES := proprietary/vendor/etc/ipsec/wod_cust.conf
+LOCAL_MODULE_CLASS := ETC
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc/ipsec
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := wod_optr.conf
+LOCAL_SRC_FILES := proprietary/vendor/etc/ipsec/wod_optr.conf
+LOCAL_MODULE_CLASS := ETC
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc/ipsec
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := openssl.cnf
+LOCAL_SRC_FILES := proprietary/vendor/etc/ipsec/ssl/openssl.cnf
+LOCAL_MODULE_CLASS := ETC
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc/ipsec/ssl
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := init.mal.rc
+LOCAL_SRC_FILES := proprietary/vendor/etc/init/init.mal.rc
+LOCAL_MODULE_CLASS := ETC
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc/init
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := init.wod.rc
+LOCAL_SRC_FILES := proprietary/vendor/etc/init/init.wod.rc
+LOCAL_MODULE_CLASS := ETC
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc/init
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := Speech_AudioParam.xml
+LOCAL_SRC_FILES := proprietary/vendor/etc/aurisys_param/Speech_AudioParam.xml
+LOCAL_MODULE_CLASS := ETC
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc/aurisys_param
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := AudioParamOptions.xml
+LOCAL_SRC_FILES := proprietary/vendor/etc/audio_param/AudioParamOptions.xml
+LOCAL_MODULE_CLASS := ETC
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc/audio_param
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := BtInfo_AudioParam.xml
+LOCAL_SRC_FILES := proprietary/vendor/etc/audio_param/BtInfo_AudioParam.xml
+LOCAL_MODULE_CLASS := ETC
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc/audio_param
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := BtInfo_ParamUnitDesc.xml
+LOCAL_SRC_FILES := proprietary/vendor/etc/audio_param/BtInfo_ParamUnitDesc.xml
+LOCAL_MODULE_CLASS := ETC
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc/audio_param
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := PlaybackACF_AudioParam.xml
+LOCAL_SRC_FILES := proprietary/vendor/etc/audio_param/PlaybackACF_AudioParam.xml
+LOCAL_MODULE_CLASS := ETC
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc/audio_param
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := PlaybackACF_ParamUnitDesc.xml
+LOCAL_SRC_FILES := proprietary/vendor/etc/audio_param/PlaybackACF_ParamUnitDesc.xml
+LOCAL_MODULE_CLASS := ETC
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc/audio_param
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := PlaybackDRC_AudioParam.xml
+LOCAL_SRC_FILES := proprietary/vendor/etc/audio_param/PlaybackDRC_AudioParam.xml
+LOCAL_MODULE_CLASS := ETC
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc/audio_param
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := PlaybackDRC_ParamUnitDesc.xml
+LOCAL_SRC_FILES := proprietary/vendor/etc/audio_param/PlaybackDRC_ParamUnitDesc.xml
+LOCAL_MODULE_CLASS := ETC
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc/audio_param
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := PlaybackHCF_AudioParam.xml
+LOCAL_SRC_FILES := proprietary/vendor/etc/audio_param/PlaybackHCF_AudioParam.xml
+LOCAL_MODULE_CLASS := ETC
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc/audio_param
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := PlaybackHCF_ParamUnitDesc.xml
+LOCAL_SRC_FILES := proprietary/vendor/etc/audio_param/PlaybackHCF_ParamUnitDesc.xml
+LOCAL_MODULE_CLASS := ETC
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc/audio_param
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := PlaybackVolAna_AudioParam.xml
+LOCAL_SRC_FILES := proprietary/vendor/etc/audio_param/PlaybackVolAna_AudioParam.xml
+LOCAL_MODULE_CLASS := ETC
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc/audio_param
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := PlaybackVolAna_ParamUnitDesc.xml
+LOCAL_SRC_FILES := proprietary/vendor/etc/audio_param/PlaybackVolAna_ParamUnitDesc.xml
+LOCAL_MODULE_CLASS := ETC
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc/audio_param
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := PlaybackVolDigi_AudioParam.xml
+LOCAL_SRC_FILES := proprietary/vendor/etc/audio_param/PlaybackVolDigi_AudioParam.xml
+LOCAL_MODULE_CLASS := ETC
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc/audio_param
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := PlaybackVolDigi_ParamUnitDesc.xml
+LOCAL_SRC_FILES := proprietary/vendor/etc/audio_param/PlaybackVolDigi_ParamUnitDesc.xml
+LOCAL_MODULE_CLASS := ETC
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc/audio_param
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := PlaybackVolUI_AudioParam.xml
+LOCAL_SRC_FILES := proprietary/vendor/etc/audio_param/PlaybackVolUI_AudioParam.xml
+LOCAL_MODULE_CLASS := ETC
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc/audio_param
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := PlaybackVolUI_ParamUnitDesc.xml
+LOCAL_SRC_FILES := proprietary/vendor/etc/audio_param/PlaybackVolUI_ParamUnitDesc.xml
+LOCAL_MODULE_CLASS := ETC
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc/audio_param
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := Playback_AudioParam.xml
+LOCAL_SRC_FILES := proprietary/vendor/etc/audio_param/Playback_AudioParam.xml
+LOCAL_MODULE_CLASS := ETC
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc/audio_param
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := Playback_ParamTreeView.xml
+LOCAL_SRC_FILES := proprietary/vendor/etc/audio_param/Playback_ParamTreeView.xml
+LOCAL_MODULE_CLASS := ETC
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc/audio_param
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := Playback_ParamUnitDesc.xml
+LOCAL_SRC_FILES := proprietary/vendor/etc/audio_param/Playback_ParamUnitDesc.xml
+LOCAL_MODULE_CLASS := ETC
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc/audio_param
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := RecordDMNR_AudioParam.xml
+LOCAL_SRC_FILES := proprietary/vendor/etc/audio_param/RecordDMNR_AudioParam.xml
+LOCAL_MODULE_CLASS := ETC
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc/audio_param
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := RecordDMNR_ParamUnitDesc.xml
+LOCAL_SRC_FILES := proprietary/vendor/etc/audio_param/RecordDMNR_ParamUnitDesc.xml
+LOCAL_MODULE_CLASS := ETC
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc/audio_param
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := RecordFIR_AudioParam.xml
+LOCAL_SRC_FILES := proprietary/vendor/etc/audio_param/RecordFIR_AudioParam.xml
+LOCAL_MODULE_CLASS := ETC
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc/audio_param
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := RecordFIR_ParamUnitDesc.xml
+LOCAL_SRC_FILES := proprietary/vendor/etc/audio_param/RecordFIR_ParamUnitDesc.xml
+LOCAL_MODULE_CLASS := ETC
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc/audio_param
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := RecordUI_AudioParam.xml
+LOCAL_SRC_FILES := proprietary/vendor/etc/audio_param/RecordUI_AudioParam.xml
+LOCAL_MODULE_CLASS := ETC
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc/audio_param
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := RecordUI_ParamUnitDesc.xml
+LOCAL_SRC_FILES := proprietary/vendor/etc/audio_param/RecordUI_ParamUnitDesc.xml
+LOCAL_MODULE_CLASS := ETC
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc/audio_param
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := RecordVolUI_AudioParam.xml
+LOCAL_SRC_FILES := proprietary/vendor/etc/audio_param/RecordVolUI_AudioParam.xml
+LOCAL_MODULE_CLASS := ETC
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc/audio_param
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := RecordVolUI_ParamUnitDesc.xml
+LOCAL_SRC_FILES := proprietary/vendor/etc/audio_param/RecordVolUI_ParamUnitDesc.xml
+LOCAL_MODULE_CLASS := ETC
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc/audio_param
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := RecordVol_AudioParam.xml
+LOCAL_SRC_FILES := proprietary/vendor/etc/audio_param/RecordVol_AudioParam.xml
+LOCAL_MODULE_CLASS := ETC
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc/audio_param
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := RecordVol_ParamUnitDesc.xml
+LOCAL_SRC_FILES := proprietary/vendor/etc/audio_param/RecordVol_ParamUnitDesc.xml
+LOCAL_MODULE_CLASS := ETC
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc/audio_param
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := Record_AudioParam.xml
+LOCAL_SRC_FILES := proprietary/vendor/etc/audio_param/Record_AudioParam.xml
+LOCAL_MODULE_CLASS := ETC
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc/audio_param
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := Record_ParamTreeView.xml
+LOCAL_SRC_FILES := proprietary/vendor/etc/audio_param/Record_ParamTreeView.xml
+LOCAL_MODULE_CLASS := ETC
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc/audio_param
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := Record_ParamUnitDesc.xml
+LOCAL_SRC_FILES := proprietary/vendor/etc/audio_param/Record_ParamUnitDesc.xml
+LOCAL_MODULE_CLASS := ETC
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc/audio_param
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := SmartPa_AudioParam.xml
+LOCAL_SRC_FILES := proprietary/vendor/etc/audio_param/SmartPa_AudioParam.xml
+LOCAL_MODULE_CLASS := ETC
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc/audio_param
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := SmartPa_ParamUnitDesc.xml
+LOCAL_SRC_FILES := proprietary/vendor/etc/audio_param/SmartPa_ParamUnitDesc.xml
+LOCAL_MODULE_CLASS := ETC
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc/audio_param
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := SpeechDMNR_AudioParam.xml
+LOCAL_SRC_FILES := proprietary/vendor/etc/audio_param/SpeechDMNR_AudioParam.xml
+LOCAL_MODULE_CLASS := ETC
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc/audio_param
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := SpeechDMNR_ParamUnitDesc.xml
+LOCAL_SRC_FILES := proprietary/vendor/etc/audio_param/SpeechDMNR_ParamUnitDesc.xml
+LOCAL_MODULE_CLASS := ETC
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc/audio_param
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := SpeechGeneral_AudioParam.xml
+LOCAL_SRC_FILES := proprietary/vendor/etc/audio_param/SpeechGeneral_AudioParam.xml
+LOCAL_MODULE_CLASS := ETC
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc/audio_param
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := SpeechGeneral_ParamUnitDesc.xml
+LOCAL_SRC_FILES := proprietary/vendor/etc/audio_param/SpeechGeneral_ParamUnitDesc.xml
+LOCAL_MODULE_CLASS := ETC
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc/audio_param
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := SpeechMagiClarity_AudioParam.xml
+LOCAL_SRC_FILES := proprietary/vendor/etc/audio_param/SpeechMagiClarity_AudioParam.xml
+LOCAL_MODULE_CLASS := ETC
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc/audio_param
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := SpeechMagiClarity_ParamUnitDesc.xml
+LOCAL_SRC_FILES := proprietary/vendor/etc/audio_param/SpeechMagiClarity_ParamUnitDesc.xml
+LOCAL_MODULE_CLASS := ETC
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc/audio_param
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := SpeechNetwork_AudioParam.xml
+LOCAL_SRC_FILES := proprietary/vendor/etc/audio_param/SpeechNetwork_AudioParam.xml
+LOCAL_MODULE_CLASS := ETC
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc/audio_param
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := SpeechNetwork_ParamUnitDesc.xml
+LOCAL_SRC_FILES := proprietary/vendor/etc/audio_param/SpeechNetwork_ParamUnitDesc.xml
+LOCAL_MODULE_CLASS := ETC
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc/audio_param
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := SpeechUI_AudioParam.xml
+LOCAL_SRC_FILES := proprietary/vendor/etc/audio_param/SpeechUI_AudioParam.xml
+LOCAL_MODULE_CLASS := ETC
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc/audio_param
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := SpeechUI_ParamUnitDesc.xml
+LOCAL_SRC_FILES := proprietary/vendor/etc/audio_param/SpeechUI_ParamUnitDesc.xml
+LOCAL_MODULE_CLASS := ETC
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc/audio_param
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := SpeechVolUI_AudioParam.xml
+LOCAL_SRC_FILES := proprietary/vendor/etc/audio_param/SpeechVolUI_AudioParam.xml
+LOCAL_MODULE_CLASS := ETC
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc/audio_param
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := SpeechVolUI_ParamUnitDesc.xml
+LOCAL_SRC_FILES := proprietary/vendor/etc/audio_param/SpeechVolUI_ParamUnitDesc.xml
+LOCAL_MODULE_CLASS := ETC
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc/audio_param
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := SpeechVol_AudioParam.xml
+LOCAL_SRC_FILES := proprietary/vendor/etc/audio_param/SpeechVol_AudioParam.xml
+LOCAL_MODULE_CLASS := ETC
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc/audio_param
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := SpeechVol_ParamUnitDesc.xml
+LOCAL_SRC_FILES := proprietary/vendor/etc/audio_param/SpeechVol_ParamUnitDesc.xml
+LOCAL_MODULE_CLASS := ETC
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc/audio_param
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := Speech_ParamTreeView.xml
+LOCAL_SRC_FILES := proprietary/vendor/etc/audio_param/Speech_ParamTreeView.xml
+LOCAL_MODULE_CLASS := ETC
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc/audio_param
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := Speech_ParamUnitDesc.xml
+LOCAL_SRC_FILES := proprietary/vendor/etc/audio_param/Speech_ParamUnitDesc.xml
+LOCAL_MODULE_CLASS := ETC
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc/audio_param
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := USBCall_AudioParam.xml
+LOCAL_SRC_FILES := proprietary/vendor/etc/audio_param/USBCall_AudioParam.xml
+LOCAL_MODULE_CLASS := ETC
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc/audio_param
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := USBCall_ParamUnitDesc.xml
+LOCAL_SRC_FILES := proprietary/vendor/etc/audio_param/USBCall_ParamUnitDesc.xml
+LOCAL_MODULE_CLASS := ETC
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc/audio_param
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := USBDevice_AudioParam.xml
+LOCAL_SRC_FILES := proprietary/vendor/etc/audio_param/USBDevice_AudioParam.xml
+LOCAL_MODULE_CLASS := ETC
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc/audio_param
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := USBDevice_ParamUnitDesc.xml
+LOCAL_SRC_FILES := proprietary/vendor/etc/audio_param/USBDevice_ParamUnitDesc.xml
+LOCAL_MODULE_CLASS := ETC
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc/audio_param
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := VoIPDMNR_AudioParam.xml
+LOCAL_SRC_FILES := proprietary/vendor/etc/audio_param/VoIPDMNR_AudioParam.xml
+LOCAL_MODULE_CLASS := ETC
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc/audio_param
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := VoIPDMNR_ParamUnitDesc.xml
+LOCAL_SRC_FILES := proprietary/vendor/etc/audio_param/VoIPDMNR_ParamUnitDesc.xml
+LOCAL_MODULE_CLASS := ETC
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc/audio_param
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := VoIPGeneral_AudioParam.xml
+LOCAL_SRC_FILES := proprietary/vendor/etc/audio_param/VoIPGeneral_AudioParam.xml
+LOCAL_MODULE_CLASS := ETC
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc/audio_param
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := VoIPGeneral_ParamUnitDesc.xml
+LOCAL_SRC_FILES := proprietary/vendor/etc/audio_param/VoIPGeneral_ParamUnitDesc.xml
+LOCAL_MODULE_CLASS := ETC
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc/audio_param
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := VoIPUI_AudioParam.xml
+LOCAL_SRC_FILES := proprietary/vendor/etc/audio_param/VoIPUI_AudioParam.xml
+LOCAL_MODULE_CLASS := ETC
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc/audio_param
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := VoIPUI_ParamUnitDesc.xml
+LOCAL_SRC_FILES := proprietary/vendor/etc/audio_param/VoIPUI_ParamUnitDesc.xml
+LOCAL_MODULE_CLASS := ETC
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc/audio_param
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := VoIPVolUI_AudioParam.xml
+LOCAL_SRC_FILES := proprietary/vendor/etc/audio_param/VoIPVolUI_AudioParam.xml
+LOCAL_MODULE_CLASS := ETC
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc/audio_param
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := VoIPVolUI_ParamUnitDesc.xml
+LOCAL_SRC_FILES := proprietary/vendor/etc/audio_param/VoIPVolUI_ParamUnitDesc.xml
+LOCAL_MODULE_CLASS := ETC
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc/audio_param
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := VoIPVol_AudioParam.xml
+LOCAL_SRC_FILES := proprietary/vendor/etc/audio_param/VoIPVol_AudioParam.xml
+LOCAL_MODULE_CLASS := ETC
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc/audio_param
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := VoIPVol_ParamUnitDesc.xml
+LOCAL_SRC_FILES := proprietary/vendor/etc/audio_param/VoIPVol_ParamUnitDesc.xml
+LOCAL_MODULE_CLASS := ETC
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc/audio_param
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := VoIP_AudioParam.xml
+LOCAL_SRC_FILES := proprietary/vendor/etc/audio_param/VoIP_AudioParam.xml
+LOCAL_MODULE_CLASS := ETC
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc/audio_param
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := VoIP_ParamTreeView.xml
+LOCAL_SRC_FILES := proprietary/vendor/etc/audio_param/VoIP_ParamTreeView.xml
+LOCAL_MODULE_CLASS := ETC
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc/audio_param
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := VoIP_ParamUnitDesc.xml
+LOCAL_SRC_FILES := proprietary/vendor/etc/audio_param/VoIP_ParamUnitDesc.xml
+LOCAL_MODULE_CLASS := ETC
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc/audio_param
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := VoIPv2DMNR_AudioParam.xml
+LOCAL_SRC_FILES := proprietary/vendor/etc/audio_param/VoIPv2DMNR_AudioParam.xml
+LOCAL_MODULE_CLASS := ETC
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc/audio_param
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := VoIPv2DMNR_ParamUnitDesc.xml
+LOCAL_SRC_FILES := proprietary/vendor/etc/audio_param/VoIPv2DMNR_ParamUnitDesc.xml
+LOCAL_MODULE_CLASS := ETC
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc/audio_param
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := VoIPv2General_AudioParam.xml
+LOCAL_SRC_FILES := proprietary/vendor/etc/audio_param/VoIPv2General_AudioParam.xml
+LOCAL_MODULE_CLASS := ETC
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc/audio_param
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := VoIPv2General_ParamUnitDesc.xml
+LOCAL_SRC_FILES := proprietary/vendor/etc/audio_param/VoIPv2General_ParamUnitDesc.xml
+LOCAL_MODULE_CLASS := ETC
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc/audio_param
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := VoIPv2UI_AudioParam.xml
+LOCAL_SRC_FILES := proprietary/vendor/etc/audio_param/VoIPv2UI_AudioParam.xml
+LOCAL_MODULE_CLASS := ETC
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc/audio_param
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := VoIPv2UI_ParamUnitDesc.xml
+LOCAL_SRC_FILES := proprietary/vendor/etc/audio_param/VoIPv2UI_ParamUnitDesc.xml
+LOCAL_MODULE_CLASS := ETC
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc/audio_param
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := VoIPv2_AudioParam.xml
+LOCAL_SRC_FILES := proprietary/vendor/etc/audio_param/VoIPv2_AudioParam.xml
+LOCAL_MODULE_CLASS := ETC
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc/audio_param
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := VoIPv2_ParamTreeView.xml
+LOCAL_SRC_FILES := proprietary/vendor/etc/audio_param/VoIPv2_ParamTreeView.xml
+LOCAL_MODULE_CLASS := ETC
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc/audio_param
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := VoIPv2_ParamUnitDesc.xml
+LOCAL_SRC_FILES := proprietary/vendor/etc/audio_param/VoIPv2_ParamUnitDesc.xml
+LOCAL_MODULE_CLASS := ETC
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc/audio_param
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := VolumeGainMapUL_AudioParam.xml
+LOCAL_SRC_FILES := proprietary/vendor/etc/audio_param/VolumeGainMapUL_AudioParam.xml
+LOCAL_MODULE_CLASS := ETC
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc/audio_param
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := VolumeGainMapUL_ParamUnitDesc.xml
+LOCAL_SRC_FILES := proprietary/vendor/etc/audio_param/VolumeGainMapUL_ParamUnitDesc.xml
+LOCAL_MODULE_CLASS := ETC
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc/audio_param
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := VolumeGainMap_AudioParam.xml
+LOCAL_SRC_FILES := proprietary/vendor/etc/audio_param/VolumeGainMap_AudioParam.xml
+LOCAL_MODULE_CLASS := ETC
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc/audio_param
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := VolumeGainMap_ParamUnitDesc.xml
+LOCAL_SRC_FILES := proprietary/vendor/etc/audio_param/VolumeGainMap_ParamUnitDesc.xml
+LOCAL_MODULE_CLASS := ETC
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc/audio_param
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := Volume_AudioParam.xml
+LOCAL_SRC_FILES := proprietary/vendor/etc/audio_param/Volume_AudioParam.xml
+LOCAL_MODULE_CLASS := ETC
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc/audio_param
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := Volume_ParamUnitDesc.xml
+LOCAL_SRC_FILES := proprietary/vendor/etc/audio_param/Volume_ParamUnitDesc.xml
+LOCAL_MODULE_CLASS := ETC
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc/audio_param
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := 3dwidgets.xml
+LOCAL_SRC_FILES := proprietary/vendor/etc/appwidget/3dwidgets.xml
+LOCAL_MODULE_CLASS := ETC
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc/appwidget
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := .thermal_meta.conf
+LOCAL_SRC_FILES := proprietary/vendor/etc/.tp/.thermal_meta.conf
+LOCAL_MODULE_CLASS := ETC
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc/.tp
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := thermal.conf
+LOCAL_SRC_FILES := proprietary/vendor/etc/.tp/thermal.conf
+LOCAL_MODULE_CLASS := ETC
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc/.tp
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := thermal.off.conf
+LOCAL_SRC_FILES := proprietary/vendor/etc/.tp/thermal.off.conf
+LOCAL_MODULE_CLASS := ETC
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/vendor/etc/.tp
+include $(BUILD_PREBUILT)
+
+$(shell mkdir -p $(OUT)/obj_arm/lib $(OUT)/obj/lib $(OUT)/obj_arm/SHARED_LIBRARIES/mtk-rilproxy_intermediates/ $(OUT)/obj/SHARED_LIBRARIES/mtk-rilproxy_intermediates/ $(OUT)/obj_arm/SHARED_LIBRARIES/mtk-rilmd2_intermediates/ $(OUT)/obj/SHARED_LIBRARIES/mtk-rilmd2_intermediates/ $(OUT)/obj_arm/SHARED_LIBRARIES/mtk-ril_intermediates $(OUT)/obj/SHARED_LIBRARIES/mtk-ril_intermediates) #$(OUT)/obj/SHARED_LIBRARIES/libaudiopolicyservice_intermediates/LINKED $(OUT)/obj/STATIC_LIBRARIES/lib_driver_cmd_mt66xx_intermediates/ $(OUT_DIR_COMMON_BASE)/d0ndroid/host/linux-x86/obj/SHARED_LIBRARIES/libcurl-host_intermediates $(OUT_DIR_COMMON_BASE)/d0ndroid/host/linux-x86/obj/lib/ $(OUT_DIR_COMMON_BASE)/d0ndroid/host/linux-x86/lib64 $(OUT)/obj/SHARED_LIBRARIES/libhwm_intermediates $(OUT)/obj_arm/SHARED_LIBRARIES/libhwm_intermediates $(OUT)/obj_arm/SHARED_LIBRARIES/librilproxy_intermediates $(OUT)/obj_arm/SHARED_LIBRARIES/librilproxyutils_intermediates $(OUT)/obj/SHARED_LIBRARIES/librilproxy_intermediates $(OUT)/obj/SHARED_LIBRARIES/librilproxyutils_intermediates $(OUT)/obj/STATIC_LIBRARIES/rild-prop-md1_intermediates $(OUT)/obj/STATIC_LIBRARIES/librilmtk-prop-md1_intermediates $(OUT)/obj_arm/STATIC_LIBRARIES/mtk-ril-prop-md1_intermediates $(OUT)/obj_arm/STATIC_LIBRARIES/mtk-ril-prop-md2_intermediates $(OUT)/obj_arm/STATIC_LIBRARIES/mtk-ril-prop-md2_intermediates $(OUT)/obj_arm/SHARED_LIBRARIES/librilmtk_intermediates $(OUT)/obj_arm/SHARED_LIBRARIES/librilmtkmd2_intermediates $(OUT)/obj_arm/SHARED_LIBRARIES/libmal_intermediates $(OUT)/obj_arm/SHARED_LIBRARIES/libmdfx_intermediates $(OUT)/obj/SHARED_LIBRARIES/libmal_intermediates $(OUT)/obj/SHARED_LIBRARIES/libmdfx_intermediates $(OUT_DIR_COMMON_BASE)/d0ndroid/host/linux-x86/lib)
+$(shell touch $(OUT)/obj_arm/SHARED_LIBRARIES/mtk-rilproxy_intermediates/export_includes $(OUT)/obj/SHARED_LIBRARIES/mtk-rilproxy_intermediates/export_includes $(OUT)/obj_arm/SHARED_LIBRARIES/mtk-rilmd2_intermediates/export_includes $(OUT)/obj/SHARED_LIBRARIES/mtk-rilmd2_intermediates/export_includes $(OUT)/obj_arm/SHARED_LIBRARIES/mtk-ril_intermediates/export_includes $(OUT)/obj/SHARED_LIBRARIES/mtk-ril_intermediates/export_includes) #$(OUT)/obj/STATIC_LIBRARIES/lib_driver_cmd_mt66xx_intermediates/export_includes $(OUT_DIR_COMMON_BASE)/d0ndroid/host/linux-x86/obj/SHARED_LIBRARIES/libcurl-host_intermediates/export_includes $(OUT)/obj_arm/SHARED_LIBRARIES/libhwm_intermediates/export_includes $(OUT)/obj/SHARED_LIBRARIES/libhwm_intermediates/export_includes $(OUT)/obj_arm/SHARED_LIBRARIES/libhwm_intermediates/export_includes $(OUT)/obj_arm/SHARED_LIBRARIES/librilproxy_intermediates/export_includes $(OUT)/obj_arm/SHARED_LIBRARIES/librilproxyutils_intermediates/export_includes $(OUT)/obj/SHARED_LIBRARIES/librilproxy_intermediates/export_includes $(OUT)/obj/SHARED_LIBRARIES/librilproxyutils_intermediates/export_includes $(OUT)/obj/STATIC_LIBRARIES/rild-prop-md1_intermediates/export_includes $(OUT)/obj/STATIC_LIBRARIES/librilmtk-prop-md1_intermediates/export_includes $(OUT)/obj_arm/STATIC_LIBRARIES/mtk-ril-prop-md1_intermediates/export_includes $(OUT)/obj_arm/STATIC_LIBRARIES/mtk-ril-prop-md2_intermediates/export_includes $(OUT)/obj_arm/STATIC_LIBRARIES/mtk-ril-prop-md2_intermediates/export_includes $(OUT)/obj_arm/SHARED_LIBRARIES/librilmtk_intermediates/export_includes $(OUT)/obj_arm/SHARED_LIBRARIES/librilmtkmd2_intermediates/export_includes $(OUT)/obj_arm/SHARED_LIBRARIES/libmal_intermediates/export_includes $(OUT)/obj_arm/SHARED_LIBRARIES/libmdfx_intermediates/export_includes $(OUT)/obj/SHARED_LIBRARIES/libmal_intermediates/export_includes $(OUT)/obj/SHARED_LIBRARIES/libmdfx_intermediates/export_includes)
+$(shell cp $(LOCAL_PATH)/proprietary/vendor/lib/mtk-ril.so $(OUT)/obj_arm/lib/)
+$(shell cp $(LOCAL_PATH)/proprietary/vendor/lib64/mtk-ril.so $(OUT)/obj/lib/)
+$(shell cp $(LOCAL_PATH)/proprietary/vendor/lib/mtk-rilmd2.so $(OUT)/obj_arm/lib/)
+$(shell cp $(LOCAL_PATH)/proprietary/vendor/lib64/mtk-rilmd2.so $(OUT)/obj/lib/)
+$(shell cp $(LOCAL_PATH)/proprietary/vendor/lib/mtk-rilproxy.so $(OUT)/obj_arm/lib/)
+$(shell cp $(LOCAL_PATH)/proprietary/vendor/lib64/mtk-rilproxy.so $(OUT)/obj/lib/)
+$(shell cp $(LOCAL_PATH)/proprietary/vendor/lib/libmal_rilproxy.so $(OUT)/obj_arm/lib/)
+$(shell cp $(LOCAL_PATH)/proprietary/vendor/lib64/libmal_rilproxy.so $(OUT)/obj/lib/)
+$(shell cp $(LOCAL_PATH)/proprietary/vendor/lib/libnvram.so $(OUT)/obj_arm/lib/)
+$(shell cp $(LOCAL_PATH)/proprietary/vendor/lib64/libnvram.so $(OUT)/obj/lib/)
+$(shell cp $(LOCAL_PATH)/proprietary/vendor/lib/libfile_op.so $(OUT)/obj_arm/lib/)
+$(shell cp $(LOCAL_PATH)/proprietary/vendor/lib64/libfile_op.so $(OUT)/obj/lib/)
+$(shell cp $(LOCAL_PATH)/proprietary/vendor/lib/libmtk_vt_service.so $(OUT)/obj_arm/lib/)
+$(shell nm -B -D $(LOCAL_PATH)/proprietary/vendor/lib/mtk-ril.so > $(OUT)/obj_arm/lib/mtk-ril.so.toc)
+$(shell nm -B -D $(LOCAL_PATH)/proprietary/vendor/lib64/mtk-ril.so > $(OUT)/obj/lib/mtk-ril.so.toc)
+$(shell nm -B -D $(LOCAL_PATH)/proprietary/vendor/lib/mtk-rilmd2.so > $(OUT)/obj_arm/lib/mtk-rilmd2.so.toc)
+$(shell nm -B -D $(LOCAL_PATH)/proprietary/vendor/lib64/mtk-rilmd2.so > $(OUT)/obj/lib/mtk-rilmd2.so.toc)
+$(shell nm -B -D $(LOCAL_PATH)/proprietary/vendor/lib/mtk-rilproxy.so > $(OUT)/obj_arm/lib/mtk-rilproxy.so.toc)
+$(shell nm -B -D $(LOCAL_PATH)/proprietary/vendor/lib64/mtk-rilproxy.so > $(OUT)/obj/lib/mtk-rilproxy.so.toc)
+$(shell nm -B -D $(LOCAL_PATH)/proprietary/vendor/lib/libmal_rilproxy.so > $(OUT)/obj_arm/lib/libmal_rilproxy.so.toc)
+$(shell nm -B -D $(LOCAL_PATH)/proprietary/vendor/lib64/libmal_rilproxy.so > $(OUT)/obj/lib/libmal_rilproxy.so.toc)
+$(shell nm -B -D $(LOCAL_PATH)/proprietary/vendor/lib/libnvram.so > $(OUT)/obj_arm/lib/libnvram.so.toc)
+$(shell nm -B -D $(LOCAL_PATH)/proprietary/vendor/lib64/libnvram.so > $(OUT)/obj/lib/libnvram.so.toc)
+$(shell nm -B -D $(LOCAL_PATH)/proprietary/vendor/lib/libfile_op.so > $(OUT)/obj_arm/lib/libfile_op.so.toc)
+$(shell nm -B -D $(LOCAL_PATH)/proprietary/vendor/lib64/libfile_op.so > $(OUT)/obj/lib/libfile_op.so.toc)
+$(shell nm -B -D $(LOCAL_PATH)/proprietary/vendor/lib/libmtk_vt_service.so > $(OUT)/obj_arm/lib/libmtk_vt_service.so.toc)
+$(shell nm -B -D $(LOCAL_PATH)/proprietary/vendor/lib/libmdfx.so > $(OUT)/obj_arm/lib/libmdfx.so.toc)
+$(shell nm -B -D $(LOCAL_PATH)/proprietary/vendor/lib64/libmdfx.so > $(OUT)/obj/lib/libmdfx.so.toc)
+$(shell nm -B -D $(LOCAL_PATH)/proprietary/vendor/lib/libmal.so > $(OUT)/obj_arm/lib/libmal.so.toc)
+$(shell nm -B -D $(LOCAL_PATH)/proprietary/vendor/lib64/libmal.so > $(OUT)/obj/lib/libmal.so.toc)
+$(shell nm -B -D $(LOCAL_PATH)/proprietary/vendor/lib/libhwm.so > $(OUT)/obj_arm/lib/libhwm.so.toc)
+$(shell nm -B -D $(LOCAL_PATH)/proprietary/vendor/lib64/libhwm.so > $(OUT)/obj/lib/libhwm.so.toc)
+$(shell nm -B -D $(LOCAL_PATH)/proprietary/vendor/lib/librilmtkmd2.so > $(OUT)/obj_arm/lib/librilmtkmd2.so.toc)
+$(shell nm -B -D $(LOCAL_PATH)/proprietary/vendor/lib64/librilmtkmd2.so > $(OUT)/obj/lib/librilmtkmd2.so.toc)
+$(shell nm -B -D $(LOCAL_PATH)/proprietary/vendor/lib/librilmtk.so > $(OUT)/obj_arm/lib/librilmtk.so.toc)
+$(shell nm -B -D $(LOCAL_PATH)/proprietary/vendor/lib64/librilmtk.so > $(OUT)/obj/lib/librilmtk.so.toc)
+$(shell nm -B -D $(LOCAL_PATH)/proprietary/vendor/lib/librilproxyutils.so > $(OUT)/obj_arm/lib/librilproxyutils.so.toc)
+$(shell nm -B -D $(LOCAL_PATH)/proprietary/vendor/lib64/librilproxyutils.so > $(OUT)/obj/lib/librilproxyutils.so.toc)
+$(shell nm -B -D $(LOCAL_PATH)/proprietary/vendor/lib/librilproxy.so > $(OUT)/obj_arm/lib/librilproxy.so.toc)
+$(shell nm -B -D $(LOCAL_PATH)/proprietary/vendor/lib64/librilproxy.so > $(OUT)/obj/lib/librilproxy.so.toc)
