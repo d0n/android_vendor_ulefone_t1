@@ -294,39 +294,6 @@ PRODUCT_PACKAGES += \
   libmrdump \
   libmsbc_mtk \
   libmtcloader \
-  libmtk_drvb \
-  libmtk_mmutils \
-  libmtk_vt_service \
-  libmtk_vt_swip \
-  libmtk_vt_utils \
-  libmtk_vt_wrapper \
-  libmtkcam.featurepipe.streaming \
-  libmtkcam_cct \
-  libmtkcam_exif \
-  libmtkcam_fwkutils \
-  libmtkcam_hwnode \
-  libmtkcam_hwutils \
-  libmtkcam_imgbuf \
-  libmtkcam_metadata \
-  libmtkcam_metastore \
-  libmtkcam_modulehelper \
-  libmtkcam_pipeline \
-  libmtkcam_stdutils \
-  libmtkcam_streamutils \
-  libmtkcam_sysutils \
-  libmtkjpeg \
-  libmtklimiter \
-  libmtkplayer \
-  libmtkshifter \
-  libnativecheck-jni \
-  libnvram \
-  libnvram_daemon_callback \
-  libnvram_platform \
-  libnvram_sec \
-  libnvramagentclient \
-  libperfservice \
-  libperfservicenative \
-  libpq_cust_base \
   libpq_prot \
   libpqservice \
   libprogrambinary \
@@ -377,6 +344,21 @@ PRODUCT_PACKAGES += \
   mtk-rilmd2 \
   mtk-rilproxy \
   volte_imsm \
+  libmtk_drvb \
+  libmtk_mmutils \
+  libmtk_vt_swip \
+  libmtk_vt_wrapper \
+  libmtkcam_cct \
+  libmtkcam_fwkutils \
+  libmtkcam_hwutils \
+  libmtkcam_metadata \
+  libmtkcam_pipeline \
+  libmtkjpeg \
+  libmtkshifter \
+  libnvram_daemon_callback \
+  libnvramagentclient \
+  libmtkcam_streamutils \
+  libperfservicenative \
   libwvdrmengine \
   audio.primary.mt6757 \
   audio.usb.mt6757 \
@@ -391,16 +373,33 @@ PRODUCT_PACKAGES += \
   libGLES_mali \
   libdrmctaplugin \
   libdrmmtkplugin \
+  libmtklimiter \
+  libnativecheck-jni \
+  libnvram \
+  libperfservice \
+  libmtk_vt_service \
+  libmtk_vt_utils \
+  libmtkcam.featurepipe.streaming \
+  libmtkcam_exif \
+  libmtkcam_hwnode \
+  libmtkcam_imgbuf \
+  libmtkcam_metastore \
+  libmtkcam_stdutils \
+  libmtkcam_sysutils \
+  libmtkplayer \
+  libnvram_platform \
+  libpq_cust_base \
+  libmtkcam_modulehelper \
+  libnvram_sec \
   libipsec_ims_shr \
   libjni_jpegdecoder \
+  libwifitest \
   libterservice \
   libwapi \
-  libwifitest \
   agoldnvram \
   nvram_proximity \
   tee \
   teed \
-  MPED \
   MtkCodecService \
   aal \
   aee \
@@ -478,7 +477,7 @@ PRODUCT_PACKAGES += \
   orientationd \
   perf_native_test \
   pq \
-  program_binary_builder \
+  vtservice \
   program_binary_service \
   qmcX983d \
   radvd \
@@ -497,7 +496,6 @@ PRODUCT_PACKAGES += \
   stroke \
   superumount \
   sysenv_daemon \
-  terservice \
   tertestclient \
   thermal \
   thermal_manager \
@@ -509,13 +507,34 @@ PRODUCT_PACKAGES += \
   volte_imcb \
   volte_stack \
   volte_ua \
-  vtservice \
   wfca \
   wifi2agps \
   wmt_concurrency \
   wmt_launcher \
   wmt_loader \
   wmt_loopback \
+  terservice \
+  MPED \
+  program_binary_builder \
+  pcm_sodi_ddrdfs_lpddr4_by_mp1.bin \
+  pcm_sodi_ddrdfs_lpddr4_by_mp1_mt6355.bin \
+  pcm_sodi_ddrdfs_lpddr4_mt6355.bin \
+  pcm_sodi_ddrdfs_mt6355.bin \
+  pcm_suspend.bin \
+  pcm_suspend_by_mp1.bin \
+  pcm_suspend_by_mp1_mt6355.bin \
+  pcm_suspend_lpddr4.bin \
+  pcm_suspend_lpddr4_by_mp1.bin \
+  pcm_suspend_lpddr4_by_mp1_mt6355.bin \
+  pcm_suspend_lpddr4_mt6355.bin \
+  pcm_suspend_mt6355.bin \
+  catcher_filter_1_ulwctg_n_C2KOnly_Test.bin \
+  catcher_filter_1_ulwctg_n_Default_Embms.bin \
+  catcher_filter_1_ulwctg_n_Default_IPAllOff.bin \
+  catcher_filter_1_ulwctg_n_FullLog.bin \
+  catcher_filter_1_ulwctg_n_SlimLog_DspAllOff.bin \
+  catcher_filter_1_ulwctg_n__Default.bin \
+  catcher_filter_1_ulwctg_n_meta.bin \
   ROMv2_lm_patch_1_0_hdr.bin \
   ROMv2_lm_patch_1_1_hdr.bin \
   WIFI_RAM_CODE_6755 \
@@ -542,50 +561,11 @@ PRODUCT_PACKAGES += \
   pcm_sodi_ddrdfs_by_mp1.bin \
   pcm_sodi_ddrdfs_by_mp1_mt6355.bin \
   pcm_sodi_ddrdfs_lpddr4.bin \
-  pcm_sodi_ddrdfs_lpddr4_by_mp1.bin \
-  pcm_sodi_ddrdfs_lpddr4_by_mp1_mt6355.bin \
-  pcm_sodi_ddrdfs_lpddr4_mt6355.bin \
-  pcm_sodi_ddrdfs_mt6355.bin \
-  pcm_suspend.bin \
-  pcm_suspend_by_mp1.bin \
-  pcm_suspend_by_mp1_mt6355.bin \
-  pcm_suspend_lpddr4.bin \
-  pcm_suspend_lpddr4_by_mp1.bin \
-  pcm_suspend_lpddr4_by_mp1_mt6355.bin \
-  pcm_suspend_lpddr4_mt6355.bin \
-  pcm_suspend_mt6355.bin \
-  catcher_filter_1_ulwctg_n_C2KOnly_Test.bin \
-  catcher_filter_1_ulwctg_n_Default_Embms.bin \
-  catcher_filter_1_ulwctg_n_Default_IPAllOff.bin \
-  catcher_filter_1_ulwctg_n_FullLog.bin \
-  catcher_filter_1_ulwctg_n_SlimLog_DspAllOff.bin \
-  catcher_filter_1_ulwctg_n__Default.bin \
-  catcher_filter_1_ulwctg_n_meta.bin \
   a2dp_audio_policy_configuration.xml \
   audio_policy_volumes.xml \
   camerasize.xml \
   changeram.xml \
   default_volume_tables.xml \
-  media_codecs.xml \
-  media_codecs_google_audio.xml \
-  media_codecs_google_video_le.xml \
-  media_codecs_mediatek_audio.xml \
-  media_codecs_mediatek_video.xml \
-  media_codecs_performance.xml \
-  p2p_supplicant_overlay.conf \
-  wpa_supplicant.conf \
-  wpa_supplicant_overlay.conf \
-  google.xml \
-  android.hardware.audio.low_latency.xml \
-  android.hardware.camera.xml \
-  android.hardware.consumerir.xml \
-  android.hardware.faketouch.xml \
-  android.hardware.microphone.xml \
-  android.hardware.opengles.aep.xml \
-  android.hardware.sensor.compass.xml \
-  android.software.device_admin.xml \
-  com.google.android.maps.xml \
-  com.google.android.media.effects.xml \
   atrace.rc \
   audioserver.rc \
   bootanim.rc \
@@ -613,41 +593,38 @@ PRODUCT_PACKAGES += \
   uncrypt.rc \
   vdc.rc \
   vold.rc \
-  DSM.xml \
-  DSM_config.xml \
-  agps_profiles_conf2.xml \
-  audio_em.xml \
-  aurisys_config.xml \
-  cdma_ecc_list.xml \
-  cdma_ecc_list_ss.xml \
-  custom.conf \
-  ecc_list.xml \
-  factory.ini \
-  mpe.conf \
-  mtk_omx_core.cfg \
-  virtual-spn-conf-by-efgid1.xml \
-  virtual-spn-conf-by-efpnn.xml \
-  virtual-spn-conf-by-efspn.xml \
-  virtual-spn-conf-by-imsi.xml \
+  media_codecs.xml \
+  media_codecs_google_audio.xml \
+  media_codecs_google_video_le.xml \
+  media_codecs_mediatek_audio.xml \
+  media_codecs_mediatek_video.xml \
+  media_codecs_performance.xml \
+  android.hardware.audio.low_latency.xml \
+  android.hardware.camera.xml \
+  android.hardware.consumerir.xml \
+  android.hardware.faketouch.xml \
+  android.hardware.microphone.xml \
+  android.hardware.opengles.aep.xml \
+  android.hardware.sensor.compass.xml \
+  android.software.device_admin.xml \
+  com.google.android.maps.xml \
+  com.google.android.media.effects.xml \
+  google.xml \
+  p2p_supplicant_overlay.conf \
+  wpa_supplicant.conf \
+  wpa_supplicant_overlay.conf \
   dhcp6c.conf \
   dhcp6cDNS.conf \
   dhcp6s.conf \
   radvd.conf \
+  openssl.cnf \
   ipsec.conf \
   strongswan.conf \
   wod_cust.conf \
   wod_optr.conf \
-  openssl.cnf \
   init.mal.rc \
   init.wod.rc \
   Speech_AudioParam.xml \
-  AudioParamOptions.xml \
-  BtInfo_AudioParam.xml \
-  BtInfo_ParamUnitDesc.xml \
-  PlaybackACF_AudioParam.xml \
-  PlaybackACF_ParamUnitDesc.xml \
-  PlaybackDRC_AudioParam.xml \
-  PlaybackDRC_ParamUnitDesc.xml \
   PlaybackHCF_AudioParam.xml \
   PlaybackHCF_ParamUnitDesc.xml \
   PlaybackVolAna_AudioParam.xml \
@@ -722,7 +699,30 @@ PRODUCT_PACKAGES += \
   VolumeGainMap_ParamUnitDesc.xml \
   Volume_AudioParam.xml \
   Volume_ParamUnitDesc.xml \
+  AudioParamOptions.xml \
+  BtInfo_AudioParam.xml \
+  BtInfo_ParamUnitDesc.xml \
+  PlaybackACF_AudioParam.xml \
+  PlaybackACF_ParamUnitDesc.xml \
+  PlaybackDRC_AudioParam.xml \
+  PlaybackDRC_ParamUnitDesc.xml \
   3dwidgets.xml \
   .thermal_meta.conf \
   thermal.conf \
   thermal.off.conf \
+  DSM.xml \
+  DSM_config.xml \
+  agps_profiles_conf2.xml \
+  audio_em.xml \
+  aurisys_config.xml \
+  cdma_ecc_list.xml \
+  cdma_ecc_list_ss.xml \
+  custom.conf \
+  ecc_list.xml \
+  factory.ini \
+  mpe.conf \
+  mtk_omx_core.cfg \
+  virtual-spn-conf-by-efgid1.xml \
+  virtual-spn-conf-by-efpnn.xml \
+  virtual-spn-conf-by-efspn.xml \
+  virtual-spn-conf-by-imsi.xml \
