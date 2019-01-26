@@ -64,44 +64,15 @@ PRODUCT_COPY_FILES += \
   vendor/ulefone/t1/proprietary/etc/media_codecs_mediatek_audio.xml:system/etc/media_codecs_mediatek_audio.xml \
   vendor/ulefone/t1/proprietary/etc/media_codecs_mediatek_video.xml:system/etc/media_codecs_mediatek_video.xml \
   vendor/ulefone/t1/proprietary/etc/media_codecs_performance.xml:system/etc/media_codecs_performance.xml \
-  vendor/ulefone/t1/proprietary/etc/mkshrc:system/etc/mkshrc \
-  vendor/ulefone/t1/proprietary/etc/permissions/android.hardware.audio.low_latency.xml:system/etc/permissions/android.hardware.audio.low_latency.xml \
-  vendor/ulefone/t1/proprietary/etc/permissions/android.hardware.camera.xml:system/etc/permissions/android.hardware.camera.xml \
-  vendor/ulefone/t1/proprietary/etc/permissions/android.hardware.consumerir.xml:system/etc/permissions/android.hardware.consumerir.xml \
-  vendor/ulefone/t1/proprietary/etc/permissions/android.hardware.faketouch.xml:system/etc/permissions/android.hardware.faketouch.xml \
-  vendor/ulefone/t1/proprietary/etc/permissions/android.hardware.microphone.xml:system/etc/permissions/android.hardware.microphone.xml \
-  vendor/ulefone/t1/proprietary/etc/permissions/android.hardware.opengles.aep.xml:system/etc/permissions/android.hardware.opengles.aep.xml \
-  vendor/ulefone/t1/proprietary/etc/permissions/android.hardware.sensor.compass.xml:system/etc/permissions/android.hardware.sensor.compass.xml \
-  vendor/ulefone/t1/proprietary/etc/permissions/android.software.device_admin.xml:system/etc/permissions/android.software.device_admin.xml \
-  vendor/ulefone/t1/proprietary/etc/permissions/android.software.live_wallpaper.xml:system/etc/permissions/android.software.live_wallpaper.xml \
-  vendor/ulefone/t1/proprietary/etc/permissions/android.software.managed_users.xml:system/etc/permissions/android.software.managed_users.xml \
-  vendor/ulefone/t1/proprietary/etc/permissions/android.software.midi.xml:system/etc/permissions/android.software.midi.xml \
-  vendor/ulefone/t1/proprietary/etc/permissions/com.android.location.provider.xml:system/etc/permissions/com.android.location.provider.xml \
-  vendor/ulefone/t1/proprietary/etc/permissions/com.android.media.remotedisplay.xml:system/etc/permissions/com.android.media.remotedisplay.xml \
-  vendor/ulefone/t1/proprietary/etc/permissions/com.android.mediadrm.signer.xml:system/etc/permissions/com.android.mediadrm.signer.xml \
-  vendor/ulefone/t1/proprietary/etc/permissions/com.google.android.maps.xml:system/etc/permissions/com.google.android.maps.xml \
-  vendor/ulefone/t1/proprietary/etc/permissions/com.google.android.media.effects.xml:system/etc/permissions/com.google.android.media.effects.xml \
-  vendor/ulefone/t1/proprietary/etc/permissions/com.mediatek.runningbooster.xml:system/etc/permissions/com.mediatek.runningbooster.xml \
-  vendor/ulefone/t1/proprietary/etc/permissions/platform.xml:system/etc/permissions/platform.xml \
-  vendor/ulefone/t1/proprietary/etc/preferred-apps/google.xml:system/etc/preferred-apps/google.xml \
   vendor/ulefone/t1/proprietary/etc/r_submix_audio_policy_configuration.xml:system/etc/r_submix_audio_policy_configuration.xml \
-  vendor/ulefone/t1/proprietary/etc/runningbooster/platform_list.txt:system/etc/runningbooster/platform_list.txt \
-  vendor/ulefone/t1/proprietary/etc/seccomp_policy/mediacodec-seccomp.policy:system/etc/seccomp_policy/mediacodec-seccomp.policy \
-  vendor/ulefone/t1/proprietary/etc/seccomp_policy/mediaextractor-seccomp.policy:system/etc/seccomp_policy/mediaextractor-seccomp.policy \
   vendor/ulefone/t1/proprietary/etc/smartpa_params/fs16xx_music.preset:system/etc/smartpa_params/fs16xx_music.preset \
   vendor/ulefone/t1/proprietary/etc/smartpa_params/fs16xx_ringtone.preset:system/etc/smartpa_params/fs16xx_ringtone.preset \
   vendor/ulefone/t1/proprietary/etc/smartpa_params/fs16xx_voice.preset:system/etc/smartpa_params/fs16xx_voice.preset \
-  vendor/ulefone/t1/proprietary/etc/time:system/etc/time \
   vendor/ulefone/t1/proprietary/etc/usb_audio_policy_configuration.xml:system/etc/usb_audio_policy_configuration.xml \
   vendor/ulefone/t1/proprietary/etc/wifi/p2p_supplicant_overlay.conf:system/etc/wifi/p2p_supplicant_overlay.conf \
   vendor/ulefone/t1/proprietary/etc/wifi/wpa_supplicant.conf:system/etc/wifi/wpa_supplicant.conf \
   vendor/ulefone/t1/proprietary/etc/wifi/wpa_supplicant_overlay.conf:system/etc/wifi/wpa_supplicant_overlay.conf \
   vendor/ulefone/t1/proprietary/lib/egl/libGLES_android.so:system/lib/egl/libGLES_android.so \
-  vendor/ulefone/t1/proprietary/lib/hw/audio_policy.stub.so:system/lib/hw/audio_policy.stub.so \
-  vendor/ulefone/t1/proprietary/lib/hw/fingerprint.default.so:system/lib/hw/fingerprint.default.so \
-  vendor/ulefone/t1/proprietary/lib/hw/gatekeeper.trustkernel.so:system/lib/hw/gatekeeper.trustkernel.so \
-  vendor/ulefone/t1/proprietary/lib/hw/keystore.trustkernel.so:system/lib/hw/keystore.trustkernel.so \
-  vendor/ulefone/t1/proprietary/lib/hw/keystore.v1.trustkernel.so:system/lib/hw/keystore.v1.trustkernel.so \
   vendor/ulefone/t1/proprietary/lib/libMTKAudioTimeStretch.so:system/lib/libMTKAudioTimeStretch.so \
   vendor/ulefone/t1/proprietary/lib/libaudiopolicymanager.so:system/lib/libaudiopolicymanager.so \
   vendor/ulefone/t1/proprietary/lib/libaudiopolicymanagerdefault.so:system/lib/libaudiopolicymanagerdefault.so \
@@ -119,11 +90,6 @@ PRODUCT_COPY_FILES += \
   vendor/ulefone/t1/proprietary/lib/libteeclientjni.so:system/lib/libteeclientjni.so \
   vendor/ulefone/t1/proprietary/lib/libteejni.so:system/lib/libteejni.so \
   vendor/ulefone/t1/proprietary/lib64/egl/libGLES_android.so:system/lib64/egl/libGLES_android.so \
-  vendor/ulefone/t1/proprietary/lib64/hw/audio_policy.stub.so:system/lib64/hw/audio_policy.stub.so \
-  vendor/ulefone/t1/proprietary/lib64/hw/fingerprint.default.so:system/lib64/hw/fingerprint.default.so \
-  vendor/ulefone/t1/proprietary/lib64/hw/gatekeeper.trustkernel.so:system/lib64/hw/gatekeeper.trustkernel.so \
-  vendor/ulefone/t1/proprietary/lib64/hw/keystore.trustkernel.so:system/lib64/hw/keystore.trustkernel.so \
-  vendor/ulefone/t1/proprietary/lib64/hw/keystore.v1.trustkernel.so:system/lib64/hw/keystore.v1.trustkernel.so \
   vendor/ulefone/t1/proprietary/lib64/libMTKAudioTimeStretch.so:system/lib64/libMTKAudioTimeStretch.so \
   vendor/ulefone/t1/proprietary/lib64/libagoldtpglove_jni.so:system/lib64/libagoldtpglove_jni.so \
   vendor/ulefone/t1/proprietary/lib64/libaudiopolicymanager.so:system/lib64/libaudiopolicymanager.so \
@@ -142,6 +108,8 @@ PRODUCT_COPY_FILES += \
   vendor/ulefone/t1/proprietary/lib64/libteeclientjni.so:system/lib64/libteeclientjni.so \
   vendor/ulefone/t1/proprietary/lib64/libteejni.so:system/lib64/libteejni.so \
   vendor/ulefone/t1/proprietary/lib64/libyv12util.so:system/lib64/libyv12util.so \
+  vendor/ulefone/t1/proprietary/vendor/bin/AudioSetParam:system/vendor/bin/AudioSetParam \
+  vendor/ulefone/t1/proprietary/vendor/bin/MPED:system/vendor/bin/MPED \
   vendor/ulefone/t1/proprietary/vendor/bin/MtkCodecService:system/vendor/bin/MtkCodecService \
   vendor/ulefone/t1/proprietary/vendor/bin/aal:system/vendor/bin/aal \
   vendor/ulefone/t1/proprietary/vendor/bin/aee:system/vendor/bin/aee \
@@ -219,7 +187,7 @@ PRODUCT_COPY_FILES += \
   vendor/ulefone/t1/proprietary/vendor/bin/orientationd:system/vendor/bin/orientationd \
   vendor/ulefone/t1/proprietary/vendor/bin/perf_native_test:system/vendor/bin/perf_native_test \
   vendor/ulefone/t1/proprietary/vendor/bin/pq:system/vendor/bin/pq \
-  vendor/ulefone/t1/proprietary/vendor/bin/vtservice:system/vendor/bin/vtservice \
+  vendor/ulefone/t1/proprietary/vendor/bin/program_binary_builder:system/vendor/bin/program_binary_builder \
   vendor/ulefone/t1/proprietary/vendor/bin/program_binary_service:system/vendor/bin/program_binary_service \
   vendor/ulefone/t1/proprietary/vendor/bin/qmcX983d:system/vendor/bin/qmcX983d \
   vendor/ulefone/t1/proprietary/vendor/bin/radvd:system/vendor/bin/radvd \
@@ -238,6 +206,7 @@ PRODUCT_COPY_FILES += \
   vendor/ulefone/t1/proprietary/vendor/bin/stroke:system/vendor/bin/stroke \
   vendor/ulefone/t1/proprietary/vendor/bin/superumount:system/vendor/bin/superumount \
   vendor/ulefone/t1/proprietary/vendor/bin/sysenv_daemon:system/vendor/bin/sysenv_daemon \
+  vendor/ulefone/t1/proprietary/vendor/bin/terservice:system/vendor/bin/terservice \
   vendor/ulefone/t1/proprietary/vendor/bin/tertestclient:system/vendor/bin/tertestclient \
   vendor/ulefone/t1/proprietary/vendor/bin/thermal:system/vendor/bin/thermal \
   vendor/ulefone/t1/proprietary/vendor/bin/thermal_manager:system/vendor/bin/thermal_manager \
@@ -249,64 +218,36 @@ PRODUCT_COPY_FILES += \
   vendor/ulefone/t1/proprietary/vendor/bin/volte_imcb:system/vendor/bin/volte_imcb \
   vendor/ulefone/t1/proprietary/vendor/bin/volte_stack:system/vendor/bin/volte_stack \
   vendor/ulefone/t1/proprietary/vendor/bin/volte_ua:system/vendor/bin/volte_ua \
+  vendor/ulefone/t1/proprietary/vendor/bin/vtservice:system/vendor/bin/vtservice \
   vendor/ulefone/t1/proprietary/vendor/bin/wfca:system/vendor/bin/wfca \
   vendor/ulefone/t1/proprietary/vendor/bin/wifi2agps:system/vendor/bin/wifi2agps \
   vendor/ulefone/t1/proprietary/vendor/bin/wmt_concurrency:system/vendor/bin/wmt_concurrency \
   vendor/ulefone/t1/proprietary/vendor/bin/wmt_launcher:system/vendor/bin/wmt_launcher \
   vendor/ulefone/t1/proprietary/vendor/bin/wmt_loader:system/vendor/bin/wmt_loader \
   vendor/ulefone/t1/proprietary/vendor/bin/wmt_loopback:system/vendor/bin/wmt_loopback \
-  vendor/ulefone/t1/proprietary/vendor/bin/terservice:system/vendor/bin/terservice \
-  vendor/ulefone/t1/proprietary/vendor/bin/AudioSetParam:system/vendor/bin/AudioSetParam \
-  vendor/ulefone/t1/proprietary/vendor/bin/MPED:system/vendor/bin/MPED \
-  vendor/ulefone/t1/proprietary/vendor/bin/program_binary_builder:system/vendor/bin/program_binary_builder \
   vendor/ulefone/t1/proprietary/vendor/data/misc/ProjectConfig.mk:system/vendor/data/misc/ProjectConfig.mk \
-  vendor/ulefone/t1/proprietary/vendor/etc/wide-dhcpv6/dhcp6c.conf:system/vendor/etc/wide-dhcpv6/dhcp6c.conf \
-  vendor/ulefone/t1/proprietary/vendor/etc/wide-dhcpv6/dhcp6c.script:system/vendor/etc/wide-dhcpv6/dhcp6c.script \
-  vendor/ulefone/t1/proprietary/vendor/etc/wide-dhcpv6/dhcp6cDNS.conf:system/vendor/etc/wide-dhcpv6/dhcp6cDNS.conf \
-  vendor/ulefone/t1/proprietary/vendor/etc/wide-dhcpv6/dhcp6cctlkey:system/vendor/etc/wide-dhcpv6/dhcp6cctlkey \
-  vendor/ulefone/t1/proprietary/vendor/etc/wide-dhcpv6/dhcp6s.conf:system/vendor/etc/wide-dhcpv6/dhcp6s.conf \
-  vendor/ulefone/t1/proprietary/vendor/etc/voicecommand/training/ubmfile/antiCmds/Model1.bin:system/vendor/etc/voicecommand/training/ubmfile/antiCmds/Model1.bin \
-  vendor/ulefone/t1/proprietary/vendor/etc/voicecommand/training/ubmfile/antiCmds/Model4.bin:system/vendor/etc/voicecommand/training/ubmfile/antiCmds/Model4.bin \
-  vendor/ulefone/t1/proprietary/vendor/etc/voicecommand/training/ubmfile/antiCmds/c_e_dic.bin.f:system/vendor/etc/voicecommand/training/ubmfile/antiCmds/c_e_dic.bin.f \
-  vendor/ulefone/t1/proprietary/vendor/etc/voicecommand/training/ubmfile/antiCmds/c_e_dic.bin.gen:system/vendor/etc/voicecommand/training/ubmfile/antiCmds/c_e_dic.bin.gen \
-  vendor/ulefone/t1/proprietary/vendor/etc/voicecommand/training/ubmfile/antiCmds/c_e_dic.bin.l:system/vendor/etc/voicecommand/training/ubmfile/antiCmds/c_e_dic.bin.l \
-  vendor/ulefone/t1/proprietary/vendor/etc/voicecommand/training/ubmfile/antiCmds/c_e_dic.bin.p:system/vendor/etc/voicecommand/training/ubmfile/antiCmds/c_e_dic.bin.p \
-  vendor/ulefone/t1/proprietary/vendor/etc/voicecommand/training/ubmfile/antiCmds/c_e_dic.bin.t:system/vendor/etc/voicecommand/training/ubmfile/antiCmds/c_e_dic.bin.t \
-  vendor/ulefone/t1/proprietary/vendor/etc/voicecommand/training/ubmfile/antiCmds/commandfilr3.dic:system/vendor/etc/voicecommand/training/ubmfile/antiCmds/commandfilr3.dic \
-  vendor/ulefone/t1/proprietary/vendor/etc/voicecommand/training/ubmfile/128.dat:system/vendor/etc/voicecommand/training/ubmfile/128.dat \
-  vendor/ulefone/t1/proprietary/vendor/etc/voicecommand/training/ubmfile/64.dat:system/vendor/etc/voicecommand/training/ubmfile/64.dat \
-  vendor/ulefone/t1/proprietary/vendor/etc/voicecommand/training/ubmfile/ubmModel0.bin:system/vendor/etc/voicecommand/training/ubmfile/ubmModel0.bin \
-  vendor/ulefone/t1/proprietary/vendor/etc/voicecommand/training/ubmfile/ubmModel1.bin:system/vendor/etc/voicecommand/training/ubmfile/ubmModel1.bin \
-  vendor/ulefone/t1/proprietary/vendor/etc/voicecommand/training/ubmfile/ubmModel10.bin:system/vendor/etc/voicecommand/training/ubmfile/ubmModel10.bin \
-  vendor/ulefone/t1/proprietary/vendor/etc/voicecommand/training/ubmfile/ubmModel2.bin:system/vendor/etc/voicecommand/training/ubmfile/ubmModel2.bin \
-  vendor/ulefone/t1/proprietary/vendor/etc/voicecommand/training/ubmfile/ubmModel3.bin:system/vendor/etc/voicecommand/training/ubmfile/ubmModel3.bin \
-  vendor/ulefone/t1/proprietary/vendor/etc/voicecommand/training/ubmfile/ubmModel4.bin:system/vendor/etc/voicecommand/training/ubmfile/ubmModel4.bin \
-  vendor/ulefone/t1/proprietary/vendor/etc/security/cacerts_supl/594f1775.0:system/vendor/etc/security/cacerts_supl/594f1775.0 \
-  vendor/ulefone/t1/proprietary/vendor/etc/security/cacerts_supl/7651b327.0:system/vendor/etc/security/cacerts_supl/7651b327.0 \
-  vendor/ulefone/t1/proprietary/vendor/etc/security/cacerts_supl/848ea856.0:system/vendor/etc/security/cacerts_supl/848ea856.0 \
-  vendor/ulefone/t1/proprietary/vendor/etc/security/cacerts_supl/c542733d.0:system/vendor/etc/security/cacerts_supl/c542733d.0 \
-  vendor/ulefone/t1/proprietary/vendor/etc/security/cacerts_supl/f336e3d1.0:system/vendor/etc/security/cacerts_supl/f336e3d1.0 \
-  vendor/ulefone/t1/proprietary/vendor/etc/radvd/radvd.conf:system/vendor/etc/radvd/radvd.conf \
-  vendor/ulefone/t1/proprietary/vendor/etc/mddb/mdm_layout_desc_1_ulwctg_n.dat:system/vendor/etc/mddb/mdm_layout_desc_1_ulwctg_n.dat \
-  vendor/ulefone/t1/proprietary/vendor/etc/ipsec/ssl/openssl.cnf:system/vendor/etc/ipsec/ssl/openssl.cnf \
-  vendor/ulefone/t1/proprietary/vendor/etc/ipsec/ipsec.d/cacerts/Entrust.net_Certification_Authority_2048.cer:system/vendor/etc/ipsec/ipsec.d/cacerts/Entrust.net_Certification_Authority_2048.cer \
-  vendor/ulefone/t1/proprietary/vendor/etc/ipsec/ipsec.d/cacerts/GeoTrust_PCA_G3_Root.der:system/vendor/etc/ipsec/ipsec.d/cacerts/GeoTrust_PCA_G3_Root.der \
-  vendor/ulefone/t1/proprietary/vendor/etc/ipsec/ipsec.d/cacerts/GeoTrust_Primary_CA.der:system/vendor/etc/ipsec/ipsec.d/cacerts/GeoTrust_Primary_CA.der \
-  vendor/ulefone/t1/proprietary/vendor/etc/ipsec/ipsec.d/cacerts/GeoTrust_Primary_CA_G2_ECC.der:system/vendor/etc/ipsec/ipsec.d/cacerts/GeoTrust_Primary_CA_G2_ECC.der \
-  vendor/ulefone/t1/proprietary/vendor/etc/ipsec/ipsec.d/cacerts/Root_CA_1003.crt:system/vendor/etc/ipsec/ipsec.d/cacerts/Root_CA_1003.crt \
-  vendor/ulefone/t1/proprietary/vendor/etc/ipsec/ipsec.d/cacerts/VeriSignClass3G4.der:system/vendor/etc/ipsec/ipsec.d/cacerts/VeriSignClass3G4.der \
-  vendor/ulefone/t1/proprietary/vendor/etc/ipsec/ipsec.d/cacerts/VeriSignClass3G5.der:system/vendor/etc/ipsec/ipsec.d/cacerts/VeriSignClass3G5.der \
-  vendor/ulefone/t1/proprietary/vendor/etc/ipsec/ipsec.d/cacerts/VeriSignUniversalRootCertification.der:system/vendor/etc/ipsec/ipsec.d/cacerts/VeriSignUniversalRootCertification.der \
-  vendor/ulefone/t1/proprietary/vendor/etc/ipsec/ipsec.d/cacerts/thawte.der:system/vendor/etc/ipsec/ipsec.d/cacerts/thawte.der \
-  vendor/ulefone/t1/proprietary/vendor/etc/ipsec/ipsec.conf:system/vendor/etc/ipsec/ipsec.conf \
-  vendor/ulefone/t1/proprietary/vendor/etc/ipsec/strongswan.conf:system/vendor/etc/ipsec/strongswan.conf \
-  vendor/ulefone/t1/proprietary/vendor/etc/ipsec/updown_script:system/vendor/etc/ipsec/updown_script \
-  vendor/ulefone/t1/proprietary/vendor/etc/ipsec/wod_cust.conf:system/vendor/etc/ipsec/wod_cust.conf \
-  vendor/ulefone/t1/proprietary/vendor/etc/ipsec/wod_optr.conf:system/vendor/etc/ipsec/wod_optr.conf \
-  vendor/ulefone/t1/proprietary/vendor/etc/init/init.mal.rc:system/vendor/etc/init/init.mal.rc \
-  vendor/ulefone/t1/proprietary/vendor/etc/init/init.wod.rc:system/vendor/etc/init/init.wod.rc \
-  vendor/ulefone/t1/proprietary/vendor/etc/aurisys_param/FV-SAM-MTK2.dat:system/vendor/etc/aurisys_param/FV-SAM-MTK2.dat \
-  vendor/ulefone/t1/proprietary/vendor/etc/aurisys_param/Speech_AudioParam.xml:system/vendor/etc/aurisys_param/Speech_AudioParam.xml \
+  vendor/ulefone/t1/proprietary/vendor/etc/.tp/.ht120.mtc:system/vendor/etc/.tp/.ht120.mtc \
+  vendor/ulefone/t1/proprietary/vendor/etc/.tp/.thermal_meta.conf:system/vendor/etc/.tp/.thermal_meta.conf \
+  vendor/ulefone/t1/proprietary/vendor/etc/.tp/.thermal_policy_00:system/vendor/etc/.tp/.thermal_policy_00 \
+  vendor/ulefone/t1/proprietary/vendor/etc/.tp/.thermal_policy_01:system/vendor/etc/.tp/.thermal_policy_01 \
+  vendor/ulefone/t1/proprietary/vendor/etc/.tp/.thermal_policy_05:system/vendor/etc/.tp/.thermal_policy_05 \
+  vendor/ulefone/t1/proprietary/vendor/etc/.tp/.thermal_policy_06:system/vendor/etc/.tp/.thermal_policy_06 \
+  vendor/ulefone/t1/proprietary/vendor/etc/.tp/thermal.conf:system/vendor/etc/.tp/thermal.conf \
+  vendor/ulefone/t1/proprietary/vendor/etc/.tp/thermal.off.conf:system/vendor/etc/.tp/thermal.off.conf \
+  vendor/ulefone/t1/proprietary/vendor/etc/DSM.xml:system/vendor/etc/DSM.xml \
+  vendor/ulefone/t1/proprietary/vendor/etc/DSM_config.xml:system/vendor/etc/DSM_config.xml \
+  vendor/ulefone/t1/proprietary/vendor/etc/aee-config:system/vendor/etc/aee-config \
+  vendor/ulefone/t1/proprietary/vendor/etc/agps_profiles_conf2.xml:system/vendor/etc/agps_profiles_conf2.xml \
+  vendor/ulefone/t1/proprietary/vendor/etc/appwidget/3dwidgets.xml:system/vendor/etc/appwidget/3dwidgets.xml \
+  vendor/ulefone/t1/proprietary/vendor/etc/audio_device.xml:system/vendor/etc/audio_device.xml \
+  vendor/ulefone/t1/proprietary/vendor/etc/audio_em.xml:system/vendor/etc/audio_em.xml \
+  vendor/ulefone/t1/proprietary/vendor/etc/audio_param/AudioParamOptions.xml:system/vendor/etc/audio_param/AudioParamOptions.xml \
+  vendor/ulefone/t1/proprietary/vendor/etc/audio_param/BtInfo_AudioParam.xml:system/vendor/etc/audio_param/BtInfo_AudioParam.xml \
+  vendor/ulefone/t1/proprietary/vendor/etc/audio_param/BtInfo_ParamUnitDesc.xml:system/vendor/etc/audio_param/BtInfo_ParamUnitDesc.xml \
+  vendor/ulefone/t1/proprietary/vendor/etc/audio_param/PlaybackACF_AudioParam.xml:system/vendor/etc/audio_param/PlaybackACF_AudioParam.xml \
+  vendor/ulefone/t1/proprietary/vendor/etc/audio_param/PlaybackACF_ParamUnitDesc.xml:system/vendor/etc/audio_param/PlaybackACF_ParamUnitDesc.xml \
+  vendor/ulefone/t1/proprietary/vendor/etc/audio_param/PlaybackDRC_AudioParam.xml:system/vendor/etc/audio_param/PlaybackDRC_AudioParam.xml \
+  vendor/ulefone/t1/proprietary/vendor/etc/audio_param/PlaybackDRC_ParamUnitDesc.xml:system/vendor/etc/audio_param/PlaybackDRC_ParamUnitDesc.xml \
   vendor/ulefone/t1/proprietary/vendor/etc/audio_param/PlaybackHCF_AudioParam.xml:system/vendor/etc/audio_param/PlaybackHCF_AudioParam.xml \
   vendor/ulefone/t1/proprietary/vendor/etc/audio_param/PlaybackHCF_ParamUnitDesc.xml:system/vendor/etc/audio_param/PlaybackHCF_ParamUnitDesc.xml \
   vendor/ulefone/t1/proprietary/vendor/etc/audio_param/PlaybackVolAna_AudioParam.xml:system/vendor/etc/audio_param/PlaybackVolAna_AudioParam.xml \
@@ -382,46 +323,34 @@ PRODUCT_COPY_FILES += \
   vendor/ulefone/t1/proprietary/vendor/etc/audio_param/VolumeGainMap_ParamUnitDesc.xml:system/vendor/etc/audio_param/VolumeGainMap_ParamUnitDesc.xml \
   vendor/ulefone/t1/proprietary/vendor/etc/audio_param/Volume_AudioParam.xml:system/vendor/etc/audio_param/Volume_AudioParam.xml \
   vendor/ulefone/t1/proprietary/vendor/etc/audio_param/Volume_ParamUnitDesc.xml:system/vendor/etc/audio_param/Volume_ParamUnitDesc.xml \
-  vendor/ulefone/t1/proprietary/vendor/etc/audio_param/AudioParamOptions.xml:system/vendor/etc/audio_param/AudioParamOptions.xml \
-  vendor/ulefone/t1/proprietary/vendor/etc/audio_param/BtInfo_AudioParam.xml:system/vendor/etc/audio_param/BtInfo_AudioParam.xml \
-  vendor/ulefone/t1/proprietary/vendor/etc/audio_param/BtInfo_ParamUnitDesc.xml:system/vendor/etc/audio_param/BtInfo_ParamUnitDesc.xml \
-  vendor/ulefone/t1/proprietary/vendor/etc/audio_param/PlaybackACF_AudioParam.xml:system/vendor/etc/audio_param/PlaybackACF_AudioParam.xml \
-  vendor/ulefone/t1/proprietary/vendor/etc/audio_param/PlaybackACF_ParamUnitDesc.xml:system/vendor/etc/audio_param/PlaybackACF_ParamUnitDesc.xml \
-  vendor/ulefone/t1/proprietary/vendor/etc/audio_param/PlaybackDRC_AudioParam.xml:system/vendor/etc/audio_param/PlaybackDRC_AudioParam.xml \
-  vendor/ulefone/t1/proprietary/vendor/etc/audio_param/PlaybackDRC_ParamUnitDesc.xml:system/vendor/etc/audio_param/PlaybackDRC_ParamUnitDesc.xml \
-  vendor/ulefone/t1/proprietary/vendor/etc/appwidget/3dwidgets.xml:system/vendor/etc/appwidget/3dwidgets.xml \
-  vendor/ulefone/t1/proprietary/vendor/etc/.tp/.ht120.mtc:system/vendor/etc/.tp/.ht120.mtc \
-  vendor/ulefone/t1/proprietary/vendor/etc/.tp/.thermal_meta.conf:system/vendor/etc/.tp/.thermal_meta.conf \
-  vendor/ulefone/t1/proprietary/vendor/etc/.tp/.thermal_policy_00:system/vendor/etc/.tp/.thermal_policy_00 \
-  vendor/ulefone/t1/proprietary/vendor/etc/.tp/.thermal_policy_01:system/vendor/etc/.tp/.thermal_policy_01 \
-  vendor/ulefone/t1/proprietary/vendor/etc/.tp/.thermal_policy_05:system/vendor/etc/.tp/.thermal_policy_05 \
-  vendor/ulefone/t1/proprietary/vendor/etc/.tp/.thermal_policy_06:system/vendor/etc/.tp/.thermal_policy_06 \
-  vendor/ulefone/t1/proprietary/vendor/etc/.tp/thermal.conf:system/vendor/etc/.tp/thermal.conf \
-  vendor/ulefone/t1/proprietary/vendor/etc/.tp/thermal.off.conf:system/vendor/etc/.tp/thermal.off.conf \
-  vendor/ulefone/t1/proprietary/vendor/etc/DSM.xml:system/vendor/etc/DSM.xml \
-  vendor/ulefone/t1/proprietary/vendor/etc/DSM_config.xml:system/vendor/etc/DSM_config.xml \
-  vendor/ulefone/t1/proprietary/vendor/etc/aee-config:system/vendor/etc/aee-config \
-  vendor/ulefone/t1/proprietary/vendor/etc/agps_profiles_conf2.xml:system/vendor/etc/agps_profiles_conf2.xml \
-  vendor/ulefone/t1/proprietary/vendor/etc/audio_em.xml:system/vendor/etc/audio_em.xml \
   vendor/ulefone/t1/proprietary/vendor/etc/audio_policy.conf:system/vendor/etc/audio_policy.conf \
   vendor/ulefone/t1/proprietary/vendor/etc/aurisys_config.xml:system/vendor/etc/aurisys_config.xml \
+  vendor/ulefone/t1/proprietary/vendor/etc/aurisys_param/FV-SAM-MTK2.dat:system/vendor/etc/aurisys_param/FV-SAM-MTK2.dat \
+  vendor/ulefone/t1/proprietary/vendor/etc/aurisys_param/Speech_AudioParam.xml:system/vendor/etc/aurisys_param/Speech_AudioParam.xml \
   vendor/ulefone/t1/proprietary/vendor/etc/cdma_ecc_list.xml:system/vendor/etc/cdma_ecc_list.xml \
   vendor/ulefone/t1/proprietary/vendor/etc/cdma_ecc_list_ss.xml:system/vendor/etc/cdma_ecc_list_ss.xml \
   vendor/ulefone/t1/proprietary/vendor/etc/custom.conf:system/vendor/etc/custom.conf \
   vendor/ulefone/t1/proprietary/vendor/etc/disableapplist.txt:system/vendor/etc/disableapplist.txt \
   vendor/ulefone/t1/proprietary/vendor/etc/ecc_list.xml:system/vendor/etc/ecc_list.xml \
   vendor/ulefone/t1/proprietary/vendor/etc/emdlogger_usb_config.prop:system/vendor/etc/emdlogger_usb_config.prop \
-  vendor/ulefone/t1/proprietary/vendor/etc/factory.ini:system/vendor/etc/factory.ini \
+  vendor/ulefone/t1/proprietary/vendor/etc/init/init.mal.rc:system/vendor/etc/init/init.mal.rc \
+  vendor/ulefone/t1/proprietary/vendor/etc/init/init.wod.rc:system/vendor/etc/init/init.wod.rc \
+  vendor/ulefone/t1/proprietary/vendor/etc/ipsec/ipsec.conf:system/vendor/etc/ipsec/ipsec.conf \
+  vendor/ulefone/t1/proprietary/vendor/etc/ipsec/ssl/openssl.cnf:system/vendor/etc/ipsec/ssl/openssl.cnf \
+  vendor/ulefone/t1/proprietary/vendor/etc/ipsec/strongswan.conf:system/vendor/etc/ipsec/strongswan.conf \
+  vendor/ulefone/t1/proprietary/vendor/etc/ipsec/updown_script:system/vendor/etc/ipsec/updown_script \
+  vendor/ulefone/t1/proprietary/vendor/etc/ipsec/wod_cust.conf:system/vendor/etc/ipsec/wod_cust.conf \
+  vendor/ulefone/t1/proprietary/vendor/etc/ipsec/wod_optr.conf:system/vendor/etc/ipsec/wod_optr.conf \
+  vendor/ulefone/t1/proprietary/vendor/etc/mddb/mdm_layout_desc_1_ulwctg_n.dat:system/vendor/etc/mddb/mdm_layout_desc_1_ulwctg_n.dat \
   vendor/ulefone/t1/proprietary/vendor/etc/mpe.conf:system/vendor/etc/mpe.conf \
   vendor/ulefone/t1/proprietary/vendor/etc/mtk_omx_core.cfg:system/vendor/etc/mtk_omx_core.cfg \
   vendor/ulefone/t1/proprietary/vendor/etc/mtklog-config.prop:system/vendor/etc/mtklog-config.prop \
-  vendor/ulefone/t1/proprietary/vendor/etc/partition_permission.sh:system/vendor/etc/partition_permission.sh \
   vendor/ulefone/t1/proprietary/vendor/etc/perfcontable.txt:system/vendor/etc/perfcontable.txt \
   vendor/ulefone/t1/proprietary/vendor/etc/perfcontable_p25.txt:system/vendor/etc/perfcontable_p25.txt \
   vendor/ulefone/t1/proprietary/vendor/etc/perfservapplist.txt:system/vendor/etc/perfservapplist.txt \
   vendor/ulefone/t1/proprietary/vendor/etc/perfservboosttbl.txt:system/vendor/etc/perfservboosttbl.txt \
   vendor/ulefone/t1/proprietary/vendor/etc/perfservscntbl.txt:system/vendor/etc/perfservscntbl.txt \
-  vendor/ulefone/t1/proprietary/vendor/etc/recovery.fstab:system/vendor/etc/recovery.fstab \
+  vendor/ulefone/t1/proprietary/vendor/etc/radvd/radvd.conf:system/vendor/etc/radvd/radvd.conf \
   vendor/ulefone/t1/proprietary/vendor/etc/resmonwhitelist.txt:system/vendor/etc/resmonwhitelist.txt \
   vendor/ulefone/t1/proprietary/vendor/etc/slp_conf:system/vendor/etc/slp_conf \
   vendor/ulefone/t1/proprietary/vendor/etc/throttle.sh:system/vendor/etc/throttle.sh \
@@ -429,18 +358,33 @@ PRODUCT_COPY_FILES += \
   vendor/ulefone/t1/proprietary/vendor/etc/virtual-spn-conf-by-efpnn.xml:system/vendor/etc/virtual-spn-conf-by-efpnn.xml \
   vendor/ulefone/t1/proprietary/vendor/etc/virtual-spn-conf-by-efspn.xml:system/vendor/etc/virtual-spn-conf-by-efspn.xml \
   vendor/ulefone/t1/proprietary/vendor/etc/virtual-spn-conf-by-imsi.xml:system/vendor/etc/virtual-spn-conf-by-imsi.xml \
-  vendor/ulefone/t1/proprietary/vendor/firmware/pcm_sodi_ddrdfs_lpddr4_by_mp1.bin:system/vendor/firmware/pcm_sodi_ddrdfs_lpddr4_by_mp1.bin \
-  vendor/ulefone/t1/proprietary/vendor/firmware/pcm_sodi_ddrdfs_lpddr4_by_mp1_mt6355.bin:system/vendor/firmware/pcm_sodi_ddrdfs_lpddr4_by_mp1_mt6355.bin \
-  vendor/ulefone/t1/proprietary/vendor/firmware/pcm_sodi_ddrdfs_lpddr4_mt6355.bin:system/vendor/firmware/pcm_sodi_ddrdfs_lpddr4_mt6355.bin \
-  vendor/ulefone/t1/proprietary/vendor/firmware/pcm_sodi_ddrdfs_mt6355.bin:system/vendor/firmware/pcm_sodi_ddrdfs_mt6355.bin \
-  vendor/ulefone/t1/proprietary/vendor/firmware/pcm_suspend.bin:system/vendor/firmware/pcm_suspend.bin \
-  vendor/ulefone/t1/proprietary/vendor/firmware/pcm_suspend_by_mp1.bin:system/vendor/firmware/pcm_suspend_by_mp1.bin \
-  vendor/ulefone/t1/proprietary/vendor/firmware/pcm_suspend_by_mp1_mt6355.bin:system/vendor/firmware/pcm_suspend_by_mp1_mt6355.bin \
-  vendor/ulefone/t1/proprietary/vendor/firmware/pcm_suspend_lpddr4.bin:system/vendor/firmware/pcm_suspend_lpddr4.bin \
-  vendor/ulefone/t1/proprietary/vendor/firmware/pcm_suspend_lpddr4_by_mp1.bin:system/vendor/firmware/pcm_suspend_lpddr4_by_mp1.bin \
-  vendor/ulefone/t1/proprietary/vendor/firmware/pcm_suspend_lpddr4_by_mp1_mt6355.bin:system/vendor/firmware/pcm_suspend_lpddr4_by_mp1_mt6355.bin \
-  vendor/ulefone/t1/proprietary/vendor/firmware/pcm_suspend_lpddr4_mt6355.bin:system/vendor/firmware/pcm_suspend_lpddr4_mt6355.bin \
-  vendor/ulefone/t1/proprietary/vendor/firmware/pcm_suspend_mt6355.bin:system/vendor/firmware/pcm_suspend_mt6355.bin \
+  vendor/ulefone/t1/proprietary/vendor/etc/voicecommand/training/ubmfile/128.dat:system/vendor/etc/voicecommand/training/ubmfile/128.dat \
+  vendor/ulefone/t1/proprietary/vendor/etc/voicecommand/training/ubmfile/64.dat:system/vendor/etc/voicecommand/training/ubmfile/64.dat \
+  vendor/ulefone/t1/proprietary/vendor/etc/voicecommand/training/ubmfile/antiCmds/Model1.bin:system/vendor/etc/voicecommand/training/ubmfile/antiCmds/Model1.bin \
+  vendor/ulefone/t1/proprietary/vendor/etc/voicecommand/training/ubmfile/antiCmds/Model4.bin:system/vendor/etc/voicecommand/training/ubmfile/antiCmds/Model4.bin \
+  vendor/ulefone/t1/proprietary/vendor/etc/voicecommand/training/ubmfile/antiCmds/c_e_dic.bin.f:system/vendor/etc/voicecommand/training/ubmfile/antiCmds/c_e_dic.bin.f \
+  vendor/ulefone/t1/proprietary/vendor/etc/voicecommand/training/ubmfile/antiCmds/c_e_dic.bin.gen:system/vendor/etc/voicecommand/training/ubmfile/antiCmds/c_e_dic.bin.gen \
+  vendor/ulefone/t1/proprietary/vendor/etc/voicecommand/training/ubmfile/antiCmds/c_e_dic.bin.l:system/vendor/etc/voicecommand/training/ubmfile/antiCmds/c_e_dic.bin.l \
+  vendor/ulefone/t1/proprietary/vendor/etc/voicecommand/training/ubmfile/antiCmds/c_e_dic.bin.p:system/vendor/etc/voicecommand/training/ubmfile/antiCmds/c_e_dic.bin.p \
+  vendor/ulefone/t1/proprietary/vendor/etc/voicecommand/training/ubmfile/antiCmds/c_e_dic.bin.t:system/vendor/etc/voicecommand/training/ubmfile/antiCmds/c_e_dic.bin.t \
+  vendor/ulefone/t1/proprietary/vendor/etc/voicecommand/training/ubmfile/antiCmds/commandfilr3.dic:system/vendor/etc/voicecommand/training/ubmfile/antiCmds/commandfilr3.dic \
+  vendor/ulefone/t1/proprietary/vendor/etc/voicecommand/training/ubmfile/ubmModel0.bin:system/vendor/etc/voicecommand/training/ubmfile/ubmModel0.bin \
+  vendor/ulefone/t1/proprietary/vendor/etc/voicecommand/training/ubmfile/ubmModel1.bin:system/vendor/etc/voicecommand/training/ubmfile/ubmModel1.bin \
+  vendor/ulefone/t1/proprietary/vendor/etc/voicecommand/training/ubmfile/ubmModel10.bin:system/vendor/etc/voicecommand/training/ubmfile/ubmModel10.bin \
+  vendor/ulefone/t1/proprietary/vendor/etc/voicecommand/training/ubmfile/ubmModel2.bin:system/vendor/etc/voicecommand/training/ubmfile/ubmModel2.bin \
+  vendor/ulefone/t1/proprietary/vendor/etc/voicecommand/training/ubmfile/ubmModel3.bin:system/vendor/etc/voicecommand/training/ubmfile/ubmModel3.bin \
+  vendor/ulefone/t1/proprietary/vendor/etc/voicecommand/training/ubmfile/ubmModel4.bin:system/vendor/etc/voicecommand/training/ubmfile/ubmModel4.bin \
+  vendor/ulefone/t1/proprietary/vendor/etc/wide-dhcpv6/dhcp6c.conf:system/vendor/etc/wide-dhcpv6/dhcp6c.conf \
+  vendor/ulefone/t1/proprietary/vendor/etc/wide-dhcpv6/dhcp6c.script:system/vendor/etc/wide-dhcpv6/dhcp6c.script \
+  vendor/ulefone/t1/proprietary/vendor/etc/wide-dhcpv6/dhcp6cDNS.conf:system/vendor/etc/wide-dhcpv6/dhcp6cDNS.conf \
+  vendor/ulefone/t1/proprietary/vendor/etc/wide-dhcpv6/dhcp6cctlkey:system/vendor/etc/wide-dhcpv6/dhcp6cctlkey \
+  vendor/ulefone/t1/proprietary/vendor/etc/wide-dhcpv6/dhcp6s.conf:system/vendor/etc/wide-dhcpv6/dhcp6s.conf \
+  vendor/ulefone/t1/proprietary/vendor/firmware/ROMv2_lm_patch_1_0_hdr.bin:system/vendor/firmware/ROMv2_lm_patch_1_0_hdr.bin \
+  vendor/ulefone/t1/proprietary/vendor/firmware/ROMv2_lm_patch_1_1_hdr.bin:system/vendor/firmware/ROMv2_lm_patch_1_1_hdr.bin \
+  vendor/ulefone/t1/proprietary/vendor/firmware/WIFI_RAM_CODE_6755:system/vendor/firmware/WIFI_RAM_CODE_6755 \
+  vendor/ulefone/t1/proprietary/vendor/firmware/WMT_SOC.cfg:system/vendor/firmware/WMT_SOC.cfg \
+  vendor/ulefone/t1/proprietary/vendor/firmware/catcher_filter_1_ulwctg_n.bin:system/vendor/firmware/catcher_filter_1_ulwctg_n.bin \
+  vendor/ulefone/t1/proprietary/vendor/firmware/catcher_filter_3_3g_n.bin:system/vendor/firmware/catcher_filter_3_3g_n.bin \
   vendor/ulefone/t1/proprietary/vendor/firmware/customfilter/catcher_filter_1_ulwctg_n_C2KOnly_Test.bin:system/vendor/firmware/customfilter/catcher_filter_1_ulwctg_n_C2KOnly_Test.bin \
   vendor/ulefone/t1/proprietary/vendor/firmware/customfilter/catcher_filter_1_ulwctg_n_Default_Embms.bin:system/vendor/firmware/customfilter/catcher_filter_1_ulwctg_n_Default_Embms.bin \
   vendor/ulefone/t1/proprietary/vendor/firmware/customfilter/catcher_filter_1_ulwctg_n_Default_IPAllOff.bin:system/vendor/firmware/customfilter/catcher_filter_1_ulwctg_n_Default_IPAllOff.bin \
@@ -448,12 +392,6 @@ PRODUCT_COPY_FILES += \
   vendor/ulefone/t1/proprietary/vendor/firmware/customfilter/catcher_filter_1_ulwctg_n_SlimLog_DspAllOff.bin:system/vendor/firmware/customfilter/catcher_filter_1_ulwctg_n_SlimLog_DspAllOff.bin \
   vendor/ulefone/t1/proprietary/vendor/firmware/customfilter/catcher_filter_1_ulwctg_n__Default.bin:system/vendor/firmware/customfilter/catcher_filter_1_ulwctg_n__Default.bin \
   vendor/ulefone/t1/proprietary/vendor/firmware/customfilter/catcher_filter_1_ulwctg_n_meta.bin:system/vendor/firmware/customfilter/catcher_filter_1_ulwctg_n_meta.bin \
-  vendor/ulefone/t1/proprietary/vendor/firmware/ROMv2_lm_patch_1_0_hdr.bin:system/vendor/firmware/ROMv2_lm_patch_1_0_hdr.bin \
-  vendor/ulefone/t1/proprietary/vendor/firmware/ROMv2_lm_patch_1_1_hdr.bin:system/vendor/firmware/ROMv2_lm_patch_1_1_hdr.bin \
-  vendor/ulefone/t1/proprietary/vendor/firmware/WIFI_RAM_CODE_6755:system/vendor/firmware/WIFI_RAM_CODE_6755 \
-  vendor/ulefone/t1/proprietary/vendor/firmware/WMT_SOC.cfg:system/vendor/firmware/WMT_SOC.cfg \
-  vendor/ulefone/t1/proprietary/vendor/firmware/catcher_filter_1_ulwctg_n.bin:system/vendor/firmware/catcher_filter_1_ulwctg_n.bin \
-  vendor/ulefone/t1/proprietary/vendor/firmware/catcher_filter_3_3g_n.bin:system/vendor/firmware/catcher_filter_3_3g_n.bin \
   vendor/ulefone/t1/proprietary/vendor/firmware/em_filter_1_ulwctg_n.bin:system/vendor/firmware/em_filter_1_ulwctg_n.bin \
   vendor/ulefone/t1/proprietary/vendor/firmware/fm_cust.cfg:system/vendor/firmware/fm_cust.cfg \
   vendor/ulefone/t1/proprietary/vendor/firmware/mt6627_fm_v1_coeff.bin:system/vendor/firmware/mt6627_fm_v1_coeff.bin \
@@ -474,6 +412,32 @@ PRODUCT_COPY_FILES += \
   vendor/ulefone/t1/proprietary/vendor/firmware/pcm_sodi_ddrdfs_by_mp1.bin:system/vendor/firmware/pcm_sodi_ddrdfs_by_mp1.bin \
   vendor/ulefone/t1/proprietary/vendor/firmware/pcm_sodi_ddrdfs_by_mp1_mt6355.bin:system/vendor/firmware/pcm_sodi_ddrdfs_by_mp1_mt6355.bin \
   vendor/ulefone/t1/proprietary/vendor/firmware/pcm_sodi_ddrdfs_lpddr4.bin:system/vendor/firmware/pcm_sodi_ddrdfs_lpddr4.bin \
+  vendor/ulefone/t1/proprietary/vendor/firmware/pcm_sodi_ddrdfs_lpddr4_by_mp1.bin:system/vendor/firmware/pcm_sodi_ddrdfs_lpddr4_by_mp1.bin \
+  vendor/ulefone/t1/proprietary/vendor/firmware/pcm_sodi_ddrdfs_lpddr4_by_mp1_mt6355.bin:system/vendor/firmware/pcm_sodi_ddrdfs_lpddr4_by_mp1_mt6355.bin \
+  vendor/ulefone/t1/proprietary/vendor/firmware/pcm_sodi_ddrdfs_lpddr4_mt6355.bin:system/vendor/firmware/pcm_sodi_ddrdfs_lpddr4_mt6355.bin \
+  vendor/ulefone/t1/proprietary/vendor/firmware/pcm_sodi_ddrdfs_mt6355.bin:system/vendor/firmware/pcm_sodi_ddrdfs_mt6355.bin \
+  vendor/ulefone/t1/proprietary/vendor/firmware/pcm_suspend.bin:system/vendor/firmware/pcm_suspend.bin \
+  vendor/ulefone/t1/proprietary/vendor/firmware/pcm_suspend_by_mp1.bin:system/vendor/firmware/pcm_suspend_by_mp1.bin \
+  vendor/ulefone/t1/proprietary/vendor/firmware/pcm_suspend_by_mp1_mt6355.bin:system/vendor/firmware/pcm_suspend_by_mp1_mt6355.bin \
+  vendor/ulefone/t1/proprietary/vendor/firmware/pcm_suspend_lpddr4.bin:system/vendor/firmware/pcm_suspend_lpddr4.bin \
+  vendor/ulefone/t1/proprietary/vendor/firmware/pcm_suspend_lpddr4_by_mp1.bin:system/vendor/firmware/pcm_suspend_lpddr4_by_mp1.bin \
+  vendor/ulefone/t1/proprietary/vendor/firmware/pcm_suspend_lpddr4_by_mp1_mt6355.bin:system/vendor/firmware/pcm_suspend_lpddr4_by_mp1_mt6355.bin \
+  vendor/ulefone/t1/proprietary/vendor/firmware/pcm_suspend_lpddr4_mt6355.bin:system/vendor/firmware/pcm_suspend_lpddr4_mt6355.bin \
+  vendor/ulefone/t1/proprietary/vendor/firmware/pcm_suspend_mt6355.bin:system/vendor/firmware/pcm_suspend_mt6355.bin \
+  vendor/ulefone/t1/proprietary/vendor/lib/drm/libdrmctaplugin.so:system/vendor/lib/drm/libdrmctaplugin.so \
+  vendor/ulefone/t1/proprietary/vendor/lib/drm/libdrmmtkplugin.so:system/vendor/lib/drm/libdrmmtkplugin.so \
+  vendor/ulefone/t1/proprietary/vendor/lib/egl/egl.cfg:system/vendor/lib/egl/egl.cfg \
+  vendor/ulefone/t1/proprietary/vendor/lib/egl/libGLES_mali.so:system/vendor/lib/egl/libGLES_mali.so \
+  vendor/ulefone/t1/proprietary/vendor/lib/hw/audio.primary.mt6757.so:system/vendor/lib/hw/audio.primary.mt6757.so \
+  vendor/ulefone/t1/proprietary/vendor/lib/hw/audio.usb.mt6757.so:system/vendor/lib/hw/audio.usb.mt6757.so \
+  vendor/ulefone/t1/proprietary/vendor/lib/hw/camera.mt6757.so:system/vendor/lib/hw/camera.mt6757.so \
+  vendor/ulefone/t1/proprietary/vendor/lib/hw/consumerir.mt6757.so:system/vendor/lib/hw/consumerir.mt6757.so \
+  vendor/ulefone/t1/proprietary/vendor/lib/hw/gps.mt6757.so:system/vendor/lib/hw/gps.mt6757.so \
+  vendor/ulefone/t1/proprietary/vendor/lib/hw/gralloc.mt6757.so:system/vendor/lib/hw/gralloc.mt6757.so \
+  vendor/ulefone/t1/proprietary/vendor/lib/hw/hwcomposer.mt6757.so:system/vendor/lib/hw/hwcomposer.mt6757.so \
+  vendor/ulefone/t1/proprietary/vendor/lib/hw/lights.mt6757.so:system/vendor/lib/hw/lights.mt6757.so \
+  vendor/ulefone/t1/proprietary/vendor/lib/hw/memtrack.mt6757.so:system/vendor/lib/hw/memtrack.mt6757.so \
+  vendor/ulefone/t1/proprietary/vendor/lib/hw/sensors.mt6757.so:system/vendor/lib/hw/sensors.mt6757.so \
   vendor/ulefone/t1/proprietary/vendor/lib/lib3a.so:system/vendor/lib/lib3a.so \
   vendor/ulefone/t1/proprietary/vendor/lib/lib3a_core1.so:system/vendor/lib/lib3a_core1.so \
   vendor/ulefone/t1/proprietary/vendor/lib/libBlurModoule.so:system/vendor/lib/libBlurModoule.so \
@@ -582,9 +546,10 @@ PRODUCT_COPY_FILES += \
   vendor/ulefone/t1/proprietary/vendor/lib/libcam.device3.so:system/vendor/lib/libcam.device3.so \
   vendor/ulefone/t1/proprietary/vendor/lib/libcam.feature_utils.so:system/vendor/lib/libcam.feature_utils.so \
   vendor/ulefone/t1/proprietary/vendor/lib/libcam.featureio.pipe.panorama.so:system/vendor/lib/libcam.featureio.pipe.panorama.so \
+  vendor/ulefone/t1/proprietary/vendor/lib/libcharon.so:system/vendor/lib/libcharon.so \
   vendor/ulefone/t1/proprietary/vendor/lib/libcam.hal3a.automation.so:system/vendor/lib/libcam.hal3a.automation.so \
-  vendor/ulefone/t1/proprietary/vendor/lib/libcam.hal3a.log.so:system/vendor/lib/libcam.hal3a.log.so \
   vendor/ulefone/t1/proprietary/vendor/lib/libcam.hal3a.cctsvr.so:system/vendor/lib/libcam.hal3a.cctsvr.so \
+  vendor/ulefone/t1/proprietary/vendor/lib/libcam.hal3a.log.so:system/vendor/lib/libcam.hal3a.log.so \
   vendor/ulefone/t1/proprietary/vendor/lib/libcam.hal3a.v3.dng.so:system/vendor/lib/libcam.hal3a.v3.dng.so \
   vendor/ulefone/t1/proprietary/vendor/lib/libcam.hal3a.v3.lsctbl.so:system/vendor/lib/libcam.hal3a.v3.lsctbl.so \
   vendor/ulefone/t1/proprietary/vendor/lib/libcam.hal3a.v3.nvram.so:system/vendor/lib/libcam.hal3a.v3.nvram.so \
@@ -612,7 +577,6 @@ PRODUCT_COPY_FILES += \
   vendor/ulefone/t1/proprietary/vendor/lib/libcamdrv_twin.so:system/vendor/lib/libcamdrv_twin.so \
   vendor/ulefone/t1/proprietary/vendor/lib/libcameracustom.so:system/vendor/lib/libcameracustom.so \
   vendor/ulefone/t1/proprietary/vendor/lib/libccci_util.so:system/vendor/lib/libccci_util.so \
-  vendor/ulefone/t1/proprietary/vendor/lib/libcharon.so:system/vendor/lib/libcharon.so \
   vendor/ulefone/t1/proprietary/vendor/lib/libcomutils.so:system/vendor/lib/libcomutils.so \
   vendor/ulefone/t1/proprietary/vendor/lib/libconsumerir_core.so:system/vendor/lib/libconsumerir_core.so \
   vendor/ulefone/t1/proprietary/vendor/lib/libcrypto-ss.so:system/vendor/lib/libcrypto-ss.so \
@@ -709,6 +673,39 @@ PRODUCT_COPY_FILES += \
   vendor/ulefone/t1/proprietary/vendor/lib/libmrdump.so:system/vendor/lib/libmrdump.so \
   vendor/ulefone/t1/proprietary/vendor/lib/libmsbc_mtk.so:system/vendor/lib/libmsbc_mtk.so \
   vendor/ulefone/t1/proprietary/vendor/lib/libmtcloader.so:system/vendor/lib/libmtcloader.so \
+  vendor/ulefone/t1/proprietary/vendor/lib/libmtk_drvb.so:system/vendor/lib/libmtk_drvb.so \
+  vendor/ulefone/t1/proprietary/vendor/lib/libmtk_mmutils.so:system/vendor/lib/libmtk_mmutils.so \
+  vendor/ulefone/t1/proprietary/vendor/lib/libmtk_vt_service.so:system/vendor/lib/libmtk_vt_service.so \
+  vendor/ulefone/t1/proprietary/vendor/lib/libmtk_vt_swip.so:system/vendor/lib/libmtk_vt_swip.so \
+  vendor/ulefone/t1/proprietary/vendor/lib/libmtk_vt_utils.so:system/vendor/lib/libmtk_vt_utils.so \
+  vendor/ulefone/t1/proprietary/vendor/lib/libmtk_vt_wrapper.so:system/vendor/lib/libmtk_vt_wrapper.so \
+  vendor/ulefone/t1/proprietary/vendor/lib/libmtkcam.featurepipe.streaming.so:system/vendor/lib/libmtkcam.featurepipe.streaming.so \
+  vendor/ulefone/t1/proprietary/vendor/lib/libmtkcam_cct.so:system/vendor/lib/libmtkcam_cct.so \
+  vendor/ulefone/t1/proprietary/vendor/lib/libmtkcam_exif.so:system/vendor/lib/libmtkcam_exif.so \
+  vendor/ulefone/t1/proprietary/vendor/lib/libmtkcam_fwkutils.so:system/vendor/lib/libmtkcam_fwkutils.so \
+  vendor/ulefone/t1/proprietary/vendor/lib/libmtkcam_hwnode.so:system/vendor/lib/libmtkcam_hwnode.so \
+  vendor/ulefone/t1/proprietary/vendor/lib/libmtkcam_hwutils.so:system/vendor/lib/libmtkcam_hwutils.so \
+  vendor/ulefone/t1/proprietary/vendor/lib/libmtkcam_imgbuf.so:system/vendor/lib/libmtkcam_imgbuf.so \
+  vendor/ulefone/t1/proprietary/vendor/lib/libmtkcam_metadata.so:system/vendor/lib/libmtkcam_metadata.so \
+  vendor/ulefone/t1/proprietary/vendor/lib/libmtkcam_metastore.so:system/vendor/lib/libmtkcam_metastore.so \
+  vendor/ulefone/t1/proprietary/vendor/lib/libmtkcam_modulehelper.so:system/vendor/lib/libmtkcam_modulehelper.so \
+  vendor/ulefone/t1/proprietary/vendor/lib/libmtkcam_pipeline.so:system/vendor/lib/libmtkcam_pipeline.so \
+  vendor/ulefone/t1/proprietary/vendor/lib/libmtkcam_stdutils.so:system/vendor/lib/libmtkcam_stdutils.so \
+  vendor/ulefone/t1/proprietary/vendor/lib/libmtkcam_streamutils.so:system/vendor/lib/libmtkcam_streamutils.so \
+  vendor/ulefone/t1/proprietary/vendor/lib/libmtkcam_sysutils.so:system/vendor/lib/libmtkcam_sysutils.so \
+  vendor/ulefone/t1/proprietary/vendor/lib/libmtkjpeg.so:system/vendor/lib/libmtkjpeg.so \
+  vendor/ulefone/t1/proprietary/vendor/lib/libmtklimiter.so:system/vendor/lib/libmtklimiter.so \
+  vendor/ulefone/t1/proprietary/vendor/lib/libmtkplayer.so:system/vendor/lib/libmtkplayer.so \
+  vendor/ulefone/t1/proprietary/vendor/lib/libmtkshifter.so:system/vendor/lib/libmtkshifter.so \
+  vendor/ulefone/t1/proprietary/vendor/lib/libnativecheck-jni.so:system/vendor/lib/libnativecheck-jni.so \
+  vendor/ulefone/t1/proprietary/vendor/lib/libnvram.so:system/vendor/lib/libnvram.so \
+  vendor/ulefone/t1/proprietary/vendor/lib/libnvram_daemon_callback.so:system/vendor/lib/libnvram_daemon_callback.so \
+  vendor/ulefone/t1/proprietary/vendor/lib/libnvram_platform.so:system/vendor/lib/libnvram_platform.so \
+  vendor/ulefone/t1/proprietary/vendor/lib/libnvram_sec.so:system/vendor/lib/libnvram_sec.so \
+  vendor/ulefone/t1/proprietary/vendor/lib/libnvramagentclient.so:system/vendor/lib/libnvramagentclient.so \
+  vendor/ulefone/t1/proprietary/vendor/lib/libperfservice.so:system/vendor/lib/libperfservice.so \
+  vendor/ulefone/t1/proprietary/vendor/lib/libperfservicenative.so:system/vendor/lib/libperfservicenative.so \
+  vendor/ulefone/t1/proprietary/vendor/lib/libpq_cust_base.so:system/vendor/lib/libpq_cust_base.so \
   vendor/ulefone/t1/proprietary/vendor/lib/libpq_prot.so:system/vendor/lib/libpq_prot.so \
   vendor/ulefone/t1/proprietary/vendor/lib/libpqservice.so:system/vendor/lib/libpqservice.so \
   vendor/ulefone/t1/proprietary/vendor/lib/libprogrambinary.so:system/vendor/lib/libprogrambinary.so \
@@ -755,60 +752,26 @@ PRODUCT_COPY_FILES += \
   vendor/ulefone/t1/proprietary/vendor/lib/libvtmal.so:system/vendor/lib/libvtmal.so \
   vendor/ulefone/t1/proprietary/vendor/lib/libwfo_jni.so:system/vendor/lib/libwfo_jni.so \
   vendor/ulefone/t1/proprietary/vendor/lib/libwo.so:system/vendor/lib/libwo.so \
+  vendor/ulefone/t1/proprietary/vendor/lib/mediadrm/libdrmclearkeyplugin.so:system/vendor/lib/mediadrm/libdrmclearkeyplugin.so \
+  vendor/ulefone/t1/proprietary/vendor/lib/mediadrm/libmockdrmcryptoplugin.so:system/vendor/lib/mediadrm/libmockdrmcryptoplugin.so \
+  vendor/ulefone/t1/proprietary/vendor/lib/mediadrm/libwvdrmengine.so:system/vendor/lib/mediadrm/libwvdrmengine.so \
   vendor/ulefone/t1/proprietary/vendor/lib/mtk-ril.so:system/vendor/lib/mtk-ril.so \
   vendor/ulefone/t1/proprietary/vendor/lib/mtk-rilmd2.so:system/vendor/lib/mtk-rilmd2.so \
   vendor/ulefone/t1/proprietary/vendor/lib/mtk-rilproxy.so:system/vendor/lib/mtk-rilproxy.so \
   vendor/ulefone/t1/proprietary/vendor/lib/volte_imsm.so:system/vendor/lib/volte_imsm.so \
-  vendor/ulefone/t1/proprietary/vendor/lib/libmtk_drvb.so:system/vendor/lib/libmtk_drvb.so \
-  vendor/ulefone/t1/proprietary/vendor/lib/libmtk_mmutils.so:system/vendor/lib/libmtk_mmutils.so \
-  vendor/ulefone/t1/proprietary/vendor/lib/libmtk_vt_swip.so:system/vendor/lib/libmtk_vt_swip.so \
-  vendor/ulefone/t1/proprietary/vendor/lib/libmtk_vt_wrapper.so:system/vendor/lib/libmtk_vt_wrapper.so \
-  vendor/ulefone/t1/proprietary/vendor/lib/libmtkcam_cct.so:system/vendor/lib/libmtkcam_cct.so \
-  vendor/ulefone/t1/proprietary/vendor/lib/libmtkcam_fwkutils.so:system/vendor/lib/libmtkcam_fwkutils.so \
-  vendor/ulefone/t1/proprietary/vendor/lib/libmtkcam_hwutils.so:system/vendor/lib/libmtkcam_hwutils.so \
-  vendor/ulefone/t1/proprietary/vendor/lib/libmtkcam_metadata.so:system/vendor/lib/libmtkcam_metadata.so \
-  vendor/ulefone/t1/proprietary/vendor/lib/libmtkcam_pipeline.so:system/vendor/lib/libmtkcam_pipeline.so \
-  vendor/ulefone/t1/proprietary/vendor/lib/libmtkjpeg.so:system/vendor/lib/libmtkjpeg.so \
-  vendor/ulefone/t1/proprietary/vendor/lib/libmtkshifter.so:system/vendor/lib/libmtkshifter.so \
-  vendor/ulefone/t1/proprietary/vendor/lib/libnvram_daemon_callback.so:system/vendor/lib/libnvram_daemon_callback.so \
-  vendor/ulefone/t1/proprietary/vendor/lib/libnvramagentclient.so:system/vendor/lib/libnvramagentclient.so \
-  vendor/ulefone/t1/proprietary/vendor/lib/libmtkcam_streamutils.so:system/vendor/lib/libmtkcam_streamutils.so \
-  vendor/ulefone/t1/proprietary/vendor/lib/libperfservicenative.so:system/vendor/lib/libperfservicenative.so \
-  vendor/ulefone/t1/proprietary/vendor/lib/mediadrm/libdrmclearkeyplugin.so:system/vendor/lib/mediadrm/libdrmclearkeyplugin.so \
-  vendor/ulefone/t1/proprietary/vendor/lib/mediadrm/libmockdrmcryptoplugin.so:system/vendor/lib/mediadrm/libmockdrmcryptoplugin.so \
-  vendor/ulefone/t1/proprietary/vendor/lib/mediadrm/libwvdrmengine.so:system/vendor/lib/mediadrm/libwvdrmengine.so \
-  vendor/ulefone/t1/proprietary/vendor/lib/hw/audio.primary.mt6757.so:system/vendor/lib/hw/audio.primary.mt6757.so \
-  vendor/ulefone/t1/proprietary/vendor/lib/hw/audio.usb.mt6757.so:system/vendor/lib/hw/audio.usb.mt6757.so \
-  vendor/ulefone/t1/proprietary/vendor/lib/hw/camera.mt6757.so:system/vendor/lib/hw/camera.mt6757.so \
-  vendor/ulefone/t1/proprietary/vendor/lib/hw/consumerir.mt6757.so:system/vendor/lib/hw/consumerir.mt6757.so \
-  vendor/ulefone/t1/proprietary/vendor/lib/hw/gps.mt6757.so:system/vendor/lib/hw/gps.mt6757.so \
-  vendor/ulefone/t1/proprietary/vendor/lib/hw/gralloc.mt6757.so:system/vendor/lib/hw/gralloc.mt6757.so \
-  vendor/ulefone/t1/proprietary/vendor/lib/hw/hwcomposer.mt6757.so:system/vendor/lib/hw/hwcomposer.mt6757.so \
-  vendor/ulefone/t1/proprietary/vendor/lib/hw/lights.mt6757.so:system/vendor/lib/hw/lights.mt6757.so \
-  vendor/ulefone/t1/proprietary/vendor/lib/hw/memtrack.mt6757.so:system/vendor/lib/hw/memtrack.mt6757.so \
-  vendor/ulefone/t1/proprietary/vendor/lib/hw/sensors.mt6757.so:system/vendor/lib/hw/sensors.mt6757.so \
-  vendor/ulefone/t1/proprietary/vendor/lib/egl/egl.cfg:system/vendor/lib/egl/egl.cfg \
-  vendor/ulefone/t1/proprietary/vendor/lib/egl/libGLES_mali.so:system/vendor/lib/egl/libGLES_mali.so \
-  vendor/ulefone/t1/proprietary/vendor/lib/drm/libdrmctaplugin.so:system/vendor/lib/drm/libdrmctaplugin.so \
-  vendor/ulefone/t1/proprietary/vendor/lib/drm/libdrmmtkplugin.so:system/vendor/lib/drm/libdrmmtkplugin.so \
-  vendor/ulefone/t1/proprietary/vendor/lib/libmtklimiter.so:system/vendor/lib/libmtklimiter.so \
-  vendor/ulefone/t1/proprietary/vendor/lib/libnativecheck-jni.so:system/vendor/lib/libnativecheck-jni.so \
-  vendor/ulefone/t1/proprietary/vendor/lib/libnvram.so:system/vendor/lib/libnvram.so \
-  vendor/ulefone/t1/proprietary/vendor/lib/libperfservice.so:system/vendor/lib/libperfservice.so \
-  vendor/ulefone/t1/proprietary/vendor/lib/libmtk_vt_service.so:system/vendor/lib/libmtk_vt_service.so \
-  vendor/ulefone/t1/proprietary/vendor/lib/libmtk_vt_utils.so:system/vendor/lib/libmtk_vt_utils.so \
-  vendor/ulefone/t1/proprietary/vendor/lib/libmtkcam.featurepipe.streaming.so:system/vendor/lib/libmtkcam.featurepipe.streaming.so \
-  vendor/ulefone/t1/proprietary/vendor/lib/libmtkcam_exif.so:system/vendor/lib/libmtkcam_exif.so \
-  vendor/ulefone/t1/proprietary/vendor/lib/libmtkcam_hwnode.so:system/vendor/lib/libmtkcam_hwnode.so \
-  vendor/ulefone/t1/proprietary/vendor/lib/libmtkcam_imgbuf.so:system/vendor/lib/libmtkcam_imgbuf.so \
-  vendor/ulefone/t1/proprietary/vendor/lib/libmtkcam_metastore.so:system/vendor/lib/libmtkcam_metastore.so \
-  vendor/ulefone/t1/proprietary/vendor/lib/libmtkcam_stdutils.so:system/vendor/lib/libmtkcam_stdutils.so \
-  vendor/ulefone/t1/proprietary/vendor/lib/libmtkcam_sysutils.so:system/vendor/lib/libmtkcam_sysutils.so \
-  vendor/ulefone/t1/proprietary/vendor/lib/libmtkplayer.so:system/vendor/lib/libmtkplayer.so \
-  vendor/ulefone/t1/proprietary/vendor/lib/libnvram_platform.so:system/vendor/lib/libnvram_platform.so \
-  vendor/ulefone/t1/proprietary/vendor/lib/libpq_cust_base.so:system/vendor/lib/libpq_cust_base.so \
-  vendor/ulefone/t1/proprietary/vendor/lib/libmtkcam_modulehelper.so:system/vendor/lib/libmtkcam_modulehelper.so \
-  vendor/ulefone/t1/proprietary/vendor/lib/libnvram_sec.so:system/vendor/lib/libnvram_sec.so \
+  vendor/ulefone/t1/proprietary/vendor/lib64/drm/libdrmctaplugin.so:system/vendor/lib64/drm/libdrmctaplugin.so \
+  vendor/ulefone/t1/proprietary/vendor/lib64/drm/libdrmmtkplugin.so:system/vendor/lib64/drm/libdrmmtkplugin.so \
+  vendor/ulefone/t1/proprietary/vendor/lib64/egl/libGLES_mali.so:system/vendor/lib64/egl/libGLES_mali.so \
+  vendor/ulefone/t1/proprietary/vendor/lib64/hw/audio.primary.mt6757.so:system/vendor/lib64/hw/audio.primary.mt6757.so \
+  vendor/ulefone/t1/proprietary/vendor/lib64/hw/audio.usb.mt6757.so:system/vendor/lib64/hw/audio.usb.mt6757.so \
+  vendor/ulefone/t1/proprietary/vendor/lib64/hw/camera.mt6757.so:system/vendor/lib64/hw/camera.mt6757.so \
+  vendor/ulefone/t1/proprietary/vendor/lib64/hw/consumerir.mt6757.so:system/vendor/lib64/hw/consumerir.mt6757.so \
+  vendor/ulefone/t1/proprietary/vendor/lib64/hw/gps.mt6757.so:system/vendor/lib64/hw/gps.mt6757.so \
+  vendor/ulefone/t1/proprietary/vendor/lib64/hw/gralloc.mt6757.so:system/vendor/lib64/hw/gralloc.mt6757.so \
+  vendor/ulefone/t1/proprietary/vendor/lib64/hw/hwcomposer.mt6757.so:system/vendor/lib64/hw/hwcomposer.mt6757.so \
+  vendor/ulefone/t1/proprietary/vendor/lib64/hw/lights.mt6757.so:system/vendor/lib64/hw/lights.mt6757.so \
+  vendor/ulefone/t1/proprietary/vendor/lib64/hw/memtrack.mt6757.so:system/vendor/lib64/hw/memtrack.mt6757.so \
+  vendor/ulefone/t1/proprietary/vendor/lib64/hw/sensors.mt6757.so:system/vendor/lib64/hw/sensors.mt6757.so \
   vendor/ulefone/t1/proprietary/vendor/lib64/lib3a.so:system/vendor/lib64/lib3a.so \
   vendor/ulefone/t1/proprietary/vendor/lib64/lib3a_core1.so:system/vendor/lib64/lib3a_core1.so \
   vendor/ulefone/t1/proprietary/vendor/lib64/libBlurModoule.so:system/vendor/lib64/libBlurModoule.so \
@@ -915,6 +878,7 @@ PRODUCT_COPY_FILES += \
   vendor/ulefone/t1/proprietary/vendor/lib64/libcam3_app.so:system/vendor/lib64/libcam3_app.so \
   vendor/ulefone/t1/proprietary/vendor/lib64/libcam3_hwpipeline.so:system/vendor/lib64/libcam3_hwpipeline.so \
   vendor/ulefone/t1/proprietary/vendor/lib64/libcam3a_imem.so:system/vendor/lib64/libcam3a_imem.so \
+  vendor/ulefone/t1/proprietary/vendor/lib64/libcharon.so:system/vendor/lib64/libcharon.so \
   vendor/ulefone/t1/proprietary/vendor/lib64/libcam_extension.so:system/vendor/lib64/libcam_extension.so \
   vendor/ulefone/t1/proprietary/vendor/lib64/libcam_platform.so:system/vendor/lib64/libcam_platform.so \
   vendor/ulefone/t1/proprietary/vendor/lib64/libcamalgo.so:system/vendor/lib64/libcamalgo.so \
@@ -927,7 +891,6 @@ PRODUCT_COPY_FILES += \
   vendor/ulefone/t1/proprietary/vendor/lib64/libcamdrv_twin.so:system/vendor/lib64/libcamdrv_twin.so \
   vendor/ulefone/t1/proprietary/vendor/lib64/libcameracustom.so:system/vendor/lib64/libcameracustom.so \
   vendor/ulefone/t1/proprietary/vendor/lib64/libccci_util.so:system/vendor/lib64/libccci_util.so \
-  vendor/ulefone/t1/proprietary/vendor/lib64/libcharon.so:system/vendor/lib64/libcharon.so \
   vendor/ulefone/t1/proprietary/vendor/lib64/libcomutils.so:system/vendor/lib64/libcomutils.so \
   vendor/ulefone/t1/proprietary/vendor/lib64/libconsumerir_core.so:system/vendor/lib64/libconsumerir_core.so \
   vendor/ulefone/t1/proprietary/vendor/lib64/libcrypto-ss.so:system/vendor/lib64/libcrypto-ss.so \
@@ -1040,26 +1003,6 @@ PRODUCT_COPY_FILES += \
   vendor/ulefone/t1/proprietary/vendor/lib64/libnvramagentclient.so:system/vendor/lib64/libnvramagentclient.so \
   vendor/ulefone/t1/proprietary/vendor/lib64/libperfservice.so:system/vendor/lib64/libperfservice.so \
   vendor/ulefone/t1/proprietary/vendor/lib64/libperfservicenative.so:system/vendor/lib64/libperfservicenative.so \
-  vendor/ulefone/t1/proprietary/vendor/lib64/libthha.so:system/vendor/lib64/libthha.so \
-  vendor/ulefone/t1/proprietary/vendor/lib64/libui_ext.so:system/vendor/lib64/libui_ext.so \
-  vendor/ulefone/t1/proprietary/vendor/lib64/libvt_avsync.so:system/vendor/lib64/libvt_avsync.so \
-  vendor/ulefone/t1/proprietary/vendor/lib64/libwifitest.so:system/vendor/lib64/libwifitest.so \
-  vendor/ulefone/t1/proprietary/vendor/lib64/mtk-rilproxy.so:system/vendor/lib64/mtk-rilproxy.so \
-  vendor/ulefone/t1/proprietary/vendor/lib64/mediadrm/libdrmclearkeyplugin.so:system/vendor/lib64/mediadrm/libdrmclearkeyplugin.so \
-  vendor/ulefone/t1/proprietary/vendor/lib64/mediadrm/libmockdrmcryptoplugin.so:system/vendor/lib64/mediadrm/libmockdrmcryptoplugin.so \
-  vendor/ulefone/t1/proprietary/vendor/lib64/hw/audio.primary.mt6757.so:system/vendor/lib64/hw/audio.primary.mt6757.so \
-  vendor/ulefone/t1/proprietary/vendor/lib64/hw/audio.usb.mt6757.so:system/vendor/lib64/hw/audio.usb.mt6757.so \
-  vendor/ulefone/t1/proprietary/vendor/lib64/hw/camera.mt6757.so:system/vendor/lib64/hw/camera.mt6757.so \
-  vendor/ulefone/t1/proprietary/vendor/lib64/hw/consumerir.mt6757.so:system/vendor/lib64/hw/consumerir.mt6757.so \
-  vendor/ulefone/t1/proprietary/vendor/lib64/hw/gps.mt6757.so:system/vendor/lib64/hw/gps.mt6757.so \
-  vendor/ulefone/t1/proprietary/vendor/lib64/hw/gralloc.mt6757.so:system/vendor/lib64/hw/gralloc.mt6757.so \
-  vendor/ulefone/t1/proprietary/vendor/lib64/hw/hwcomposer.mt6757.so:system/vendor/lib64/hw/hwcomposer.mt6757.so \
-  vendor/ulefone/t1/proprietary/vendor/lib64/hw/lights.mt6757.so:system/vendor/lib64/hw/lights.mt6757.so \
-  vendor/ulefone/t1/proprietary/vendor/lib64/hw/memtrack.mt6757.so:system/vendor/lib64/hw/memtrack.mt6757.so \
-  vendor/ulefone/t1/proprietary/vendor/lib64/hw/sensors.mt6757.so:system/vendor/lib64/hw/sensors.mt6757.so \
-  vendor/ulefone/t1/proprietary/vendor/lib64/egl/libGLES_mali.so:system/vendor/lib64/egl/libGLES_mali.so \
-  vendor/ulefone/t1/proprietary/vendor/lib64/drm/libdrmctaplugin.so:system/vendor/lib64/drm/libdrmctaplugin.so \
-  vendor/ulefone/t1/proprietary/vendor/lib64/drm/libdrmmtkplugin.so:system/vendor/lib64/drm/libdrmmtkplugin.so \
   vendor/ulefone/t1/proprietary/vendor/lib64/libpq_cust_base.so:system/vendor/lib64/libpq_cust_base.so \
   vendor/ulefone/t1/proprietary/vendor/lib64/libpq_prot.so:system/vendor/lib64/libpq_prot.so \
   vendor/ulefone/t1/proprietary/vendor/lib64/libpqservice.so:system/vendor/lib64/libpqservice.so \
@@ -1079,28 +1022,35 @@ PRODUCT_COPY_FILES += \
   vendor/ulefone/t1/proprietary/vendor/lib64/libstagefrighthw.so:system/vendor/lib64/libstagefrighthw.so \
   vendor/ulefone/t1/proprietary/vendor/lib64/libstrongswan.so:system/vendor/lib64/libstrongswan.so \
   vendor/ulefone/t1/proprietary/vendor/lib64/libsysenv.so:system/vendor/lib64/libsysenv.so \
+  vendor/ulefone/t1/proprietary/vendor/lib64/libterservice.so:system/vendor/lib64/libterservice.so \
   vendor/ulefone/t1/proprietary/vendor/lib64/libtfa9890_interface.so:system/vendor/lib64/libtfa9890_interface.so \
+  vendor/ulefone/t1/proprietary/vendor/lib64/libthha.so:system/vendor/lib64/libthha.so \
   vendor/ulefone/t1/proprietary/vendor/lib64/libtimestretch.so:system/vendor/lib64/libtimestretch.so \
   vendor/ulefone/t1/proprietary/vendor/lib64/libtouchfilter.so:system/vendor/lib64/libtouchfilter.so \
   vendor/ulefone/t1/proprietary/vendor/lib64/libudf.so:system/vendor/lib64/libudf.so \
+  vendor/ulefone/t1/proprietary/vendor/lib64/libui_ext.so:system/vendor/lib64/libui_ext.so \
   vendor/ulefone/t1/proprietary/vendor/lib64/libvcodec_cap.so:system/vendor/lib64/libvcodec_cap.so \
+  vendor/ulefone/t1/proprietary/vendor/lib64/libvcodec_oal.so:system/vendor/lib64/libvcodec_oal.so \
   vendor/ulefone/t1/proprietary/vendor/lib64/libvcodec_utility.so:system/vendor/lib64/libvcodec_utility.so \
   vendor/ulefone/t1/proprietary/vendor/lib64/libvcodecdrv.so:system/vendor/lib64/libvcodecdrv.so \
-  vendor/ulefone/t1/proprietary/vendor/lib64/libwfo_jni.so:system/vendor/lib64/libwfo_jni.so \
-  vendor/ulefone/t1/proprietary/vendor/lib64/mtk-ril.so:system/vendor/lib64/mtk-ril.so \
-  vendor/ulefone/t1/proprietary/vendor/lib64/volte_imsm.so:system/vendor/lib64/volte_imsm.so \
-  vendor/ulefone/t1/proprietary/vendor/lib64/libterservice.so:system/vendor/lib64/libterservice.so \
-  vendor/ulefone/t1/proprietary/vendor/lib64/libvcodec_oal.so:system/vendor/lib64/libvcodec_oal.so \
+  vendor/ulefone/t1/proprietary/vendor/lib64/libvt_avsync.so:system/vendor/lib64/libvt_avsync.so \
   vendor/ulefone/t1/proprietary/vendor/lib64/libwapi.so:system/vendor/lib64/libwapi.so \
+  vendor/ulefone/t1/proprietary/vendor/lib64/libwfo_jni.so:system/vendor/lib64/libwfo_jni.so \
+  vendor/ulefone/t1/proprietary/vendor/lib64/libwifitest.so:system/vendor/lib64/libwifitest.so \
   vendor/ulefone/t1/proprietary/vendor/lib64/libwo.so:system/vendor/lib64/libwo.so \
+  vendor/ulefone/t1/proprietary/vendor/lib64/mediadrm/libdrmclearkeyplugin.so:system/vendor/lib64/mediadrm/libdrmclearkeyplugin.so \
+  vendor/ulefone/t1/proprietary/vendor/lib64/mediadrm/libmockdrmcryptoplugin.so:system/vendor/lib64/mediadrm/libmockdrmcryptoplugin.so \
+  vendor/ulefone/t1/proprietary/vendor/lib64/mtk-ril.so:system/vendor/lib64/mtk-ril.so \
   vendor/ulefone/t1/proprietary/vendor/lib64/mtk-rilmd2.so:system/vendor/lib64/mtk-rilmd2.so \
-  vendor/ulefone/t1/proprietary/vendor/media/images/drm_disable_icon.png:system/vendor/media/images/drm_disable_icon.png \
+  vendor/ulefone/t1/proprietary/vendor/lib64/mtk-rilproxy.so:system/vendor/lib64/mtk-rilproxy.so \
+  vendor/ulefone/t1/proprietary/vendor/lib64/volte_imsm.so:system/vendor/lib64/volte_imsm.so \
   vendor/ulefone/t1/proprietary/vendor/media/LMspeed_508.emd:system/vendor/media/LMspeed_508.emd \
   vendor/ulefone/t1/proprietary/vendor/media/PFFprec_600.emd:system/vendor/media/PFFprec_600.emd \
+  vendor/ulefone/t1/proprietary/vendor/media/images/drm_disable_icon.png:system/vendor/media/images/drm_disable_icon.png \
+  vendor/ulefone/t1/proprietary/vendor/res/images/lcd_test_00.png:system/vendor/res/images/lcd_test_00.png \
+  vendor/ulefone/t1/proprietary/vendor/res/images/lcd_test_01.png:system/vendor/res/images/lcd_test_01.png \
+  vendor/ulefone/t1/proprietary/vendor/res/images/lcd_test_02.png:system/vendor/res/images/lcd_test_02.png \
   vendor/ulefone/t1/proprietary/vendor/res/sound/CA2CA.ogg:system/vendor/res/sound/CA2CA.ogg \
   vendor/ulefone/t1/proprietary/vendor/res/sound/CADetected.ogg:system/vendor/res/sound/CADetected.ogg \
   vendor/ulefone/t1/proprietary/vendor/res/sound/ringtone.wav:system/vendor/res/sound/ringtone.wav \
   vendor/ulefone/t1/proprietary/vendor/res/sound/testpattern1.wav:system/vendor/res/sound/testpattern1.wav \
-  vendor/ulefone/t1/proprietary/vendor/res/images/lcd_test_00.png:system/vendor/res/images/lcd_test_00.png \
-  vendor/ulefone/t1/proprietary/vendor/res/images/lcd_test_01.png:system/vendor/res/images/lcd_test_01.png \
-  vendor/ulefone/t1/proprietary/vendor/res/images/lcd_test_02.png:system/vendor/res/images/lcd_test_02.png \
