@@ -72,6 +72,7 @@ PRODUCT_COPY_FILES += \
   vendor/ulefone/t1/proprietary/etc/wifi/p2p_supplicant_overlay.conf:system/etc/wifi/p2p_supplicant_overlay.conf \
   vendor/ulefone/t1/proprietary/etc/wifi/wpa_supplicant.conf:system/etc/wifi/wpa_supplicant.conf \
   vendor/ulefone/t1/proprietary/etc/wifi/wpa_supplicant_overlay.conf:system/etc/wifi/wpa_supplicant_overlay.conf \
+  vendor/ulefone/t1/proprietary/etc/mkshrc:system/etc/mkshrc \
   vendor/ulefone/t1/proprietary/lib/egl/libGLES_android.so:system/lib/egl/libGLES_android.so \
   vendor/ulefone/t1/proprietary/lib/libMTKAudioTimeStretch.so:system/lib/libMTKAudioTimeStretch.so \
   vendor/ulefone/t1/proprietary/lib/libaudiopolicymanager.so:system/lib/libaudiopolicymanager.so \
